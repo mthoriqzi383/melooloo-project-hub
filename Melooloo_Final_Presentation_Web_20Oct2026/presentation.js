@@ -32,6 +32,16 @@
   let sceneLoaded = false;
   let priorFocus;
   let beat = 0;
+  let draftEdits = {schema:1,slides:{}};
+  const publishedEdits = window.MELOOLOO_PUBLISHED_EDITS || {schema:1,slides:{}};
+  const editCore = window.MELOOLOO_SLIDE_EDIT_CORE;
+  if (new URLSearchParams(location.search).has('editor')) document.documentElement.classList.add('editor-preview');
+  let editableTexts = [];
+  function applySlideEdits() {
+    editableTexts = editCore?.apply($('storySlide'),page,publishedEdits,draftEdits) || [];
+    const visibleTitle = $('storySlide').querySelector('.story-copy h2');
+    if (visibleTitle) $('slideTitle').textContent = visibleTitle.textContent;
+  }
   const interactiveBeats = {
     3: [
       ['Permintaan premium','Estimasi kebutuhan di DKI: 1.460–2.190 ton per tahun.'],
@@ -188,6 +198,7 @@
     scene.querySelector('[data-beat-number]').textContent = `${pad(beat+1)} / ${pad(steps.length)}`;
     scene.querySelector('[data-beat-title]').textContent = steps[beat][0];
     scene.querySelector('[data-beat-description]').textContent = steps[beat][1];
+    applySlideEdits();
     $('stageNext').setAttribute('aria-label',beat < steps.length-1 ? `Sorot tahap berikutnya: ${steps[beat+1][0]}` : 'Halaman berikutnya');
     $('stagePrev').setAttribute('aria-label',beat > 0 ? `Kembali ke tahap sebelumnya: ${steps[beat-1][0]}` : 'Halaman sebelumnya');
   }
@@ -242,6 +253,7 @@
       else {
         $('stageNext').setAttribute('aria-label','Halaman berikutnya');
         $('stagePrev').setAttribute('aria-label','Halaman sebelumnya');
+        applySlideEdits();
       }
     }
     if (changed && previousSection !== nextSection && !options.skipChapter) showChapter(nextSection);
@@ -401,5 +413,32 @@
     else if (event.key.toLowerCase() === 'g') openScene(contexts[page]?.[0] || 'CORNER_SE');
   });
   addEventListener('hashchange',loadHash);
+  if (new URLSearchParams(location.search).has('editor')) {
+    window.MELOOLOO_EDITOR_API = {
+      getPage: () => page,
+      getTexts: () => editableTexts.map(({index,base,current,approved,proposed,tag,parent}) => ({
+        index,base,current,approved,proposed,tag,
+        visible: !!parent && getComputedStyle(parent).visibility !== 'hidden'
+      })),
+      highlight: index => {
+        document.querySelectorAll('[data-editor-highlight]').forEach(el => {
+          el.style.outline = el.dataset.editorOldOutline || '';
+          delete el.dataset.editorHighlight;
+          delete el.dataset.editorOldOutline;
+        });
+        const target = editableTexts.find(entry => entry.index === index)?.parent;
+        if (target) {
+          target.dataset.editorOldOutline = target.style.outline;
+          target.dataset.editorHighlight = '1';
+          target.style.outline = '2px solid #c7ed94';
+        }
+      },
+      setDraft: value => {
+        draftEdits = value && value.schema === 1 && value.slides ? value : {schema:1,slides:{}};
+        showPage(page,{force:true,skipChapter:true});
+      },
+      showPage: value => showPage(value,{force:true,skipChapter:true})
+    };
+  }
   loadHash();
 })();
