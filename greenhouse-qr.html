@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kode QR Melooloo untuk membuka walkthrough 3D greenhouse dari ponsel.">
+  <title>Melooloo · Scan Greenhouse 3D</title>
+  <style>
+    :root{color-scheme:light;--pine:#0b3325;--leaf:#a8d677;--paper:#f5f7ed;--muted:#52675b}
+    *{box-sizing:border-box}
+    html{min-height:100%}
+    body{min-height:100vh;margin:0;background:var(--paper);color:var(--pine);font-family:Inter,Avenir,Arial,sans-serif}
+    .topline{height:8px;background:linear-gradient(90deg,#0b3325 0 68%,#a8d677 68%)}
+    .page{min-height:calc(100vh - 8px);max-width:1600px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(350px,.82fr);gap:clamp(36px,6vw,108px);align-items:center;padding:clamp(32px,5vw,80px)}
+    .brand{display:flex;align-items:center;gap:15px;text-decoration:none;color:inherit;font-weight:800;font-size:clamp(20px,2vw,28px);letter-spacing:-.05em}
+    .brand img{width:112px;height:90px;object-fit:contain}
+    .tag{display:inline-flex;align-items:center;gap:10px;margin:clamp(52px,7vw,110px) 0 25px;font-size:13px;font-weight:800;letter-spacing:.17em}
+    .tag:before{content:"";width:32px;height:2px;background:#6ea445}
+    h1{font-size:clamp(60px,7.3vw,124px);line-height:.91;letter-spacing:-.075em;margin:0;max-width:850px}
+    h1 em{display:block;font-style:normal;color:#6a9b45}
+    .intro{font-size:clamp(19px,1.8vw,26px);line-height:1.38;max-width:600px;margin:36px 0 0}
+    .steps{display:flex;align-items:center;gap:13px;margin-top:47px;color:var(--muted);font-size:15px}
+    .steps strong{display:grid;place-items:center;width:30px;height:30px;flex:none;background:var(--pine);color:#fff;border-radius:50%;font-size:13px}
+    .scan{background:#fff;box-shadow:0 36px 90px #173b2524;border-radius:28px;padding:clamp(24px,3vw,52px);text-align:center;max-width:600px;width:100%;justify-self:center}
+    .scan img{display:block;width:100%;max-width:470px;aspect-ratio:1;margin:auto;image-rendering:pixelated}
+    .scan-title{font-size:20px;font-weight:800;margin:8px 0 4px}
+    .scan-url{font-size:13px;color:var(--muted);overflow-wrap:anywhere;margin:0}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+    .actions a,.actions button{border:1px solid #94b99d;border-radius:999px;padding:13px 19px;background:transparent;color:var(--pine);text-decoration:none;font:700 14px/1.2 inherit;cursor:pointer}
+    .actions a:first-child{background:var(--pine);color:#fff;border-color:var(--pine)}
+    .note{max-width:650px;margin:32px 0 0;color:#64746a;font-size:13px;line-height:1.5}
+    @media(max-width:900px){.page{grid-template-columns:1fr}.tag{margin-top:42px}.scan{max-width:470px}.actions{margin-top:28px}}
+    @media(max-width:600px){.page{padding:24px}.scan{border-radius:18px;padding:22px}h1{font-size:clamp(54px,13vw,82px)}.brand img{width:90px;height:72px}.steps{margin-top:28px}}
+    @media print{@page{size:A4 landscape;margin:11mm}body{background:#fff}.topline{height:4px}.page{min-height:0;padding:8mm;grid-template-columns:1fr 1fr;gap:15mm}.tag{margin-top:25mm}h1{font-size:57pt}.intro{font-size:17pt}.scan{box-shadow:none;border:1px solid #d3dfd1;padding:9mm}.scan img{max-width:105mm}.actions,.steps{display:none}.note{margin-top:20mm}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <main class="page">
+    <section>
+      <a class="brand" href="index.html" aria-label="Melooloo project hub"><img src="Melooloo_Final_Presentation_Web_20Oct2026/assets/logo.png" alt="Melooloo"></a>
+      <p class="tag">GREENHOUSE WALKTHROUGH</p>
+      <h1>Masuk ke<br><em>greenhouse.</em></h1>
+      <p class="intro">Pindai kode untuk menjelajahi model 3D Melooloo di rooftop Mall Artha Gading.</p>
+      <div class="steps"><strong>1</strong> Buka kamera ponsel <strong>2</strong> Arahkan ke kode QR <strong>3</strong> Jelajahi area</div>
+      <div class="actions">
+        <a href="3d.html">Buka peta 3D ↗</a>
+        <a href="assets/greenhouse-qr/melooloo-greenhouse-3d-qr.png" download>Unduh QR PNG</a>
+        <a href="assets/greenhouse-qr/melooloo-greenhouse-3d-scan-card.svg" download>Unduh kartu cetak</a>
+        <button type="button" onclick="window.print()">Cetak layar ini</button>
+      </div>
+      <p class="note">Visualisasi konsep. Posisi dan kelayakan struktur greenhouse pada atap belum diverifikasi melalui survei dan kajian teknik.</p>
+    </section>
+    <section class="scan" aria-label="Kode QR menuju greenhouse 3D">
+      <img src="assets/greenhouse-qr/melooloo-greenhouse-3d-qr.svg" alt="Kode QR untuk membuka walkthrough 3D greenhouse Melooloo">
+      <p class="scan-title">Scan untuk menjelajahi 3D</p>
+      <p class="scan-url">mthoriqzi383.github.io/melooloo-project-hub/3d.html</p>
+    </section>
+  </main>
+</body>
+</html>
