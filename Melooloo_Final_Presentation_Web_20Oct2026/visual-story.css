@@ -82,6 +82,19 @@
 .vs-roster-list em{font-size:.85cqw;font-style:normal;color:var(--soft);letter-spacing:.1em}
 .vs-roster-list strong{font-size:2.55cqw;letter-spacing:-.06em;font-weight:650}
 .vs-roster-list span{font-size:1.5cqw;color:var(--soft)}
+.story-visual:has(.vs-roster-reference){background:#fbf5e7}
+.story-visual:has(.vs-roster-reference) .story-topline,.story-visual:has(.vs-roster-reference) .story-footer,.story-visual:has(.vs-roster-reference) .story-grain{display:none}
+.vs-roster-reference{inset:0;display:block;color:#050505}
+.vs-roster-school{position:absolute;top:3.4%;left:2.6%;display:flex;align-items:center;gap:.65cqw;color:#123665}
+.vs-roster-school img{width:4.75cqw;height:4.75cqw;object-fit:contain}
+.vs-roster-school span{font:800 1.05cqw Arial,sans-serif;letter-spacing:.02em;line-height:1.06}
+.vs-roster-school strong{display:block;font-size:1.8cqw;letter-spacing:-.035em}
+.vs-roster-reference>h2{position:absolute;top:9.4%;left:0;right:0;text-align:center;margin:0;font:800 6.1cqw/1 Arial,sans-serif;letter-spacing:-.04em;color:#050505}
+.vs-roster-person{position:absolute;left:var(--x);top:var(--y);transform:translateX(-50%);width:18.5cqw;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.1cqw}
+.vs-roster-portrait{width:17cqw;height:17cqw;border-radius:50%;background:#fbf5e7;border:1px solid #d4d1c7;overflow:hidden}
+.vs-roster-portrait.has-photo{border:0}
+.vs-roster-portrait img{width:100%;height:100%;display:block;object-fit:cover;border-radius:50%}
+.vs-roster-person>strong{font:750 2.8cqw/1 Arial,sans-serif;color:#050505;letter-spacing:-.04em}
 .vs-gap .story-copy{max-width:58%}
 .vs-gap-plot{position:absolute;inset:36% 0 1%;padding:1cqw 0;display:flex;flex-direction:column;justify-content:space-around}
 .vs-axis{display:flex;justify-content:space-between;font-size:.73cqw;color:var(--soft);border-bottom:1px solid var(--line);padding-bottom:.45cqw}

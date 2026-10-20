@@ -2,7 +2,7 @@
    later finance PowerPoint; page 65 uses its finance decision figures. */
 window.MELOOLOO_STORY = [
   {type:'hero',title:'Melooloo',lead:'Produsen melon premium berbasis urban farming dengan sistem smart greenhouse adaptif untuk segmen B2B2C di Jakarta.',facts:[['Seminar 2','Business plan'],['Kelompok 6','Prasetiya Mulya']]},
-  {type:'cards',title:'Tim di balik Melooloo',lead:'Lima anggota kelompok 6 dalam presentasi business plan.',facts:[['Carlos','Indra Alam'],['Mery',''],['Nindio','Mahendra W'],['Muhamad','Thoriq'],['Emily','Yubilina']]},
+  {type:'cards',title:'Our Shareholders',lead:'Lima anggota kelompok 6 dalam presentasi business plan.',facts:[['Carlos','Indra Alam'],['Mery',''],['Nindio','Mahendra W'],['Muhamad','Thoriq'],['Emily','Yubilina']]},
   {type:'figure',title:'Peluang di pasar premium',lead:'Estimasi permintaan premium DKI lebih besar daripada pasokan bermerek dari produsen lokal.',facts:[['1.460–2.190','ton/tahun permintaan premium'],['400–1.200','ton/tahun pasokan bermerek'],['260–1.790','ton/tahun gap estimasi']]},
   {type:'cards',title:'Dua masalah. Satu model.',lead:'Kesenjangan lokasi dan kualitas bertemu dengan inefisiensi budidaya konvensional.',facts:[['1,46%','porsi produksi untuk pasar konsumsi tinggi'],['30–40%','risiko gagal panen konvensional'],['B2B2C','ritel/HoReCa dan konsumen langsung'],['253','responden survei primer']]},
   {type:'cards',title:'Struktur industri membuka ruang',lead:'Lima kekuatan persaingan menunjukkan pembeli paling kuat; kualitas konsisten dan kontrak menjadi respons utama.',facts:[['Sedang','pendatang baru'],['Tinggi','daya tawar pembeli'],['Sedang','daya tawar pemasok'],['Sedang','substitusi'],['Sedang','rivalitas']]},

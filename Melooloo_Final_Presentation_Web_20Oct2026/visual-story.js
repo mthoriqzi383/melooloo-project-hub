@@ -35,7 +35,11 @@
     return `<div class="vscene vs-cover vs-dark vs-page-${n}"><div class="vs-cover-image" style="background-image:url('${img(name)}')"></div><div class="vs-cover-shade"></div>${top}<div class="vs-cover-copy">${heading}<div class="vs-cover-rule"></div>${facts(item,4)}</div><div class="vs-concept">${concept}${n===22?' · PENEMPATAN ATAP BELUM DIVERIFIKASI':''}</div></div>`;
   }
   function roster(item,heading) {
-    return `<div class="vscene vs-roster"><div class="vs-intro">${heading}<div class="vs-hairline"></div><p class="vs-side-label">KELOMPOK 06<br>PERENCANAAN BISNIS</p></div><div class="vs-roster-list">${item.facts.map((f,i)=>`<div><em>${String(i+1).padStart(2,'0')}</em><strong>${E(f[0])}</strong><span>${E(f[1])}</span></div>`).join('')}</div></div>`;
+    const people = [
+      ['Carlos','',12,25],['Nindio','assets/team/nindio.png',50,25],['Emily','assets/team/emily.png',88,25],
+      ['Mery','',31,56],['Thoriq','',69,56]
+    ];
+    return `<div class="vscene vs-roster vs-roster-reference"><div class="vs-roster-school"><img src="assets/team/university-crest.png" alt="Logo Universitas Prasetiya Mulya"><span>UNIVERSITAS<strong>PRASETIYA MULYA</strong></span></div><h2>Our Shareholders</h2>${people.map(([name,portrait,x,y])=>`<div class="vs-roster-person" style="--x:${x}%;--y:${y}%"><div class="vs-roster-portrait${portrait?' has-photo':''}">${portrait?`<img src="${portrait}" alt="Foto ${name}">`:''}</div><strong>${name}</strong></div>`).join('')}</div>`;
   }
   function gap(item,heading) {
     return `<div class="vscene vs-gap vs-interactive" data-interactive-slide="3"><div class="vs-title">${heading}</div><div class="vs-gap-plot"><div class="vs-axis"><span>0</span><span>550</span><span>1.100</span><span>1.650</span><span>2.200 TON</span></div><button class="vs-range vs-focus-target" type="button" data-beat-target="0" aria-label="Sorot permintaan premium"><span>PERMINTAAN PREMIUM</span><div><i style="--from:66.4%;--to:99.5%"></i></div><b>1.460–2.190</b></button><button class="vs-range vs-range-supply vs-focus-target" type="button" data-beat-target="1" aria-label="Sorot pasokan bermerek"><span>PASOKAN BERMEREK</span><div><i style="--from:18.2%;--to:54.5%"></i></div><b>400–1.200</b></button><button class="vs-gap-note vs-focus-target" type="button" data-beat-target="2" aria-label="Sorot celah pasar estimasi"><small>CELAH ESTIMASI</small><strong>260–1.790</strong><span>ton per tahun</span></button></div>${beatPanel(3)}${source(3)}</div>`;
