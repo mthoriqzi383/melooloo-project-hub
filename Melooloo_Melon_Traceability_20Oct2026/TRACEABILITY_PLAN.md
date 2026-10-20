@@ -2,6 +2,12 @@
 
 Status: rancangan pengalaman dan alur data; **belum terhubung ke batch produksi**. Halaman konsep di folder ini bukan bukti panen. QR presentasi greenhouse 3D yang sudah ada mempunyai tujuan berbeda dari QR pada buah.
 
+## Contoh yang dapat dipindai
+
+Halaman `../trace-demo.html` adalah **contoh interaktif untuk presentasi**. QR PNG/SVG dan kartu A6 PNG/SVG tersedia di `../assets/melon-trace-demo/`. Seluruh tanggal, varietas pada lot contoh, dan nilai **15,2°Bx** adalah simulasi yang ditandai pada halaman dan kartu. Nilai Brix contoh dijelaskan sebagai **sampel lot**, bukan uji per buah. Lokasi asal sengaja tidak diberi pin nyata karena belum ada lokasi produksi untuk lot demo. QR ini tidak boleh dipakai sebagai label buah yang dijual.
+
+Sebelum membuat QR produksi: tetapkan ID lot riil, isi dan periksa rekaman tanam/panen/QC/kebun, setujui informasi yang boleh dibuka pelanggan, lalu buat URL permanen per lot. Cocokkan kode pada label dengan halaman tujuan dan uji hasil scan pada label fisik.
+
 ## 1. Janji kepada pelanggan
 
 Pindai QR pada **setiap buah** untuk membuka halaman yang cocok dengan labelnya: produk/varietas, lot panen, kebun asal yang sudah diverifikasi, urutan peristiwa budidaya sampai distribusi, hasil QC yang relevan, dan cara menyimpan. Tampilan pertama harus menjawab tiga pertanyaan: **buah apa ini, dari kebun mana, dan kapan dipanen?** Rincian proses tersedia di bawahnya.
