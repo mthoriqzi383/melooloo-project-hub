@@ -41,7 +41,7 @@
       entry.proposed = validPatch(proposed, entry) ? proposed.value : null;
     }
     return entries.map(({index,base,current,approved,proposed,node}) => ({
-      index,base,current,approved,proposed,
+      index,base,current,approved,proposed,node,
       tag:node.parentElement?.tagName.toLowerCase() || 'text',
       parent:node.parentElement
     }));

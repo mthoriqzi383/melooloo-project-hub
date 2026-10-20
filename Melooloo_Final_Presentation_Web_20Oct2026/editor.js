@@ -15,6 +15,8 @@
   let texts = [];
   let api = null;
   let saveTimer;
+  let previewAttempts = 0;
+  const quickTimers = new Map();
   const pad = n => String(n).padStart(2,'0');
   const status = message => { $('editorStatus').textContent = message; };
   function sanitize(input) {
@@ -92,6 +94,7 @@
   function refreshTexts() {
     if (!api) return;
     texts=api.getTexts();
+    syncQuickFields();
     const query=$('textSearch').value.trim().toLocaleLowerCase('id');
     const list=$('textList');list.replaceChildren();
     for (const entry of texts) {
@@ -104,6 +107,17 @@
       row.append(index,body,dot);row.addEventListener('click',()=>selectText(entry.index));list.append(row);
     }
     if (!list.children.length) {const empty=document.createElement('p');empty.className='slide-group';empty.textContent='Tidak ada teks yang cocok.';list.append(empty);}
+  }
+  function syncQuickFields() {
+    const primary=api.getPrimaryTexts();
+    for (const [field,index] of [['quickTitle',primary.title],['quickLead',primary.lead]]) {
+      const row=$(field+'Row');
+      row.hidden=index===null;
+      $(field).dataset.index=index===null?'':String(index);
+      const entry=texts.find(item=>item.index===index);
+      if (entry && document.activeElement!==$(field)) $(field).value=entry.current;
+    }
+    $('quickUnavailable').hidden=primary.title!==null || primary.lead!==null;
   }
   function selectText(index) {
     selected=index;const entry=texts.find(item=>item.index===index);if (!entry) return;
@@ -119,28 +133,66 @@
     const value=$('editValue').value;
     $('charCount').textContent=`${value.length} / 2000`;
     if (!value.trim()) {$('savedState').textContent='Teks tidak boleh kosong';return;}
+    setTextPatch(selected,value);
+    $('savedState').textContent='Draf tersimpan';
+    api.highlight(selected);
+  }
+  function setTextPatch(index,value) {
+    const entry=texts.find(item=>item.index===index);
+    if (!entry || !value.trim()) {status('Teks tidak boleh kosong.');return;}
     const slide=draft.slides[page] || {text:{}};
-    if (value===entry.approved) delete slide.text[selected];
-    else slide.text[selected]={base:entry.base,from:entry.approved,value};
+    if (value===entry.approved) delete slide.text[index];
+    else slide.text[index]={base:entry.base,from:entry.approved,value};
     if (!Object.keys(slide.text).length && !slide.note) delete draft.slides[page];
     else draft.slides[page]=slide;
     save();api.setDraft(draft);texts=api.getTexts();
-    $('savedState').textContent='Draf tersimpan';
-    refreshTexts();api.highlight(selected);
+    refreshTexts();
+    if (selected===index) $('editValue').value=value;
   }
-  $('deckFrame').addEventListener('load',()=>{
+  function connectPreview() {
+    if (api) return;
     try {
-      api=$('deckFrame').contentWindow.MELOOLOO_EDITOR_API;
-      if (!api) throw new Error('Pratinjau belum siap.');
+      const ready=$('deckFrame').contentWindow.MELOOLOO_EDITOR_API;
+      if (!ready) {
+        if (++previewAttempts < 50) setTimeout(connectPreview,200);
+        else status('Pratinjau tidak dapat dibuka. Muat ulang halaman editor.');
+        return;
+      }
+      api=ready;
       api.setDraft(draft);api.showPage(page);refreshTexts();syncCurrent();
-    } catch { status('Pratinjau belum dapat dibuka. Muat ulang halaman editor.'); }
-  });
+      status('Klik teks pada slide atau ubah judul di panel kanan.');
+    } catch (error) { console.error(error);status('Pratinjau tidak dapat dibuka. Muat ulang halaman editor.'); }
+  }
+  $('deckFrame').addEventListener('load',()=>{previewAttempts=0;connectPreview();});
+  setTimeout(connectPreview,1000);
   $('slideSearch').addEventListener('input',buildSlides);
   $('textSearch').addEventListener('input',refreshTexts);
   $('prevSlide').addEventListener('click',()=>showPage(order[Math.max(0,order.indexOf(page)-1)]));
   $('nextSlide').addEventListener('click',()=>showPage(order[Math.min(65,order.indexOf(page)+1)]));
   $('editValue').addEventListener('input',()=>{clearTimeout(saveTimer);saveTimer=setTimeout(updateText,280);});
   $('editValue').addEventListener('blur',()=>{if (saveTimer) {clearTimeout(saveTimer);saveTimer=null;updateText();}});
+  for (const field of ['quickTitle','quickLead']) {
+    const input=$(field);
+    const commit=()=>{
+      const index=Number(input.dataset.index);
+      if (input.dataset.index!=='' && input.value.trim()) setTextPatch(index,input.value);
+    };
+    input.addEventListener('input',()=>{
+      clearTimeout(quickTimers.get(field));
+      quickTimers.set(field,setTimeout(commit,260));
+    });
+    input.addEventListener('blur',()=>{
+      clearTimeout(quickTimers.get(field));
+      quickTimers.delete(field);
+      commit();
+    });
+  }
+  addEventListener('message',event=>{
+    if (event.origin!==location.origin || event.source!==$('deckFrame').contentWindow || event.data?.type!=='melooloo-editor-pick') return;
+    if (event.data.page!==page || !Number.isInteger(event.data.index)) return;
+    refreshTexts();
+    selectText(event.data.index);
+  });
   $('resetText').addEventListener('click',()=>{
     if (selected===null) return;
     const entry=texts.find(item=>item.index===selected);if (!entry) return;

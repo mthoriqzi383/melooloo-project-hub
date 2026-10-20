@@ -414,8 +414,27 @@
   });
   addEventListener('hashchange',loadHash);
   if (new URLSearchParams(location.search).has('editor')) {
+    $('storySlide').addEventListener('click', event => {
+      const target = event.target;
+      if (!(target instanceof Element) || !target.closest('.story-canvas')) return;
+      const range = document.caretRangeFromPoint?.(event.clientX,event.clientY);
+      const direct = range?.startContainer?.nodeType === Node.TEXT_NODE ? range.startContainer : null;
+      let entry = direct && editableTexts.find(item => item.node === direct);
+      if (!entry && target !== $('storySlide').querySelector('.story-canvas')) {
+        entry = editableTexts.find(item => item.parent === target || target.contains(item.parent));
+      }
+      if (entry) parent.postMessage({type:'melooloo-editor-pick',page,index:entry.index},location.origin);
+    });
     window.MELOOLOO_EDITOR_API = {
       getPage: () => page,
+      getPrimaryTexts: () => {
+        const title = $('storySlide').querySelector('.story-copy h2');
+        const lead = $('storySlide').querySelector('.story-copy p');
+        return {
+          title: editableTexts.find(entry => entry.parent === title)?.index ?? null,
+          lead: editableTexts.find(entry => entry.parent === lead)?.index ?? null
+        };
+      },
       getTexts: () => editableTexts.map(({index,base,current,approved,proposed,tag,parent}) => ({
         index,base,current,approved,proposed,tag,
         visible: !!parent && getComputedStyle(parent).visibility !== 'hidden'
