@@ -11,7 +11,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Lewati navigasi</a>
-  <div class="demo-ribbon" role="status"><span class="demo-pulse" aria-hidden="true"></span><strong>HALAMAN DEMO</strong><span>Semua tanggal dan hasil QC di bawah adalah simulasi, bukan catatan panen Melooloo.</span></div>
+  <div class="demo-ribbon" role="status"><span class="demo-pulse" aria-hidden="true"></span><strong>DEMO</strong><span>Data contoh, bukan hasil panen.</span></div>
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Kembali ke Melooloo Project Hub"><img src="Melooloo_Final_Presentation_Web_20Oct2026/assets/logo.png" alt="Melooloo"></a>
     <nav aria-label="Navigasi halaman"><a href="#ringkasan">Ringkasan</a><a href="#perjalanan">Perjalanan</a><a href="#mutu">Mutu</a><a href="#asal">Asal kebun</a></nav>
@@ -19,30 +19,29 @@
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero customer-hero" aria-labelledby="hero-title">
       <div class="hero-content">
-        <p class="eyebrow"><span class="line"></span> 01 / TRACE YOUR MELON</p>
-        <div class="hero-status"><span class="status-dot" aria-hidden="true"></span> DATA SIMULASI · LOT DEMO-001</div>
-        <h1 id="hero-title">Cerita di balik<br><em>buahmu.</em></h1>
-        <p class="hero-lede">Dari benih sampai siap dinikmati. Contoh ini menunjukkan informasi yang akan terbuka saat pelanggan memindai QR pada melon Melooloo.</p>
-        <div class="hero-action"><a href="#ringkasan">Lihat jejaknya <span aria-hidden="true">↓</span></a><span>8 tahap · 1 lot · 1 cerita</span></div>
-        <p class="hero-note">Foto kemasan adalah visual konsep. Melon pada foto dan data demo ini tidak mewakili hasil produksi yang sudah diverifikasi.</p>
+        <p class="eyebrow"><span class="line"></span> MELOOLOO SIGNATURE</p>
+        <h1 id="hero-title"><span>Kenali</span> <em>melonmu.</em></h1>
+        <p class="hero-lede">Dari tanam hingga siap dikirim.</p>
+        <div class="hero-mini-journey" aria-label="Tanam, panen, kirim"><span>Tanam</span><i aria-hidden="true">→</i><span>Panen</span><i aria-hidden="true">→</i><span>Kirim</span></div>
       </div>
       <div class="hero-art">
         <img src="Melooloo_Final_Presentation_Web_20Oct2026/assets/editorial/signature-pack.jpg" alt="Visual konsep kemasan melon Melooloo Signature; bukan dokumentasi buah dari lot demo">
-        <span class="art-tag">VISUAL KEMASAN KONSEP</span>
-        <div class="hero-art-label"><span>MELOOLOO SIGNATURE</span><strong>Lot DEMO-001</strong><small>Pratinjau pengalaman QR pada buah</small></div>
+        <span class="art-tag">FOTO KONSEP</span>
+        <div class="hero-art-label"><span>LOT CONTOH</span><strong>DEMO-001</strong><small>Bukan buah dari panen nyata</small></div>
       </div>
     </section>
 
-    <section class="overview shell" id="ringkasan" aria-labelledby="summary-title">
-      <div class="section-heading"><p class="kicker">02 / RINGKASAN LOT</p><h2 id="summary-title">Yang ingin diketahui pertama.</h2><p>Tanggal dan hasil di sini sengaja dibuat untuk memperlihatkan tata letak halaman pelanggan. Semua bidang berstatus demo.</p></div>
-      <div class="summary-grid">
-        <article class="summary-card"><span class="summary-icon" aria-hidden="true">✳</span><p>TANGGAL TANAM <b>CONTOH</b></p><strong>05 Jul 2026</strong><small>Setelah tahap semai · Lot DEMO-001</small></article>
-        <article class="summary-card"><span class="summary-icon" aria-hidden="true">◒</span><p>TANGGAL PANEN <b>CONTOH</b></p><strong>20 Sep 2026</strong><small>Panen pada lot yang sama</small></article>
-        <article class="summary-card brix-card"><span class="summary-icon" aria-hidden="true">◇</span><p>TINGKAT KEMANISAN <b>CONTOH</b></p><strong>15,2<span>°Bx</span></strong><small>Simulasi hasil uji <em>sampel lot</em>; bukan uji tiap buah</small></article>
+    <section class="overview shell quick-overview" id="ringkasan" aria-labelledby="summary-title">
+      <div class="quick-head"><p class="kicker">LOT DEMO-001 · DATA CONTOH</p><h2 id="summary-title">Sekilas buahmu.</h2></div>
+      <div class="summary-grid quick-stats">
+        <article class="summary-card"><svg class="summary-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-9M12 14C7 14 5 11 5 6c5 0 7 3 7 8ZM12 11c0-5 2-8 7-8 0 5-2 8-7 8ZM4 21h16"/></svg><p>DITANAM <b>CONTOH</b></p><strong class="date-value"><span>05</span><span>JUL<small>2026</small></span></strong></article>
+        <article class="summary-card"><svg class="summary-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-4-3-8 0-8 5 0 6 4 10 8 10s8-4 8-10c0-5-4-8-8-5ZM12 7c0-3 1-5 4-5M12 6c-2-2-4-2-6-1"/></svg><p>DIPANEN <b>CONTOH</b></p><strong class="date-value"><span>20</span><span>SEP<small>2026</small></span></strong></article>
+        <article class="summary-card brix-card"><svg class="summary-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C9 6 5 10 5 15a7 7 0 0 0 14 0c0-5-4-9-7-13ZM9 16c.5 1.5 1.5 2.2 3 2.4"/></svg><p>BRIX <b>CONTOH</b></p><strong class="brix-value">15,2<span>°Bx</span></strong></article>
       </div>
-      <div class="identity-strip"><div><span>PRODUK</span><strong>Melooloo Signature</strong></div><div><span>VARIETAS CONTOH</span><strong>Fujisawa RZ F1</strong></div><div><span>KODE LOT</span><strong>DEMO-001</strong></div><div><span>STATUS DATA</span><strong class="identity-demo">Simulasi</strong></div></div>
+      <p class="quick-note">15,2°Bx adalah <strong>contoh uji sampel lot</strong>, bukan hasil ukur tiap buah.</p>
+      <div class="quick-actions"><a href="#perjalanan">Lihat perjalanan lengkap <span aria-hidden="true">↓</span></a><details class="lot-details"><summary>Detail lot <span aria-hidden="true">+</span></summary><div class="identity-strip"><div><span>PRODUK</span><strong>Melooloo Signature</strong></div><div><span>VARIETAS CONTOH</span><strong>Fujisawa RZ F1</strong></div><div><span>KODE LOT</span><strong>DEMO-001</strong></div><div><span>STATUS DATA</span><strong class="identity-demo">Simulasi</strong></div></div></details></div>
     </section>
 
     <section class="journey" id="perjalanan" aria-labelledby="journey-title">
