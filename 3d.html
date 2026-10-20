@@ -4,19 +4,50 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <meta http-equiv="refresh" content="0; url=Greenhouse_Full_Facility_Walkthrough_28Sep2026/index.html?city=1">
+  <meta name="description" content="Buka peta 3D greenhouse Melooloo di Mall Artha Gading.">
   <title>Melooloo · Greenhouse 3D</title>
   <style>
-    body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f5f7ef;color:#123d2c;font:17px/1.5 system-ui,sans-serif;text-align:center;padding:24px;box-sizing:border-box}
-    a{color:#0b6542;font-weight:700}
+    :root{color-scheme:light;--pine:#0b3325;--cream:#f6f8ee;--muted:#536b5c}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:var(--cream);color:var(--pine);font-family:Inter,Avenir,Arial,sans-serif}
+    header{padding:25px clamp(24px,5vw,65px);display:flex;align-items:center;justify-content:space-between}
+    header a{text-decoration:none;color:inherit;font-weight:800}
+    header img{width:92px;height:74px;object-fit:contain}
+    header span{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--muted)}
+    main{max-width:1150px;margin:auto;padding:20px 24px 55px}
+    .preview{position:relative;overflow:hidden;border-radius:18px;aspect-ratio:1.78;background:#d6e2ce}
+    .preview img{display:block;width:100%;height:100%;object-fit:cover}
+    .preview span{position:absolute;left:18px;bottom:18px;background:#0b3325dd;color:#fff;border-radius:999px;padding:8px 13px;font-size:11px;font-weight:700}
+    .content{padding:30px 2px 0}
+    .kicker{font-size:12px;letter-spacing:.15em;font-weight:800;color:#6b9851;margin:0 0 15px}
+    h1{font-size:clamp(42px,6vw,74px);letter-spacing:-.065em;line-height:.98;margin:0 0 20px}
+    p{font-size:16px;line-height:1.55;color:var(--muted);max-width:760px}
+    .button{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;background:var(--pine);color:#fff;text-decoration:none;font-size:16px;font-weight:750;border-radius:999px;padding:17px 24px;margin-top:17px}
+    .secondary{display:inline-block;color:var(--pine);text-decoration:underline;text-underline-offset:3px;font-size:14px;margin:18px 0 0 18px}
+    .note{font-size:12px;border-top:1px solid #d3dfcf;padding-top:18px;margin-top:35px}
+    @media(max-width:600px){header{padding:15px 24px}header img{width:78px;height:62px}main{padding-top:5px}.preview{aspect-ratio:1.45}.preview span{left:12px;bottom:12px}h1{font-size:48px}.secondary{display:block;margin:20px 0 0}}
   </style>
 </head>
 <body>
+  <header><a href="index.html" aria-label="Melooloo project hub"><img src="Melooloo_Final_Presentation_Web_20Oct2026/assets/logo.png" alt="Melooloo"></a><span>GREENHOUSE 3D</span></header>
   <main>
-    <h1>Memuat greenhouse 3D Melooloo…</h1>
-    <p>Jika halaman tidak terbuka otomatis, <a href="Greenhouse_Full_Facility_Walkthrough_28Sep2026/index.html?city=1">buka walkthrough interaktif di sini</a>.</p>
-    <p><small>Visualisasi konsep; penempatan greenhouse pada atap belum diverifikasi.</small></p>
+    <div class="preview">
+      <img src="Greenhouse_Full_Facility_Walkthrough_28Sep2026/assets/photoreal/CAMPUS_CLOSER_20261006.png" alt="Visualisasi konsep greenhouse Melooloo di atas atap mal">
+      <span>VISUALISASI KONSEP</span>
+    </div>
+    <div class="content">
+      <p class="kicker">MAL ARTHA GADING · JAKARTA</p>
+      <h1>Jelajahi greenhouse<br>Melooloo.</h1>
+      <p>Buka model 3D interaktif untuk melihat area rooftop, ruang kerja, greenhouse, dan teknologi sensor. Model detail berukuran besar; gunakan Wi-Fi dan tunggu hingga selesai dimuat.</p>
+      <a class="button" href="Greenhouse_Full_Facility_Walkthrough_28Sep2026/index.html?city=1">Buka peta 3D <span aria-hidden="true">↗</span></a>
+      <a class="secondary" href="Greenhouse_Full_Facility_Walkthrough_28Sep2026/shared-room-presentation.html">Lihat galeri ruang lebih ringan</a>
+      <p class="note">Bangunan dan lingkungan pada gambar adalah visualisasi konsep. Posisi greenhouse pada atap, struktur, utilitas, dan kelayakan bangun masih memerlukan survei serta kajian teknik.</p>
+    </div>
   </main>
-  <script>location.replace('Greenhouse_Full_Facility_Walkthrough_28Sep2026/index.html?city=1');</script>
+  <script>
+    if (!new URLSearchParams(location.search).has('preview') && matchMedia('(pointer:fine)').matches && innerWidth >= 901) {
+      location.replace('Greenhouse_Full_Facility_Walkthrough_28Sep2026/index.html?city=1');
+    }
+  </script>
 </body>
 </html>
