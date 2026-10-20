@@ -1,0 +1,11 @@
+{
+  "status": "enabled",
+  "date": "2026-09-29",
+  "new_parts": 3393,
+  "sections": 28,
+  "higgsfield_surfaces": 4,
+  "validation": "qa/service_asset_browser_validation_29Sep2026.json",
+  "geometry_method": "browser geometry compiled from proposed room detail",
+  "native_source": "pending computer-use console",
+  "components": 12
+}

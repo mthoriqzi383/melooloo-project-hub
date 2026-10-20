@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="795.6pt" height="487.561875pt" viewBox="0 0 795.6 487.561875" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-28T19:40:20.673017</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 487.561875 
+L 795.6 487.561875 
+L 795.6 0 
+L 0 0 
+z
+" style="fill: #faf3e3"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 23.94 246.7008 
+L 266.67 246.7008 
+L 266.67 60.9768 
+L 23.94 60.9768 
+z
+" clip-path="url(#pd701846683)" style="fill: #eaf3ea; stroke: #1f4d2e; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 280.62 246.7008 
+L 523.35 246.7008 
+L 523.35 60.9768 
+L 280.62 60.9768 
+z
+" clip-path="url(#pd701846683)" style="fill: #eaf3ea; stroke: #1f4d2e; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 537.3 246.7008 
+L 780.03 246.7008 
+L 780.03 60.9768 
+L 537.3 60.9768 
+z
+" clip-path="url(#pd701846683)" style="fill: #eaf3ea; stroke: #1f4d2e; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 23.94 460.1448 
+L 266.67 460.1448 
+L 266.67 274.4208 
+L 23.94 274.4208 
+z
+" clip-path="url(#pd701846683)" style="fill: #eaf3ea; stroke: #1f4d2e; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 280.62 460.1448 
+L 523.35 460.1448 
+L 523.35 274.4208 
+L 280.62 274.4208 
+z
+" clip-path="url(#pd701846683)" style="fill: #eaf3ea; stroke: #1f4d2e; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 537.3 460.1448 
+L 780.03 460.1448 
+L 780.03 274.4208 
+L 537.3 274.4208 
+z
+" clip-path="url(#pd701846683)" style="fill: #eaf3ea; stroke: #1f4d2e; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="23.94" y="29.376" transform="rotate(-0 23.94 29.376)">SITE / HUB: PETA HUBUNGAN FUNGSI</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="23.94" y="51.552" transform="rotate(-0 23.94 51.552)">35 GH di 2 lokasi (17–18 GH/lokasi). Ruang di bawah dibagi bersama; footprint belum ditetapkan.</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="33.984" y="78.7176" transform="rotate(-0 33.984 78.7176)">INPUT / BIBIT</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="33.984" y="99.7848" transform="rotate(-0 33.984 99.7848)">S01 Penerimaan input / goods receiving</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="33.984" y="123.0696" transform="rotate(-0 33.984 123.0696)">S02 Gudang benih dan input kering</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="33.984" y="146.3544" transform="rotate(-0 33.984 146.3544)">S03 Persemaian / nursery</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="33.984" y="169.6392" transform="rotate(-0 33.984 169.6392)">S04 Area bibit siap transplantasi</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="33.984" y="192.924" transform="rotate(-0 33.984 192.924)">S05 Observasi tanaman / isolasi IPM</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="290.664" y="78.7176" transform="rotate(-0 290.664 78.7176)">PANEN / PACK</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="290.664" y="99.7848" transform="rotate(-0 290.664 99.7848)">S16 Penerimaan buah panen di hub</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="290.664" y="123.0696" transform="rotate(-0 290.664 123.0696)">S17 QC / grading / timbang</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="290.664" y="146.3544" transform="rotate(-0 290.664 146.3544)">S18 Hold produk / non-release</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="290.664" y="169.6392" transform="rotate(-0 290.664 169.6392)">S19 Packing Signature / Weekly</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="290.664" y="192.924" transform="rotate(-0 290.664 192.924)">S20 Assembly Gift Edition</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="290.664" y="216.2088" transform="rotate(-0 290.664 216.2088)">S21 Gudang kemasan bersih</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="547.344" y="78.7176" transform="rotate(-0 547.344 78.7176)">COLD CHAIN / TRANSFER</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="547.344" y="99.7848" transform="rotate(-0 547.344 99.7848)">S22 Cold room pusat / staging dingin</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="547.344" y="123.0696" transform="rotate(-0 547.344 123.0696)">S23 Dispatch / handoff cold chain</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="547.344" y="146.3544" transform="rotate(-0 547.344 146.3544)">S24 Cuci crate / alat dan pengeringan</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="547.344" y="169.6392" transform="rotate(-0 547.344 169.6392)">S25 Limbah tanaman / packaging / residual</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="547.344" y="192.924" transform="rotate(-0 547.344 192.924)">S26 Lift barang / dock / transfer ke jalan</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="547.344" y="216.2088" transform="rotate(-0 547.344 216.2088)">S27 Sirkulasi site / egress / drain atap</text>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="33.984" y="292.1616" transform="rotate(-0 33.984 292.1616)">UTILITAS</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="33.984" y="313.2288" transform="rotate(-0 33.984 313.2288)">S06 Air baku / buffer / treatment</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="33.984" y="336.5136" transform="rotate(-0 33.984 336.5136)">S07 Preparation nutrisi dan store kimia</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="33.984" y="359.7984" transform="rotate(-0 33.984 359.7984)">S08 Gudang alat / suku cadang</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="33.984" y="383.0832" transform="rotate(-0 33.984 383.0832)">S09 Workshop / maintenance bench</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="33.984" y="406.368" transform="rotate(-0 33.984 406.368)">S10 Panel site / jaringan / UPS</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="33.984" y="429.6528" transform="rotate(-0 33.984 429.6528)">S11 Genset / power backup eksternal</text>
+   </g>
+   <g id="text_30">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="290.664" y="292.1616" transform="rotate(-0 290.664 292.1616)">STAF</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="290.664" y="313.2288" transform="rotate(-0 290.664 313.2288)">S12 Locker / change / higiene staf</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="290.664" y="336.5136" transform="rotate(-0 290.664 336.5136)">S13 Toilet / sanitasi staf</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="290.664" y="359.7984" transform="rotate(-0 290.664 359.7984)">S14 Istirahat / briefing / P3K</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="290.664" y="383.0832" transform="rotate(-0 290.664 383.0832)">S15 Kantor kecil / admin site</text>
+   </g>
+   <g id="text_35">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="547.344" y="292.1616" transform="rotate(-0 547.344 292.1616)">PENGUNJUNG / TRIAL</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="547.344" y="313.2288" transform="rotate(-0 547.344 313.2288)">S28 Open Farm reception / viewing</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f4d2e" x="547.344" y="336.5136" transform="rotate(-0 547.344 336.5136)">S29 Pilot R&amp;D / trial bay</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #b85042" x="23.94" y="478.44" transform="rotate(-0 23.94 478.44)">Adjacency / functional program only. HQcold room 1 unit Y0; ruang proposal tidak otomatis tercakup CAPEX.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pd701846683">
+   <rect x="7.2" y="7.2" width="781.2" height="471.24"/>
+  </clipPath>
+ </defs>
+</svg>

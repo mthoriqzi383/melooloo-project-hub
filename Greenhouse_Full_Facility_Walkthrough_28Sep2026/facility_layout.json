@@ -1,0 +1,1873 @@
+{
+  "status": "USER-APPROVED PROPOSED LAYOUT; dimensions not surveyed or funded",
+  "site_name": "Melooloo HQ concept",
+  "roof": {
+    "width": 78,
+    "depth": 86,
+    "z": 5,
+    "area": 6708,
+    "GH_footprint": 3600
+  },
+  "hub": {
+    "width": 78,
+    "depth": 20,
+    "z": 0
+  },
+  "rooms": [
+    {
+      "id": "S01",
+      "x": 5,
+      "y": 8,
+      "z": 5,
+      "width": 4,
+      "depth": 4,
+      "level": "roof",
+      "front_door": 2.0,
+      "back_door": 3.3
+    },
+    {
+      "id": "S02",
+      "x": 9.35,
+      "y": 8,
+      "z": 5,
+      "width": 3,
+      "depth": 3,
+      "level": "roof",
+      "front_door": 1.5,
+      "back_door": 2.3
+    },
+    {
+      "id": "S03",
+      "x": 12.7,
+      "y": 8,
+      "z": 5,
+      "width": 6,
+      "depth": 8,
+      "level": "roof",
+      "front_door": 3.0,
+      "back_door": 5.3
+    },
+    {
+      "id": "S04",
+      "x": 19.05,
+      "y": 8,
+      "z": 5,
+      "width": 3,
+      "depth": 4,
+      "level": "roof",
+      "front_door": 1.5,
+      "back_door": 1.5
+    },
+    {
+      "id": "S05",
+      "x": 22.4,
+      "y": 8,
+      "z": 5,
+      "width": 3,
+      "depth": 3,
+      "level": "roof",
+      "front_door": 1.5,
+      "back_door": 2.3
+    },
+    {
+      "id": "S06",
+      "x": 25.75,
+      "y": 8,
+      "z": 5,
+      "width": 4,
+      "depth": 4,
+      "level": "roof",
+      "front_door": 2.0,
+      "back_door": 2.0
+    },
+    {
+      "id": "S07",
+      "x": 30.1,
+      "y": 8,
+      "z": 5,
+      "width": 3,
+      "depth": 4,
+      "level": "roof",
+      "front_door": 1.5,
+      "back_door": 2.3
+    },
+    {
+      "id": "S08",
+      "x": 33.45,
+      "y": 8,
+      "z": 5,
+      "width": 3,
+      "depth": 3,
+      "level": "roof",
+      "front_door": 1.5,
+      "back_door": 2.3
+    },
+    {
+      "id": "S09",
+      "x": 36.8,
+      "y": 8,
+      "z": 5,
+      "width": 4,
+      "depth": 4,
+      "level": "roof",
+      "front_door": 2.0,
+      "back_door": 3.3
+    },
+    {
+      "id": "S10",
+      "x": 41.15,
+      "y": 8,
+      "z": 5,
+      "width": 3,
+      "depth": 3,
+      "level": "roof",
+      "front_door": 1.5,
+      "back_door": 2.3
+    },
+    {
+      "id": "S12",
+      "x": 44.5,
+      "y": 8,
+      "z": 5,
+      "width": 4,
+      "depth": 4,
+      "level": "roof",
+      "front_door": 2.0,
+      "back_door": 3.3
+    },
+    {
+      "id": "S13",
+      "x": 48.85,
+      "y": 8,
+      "z": 5,
+      "width": 3,
+      "depth": 4,
+      "level": "roof",
+      "front_door": 2.3,
+      "back_door": 1.5
+    },
+    {
+      "id": "S14",
+      "x": 52.2,
+      "y": 8,
+      "z": 5,
+      "width": 4,
+      "depth": 5,
+      "level": "roof",
+      "front_door": 0.5,
+      "back_door": 3.3
+    },
+    {
+      "id": "S15",
+      "x": 56.55,
+      "y": 8,
+      "z": 5,
+      "width": 3,
+      "depth": 3,
+      "level": "roof",
+      "front_door": 2.5,
+      "back_door": 2.3
+    },
+    {
+      "id": "S29",
+      "x": 59.9,
+      "y": 8,
+      "z": 5,
+      "width": 4,
+      "depth": 6,
+      "level": "roof",
+      "front_door": 2.0,
+      "back_door": 3.3
+    },
+    {
+      "id": "S28",
+      "x": 69,
+      "y": 8,
+      "z": 5,
+      "width": 5,
+      "depth": 6,
+      "level": "roof",
+      "front_door": 2.5,
+      "back_door": 2.5
+    },
+    {
+      "id": "S16",
+      "x": 18,
+      "y": 8,
+      "z": 0,
+      "width": 4,
+      "depth": 5,
+      "level": "ground",
+      "front_door": 2.0,
+      "back_door": 3.3
+    },
+    {
+      "id": "S17",
+      "x": 22.35,
+      "y": 8,
+      "z": 0,
+      "width": 4,
+      "depth": 5,
+      "level": "ground",
+      "front_door": 1.4,
+      "back_door": 3.3
+    },
+    {
+      "id": "S18",
+      "x": 26.7,
+      "y": 10,
+      "z": 0,
+      "width": 2,
+      "depth": 3,
+      "level": "ground",
+      "front_door": 1.45,
+      "back_door": 1.3
+    },
+    {
+      "id": "S19",
+      "x": 29.05,
+      "y": 8,
+      "z": 0,
+      "width": 6,
+      "depth": 5,
+      "level": "ground",
+      "front_door": 3.0,
+      "back_door": 2.8
+    },
+    {
+      "id": "S20",
+      "x": 35.4,
+      "y": 9,
+      "z": 0,
+      "width": 4,
+      "depth": 4,
+      "level": "ground",
+      "front_door": 2.0,
+      "back_door": 3.3
+    },
+    {
+      "id": "S21",
+      "x": 39.75,
+      "y": 9,
+      "z": 0,
+      "width": 3,
+      "depth": 4,
+      "level": "ground",
+      "front_door": 1.5,
+      "back_door": 2.3
+    },
+    {
+      "id": "S22",
+      "x": 43.1,
+      "y": 8,
+      "z": 0,
+      "width": 4,
+      "depth": 5,
+      "level": "ground",
+      "front_door": 2.0,
+      "back_door": 2.0
+    },
+    {
+      "id": "S23",
+      "x": 47.45,
+      "y": 8,
+      "z": 0,
+      "width": 4,
+      "depth": 5,
+      "level": "ground",
+      "front_door": 2.0,
+      "back_door": 3.3
+    },
+    {
+      "id": "S24",
+      "x": 61,
+      "y": 5,
+      "z": 0,
+      "width": 4,
+      "depth": 4,
+      "level": "ground",
+      "front_door": 2,
+      "back_door": 3.3
+    },
+    {
+      "id": "S25",
+      "x": 81,
+      "y": 2,
+      "z": 0,
+      "width": 3,
+      "depth": 4,
+      "level": "external"
+    },
+    {
+      "id": "S11",
+      "x": 90,
+      "y": 15,
+      "z": 0,
+      "width": 3,
+      "depth": 4,
+      "level": "external"
+    },
+    {
+      "id": "S26",
+      "x": 9,
+      "y": -6,
+      "z": 0,
+      "width": 5,
+      "depth": 6,
+      "level": "ground"
+    }
+  ],
+  "greenhouses": [
+    {
+      "id": "GH01",
+      "x": 4,
+      "y": 18,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH02",
+      "x": 16,
+      "y": 18,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH03",
+      "x": 28,
+      "y": 18,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH04",
+      "x": 40,
+      "y": 18,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH05",
+      "x": 52,
+      "y": 18,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH06",
+      "x": 64,
+      "y": 18,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH07",
+      "x": 4,
+      "y": 40,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH08",
+      "x": 16,
+      "y": 40,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH09",
+      "x": 28,
+      "y": 40,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH10",
+      "x": 40,
+      "y": 40,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH11",
+      "x": 52,
+      "y": 40,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH12",
+      "x": 64,
+      "y": 40,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH13",
+      "x": 4,
+      "y": 62,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH14",
+      "x": 16,
+      "y": 62,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH15",
+      "x": 28,
+      "y": 62,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH16",
+      "x": 40,
+      "y": 62,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH17",
+      "x": 52,
+      "y": 62,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    },
+    {
+      "id": "GH18",
+      "x": 64,
+      "y": 62,
+      "z": 5,
+      "width": 10,
+      "depth": 20
+    }
+  ],
+  "destinations": [
+    {
+      "id": "S01",
+      "name": "Penerimaan input / goods receiving",
+      "level": "roof",
+      "position": [
+        7.0,
+        6.8,
+        6.65
+      ],
+      "target": [
+        7.0,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S01.png",
+      "purpose": "Menerima benih, nutrisi, substrate dan consumables; cek batch/kondisi sebelum masuk gudang.",
+      "equipment": "Meja inspeksi, pallet/rak sementara, log penerimaan.",
+      "source": "Supply network Bab V; ruang receiving = usulan."
+    },
+    {
+      "id": "S02",
+      "name": "Gudang benih dan input kering",
+      "level": "roof",
+      "position": [
+        10.85,
+        6.8,
+        6.65
+      ],
+      "target": [
+        10.85,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S02.png",
+      "purpose": "Menjaga benih, netpot dan input sensitif tetap kering dan teridentifikasi.",
+      "equipment": "Rak tertutup, lot/expiry tracking, penyimpanan sesuai supplier.",
+      "source": "Panduan Bab V inventori; supply network benih; fungsi ruang = usulan."
+    },
+    {
+      "id": "S03",
+      "name": "Persemaian / nursery",
+      "level": "roof",
+      "position": [
+        15.7,
+        6.8,
+        6.65
+      ],
+      "target": [
+        15.7,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S03.png",
+      "purpose": "Germinasi dan pembesaran bibit sebelum transplantasi. Tidak otomatis memakai lantai 200 m² modul panen.",
+      "equipment": "Tray/rockwool, bench, supply air/air bersih, alat monitoring.",
+      "source": "Benih/substrate dan proses tanam pada Bab V; nursery terpisah belum dirinci."
+    },
+    {
+      "id": "S04",
+      "name": "Area bibit siap transplantasi",
+      "level": "roof",
+      "position": [
+        20.55,
+        6.8,
+        6.65
+      ],
+      "target": [
+        20.55,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S04.png",
+      "purpose": "Hold bibit yang sudah siap dan cek identitas batch untuk GH tujuan.",
+      "equipment": "Bench terlabel, trolley bersih, checklist kondisi bibit.",
+      "source": "Usulan alur operasi dari tahapan budidaya."
+    },
+    {
+      "id": "S05",
+      "name": "Observasi tanaman / isolasi IPM",
+      "level": "roof",
+      "position": [
+        23.9,
+        6.8,
+        6.65
+      ],
+      "target": [
+        23.9,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S05.png",
+      "purpose": "Menahan bibit/tanaman suspek untuk observasi tanpa memasukkan kembali ke alur sehat.",
+      "equipment": "Bench isolasi, alat khusus, log observasi dan akses terbatas.",
+      "source": "Risiko penyakit DFT pada Bab V; konfigurasi isolasi = usulan."
+    },
+    {
+      "id": "S06",
+      "name": "Air baku / buffer / treatment",
+      "level": "roof",
+      "position": [
+        27.75,
+        6.8,
+        6.65
+      ],
+      "target": [
+        27.75,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S06.png",
+      "purpose": "Menyediakan air dengan mutu dan kontinuitas yang cocok untuk hidroponik.",
+      "equipment": "Buffer tank, water meter, treatment yang dipilih setelah uji air.",
+      "source": "Sumber air Panduan Bab V; sizing dan treatment = usulan."
+    },
+    {
+      "id": "S07",
+      "name": "Preparation nutrisi dan store kimia",
+      "level": "roof",
+      "position": [
+        31.6,
+        6.8,
+        6.65
+      ],
+      "target": [
+        31.6,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S07.png",
+      "purpose": "Menyimpan dan menyiapkan nutrisi/produk budidaya secara terkontrol; stock A/B terpisah.",
+      "equipment": "Rak dan bund/containment sesuai bahan, alat ukur, label, area mix, fasilitas penanganan sesuai SOP.",
+      "source": "AB Mix Bab V dan BOM; prinsip A/B: Penn State E2."
+    },
+    {
+      "id": "S08",
+      "name": "Gudang alat / suku cadang",
+      "level": "roof",
+      "position": [
+        34.95,
+        6.8,
+        6.65
+      ],
+      "target": [
+        34.95,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S08.png",
+      "purpose": "Menjaga spare pompa, sensor, fittings dan tools agar penggantian cepat.",
+      "equipment": "Rak item kritis, parts bin, alat cadangan dan log.",
+      "source": "CAPEX_Detail B38; risk supply network; gudang = usulan."
+    },
+    {
+      "id": "S09",
+      "name": "Workshop / maintenance bench",
+      "level": "roof",
+      "position": [
+        38.8,
+        6.8,
+        6.65
+      ],
+      "target": [
+        38.8,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S09.png",
+      "purpose": "Pemeriksaan pompa/sensor, kalibrasi dan perbaikan ringan di luar zona buah.",
+      "equipment": "Workbench, alat servis, calibration reference sesuai sensor, tray parts.",
+      "source": "Maintenance supplier Bab V; area kerja = usulan."
+    },
+    {
+      "id": "S10",
+      "name": "Panel site / jaringan / UPS",
+      "level": "roof",
+      "position": [
+        42.65,
+        6.8,
+        6.65
+      ],
+      "target": [
+        42.65,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S10.png",
+      "purpose": "Distribusi listrik site dan koneksi data antarmodul; lokasi NAS pusat dapat berbeda.",
+      "equipment": "Panel site, network switch/gateway, UPS, local data access; NAS pusat pada CAPEX.",
+      "source": "CAPEX_Detail B39; detail distribusi listrik = usulan."
+    },
+    {
+      "id": "S12",
+      "name": "Locker / change / higiene staf",
+      "level": "roof",
+      "position": [
+        46.5,
+        6.8,
+        6.65
+      ],
+      "target": [
+        46.5,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S12.png",
+      "purpose": "Membuat transisi pakaian/alat kaki dan higiene sebelum masuk budidaya atau packing.",
+      "equipment": "Locker, changing bench, higiene tangan sesuai SOP, tempat APD.",
+      "source": "SDM/SOP hygiene pada BP; room program = usulan."
+    },
+    {
+      "id": "S13",
+      "name": "Toilet / sanitasi staf",
+      "level": "roof",
+      "position": [
+        51.15,
+        6.8,
+        6.65
+      ],
+      "target": [
+        51.15,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S13.png",
+      "purpose": "Menyediakan kebutuhan staf di luar ruang budidaya dan packing.",
+      "equipment": "Fasilitas sanitasi dan higiene tangan gedung/site.",
+      "source": "Fasilitas gedung belum dirinci pada sumber; usulan program."
+    },
+    {
+      "id": "S14",
+      "name": "Istirahat / briefing / P3K",
+      "level": "roof",
+      "position": [
+        52.7,
+        6.8,
+        6.65
+      ],
+      "target": [
+        52.7,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S14.png",
+      "purpose": "Ruang staf untuk break, briefing dan perlengkapan pertolongan pertama.",
+      "equipment": "Meja/seat, board SOP, perlengkapan P3K sesuai site.",
+      "source": "SDM/briefing pada BP; ruang = usulan."
+    },
+    {
+      "id": "S15",
+      "name": "Kantor kecil / admin site",
+      "level": "roof",
+      "position": [
+        59.05,
+        6.8,
+        6.65
+      ],
+      "target": [
+        59.05,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S15.png",
+      "purpose": "Catatan operasi, produksi, order, stok dan koordinasi dua lokasi.",
+      "equipment": "CAPEX: meja/kursi, AC,2 laptop, printer; akses dashboard.",
+      "source": "CAPEX_Detail B37/N37: office build-out tiap lokasi 9 m²."
+    },
+    {
+      "id": "S29",
+      "name": "Pilot R&D / trial bay",
+      "level": "roof",
+      "position": [
+        61.9,
+        6.8,
+        6.65
+      ],
+      "target": [
+        61.9,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S29.png",
+      "purpose": "Trial varietas/proses pada area yang dibedakan dari produksi komersial.",
+      "equipment": "Label trial, loop/records terpisah, bench/mini bay sesuai trial.",
+      "source": "Panduan Bab V Improvement: R&D; area/kapasitas = belum final."
+    },
+    {
+      "id": "S28",
+      "name": "Open Farm reception / viewing",
+      "level": "roof",
+      "position": [
+        71.5,
+        6.8,
+        6.65
+      ],
+      "target": [
+        71.5,
+        9,
+        6.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S28.png",
+      "purpose": "Menerima dan mengedukasi pengunjung tanpa menjadikan semua jalur budidaya jalur wisata.",
+      "equipment": "Visitor check-in, viewing route, briefing/signage; hygiene jika masuk terbatas.",
+      "source": "Bab IV Brand Touchpoints: Open Farm; layout program = usulan."
+    },
+    {
+      "id": "S16",
+      "name": "Penerimaan buah panen di hub",
+      "level": "ground",
+      "position": [
+        20.0,
+        6.8,
+        1.65
+      ],
+      "target": [
+        20.0,
+        9,
+        1.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S16.png",
+      "purpose": "Menerima crate per GH/batch dan menjaga identitas buah sebelum QC.",
+      "equipment": "Crate bersih, tempat timbang, meja data, trolley.",
+      "source": "G02 ke distribution hub Bab V [0884]; detail hub = usulan."
+    },
+    {
+      "id": "S17",
+      "name": "QC / grading / timbang",
+      "level": "ground",
+      "position": [
+        23.75,
+        6.8,
+        1.65
+      ],
+      "target": [
+        23.75,
+        9,
+        1.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S17.png",
+      "purpose": "Sortir mutu visual, berat dan hasil/sampling kemanisan; tetapkan release setiap batch.",
+      "equipment": "Timbangan, refractometer/alat QC, meja, catatan batch.",
+      "source": "Bab IV QC/label; Bab V sortasi; alat farming CAPEX B38."
+    },
+    {
+      "id": "S18",
+      "name": "Hold produk / non-release",
+      "level": "ground",
+      "position": [
+        28.15,
+        8.8,
+        1.65
+      ],
+      "target": [
+        28.15,
+        11,
+        1.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S18.png",
+      "purpose": "Mencegah produk yang belum lolos QC atau menunggu keputusan tercampur produk rilis.",
+      "equipment": "Rak/crate bertanda hold, log dan kontrol akses.",
+      "source": "Usulan quality flow dari fungsi grading dan risk matrix."
+    },
+    {
+      "id": "S19",
+      "name": "Packing Signature / Weekly",
+      "level": "ground",
+      "position": [
+        32.05,
+        6.8,
+        1.65
+      ],
+      "target": [
+        32.05,
+        9,
+        1.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S19.png",
+      "purpose": "Mengemas single retail atau dua buah per pengiriman Weekly pada alur bersih.",
+      "equipment": "Meja bersih, material pelindung, label printer, QR scan, scales bila perlu.",
+      "source": "Bab IV Tabel 4.21; packaging Bab V; layout room = usulan."
+    },
+    {
+      "id": "S20",
+      "name": "Assembly Gift Edition",
+      "level": "ground",
+      "position": [
+        37.4,
+        7.8,
+        1.65
+      ],
+      "target": [
+        37.4,
+        10,
+        1.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S20.png",
+      "purpose": "Seleksi dan perakitan tiga buah Grade A+ dalam rigid box.",
+      "equipment": "Meja assembly, inlay, kartu narasi, packaging QC.",
+      "source": "Bab IV Tabel 4.20/4.21; ruang assembly = usulan."
+    },
+    {
+      "id": "S21",
+      "name": "Gudang kemasan bersih",
+      "level": "ground",
+      "position": [
+        41.25,
+        7.8,
+        1.65
+      ],
+      "target": [
+        41.25,
+        10,
+        1.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S21.png",
+      "purpose": "Menjaga box, inlay, labels dan kartu tetap bersih, kering dan siap dipakai.",
+      "equipment": "Rak tertutup/covered stock, FIFO lot packaging.",
+      "source": "Pemasok packaging Bab V; ruang = usulan."
+    },
+    {
+      "id": "S22",
+      "name": "Cold room pusat / staging dingin",
+      "level": "ground",
+      "position": [
+        45.1,
+        6.8,
+        1.65
+      ],
+      "target": [
+        45.1,
+        9,
+        1.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S22.png",
+      "purpose": "Menjaga mutu sebelum distribusi sesuai proses yang divalidasi. Initial cold room ditempatkan pada HQ/central facility.",
+      "equipment": "Workbook Y0: cold storage/cold chain Rp 450 juta; temperature logging, racks, akses servis.",
+      "source": "CAPEX_Detail B15/N15: 1 unit @ HQ Y0; additions Y4/Y5. Ukuran = TBD."
+    },
+    {
+      "id": "S23",
+      "name": "Dispatch / handoff cold chain",
+      "level": "ground",
+      "position": [
+        49.45,
+        6.8,
+        1.65
+      ],
+      "target": [
+        49.45,
+        9,
+        1.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S23.png",
+      "purpose": "Mencocokkan order, batch, pack, waktu dan kendaraan sebelum pengiriman.",
+      "equipment": "Order check, cold box/reefer sesuai armada, trolley, timestamp handoff.",
+      "source": "Logistik Bab V; CAPEX_Detail B16: 2 unit cool box motor pada Y0."
+    },
+    {
+      "id": "S24",
+      "name": "Cuci crate / alat dan pengeringan",
+      "level": "ground",
+      "position": [
+        63,
+        3.8,
+        1.65
+      ],
+      "target": [
+        63,
+        6,
+        1.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S24.png",
+      "purpose": "Mencuci dan mengeringkan reusable crates/tools, tanpa membasahi packing bersih.",
+      "equipment": "Wash point, rack drying, tools sesuai SOP, drain yang dirancang.",
+      "source": "Usulan flow kebersihan untuk crate/alat yang disebut CAPEX."
+    },
+    {
+      "id": "S25",
+      "name": "Limbah tanaman / packaging / residual",
+      "level": "external",
+      "position": [
+        82.5,
+        0.5,
+        1.65
+      ],
+      "target": [
+        82.5,
+        3,
+        1.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S25.png",
+      "purpose": "Mengumpulkan sisa tanaman, reject dan packaging; memisahkan limbah nutrisi/kimia sesuai proses.",
+      "equipment": "Bin tertutup dan terlabel, route removal, tempat tahan residual sesuai bahan.",
+      "source": "Risiko penyakit/efficiency BP; rincian waste area = usulan."
+    },
+    {
+      "id": "S11",
+      "name": "Genset / power backup eksternal",
+      "level": "external",
+      "position": [
+        91.5,
+        13.5,
+        1.65
+      ],
+      "target": [
+        91.5,
+        16,
+        1.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S11.png",
+      "purpose": "Menopang beban kritis ketika listrik padam. Genset bensin tidak beroperasi di GH atau ruang tertutup.",
+      "equipment": "BOM: genset 1.200 W. Desain backup/load transfer sesuai electrical engineer.",
+      "source": "Bab V [0961-0962], BOM; CDC/NIOSH E1. Ini batas prinsip, bukan gambar instalasi."
+    },
+    {
+      "id": "S26",
+      "name": "Lift barang / dock / transfer ke jalan",
+      "level": "ground",
+      "position": [
+        9.5,
+        -5.7,
+        1.65
+      ],
+      "target": [
+        9.5,
+        -5,
+        1.45
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S26.png",
+      "purpose": "Menghubungkan rooftop dengan receiving/dispatch dan kendaraan di tingkat jalan.",
+      "equipment": "Lift/hoist yang disetujui gedung, loading point, trolley, jadwal lift.",
+      "source": "Rooftop + distribution BP; akses vertikal belum terinci."
+    },
+    {
+      "id": "G01",
+      "name": "Pintu masuk dan vestibule higiene",
+      "level": "roof",
+      "position": [
+        5.2,
+        17.0,
+        6.65
+      ],
+      "target": [
+        5.2,
+        19.0,
+        6.65
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G01.png",
+      "purpose": "Transisi operator dari sirkulasi site ke area budidaya. Pintu GH ada pada BP; vestibule belum dirinci.",
+      "equipment": "Pintu berurutan/insect barrier, titik higiene tangan/alas kaki sesuai SOP, log masuk.",
+      "source": "Bab V [0878-0884]; vestibule = usulan. Wastafel dapat berada di area bersama."
+    },
+    {
+      "id": "G02",
+      "name": "Staging panen dan sortasi awal",
+      "level": "roof",
+      "position": [
+        9,
+        19.65,
+        6.65
+      ],
+      "target": [
+        9,
+        21.65,
+        6.65
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G02.png",
+      "purpose": "Menahan sementara crate panen dan memilah awal sebelum dibawa ke hub. Bukan lini packing final penuh.",
+      "equipment": "Meja/crate bersih, timbangan bila diperlukan, trolley, penanda batch.",
+      "source": "Bab V [0884], Gambar denah blok [0879]."
+    },
+    {
+      "id": "G03",
+      "name": "Transit operator dan alat harian",
+      "level": "roof",
+      "position": [
+        12.2,
+        20.2,
+        6.65
+      ],
+      "target": [
+        12.2,
+        21.9,
+        6.65
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G03.png",
+      "purpose": "Ruang lewat depan serta penyimpanan alat harian dalam kabinet. Tidak menyimpan stok pestisida di sini.",
+      "equipment": "Kabinet alat bersih, gunting panen, sarung tangan, titik parkir trolley.",
+      "source": "Bab V: staging dan jalur kerja; detail G03 = usulan."
+    },
+    {
+      "id": "G04",
+      "name": "Zona budidaya / 7 pasang baris DFT",
+      "level": "roof",
+      "position": [
+        9.65,
+        22,
+        6.65
+      ],
+      "target": [
+        9.65,
+        24,
+        6.65
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "Menumbuhkan 420 tanaman, satu tanaman satu buah. 14 baris × 30 titik.",
+      "equipment": "Pipa DFT 3 inci pada support 0,8 m, netpot, trellis 2,5 m, sling buah.",
+      "source": "Bab V [0881], [0888], Tabel 5.2; BOM [1515]."
+    },
+    {
+      "id": "G05",
+      "name": "Jalur kerja dan akses tepi",
+      "level": "roof",
+      "position": [
+        8.35,
+        26,
+        6.65
+      ],
+      "target": [
+        8.35,
+        28,
+        6.65
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G05.png",
+      "purpose": "Penyerbukan, pruning, inspeksi, perawatan, pengambilan buah dan akses utilitas.",
+      "equipment": "Jalur tanpa stok/barang; permukaan antiselip; trolley sesuai lebar efektif.",
+      "source": "Bab V [0882]; 6 jalur berasal dari 7 pasang. Dua jalur tepi = usulan."
+    },
+    {
+      "id": "G06",
+      "name": "Zona basah nutrisi / sirkulasi",
+      "level": "roof",
+      "position": [
+        7.05,
+        36.3,
+        6.65
+      ],
+      "target": [
+        5.4,
+        37.2,
+        6.0
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G06.png",
+      "purpose": "Mengontrol larutan kerja, level, aliran dan kembalian DFT. Jangan menyamakan dua stock A/B dengan reservoir kerja.",
+      "equipment": "BOM: dua bak 500 L, dua pompa 25 W. Usulan: reservoir kerja, stock A/B terpisah, valve, filter, secondary containment.",
+      "source": "Bab V [0883], [0968-0969], BOM; prinsip stok terpisah: Penn State E2."
+    },
+    {
+      "id": "G07",
+      "name": "Zona mekanikal dan service iklim",
+      "level": "roof",
+      "position": [
+        11.2,
+        36.2,
+        6.65
+      ],
+      "target": [
+        11.2,
+        38.2,
+        6.65
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G07.png",
+      "purpose": "Menempatkan peralatan yang membutuhkan akses perawatan, tanpa menutup jalur kerja.",
+      "equipment": "Dehumidifier satu unit; manifolds/peralatan mekanis; jalur kondensat. Blower berada pada dinding.",
+      "source": "Bab V [0883], [0970-0975]; CDC E1 untuk genset."
+    },
+    {
+      "id": "G08",
+      "name": "Panel listrik / kontrol kering",
+      "level": "roof",
+      "position": [
+        12.5,
+        37.0,
+        6.65
+      ],
+      "target": [
+        12.5,
+        39.0,
+        6.65
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G08.png",
+      "purpose": "Kontrol dan proteksi rangkaian; akses teknisi pada bagian kering. Tidak otomatis ruangan tertutup.",
+      "equipment": "Panel BOM 30 × 30 cm, controller ESP32, relay, network/power protection sesuai desain listrik.",
+      "source": "Bab V [0883], BOM [1515], CAPEX_Detail B10/B12."
+    },
+    {
+      "id": "G09",
+      "name": "Selubung, struktur, atap dan trellis",
+      "level": "roof",
+      "position": [
+        2.6,
+        24,
+        6.65
+      ],
+      "target": [
+        2.6,
+        26,
+        6.65
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G09.png",
+      "purpose": "Mendukung cover, peralatan dan tanaman, serta membatasi masuknya hama/cuaca.",
+      "equipment": "Rangka galvanis, UV film atau polycarbonate (opsi belum diputuskan), insect net 40 mesh, trellis/sling.",
+      "source": "Bab V [0878], [0888], BOM; shell area reconciliation pada catatan dimensi."
+    },
+    {
+      "id": "G10",
+      "name": "Jalur supply, return dan drainase",
+      "level": "roof",
+      "position": [
+        7.05,
+        35.0,
+        6.65
+      ],
+      "target": [
+        6.4,
+        35.5,
+        5.8
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G10.png",
+      "purpose": "Mendistribusikan dan mengembalikan larutan kerja; air hujan, limbah nutrisi dan kondensat dipetakan tersendiri.",
+      "equipment": "Supply/return manifold, valve per loop, filter, titik inspeksi, saluran dan akses bersih.",
+      "source": "Bab V [0968-0969], DFT risk tables, BOM PVC/fitting; isolation = usulan."
+    },
+    {
+      "id": "G11",
+      "name": "Sensor dan titik monitoring",
+      "level": "roof",
+      "position": [
+        8.35,
+        35.0,
+        6.65
+      ],
+      "target": [
+        8.35,
+        37.0,
+        6.65
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G11.png",
+      "purpose": "Membandingkan kondisi depan-tengah-belakang dan kualitas larutan sirkulasi.",
+      "equipment": "3 suhu/RH, 2 pH, 2 EC/TDS, 1 flow sensor pada BOM. Posisi dan jumlah loop belum diputuskan.",
+      "source": "Bab V [0886], [0963-0967], BOM [1515]."
+    },
+    {
+      "id": "G12",
+      "name": "Ventilasi dan kontrol iklim",
+      "level": "roof",
+      "position": [
+        11.2,
+        35.9,
+        6.65
+      ],
+      "target": [
+        11.2,
+        37.9,
+        6.65
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G12.png",
+      "purpose": "Sirkulasi udara dan pengendalian kelembapan mengikuti target agronomi.",
+      "equipment": "Dua blower di dinding kiri/kanan; dehumidifier; inlet/outlet dan insect barrier sesuai desain.",
+      "source": "Bab V [0885], [0972-0975]; airflow/thermal sizing belum ada."
+    },
+    {
+      "id": "GH01",
+      "name": "Greenhouse 01",
+      "level": "roof",
+      "position": [
+        5.2,
+        16.9,
+        6.65
+      ],
+      "target": [
+        5.2,
+        21,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH02",
+      "name": "Greenhouse 02",
+      "level": "roof",
+      "position": [
+        17.2,
+        16.9,
+        6.65
+      ],
+      "target": [
+        17.2,
+        21,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH03",
+      "name": "Greenhouse 03",
+      "level": "roof",
+      "position": [
+        29.2,
+        16.9,
+        6.65
+      ],
+      "target": [
+        29.2,
+        21,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH04",
+      "name": "Greenhouse 04",
+      "level": "roof",
+      "position": [
+        41.2,
+        16.9,
+        6.65
+      ],
+      "target": [
+        41.2,
+        21,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH05",
+      "name": "Greenhouse 05",
+      "level": "roof",
+      "position": [
+        53.2,
+        16.9,
+        6.65
+      ],
+      "target": [
+        53.2,
+        21,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH06",
+      "name": "Greenhouse 06",
+      "level": "roof",
+      "position": [
+        65.2,
+        16.9,
+        6.65
+      ],
+      "target": [
+        65.2,
+        21,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH07",
+      "name": "Greenhouse 07",
+      "level": "roof",
+      "position": [
+        5.2,
+        38.9,
+        6.65
+      ],
+      "target": [
+        5.2,
+        43,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH08",
+      "name": "Greenhouse 08",
+      "level": "roof",
+      "position": [
+        17.2,
+        38.9,
+        6.65
+      ],
+      "target": [
+        17.2,
+        43,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH09",
+      "name": "Greenhouse 09",
+      "level": "roof",
+      "position": [
+        29.2,
+        38.9,
+        6.65
+      ],
+      "target": [
+        29.2,
+        43,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH10",
+      "name": "Greenhouse 10",
+      "level": "roof",
+      "position": [
+        41.2,
+        38.9,
+        6.65
+      ],
+      "target": [
+        41.2,
+        43,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH11",
+      "name": "Greenhouse 11",
+      "level": "roof",
+      "position": [
+        53.2,
+        38.9,
+        6.65
+      ],
+      "target": [
+        53.2,
+        43,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH12",
+      "name": "Greenhouse 12",
+      "level": "roof",
+      "position": [
+        65.2,
+        38.9,
+        6.65
+      ],
+      "target": [
+        65.2,
+        43,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH13",
+      "name": "Greenhouse 13",
+      "level": "roof",
+      "position": [
+        5.2,
+        60.9,
+        6.65
+      ],
+      "target": [
+        5.2,
+        65,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH14",
+      "name": "Greenhouse 14",
+      "level": "roof",
+      "position": [
+        17.2,
+        60.9,
+        6.65
+      ],
+      "target": [
+        17.2,
+        65,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH15",
+      "name": "Greenhouse 15",
+      "level": "roof",
+      "position": [
+        29.2,
+        60.9,
+        6.65
+      ],
+      "target": [
+        29.2,
+        65,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH16",
+      "name": "Greenhouse 16",
+      "level": "roof",
+      "position": [
+        41.2,
+        60.9,
+        6.65
+      ],
+      "target": [
+        41.2,
+        65,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH17",
+      "name": "Greenhouse 17",
+      "level": "roof",
+      "position": [
+        53.2,
+        60.9,
+        6.65
+      ],
+      "target": [
+        53.2,
+        65,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "GH18",
+      "name": "Greenhouse 18",
+      "level": "roof",
+      "position": [
+        65.2,
+        60.9,
+        6.65
+      ],
+      "target": [
+        65.2,
+        65,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/G04.png",
+      "purpose": "10 × 20 m standard module; 420 planting anchors, identical GH functions.",
+      "equipment": "DFT, trellis, nutrient services, controls and climate systems.",
+      "source": "BP module; campus placement is proposed."
+    },
+    {
+      "id": "S27",
+      "name": "Sirkulasi site / egress / drain atap",
+      "level": "roof",
+      "position": [
+        15,
+        39,
+        6.65
+      ],
+      "target": [
+        15,
+        65,
+        6.4
+      ],
+      "photo": "../Greenhouse_Detailed_Design_28Sep2026/assets/photoreal/S27.png",
+      "purpose": "Jalur staf/trolley, akses service, jalur keluar dan drain roof yang tidak tertutup equipment.",
+      "equipment": "Clear routes, outlet roof drain, edge protection sesuai desain gedung.",
+      "source": "Renovasi rooftop CAPEX B19; detail engineering belum ada."
+    },
+    {
+      "id": "LIFT_GROUND",
+      "name": "Ground lift landing",
+      "level": "ground",
+      "position": [
+        13.5,
+        0.3,
+        1.65
+      ],
+      "target": [
+        13.5,
+        3,
+        1.65
+      ],
+      "photo": null,
+      "purpose": "Connected access between the packing hub and rooftop production campus.",
+      "equipment": "Two stair flights and a concept lift. Use E at the lift landing to change floors.",
+      "source": "Proposed access geometry; lift specification and code review remain open."
+    },
+    {
+      "id": "LIFT_ROOF",
+      "name": "Roof lift landing",
+      "level": "roof",
+      "position": [
+        13.5,
+        0.6,
+        6.65
+      ],
+      "target": [
+        13.5,
+        3,
+        6.65
+      ],
+      "photo": null,
+      "purpose": "Connected access between the packing hub and rooftop production campus.",
+      "equipment": "Two stair flights and a concept lift. Use E at the lift landing to change floors.",
+      "source": "Proposed access geometry; lift specification and code review remain open."
+    },
+    {
+      "id": "STAIR_GROUND",
+      "name": "Stair entrance",
+      "level": "ground",
+      "position": [
+        2.6,
+        1.3,
+        1.65
+      ],
+      "target": [
+        2.6,
+        5,
+        3.9
+      ],
+      "photo": null,
+      "purpose": "Connected access between the packing hub and rooftop production campus.",
+      "equipment": "Two stair flights and a concept lift. Use E at the lift landing to change floors.",
+      "source": "Proposed access geometry; lift specification and code review remain open."
+    },
+    {
+      "id": "STAIR_ROOF",
+      "name": "Upper stair landing",
+      "level": "roof",
+      "position": [
+        4.6,
+        1.3,
+        6.65
+      ],
+      "target": [
+        4.6,
+        5,
+        4.7
+      ],
+      "photo": null,
+      "purpose": "Connected access between the packing hub and rooftop production campus.",
+      "equipment": "Two stair flights and a concept lift. Use E at the lift landing to change floors.",
+      "source": "Proposed access geometry; lift specification and code review remain open."
+    },
+    {
+      "id": "CORNER_SW",
+      "name": "Roof corner SW",
+      "level": "roof",
+      "position": [
+        2,
+        16,
+        6.65
+      ],
+      "target": [
+        39,
+        43,
+        6.65
+      ],
+      "photo": null,
+      "purpose": "Peripheral circulation and roof edge view.",
+      "equipment": "Concept parapet, drainage and protected service route.",
+      "source": "Proposed footprint."
+    },
+    {
+      "id": "CORNER_SE",
+      "name": "Roof corner SE",
+      "level": "roof",
+      "position": [
+        76,
+        16,
+        6.65
+      ],
+      "target": [
+        39,
+        43,
+        6.65
+      ],
+      "photo": null,
+      "purpose": "Peripheral circulation and roof edge view.",
+      "equipment": "Concept parapet, drainage and protected service route.",
+      "source": "Proposed footprint."
+    },
+    {
+      "id": "CORNER_NW",
+      "name": "Roof corner NW",
+      "level": "roof",
+      "position": [
+        2,
+        84,
+        6.65
+      ],
+      "target": [
+        39,
+        43,
+        6.65
+      ],
+      "photo": null,
+      "purpose": "Peripheral circulation and roof edge view.",
+      "equipment": "Concept parapet, drainage and protected service route.",
+      "source": "Proposed footprint."
+    },
+    {
+      "id": "CORNER_NE",
+      "name": "Roof corner NE",
+      "level": "roof",
+      "position": [
+        76,
+        84,
+        6.65
+      ],
+      "target": [
+        39,
+        43,
+        6.65
+      ],
+      "photo": null,
+      "purpose": "Peripheral circulation and roof edge view.",
+      "equipment": "Concept parapet, drainage and protected service route.",
+      "source": "Proposed footprint."
+    }
+  ],
+  "start": {
+    "position": [
+      6,
+      -10,
+      1.65
+    ],
+    "target": [
+      8,
+      8,
+      1.65
+    ]
+  },
+  "lift": {
+    "x": 12,
+    "y": 1,
+    "width": 3,
+    "depth": 3,
+    "z0": 0,
+    "z1": 5
+  },
+  "stairs": {
+    "flight1": [
+      2,
+      3.2,
+      2,
+      5.78
+    ],
+    "landing": [
+      1.8,
+      5.4,
+      5.78,
+      7
+    ],
+    "flight2": [
+      4,
+      5.2,
+      2,
+      5.78
+    ],
+    "height": 5
+  },
+  "source": "September 28 BP and infrastructure guideline; fixed module geometry from detailed Blender study",
+  "section_ids": [
+    "G01",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12",
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25",
+    "S26",
+    "S27",
+    "S28",
+    "S29"
+  ],
+  "tour": [
+    "S26",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25",
+    "S11",
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S28",
+    "S29",
+    "G01",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12",
+    "S27",
+    "CORNER_NE",
+    "CORNER_NW",
+    "CORNER_SW",
+    "CORNER_SE"
+  ]
+}

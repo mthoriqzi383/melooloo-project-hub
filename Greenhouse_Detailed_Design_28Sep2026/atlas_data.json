@@ -1,0 +1,2436 @@
+{
+  "date": "2026-09-28",
+  "status": "Detailed visual design study; not construction issue or as-built",
+  "scope": "41 existing section IDs; module, site and central hub are distinct scales",
+  "unit": "metres",
+  "BP_locked": {
+    "module": [
+      10,
+      20
+    ],
+    "eave": 3,
+    "ridge": 4.5,
+    "trellis": 2.5,
+    "DFT_support": 0.8,
+    "DFT_rows": 14,
+    "points_per_row": 30,
+    "plant_points": 420,
+    "work_aisle": 0.8,
+    "office_area": 9,
+    "cold_rooms_Y0_at_HQ": 1
+  },
+  "module_concept": {
+    "front_band": 2.5,
+    "crop_band": 15,
+    "rear_band": 2.5,
+    "gross_crop_area": 150,
+    "net_140_status": "unresolved; not asserted by geometry",
+    "pair_envelope": 0.5,
+    "edge_aisle": 0.85
+  },
+  "rooms": [
+    {
+      "id": "G01",
+      "name": "Pintu masuk dan vestibule higiene",
+      "level": "Modul GH",
+      "group": "Akses",
+      "status": "Usulan pemisahan fungsi",
+      "area": "Konsep 2,5 × 2,5 m = 6,25 m²",
+      "purpose": "Transisi operator dari sirkulasi site ke area budidaya. Pintu GH ada pada BP; vestibule belum dirinci.",
+      "equipment": "Pintu berurutan/insect barrier, titik higiene tangan/alas kaki sesuai SOP, log masuk.",
+      "connections": "S12 locker/higiene → G01 → G05 jalur kerja.",
+      "check": "Dimensi pintu, trolley, alur masuk dan keluar harus cocok; higiene tidak menimbulkan genangan.",
+      "source": "Bab V [0878-0884]; vestibule = usulan. Wastafel dapat berada di area bersama.",
+      "concept_width_m": 2.5,
+      "concept_depth_m": 2.5,
+      "archetype": "entry",
+      "placement": "Depan modul",
+      "layout": "Dua portal berurutan; dispenser dan log pada sisi kiri; threshold rata, lintasan trolley tetap bebas.",
+      "services": "Lampu tertutup; dispenser tangan; wastafel utama di S12.",
+      "design_check": "Pintu konsep 1,1 m; verifikasi egress dan trolley. Hindari vestibule yang membuang akses panen.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "Module envelope from BP; section geometry from preceding concept",
+      "render_path": "assets/renders/G01.png",
+      "navigation_group": "Modul produksi",
+      "photoreal_path": "assets/photoreal/G01.png",
+      "plan_path": "assets/plans/G01.svg",
+      "modeled_footprints": []
+    },
+    {
+      "id": "G02",
+      "name": "Staging panen dan sortasi awal",
+      "level": "Modul GH",
+      "group": "Hasil panen",
+      "status": "Fungsi disebut BP; ukuran usulan",
+      "area": "Konsep 5 × 2,5 m = 12,5 m²",
+      "purpose": "Menahan sementara crate panen dan memilah awal sebelum dibawa ke hub. Bukan lini packing final penuh.",
+      "equipment": "Meja/crate bersih, timbangan bila diperlukan, trolley, penanda batch.",
+      "connections": "G04 → G02 → S16 penerimaan panen → S17 QC.",
+      "check": "Pisahkan fruit hold dari tools dan bahan nutrisi; staging tidak menutup akses. Final packaging di S19/S20.",
+      "source": "Bab V [0884], Gambar denah blok [0879].",
+      "concept_width_m": 5,
+      "concept_depth_m": 2.5,
+      "archetype": "harvest",
+      "placement": "Depan modul",
+      "layout": "Meja stainless 1,8 × 0,7 m di tepi, dua posisi trolley dan crate berlabel batch; buah utuh saja.",
+      "services": "Outlet timbangan pada sisi kering; pencatatan batch portable.",
+      "design_check": "Staging singkat, bukan packing final. Jangan menambah stok sampai lintasan tertutup.",
+      "family": "Clean fruit handling",
+      "finishes": {
+        "floor": "Permukaan halus yang dapat dibersihkan, matte light-gray; clean bays dipisahkan dari returns.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "Module envelope from BP; section geometry from preceding concept",
+      "render_path": "assets/renders/G02.png",
+      "navigation_group": "Modul produksi",
+      "photoreal_path": "assets/photoreal/G02.png",
+      "plan_path": "assets/plans/G02.svg",
+      "modeled_footprints": []
+    },
+    {
+      "id": "G03",
+      "name": "Transit operator dan alat harian",
+      "level": "Modul GH",
+      "group": "Akses",
+      "status": "Usulan fungsi",
+      "area": "Konsep 2,5 × 2,5 m = 6,25 m²",
+      "purpose": "Ruang lewat depan serta penyimpanan alat harian dalam kabinet. Tidak menyimpan stok pestisida di sini.",
+      "equipment": "Kabinet alat bersih, gunting panen, sarung tangan, titik parkir trolley.",
+      "connections": "G01 ↔ G05; alat dicuci/dirawat di S09/S24.",
+      "check": "Sediakan lintasan bebas; alat yang kontak buah mengikuti SOP kebersihan.",
+      "source": "Bab V: staging dan jalur kerja; detail G03 = usulan.",
+      "concept_width_m": 2.5,
+      "concept_depth_m": 2.5,
+      "archetype": "tools",
+      "placement": "Depan modul",
+      "layout": "Kabinet kedalaman 0,45 m dan peg rail tertutup pada tepi; satu parking trolley; alat kontak buah terpisah.",
+      "services": "Task light; charging portable di lokasi kering.",
+      "design_check": "Kabinet bukan store pestisida. Tidak memakai vestibule sebagai gudang.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "Module envelope from BP; section geometry from preceding concept",
+      "render_path": "assets/renders/G03.png",
+      "navigation_group": "Modul produksi",
+      "photoreal_path": "assets/photoreal/G03.png",
+      "plan_path": "assets/plans/G03.svg",
+      "modeled_footprints": []
+    },
+    {
+      "id": "G04",
+      "name": "Zona budidaya / 7 pasang baris DFT",
+      "level": "Modul GH",
+      "group": "Budidaya",
+      "status": "14 baris/420 titik di BP; pembagian panjang usulan",
+      "area": "Konsep bruto 10 × 15 m = 150 m², termasuk jalur",
+      "purpose": "Menumbuhkan 420 tanaman, satu tanaman satu buah. 14 baris × 30 titik.",
+      "equipment": "Pipa DFT 3 inci pada support 0,8 m, netpot, trellis 2,5 m, sling buah.",
+      "connections": "G06/G10 memasok larutan; G05 untuk pemeliharaan; G02 untuk panen.",
+      "check": "150 m² bukan pengganti angka net 140 m² BP. Canopy, akar, lebar pasangan baris dan akses belum tervalidasi.",
+      "source": "Bab V [0881], [0888], Tabel 5.2; BOM [1515].",
+      "concept_width_m": 10,
+      "concept_depth_m": 15,
+      "archetype": "crop",
+      "placement": "Tengah modul",
+      "layout": "14 baris / 7 pasang, 30 titik per baris, pitch 0,50 m; DFT 3 inci pada 0,8 m; training dan sling sampai trellis 2,5 m.",
+      "services": "Supply dan return ke G06; pruning, pollination dan fruit support mengikuti agronomis.",
+      "design_check": "420 titik dimodelkan persis. Pair envelope 0,50 m masih konsep; tajuk dan volume akar perlu trial. 150 m² bruto bukan 140 m² net.",
+      "family": "Crop / shell",
+      "finishes": {
+        "floor": "Permukaan existing roof dilindungi sesuai gedung; jalur abu muda dan planter/DFT support pada skid terpisah.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "Module envelope from BP; section geometry from preceding concept",
+      "render_path": "assets/renders/G04.png",
+      "navigation_group": "Modul produksi",
+      "photoreal_path": "assets/photoreal/G04.png",
+      "plan_path": "assets/plans/G04.svg",
+      "modeled_footprints": []
+    },
+    {
+      "id": "G05",
+      "name": "Jalur kerja dan akses tepi",
+      "level": "Modul GH",
+      "group": "Akses",
+      "status": "80 cm di BP; jalur tepi usulan",
+      "area": "6 jalur antar-pasang × 0,8 m; tepi ilustrasi 0,85 m",
+      "purpose": "Penyerbukan, pruning, inspeksi, perawatan, pengambilan buah dan akses utilitas.",
+      "equipment": "Jalur tanpa stok/barang; permukaan antiselip; trolley sesuai lebar efektif.",
+      "connections": "Zona depan ↔ G04 sepanjang baris ↔ utilitas belakang.",
+      "check": "Jalur 80 cm adalah input BP, belum bukti cukup untuk trolley/evakuasi. Canopy matang tidak boleh menutup clearance.",
+      "source": "Bab V [0882]; 6 jalur berasal dari 7 pasang. Dua jalur tepi = usulan.",
+      "concept_width_m": 10,
+      "concept_depth_m": 15,
+      "archetype": "aisle",
+      "placement": "Overlay zona tanam",
+      "layout": "Enam jalur antar-pasang 0,80 m, dua tepi 0,85 m; marking tipis; semua selang melintas melalui bridge/tepi.",
+      "services": "Lampu kerja dan permukaan antiselip; trolley ramping yang benar-benar muat setelah tajuk tumbuh.",
+      "design_check": "Jangan memakai 0,80 m sebagai klaim aksesibilitas atau egress yang disetujui. Lebar bersih diukur setelah tajuk dan equipment.",
+      "family": "Crop / shell",
+      "finishes": {
+        "floor": "Permukaan existing roof dilindungi sesuai gedung; jalur abu muda dan planter/DFT support pada skid terpisah.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "Module envelope from BP; section geometry from preceding concept",
+      "render_path": "assets/renders/G05.png",
+      "navigation_group": "Modul produksi",
+      "photoreal_path": "assets/photoreal/G05.png",
+      "plan_path": "assets/plans/G05.svg",
+      "modeled_footprints": []
+    },
+    {
+      "id": "G06",
+      "name": "Zona basah nutrisi / sirkulasi",
+      "level": "Modul GH",
+      "group": "Utilitas",
+      "status": "Fungsi BP; pembagian sistem perlu klarifikasi",
+      "area": "Konsep 5 × 2,5 m = 12,5 m²",
+      "purpose": "Mengontrol larutan kerja, level, aliran dan kembalian DFT. Jangan menyamakan dua stock A/B dengan reservoir kerja.",
+      "equipment": "BOM: dua bak 500 L, dua pompa 25 W. Usulan: reservoir kerja, stock A/B terpisah, valve, filter, secondary containment.",
+      "connections": "S06 air → S07 stok / persiapan → G06 reservoir kerja → G10 DFT → return.",
+      "check": "Tentukan peran setiap bak: stock atau working reservoir. Beban air penuh dan hydraulic head perlu desain.",
+      "source": "Bab V [0883], [0968-0969], BOM; prinsip stok terpisah: Penn State E2.",
+      "concept_width_m": 5,
+      "concept_depth_m": 2.5,
+      "archetype": "nutrient",
+      "placement": "Belakang modul",
+      "layout": "Dua reservoir nominal 500 L, bund rendah, dua pump skids, manifold dan dua stock concentrates kecil yang terpisah.",
+      "services": "Isolasi loop, drain terkendali, sampling bypass, pH/EC pada larutan; stock A/B tidak dicampur sebelum dosing.",
+      "design_check": "Peran dua tank BP belum final. Render memilih reservoir kerja + stok kecil tambahan sebagai usulan; bukan BOM final. Flow/head dan beban slab belum dihitung.",
+      "family": "Wet utility",
+      "finishes": {
+        "floor": "Lantai antiselip warna abu muda dengan sambungan bersih dan drain terkendali; detail kemiringan belum final.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "Module envelope from BP; section geometry from preceding concept",
+      "render_path": "assets/renders/G06.png",
+      "navigation_group": "Modul produksi",
+      "photoreal_path": "assets/photoreal/G06.png",
+      "plan_path": "assets/plans/G06.svg",
+      "modeled_footprints": []
+    },
+    {
+      "id": "G07",
+      "name": "Zona mekanikal dan service iklim",
+      "level": "Modul GH",
+      "group": "Utilitas",
+      "status": "Peralatan BP; luas usulan",
+      "area": "Konsep 3 × 2,5 m = 7,5 m²",
+      "purpose": "Menempatkan peralatan yang membutuhkan akses perawatan, tanpa menutup jalur kerja.",
+      "equipment": "Dehumidifier satu unit; manifolds/peralatan mekanis; jalur kondensat. Blower berada pada dinding.",
+      "connections": "G12 iklim; kondensat ke sistem drain yang sesuai; akses service dari jalur belakang.",
+      "check": "Sizing dehumidifier, airflow, heat load dan clearance vendor belum ada. Genset bensin tidak ditempatkan di sini.",
+      "source": "Bab V [0883], [0970-0975]; CDC E1 untuk genset.",
+      "concept_width_m": 3,
+      "concept_depth_m": 2.5,
+      "archetype": "mechanical",
+      "placement": "Belakang modul",
+      "layout": "Dehumidifier dengan grille terbuka, filter dapat dilepas; condensate ke drain terkendali; working face ditandai.",
+      "services": "Koneksi power kering; condensate; dua blower tetap pada dinding GH.",
+      "design_check": "Footprint alat dan jarak servis harus memakai shop drawing vendor; kapasitas tidak ditentukan dari model visual.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "Module envelope from BP; section geometry from preceding concept",
+      "render_path": "assets/renders/G07.png",
+      "navigation_group": "Modul produksi",
+      "photoreal_path": "assets/photoreal/G07.png",
+      "plan_path": "assets/plans/G07.svg",
+      "modeled_footprints": []
+    },
+    {
+      "id": "G08",
+      "name": "Panel listrik / kontrol kering",
+      "level": "Modul GH",
+      "group": "Utilitas",
+      "status": "Panel BP; pemisahan kering usulan",
+      "area": "Konsep 2 × 2,5 m = 5 m²",
+      "purpose": "Kontrol dan proteksi rangkaian; akses teknisi pada bagian kering. Tidak otomatis ruangan tertutup.",
+      "equipment": "Panel BOM 30 × 30 cm, controller ESP32, relay, network/power protection sesuai desain listrik.",
+      "connections": "S10 panel site/IT → G08 → pompa, blower, sensor; data ke dashboard.",
+      "check": "Jauhkan dari splash bak, kondensat dan selang; enclosure dan pemisahan listrik basah ditetapkan engineer.",
+      "source": "Bab V [0883], BOM [1515], CAPEX_Detail B10/B12.",
+      "concept_width_m": 2,
+      "concept_depth_m": 2.5,
+      "archetype": "control",
+      "placement": "Belakang modul, sisi kering",
+      "layout": "Kabinet modul 0,30 × 0,30 m pada dinding kering; raceway di atas splash zone; diagram koneksi terpisah dari wet work.",
+      "services": "Controller ESP32 dan relay dari BOM; isolasi, grounding dan enclosure oleh engineer.",
+      "design_check": "Model menunjukkan casing dan jalur, bukan wiring diagram. Panel besar site ada di S10.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "Module envelope from BP; section geometry from preceding concept",
+      "render_path": "assets/renders/G08.png",
+      "navigation_group": "Modul produksi",
+      "photoreal_path": "assets/photoreal/G08.png",
+      "plan_path": "assets/plans/G08.svg",
+      "modeled_footprints": []
+    },
+    {
+      "id": "G09",
+      "name": "Selubung, struktur, atap dan trellis",
+      "level": "Modul GH",
+      "group": "Struktur",
+      "status": "Dimensi dan komponen BP",
+      "area": "Lebar 10 m; panjang 20 m; dinding 3 m; ridge 4,5 m",
+      "purpose": "Mendukung cover, peralatan dan tanaman, serta membatasi masuknya hama/cuaca.",
+      "equipment": "Rangka galvanis, UV film atau polycarbonate (opsi belum diputuskan), insect net 40 mesh, trellis/sling.",
+      "connections": "Terhubung load path ke struktur gedung, roof waterproofing dan drain eksternal.",
+      "check": "Beban struktur, angin/uplift, buah, air dan maintenance belum dihitung. Polycarbonate tidak otomatis 200 micron.",
+      "source": "Bab V [0878], [0888], BOM; shell area reconciliation pada catatan dimensi.",
+      "concept_width_m": 10,
+      "concept_depth_m": 20,
+      "archetype": "envelope",
+      "placement": "Selubung modul",
+      "layout": "Portal galvanis berulang, eave 3 m / ridge 4,5 m; UV-film konsep; insect-mesh sides; trellis terpisah dari cover.",
+      "services": "Roof water ke tepi/drain gedung; screen openings; anchors dan bracing mengikuti engineer.",
+      "design_check": "Film dan mesh visual bukan detail sambungan. 208,8 m² bidang atap sebelum overlap; struktur rooftop belum disetujui.",
+      "family": "Crop / shell",
+      "finishes": {
+        "floor": "Permukaan existing roof dilindungi sesuai gedung; jalur abu muda dan planter/DFT support pada skid terpisah.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "Module envelope from BP; section geometry from preceding concept",
+      "render_path": "assets/renders/G09.png",
+      "navigation_group": "Modul produksi",
+      "photoreal_path": "assets/photoreal/G09.png",
+      "plan_path": "assets/plans/G09.svg",
+      "modeled_footprints": []
+    },
+    {
+      "id": "G10",
+      "name": "Jalur supply, return dan drainase",
+      "level": "Modul GH",
+      "group": "Utilitas",
+      "status": "Resirkulasi BP; detail jaringan usulan",
+      "area": "Overlay jaringan; bukan tambahan luas lantai",
+      "purpose": "Mendistribusikan dan mengembalikan larutan kerja; air hujan, limbah nutrisi dan kondensat dipetakan tersendiri.",
+      "equipment": "Supply/return manifold, valve per loop, filter, titik inspeksi, saluran dan akses bersih.",
+      "connections": "G06 ↔14 baris; kondensat G07; drain bangunan S27.",
+      "check": "Definisikan isolation per GH agar satu batch sakit tidak otomatis membagi loop. Outlet/disposal mengikuti desain site.",
+      "source": "Bab V [0968-0969], DFT risk tables, BOM PVC/fitting; isolation = usulan.",
+      "concept_width_m": 5,
+      "concept_depth_m": 2.5,
+      "archetype": "hydraulic",
+      "placement": "Overlay utilitas dan DFT",
+      "layout": "Supply manifold pada satu sisi, return terpisah, valve per loop dan sampling bypass pada wet zone; clean-out dapat dijangkau.",
+      "services": "DFT circulation; garis biru = konsep supply, abu = return, orange = dosing.",
+      "design_check": "Warna adalah wayfinding konsep, bukan standar plumbing. Diameter, slope, head dan disinfection belum dirancang.",
+      "family": "Wet utility",
+      "finishes": {
+        "floor": "Lantai antiselip warna abu muda dengan sambungan bersih dan drain terkendali; detail kemiringan belum final.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "Module envelope from BP; section geometry from preceding concept",
+      "render_path": "assets/renders/G10.png",
+      "navigation_group": "Modul produksi",
+      "photoreal_path": "assets/photoreal/G10.png",
+      "plan_path": "assets/plans/G10.svg",
+      "modeled_footprints": []
+    },
+    {
+      "id": "G11",
+      "name": "Sensor dan titik monitoring",
+      "level": "Modul GH",
+      "group": "Kontrol",
+      "status": "Qty BOM di BP; posisi rinci usulan",
+      "area": "3 titik ambient; pH/EC di larutan, bukan udara",
+      "purpose": "Membandingkan kondisi depan-tengah-belakang dan kualitas larutan sirkulasi.",
+      "equipment": "3 suhu/RH, 2 pH, 2 EC/TDS, 1 flow sensor pada BOM. Posisi dan jumlah loop belum diputuskan.",
+      "connections": "Ambient ke G08; pH/EC/flow pada G06/G10; data ke S10.",
+      "check": "Sensor ambient tidak membaca pH/EC udara. Tentukan lokasi representatif, shield, calibration dan sampling ports.",
+      "source": "Bab V [0886], [0963-0967], BOM [1515].",
+      "concept_width_m": 4,
+      "concept_depth_m": 3,
+      "archetype": "sensor",
+      "placement": "Detail sistem; bukan ruang tambahan",
+      "layout": "Tiga ambient T/RH positions depan-tengah-belakang; shield pada bracket. Detail pH/EC dalam bypass larutan dan flow pada pipa.",
+      "services": "Low voltage cable tray ke G08; servis dan calibration ports terlihat.",
+      "design_check": "Vignette menunjukkan hardware tanpa angka live. Detail loop kedua tetap memerlukan hydraulic schematic.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/G11.png",
+      "navigation_group": "Modul produksi",
+      "photoreal_path": "assets/photoreal/G11.png",
+      "plan_path": "assets/plans/G11.svg",
+      "modeled_footprints": []
+    },
+    {
+      "id": "G12",
+      "name": "Ventilasi dan kontrol iklim",
+      "level": "Modul GH",
+      "group": "Kontrol",
+      "status": "Dua blower/dehumidifier BP",
+      "area": "Overlay selubung dan equipment",
+      "purpose": "Sirkulasi udara dan pengendalian kelembapan mengikuti target agronomi.",
+      "equipment": "Dua blower di dinding kiri/kanan; dehumidifier; inlet/outlet dan insect barrier sesuai desain.",
+      "connections": "G07 mekanikal, G09 envelope, G11 sensor.",
+      "check": "Target BP 25–30°C siang/18–22°C malam bukan hasil performa. Dua blower belum membuktikan temperatur tersebut di Jakarta.",
+      "source": "Bab V [0885], [0972-0975]; airflow/thermal sizing belum ada.",
+      "concept_width_m": 3,
+      "concept_depth_m": 2.5,
+      "archetype": "climate",
+      "placement": "Overlay selubung dan utilitas",
+      "layout": "Dua axial blowers dinding, insect-barrier intake dan dehumidifier; arah aliran ditinjau tanpa mengklaim kinerja.",
+      "services": "Power, condensate dan akses filter; control dari G08.",
+      "design_check": "GH tetap ruang budidaya dengan screen/film, bukan ruang AC tertutup. Target suhu/RH memerlukan sizing panas dan kelembapan.",
+      "family": "Crop / shell",
+      "finishes": {
+        "floor": "Permukaan existing roof dilindungi sesuai gedung; jalur abu muda dan planter/DFT support pada skid terpisah.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "Module envelope from BP; section geometry from preceding concept",
+      "render_path": "assets/renders/G12.png",
+      "navigation_group": "Modul produksi",
+      "photoreal_path": "assets/photoreal/G12.png",
+      "plan_path": "assets/plans/G12.svg",
+      "modeled_footprints": []
+    },
+    {
+      "id": "S01",
+      "name": "Penerimaan input / goods receiving",
+      "level": "Shared site / hub",
+      "group": "Input",
+      "status": "Usulan ruang bersama",
+      "area": "Belum ditentukan",
+      "purpose": "Menerima benih, nutrisi, substrate dan consumables; cek batch/kondisi sebelum masuk gudang.",
+      "equipment": "Meja inspeksi, pallet/rak sementara, log penerimaan.",
+      "connections": "S26 akses barang → S01 → S02/S07/S08.",
+      "check": "Pisahkan input kimia dari buah dan kemasan bersih.",
+      "source": "Supply network Bab V; ruang receiving = usulan.",
+      "concept_width_m": 4,
+      "concept_depth_m": 4,
+      "archetype": "receiving",
+      "placement": "Zona input site",
+      "layout": "Landing crate/pallet di sisi pintu; meja inspection 1,6 m; rak hold singkat; alur langsung ke S02/S07/S08.",
+      "services": "Lighting inspeksi; scanner/log portable; pintu servis.",
+      "design_check": "16 m² studi ruang. Tidak menaruh input kotor pada penerimaan buah S16.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S01.png",
+      "navigation_group": "Bibit dan nursery",
+      "photoreal_path": "assets/photoreal/S01.png",
+      "plan_path": "assets/plans/S01.svg",
+      "modeled_footprints": [
+        {
+          "name": "Inspection_top",
+          "x": 1.3,
+          "y": 2.25,
+          "width": 1.8,
+          "depth": 0.7
+        },
+        {
+          "name": "Inspection_shelf",
+          "x": 1.35,
+          "y": 2.3,
+          "width": 1.7,
+          "depth": 0.6
+        },
+        {
+          "name": "Receiving_crate_base",
+          "x": 0.7,
+          "y": 0.8,
+          "width": 0.6,
+          "depth": 0.4
+        },
+        {
+          "name": "Receiving_crate_base.001",
+          "x": 0.7,
+          "y": 1.9,
+          "width": 0.6,
+          "depth": 0.4
+        },
+        {
+          "name": "Receiving_crate_base.002",
+          "x": 3.0,
+          "y": 1.1,
+          "width": 0.6,
+          "depth": 0.4
+        },
+        {
+          "name": "HoldRack_shelf",
+          "x": 0.2,
+          "y": 3.175,
+          "width": 1.4,
+          "depth": 0.55
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "name": "Gudang benih dan input kering",
+      "level": "Shared site / hub",
+      "group": "Input",
+      "status": "Usulan dari kebutuhan stok",
+      "area": "Belum ditentukan",
+      "purpose": "Menjaga benih, netpot dan input sensitif tetap kering dan teridentifikasi.",
+      "equipment": "Rak tertutup, lot/expiry tracking, penyimpanan sesuai supplier.",
+      "connections": "S01 → S02 → S03; consumables ke S08.",
+      "check": "Jangan menggabungkan benih dengan bahan kimia/sprayer.",
+      "source": "Panduan Bab V inventori; supply network benih; fungsi ruang = usulan.",
+      "concept_width_m": 3,
+      "concept_depth_m": 3,
+      "archetype": "seedstore",
+      "placement": "Ruang kering site",
+      "layout": "Rak tertutup kedalaman 0,45 m pada back wall; benih dalam bin tertutup, lot dan expiry terpisah dari nutrisi.",
+      "services": "Monitoring kondisi simpan sesuai supplier; task light.",
+      "design_check": "9 m² konsep, bukan volume stok terhitung. Suhu simpan benih belum ditetapkan.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S02.png",
+      "navigation_group": "Bibit dan nursery",
+      "photoreal_path": "assets/photoreal/S02.png",
+      "plan_path": "assets/plans/S02.svg",
+      "modeled_footprints": [
+        {
+          "name": "Storage_shelf",
+          "x": 0.25,
+          "y": 2.3,
+          "width": 1.6,
+          "depth": 0.5
+        },
+        {
+          "name": "SideStorage_shelf",
+          "x": 0.15,
+          "y": 0.525,
+          "width": 0.6,
+          "depth": 1.65
+        },
+        {
+          "name": "InventoryDesk_top",
+          "x": 1.85,
+          "y": 0.725,
+          "width": 1.0,
+          "depth": 0.55
+        },
+        {
+          "name": "InventoryDesk_shelf",
+          "x": 1.9,
+          "y": 0.775,
+          "width": 0.9,
+          "depth": 0.45
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "name": "Persemaian / nursery",
+      "level": "Shared site / hub",
+      "group": "Input",
+      "status": "Usulan ruang produksi bersama",
+      "area": "Belum ditentukan; hitung tray dan batch overlap",
+      "purpose": "Germinasi dan pembesaran bibit sebelum transplantasi. Tidak otomatis memakai lantai 200 m² modul panen.",
+      "equipment": "Tray/rockwool, bench, supply air/air bersih, alat monitoring.",
+      "connections": "S02 benih → S03 → S04 → G04.",
+      "check": "Sizing menurut kalender batch, umur bibit dan cadangan; kebutuhan cahaya/iklim divalidasi agronomis.",
+      "source": "Benih/substrate dan proses tanam pada Bab V; nursery terpisah belum dirinci.",
+      "concept_width_m": 6,
+      "concept_depth_m": 8,
+      "archetype": "nursery",
+      "placement": "Annex budidaya site",
+      "layout": "Empat benches 1 × 3 m, tray plug dan rockwool; cross aisle depan; mesh enclosure dan transplant work surface.",
+      "services": "Air bersih dengan supply terkendali; ambient monitor; tray cleaning di S24.",
+      "design_check": "48 m² konsep. Tray count, seedling age, cadangan dan overlap batch belum dihitung; tidak menyatakan cukup untuk 17/18 GH.",
+      "family": "Crop / shell",
+      "finishes": {
+        "floor": "Permukaan existing roof dilindungi sesuai gedung; jalur abu muda dan planter/DFT support pada skid terpisah.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S03.png",
+      "navigation_group": "Bibit dan nursery",
+      "photoreal_path": "assets/photoreal/S03.png",
+      "plan_path": "assets/plans/S03.svg",
+      "modeled_footprints": [
+        {
+          "name": "NurseryBench_top",
+          "x": 0.9,
+          "y": 0.6,
+          "width": 1.0,
+          "depth": 3.0
+        },
+        {
+          "name": "NurseryBench_shelf",
+          "x": 0.95,
+          "y": 0.65,
+          "width": 0.9,
+          "depth": 2.9
+        },
+        {
+          "name": "NurseryBench_top.001",
+          "x": 0.9,
+          "y": 4.4,
+          "width": 1.0,
+          "depth": 3.0
+        },
+        {
+          "name": "NurseryBench_shelf.001",
+          "x": 0.95,
+          "y": 4.45,
+          "width": 0.9,
+          "depth": 2.9
+        },
+        {
+          "name": "NurseryBench_top.002",
+          "x": 3.9,
+          "y": 0.6,
+          "width": 1.0,
+          "depth": 3.0
+        },
+        {
+          "name": "NurseryBench_shelf.002",
+          "x": 3.95,
+          "y": 0.65,
+          "width": 0.9,
+          "depth": 2.9
+        },
+        {
+          "name": "NurseryBench_top.003",
+          "x": 3.9,
+          "y": 4.4,
+          "width": 1.0,
+          "depth": 3.0
+        },
+        {
+          "name": "NurseryBench_shelf.003",
+          "x": 3.95,
+          "y": 4.45,
+          "width": 0.9,
+          "depth": 2.9
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "name": "Area bibit siap transplantasi",
+      "level": "Shared site / hub",
+      "group": "Input",
+      "status": "Usulan zona; dapat menyatu dengan nursery",
+      "area": "Belum ditentukan",
+      "purpose": "Hold bibit yang sudah siap dan cek identitas batch untuk GH tujuan.",
+      "equipment": "Bench terlabel, trolley bersih, checklist kondisi bibit.",
+      "connections": "S03 → S04 → G01/G04.",
+      "check": "Pisahkan alur bibit dari limbah panen; bukan tambahan ruang mandiri jika satu area cukup.",
+      "source": "Usulan alur operasi dari tahapan budidaya.",
+      "concept_width_m": 3,
+      "concept_depth_m": 4,
+      "archetype": "ready",
+      "placement": "Annex budidaya site",
+      "layout": "Dua benches pendek, satu trolley bibit dan posisi batch release; rute paling singkat ke pintu GH.",
+      "services": "Supply air/air bersih sesuai nursery; portable checklist.",
+      "design_check": "12 m² konsep untuk hold singkat; jangan menjadi persemaian kedua tanpa menghitung kapasitas.",
+      "family": "Crop / shell",
+      "finishes": {
+        "floor": "Permukaan existing roof dilindungi sesuai gedung; jalur abu muda dan planter/DFT support pada skid terpisah.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S04.png",
+      "navigation_group": "Bibit dan nursery",
+      "photoreal_path": "assets/photoreal/S04.png",
+      "plan_path": "assets/plans/S04.svg",
+      "modeled_footprints": [
+        {
+          "name": "ReadyBatch_top",
+          "x": 0.45,
+          "y": 1.2,
+          "width": 0.8,
+          "depth": 2.4
+        },
+        {
+          "name": "ReadyBatch_shelf",
+          "x": 0.5,
+          "y": 1.25,
+          "width": 0.7,
+          "depth": 2.3
+        },
+        {
+          "name": "ReadyBatch_top.001",
+          "x": 1.7,
+          "y": 1.2,
+          "width": 0.8,
+          "depth": 2.4
+        },
+        {
+          "name": "ReadyBatch_shelf.001",
+          "x": 1.75,
+          "y": 1.25,
+          "width": 0.7,
+          "depth": 2.3
+        },
+        {
+          "name": "TransplantTrolley_crate_base",
+          "x": 1.2,
+          "y": 0.55,
+          "width": 0.6,
+          "depth": 0.4
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "name": "Observasi tanaman / isolasi IPM",
+      "level": "Shared site / hub",
+      "group": "Input",
+      "status": "Usulan zona terisolasi",
+      "area": "Belum ditentukan",
+      "purpose": "Menahan bibit/tanaman suspek untuk observasi tanpa memasukkan kembali ke alur sehat.",
+      "equipment": "Bench isolasi, alat khusus, log observasi dan akses terbatas.",
+      "connections": "S03/G04 → S05 → keputusan agronomi/S25.",
+      "check": "Jangan menempatkan isolasi pada loop air bersama atau di tengah nursery sehat.",
+      "source": "Risiko penyakit DFT pada Bab V; konfigurasi isolasi = usulan.",
+      "concept_width_m": 3,
+      "concept_depth_m": 3,
+      "archetype": "isolation",
+      "placement": "Annex terpisah dari nursery sehat",
+      "layout": "Single inspection bench, specimen hold dan tools khusus; akses terkendali; pemisahan tanaman sakit jelas.",
+      "services": "Ventilasi yang tidak diarahkan ke nursery sehat; catatan IPM.",
+      "design_check": "9 m² konsep. Tidak mengklaim containment biologis; protokol pest/agronomy menentukan isolasi sebenarnya.",
+      "family": "Crop / shell",
+      "finishes": {
+        "floor": "Permukaan existing roof dilindungi sesuai gedung; jalur abu muda dan planter/DFT support pada skid terpisah.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S05.png",
+      "navigation_group": "Bibit dan nursery",
+      "photoreal_path": "assets/photoreal/S05.png",
+      "plan_path": "assets/plans/S05.svg",
+      "modeled_footprints": [
+        {
+          "name": "IPM_Observation_top",
+          "x": 0.55,
+          "y": 1.25,
+          "width": 1.1,
+          "depth": 1.5
+        },
+        {
+          "name": "IPM_Observation_shelf",
+          "x": 0.6,
+          "y": 1.3,
+          "width": 1.0,
+          "depth": 1.4
+        }
+      ]
+    },
+    {
+      "id": "S06",
+      "name": "Air baku / buffer / treatment",
+      "level": "Shared site / hub",
+      "group": "Utilitas",
+      "status": "Usulan ruang/area utilitas bersama",
+      "area": "Volume dan luas belum ditentukan",
+      "purpose": "Menyediakan air dengan mutu dan kontinuitas yang cocok untuk hidroponik.",
+      "equipment": "Buffer tank, water meter, treatment yang dipilih setelah uji air.",
+      "connections": "Sumber air → S06 → S07/G06; roof runoff tidak otomatis dipakai.",
+      "check": "Uji air, sumber, debit puncak dan beban tangki; jangan invent kapasitas buffer.",
+      "source": "Sumber air Panduan Bab V; sizing dan treatment = usulan.",
+      "concept_width_m": 4,
+      "concept_depth_m": 4,
+      "archetype": "water",
+      "placement": "Utility site, level gedung yang disetujui",
+      "layout": "Buffer vessel, filter housings, meter dan sampling point pada skid; aisle servis pada sisi valves. Akses servis dari depan; model revisi tidak memakai pintu belakang.",
+      "services": "Incoming water; quality test sebelum treatment; drain terkendali.",
+      "design_check": "16 m² visual allocation. Volume tank di render placeholder equipment envelope; uji air dan struktur menentukan kapasitas.",
+      "family": "Wet utility",
+      "finishes": {
+        "floor": "Lantai antiselip warna abu muda dengan sambungan bersih dan drain terkendali; detail kemiringan belum final.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S06.png",
+      "navigation_group": "Utilitas dan pemeliharaan",
+      "photoreal_path": "assets/photoreal/S06.png",
+      "plan_path": "assets/plans/S06.svg",
+      "modeled_footprints": [
+        {
+          "name": "WaterBuffer_vessel",
+          "x": 0.6,
+          "y": 2.45,
+          "width": 1.0,
+          "depth": 1.0
+        },
+        {
+          "name": "WaterBuffer_base",
+          "x": 0.575,
+          "y": 2.425,
+          "width": 1.05,
+          "depth": 1.05
+        },
+        {
+          "name": "FilterHousing",
+          "x": 2.07,
+          "y": 2.22,
+          "width": 0.26,
+          "depth": 0.26
+        },
+        {
+          "name": "FilterHousing.001",
+          "x": 2.67,
+          "y": 2.22,
+          "width": 0.26,
+          "depth": 0.26
+        },
+        {
+          "name": "FilterHousing.002",
+          "x": 3.27,
+          "y": 2.22,
+          "width": 0.26,
+          "depth": 0.26
+        }
+      ]
+    },
+    {
+      "id": "S07",
+      "name": "Preparation nutrisi dan store kimia",
+      "level": "Shared site / hub",
+      "group": "Utilitas",
+      "status": "Usulan pemisahan fungsi bersama",
+      "area": "Belum ditentukan",
+      "purpose": "Menyimpan dan menyiapkan nutrisi/produk budidaya secara terkontrol; stock A/B terpisah.",
+      "equipment": "Rak dan bund/containment sesuai bahan, alat ukur, label, area mix, fasilitas penanganan sesuai SOP.",
+      "connections": "S01 input → S07 → G06; limbah diarahkan sesuai prosedur.",
+      "check": "Konsentrat A/B tidak dicampur satu sama lain; peran bak 500 L di BOM perlu diklarifikasi.",
+      "source": "AB Mix Bab V dan BOM; prinsip A/B: Penn State E2.",
+      "concept_width_m": 3,
+      "concept_depth_m": 4,
+      "archetype": "chemical",
+      "placement": "Utility site, terpisah dari buah",
+      "layout": "Dua covered stock stations A/B terpisah, bench penakaran, closed cabinets dan secondary containment. Furniture/skid ditarik dari pendekatan pintu belakang pada revisi model.",
+      "services": "Water point dan penanganan bahan sesuai SDS/SOP; dosing supply ke G06.",
+      "design_check": "12 m² konsep. Kompatibilitas, ventilasi dan fasilitas penanganan ditetapkan bahan aktual; tidak mencampur chemicals di rak buah.",
+      "family": "Wet utility",
+      "finishes": {
+        "floor": "Lantai antiselip warna abu muda dengan sambungan bersih dan drain terkendali; detail kemiringan belum final.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S07.png",
+      "navigation_group": "Utilitas dan pemeliharaan",
+      "photoreal_path": "assets/photoreal/S07.png",
+      "plan_path": "assets/plans/S07.svg",
+      "modeled_footprints": [
+        {
+          "name": "MixingBench_top",
+          "x": 0.05,
+          "y": 2.275,
+          "width": 2.0,
+          "depth": 0.65
+        },
+        {
+          "name": "MixingBench_shelf",
+          "x": 0.1,
+          "y": 2.325,
+          "width": 1.9,
+          "depth": 0.55
+        },
+        {
+          "name": "Stock_A_vessel.001",
+          "x": 0.32,
+          "y": 2.42,
+          "width": 0.36,
+          "depth": 0.36
+        },
+        {
+          "name": "Stock_A_base.001",
+          "x": 0.311,
+          "y": 2.411,
+          "width": 0.378,
+          "depth": 0.378
+        },
+        {
+          "name": "Stock_B_vessel.001",
+          "x": 1.27,
+          "y": 2.42,
+          "width": 0.36,
+          "depth": 0.36
+        },
+        {
+          "name": "Stock_B_base.001",
+          "x": 1.261,
+          "y": 2.411,
+          "width": 0.378,
+          "depth": 0.378
+        },
+        {
+          "name": "MixingBund",
+          "x": -0.075,
+          "y": 2.15,
+          "width": 2.25,
+          "depth": 0.9
+        },
+        {
+          "name": "Chemical_Cabinet",
+          "x": 0.1,
+          "y": 0.875,
+          "width": 0.7,
+          "depth": 0.45
+        }
+      ]
+    },
+    {
+      "id": "S08",
+      "name": "Gudang alat / suku cadang",
+      "level": "Shared site / hub",
+      "group": "Utilitas",
+      "status": "Peralatan didanai; ruang usulan",
+      "area": "Belum ditentukan",
+      "purpose": "Menjaga spare pompa, sensor, fittings dan tools agar penggantian cepat.",
+      "equipment": "Rak item kritis, parts bin, alat cadangan dan log.",
+      "connections": "S01 → S08 → S09/G03/G08.",
+      "check": "Pisahkan alat bersih, kotor dan bahan kimia.",
+      "source": "CAPEX_Detail B38; risk supply network; gudang = usulan.",
+      "concept_width_m": 3,
+      "concept_depth_m": 3,
+      "archetype": "spares",
+      "placement": "Ruang kering site",
+      "layout": "Rak parts bins, spare pumps, fittings dan probes dalam tempat pelindung; check-out bench kecil.",
+      "services": "Light dan inventory log; no wet washing.",
+      "design_check": "9 m² konsep. Jaga spares kritis berbeda dari tools kotor.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S08.png",
+      "navigation_group": "Utilitas dan pemeliharaan",
+      "photoreal_path": "assets/photoreal/S08.png",
+      "plan_path": "assets/plans/S08.svg",
+      "modeled_footprints": [
+        {
+          "name": "Storage_shelf.004",
+          "x": 0.25,
+          "y": 2.3,
+          "width": 1.6,
+          "depth": 0.5
+        },
+        {
+          "name": "SideStorage_shelf.004",
+          "x": 0.15,
+          "y": 0.525,
+          "width": 0.6,
+          "depth": 1.65
+        },
+        {
+          "name": "InventoryDesk_top.001",
+          "x": 1.85,
+          "y": 0.725,
+          "width": 1.0,
+          "depth": 0.55
+        },
+        {
+          "name": "InventoryDesk_shelf.001",
+          "x": 1.9,
+          "y": 0.775,
+          "width": 0.9,
+          "depth": 0.45
+        }
+      ]
+    },
+    {
+      "id": "S09",
+      "name": "Workshop / maintenance bench",
+      "level": "Shared site / hub",
+      "group": "Utilitas",
+      "status": "Usulan area bersama",
+      "area": "Belum ditentukan",
+      "purpose": "Pemeriksaan pompa/sensor, kalibrasi dan perbaikan ringan di luar zona buah.",
+      "equipment": "Workbench, alat servis, calibration reference sesuai sensor, tray parts.",
+      "connections": "S08 spare ↔ S09 ↔ G06/G08; tools kotor ke S24.",
+      "check": "Welding/pekerjaan panas tidak diasumsikan boleh di rooftop; service mengikuti kapasitas site.",
+      "source": "Maintenance supplier Bab V; area kerja = usulan.",
+      "concept_width_m": 4,
+      "concept_depth_m": 4,
+      "archetype": "workshop",
+      "placement": "Utility site",
+      "layout": "Workbench 2,2 m, pegboard, servis pump bench dan calibration station; alat kotor masuk melalui S24 bila relevan. Koreksi model: rak parts dipindahkan ke sisi kiri agar pendekatan pintu belakang bebas.",
+      "services": "Power bench, task light, outlet proteksi oleh engineer.",
+      "design_check": "16 m² konsep; workshop ringan. Tidak memberi izin welding/hot work pada rooftop.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S09.png",
+      "navigation_group": "Utilitas dan pemeliharaan",
+      "photoreal_path": "assets/photoreal/S09.png",
+      "plan_path": "assets/plans/S09.svg",
+      "modeled_footprints": [
+        {
+          "name": "ServiceBench_top",
+          "x": 0.5,
+          "y": 3.0,
+          "width": 2.3,
+          "depth": 0.7
+        },
+        {
+          "name": "ServiceBench_shelf",
+          "x": 0.55,
+          "y": 3.05,
+          "width": 2.2,
+          "depth": 0.6
+        },
+        {
+          "name": "ToolCabinet",
+          "x": 0.15,
+          "y": 0.775,
+          "width": 0.8,
+          "depth": 0.45
+        },
+        {
+          "name": "Parts_shelf",
+          "x": 0.0,
+          "y": 1.875,
+          "width": 1.0,
+          "depth": 0.55
+        }
+      ]
+    },
+    {
+      "id": "S10",
+      "name": "Panel site / jaringan / UPS",
+      "level": "Shared site / hub",
+      "group": "Utilitas",
+      "status": "Infrastruktur IT didanai; ruang usulan",
+      "area": "Belum ditentukan",
+      "purpose": "Distribusi listrik site dan koneksi data antarmodul; lokasi NAS pusat dapat berbeda.",
+      "equipment": "Panel site, network switch/gateway, UPS, local data access; NAS pusat pada CAPEX.",
+      "connections": "Listrik/data → S10 → G08/G11; akses admin S15.",
+      "check": "Pisahkan rangkaian kritis, wet areas dan akses teknisi; tidak menganggap UPS menopang semua climate load.",
+      "source": "CAPEX_Detail B39; detail distribusi listrik = usulan.",
+      "concept_width_m": 3,
+      "concept_depth_m": 3,
+      "archetype": "it",
+      "placement": "Ruang kering site / pusat",
+      "layout": "Site distribution panel, network rack dan UPS; front service zone terpisah dari kotak stok. Rack jaringan dipindahkan ke kiri depan agar pintu belakang bebas.",
+      "services": "Data gateway/NAS sesuai lokasi aktual; circuit segregation; heat rejection vendor.",
+      "design_check": "9 m² konsep. NAS pusat tidak diduplikasi di tiap GH; UPS bukan backup semua climate load.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S10.png",
+      "navigation_group": "Utilitas dan pemeliharaan",
+      "photoreal_path": "assets/photoreal/S10.png",
+      "plan_path": "assets/plans/S10.svg",
+      "modeled_footprints": [
+        {
+          "name": "NetworkRack",
+          "x": 0.325,
+          "y": 0.92,
+          "width": 0.55,
+          "depth": 0.6
+        }
+      ]
+    },
+    {
+      "id": "S11",
+      "name": "Genset / power backup eksternal",
+      "level": "Shared site / hub",
+      "group": "Utilitas",
+      "status": "Peralatan BP; relokasi operasional diperlukan",
+      "area": "Area outdoor; luas dan lokasi belum ditentukan",
+      "purpose": "Menopang beban kritis ketika listrik padam. Genset bensin tidak beroperasi di GH atau ruang tertutup.",
+      "equipment": "BOM: genset 1.200 W. Desain backup/load transfer sesuai electrical engineer.",
+      "connections": "S11 → distribusi listrik → critical pump/control circuits.",
+      "check": "CDC: outdoor, setidaknya 20 ft (~6,1 m) dari bukaan; exhaust jauh dari intake. Ratings/surge perlu dicek.",
+      "source": "Bab V [0961-0962], BOM; CDC/NIOSH E1. Ini batas prinsip, bukan gambar instalasi.",
+      "concept_width_m": 3,
+      "concept_depth_m": 4,
+      "archetype": "generator",
+      "placement": "Outdoor utility yard",
+      "layout": "Genset kecil pada plinth, open-sided shelter dan access guard; tidak enclosed; air intake/exhaust tidak menuju bukaan.",
+      "services": "Transfer/load design engineer; runoff tidak masuk drainage buah.",
+      "design_check": "12 m² adalah vignette, bukan batas exhaust clearance. Lokasi operasi ≥6,1 m dari bukaan sesuai CDC; tidak memuat depot BBM.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S11.png",
+      "navigation_group": "Utilitas dan pemeliharaan",
+      "photoreal_path": "assets/photoreal/S11.png",
+      "plan_path": "assets/plans/S11.svg",
+      "modeled_footprints": [
+        {
+          "name": "GeneratorPlinth",
+          "x": 0.6,
+          "y": 1.6,
+          "width": 1.8,
+          "depth": 1.2
+        },
+        {
+          "name": "SmallGenerator",
+          "x": 1.175,
+          "y": 1.95,
+          "width": 0.65,
+          "depth": 0.5
+        }
+      ]
+    },
+    {
+      "id": "S12",
+      "name": "Locker / change / higiene staf",
+      "level": "Shared site / hub",
+      "group": "Staf",
+      "status": "Usulan fasilitas bersama",
+      "area": "Belum ditentukan",
+      "purpose": "Membuat transisi pakaian/alat kaki dan higiene sebelum masuk budidaya atau packing.",
+      "equipment": "Locker, changing bench, higiene tangan sesuai SOP, tempat APD.",
+      "connections": "Staff entry → S12 → G01 atau S19 melalui jalur yang sesuai.",
+      "check": "Pemisahan staf field vs packing diatur; tidak langsung menyatukan wet/splash dengan bahan packaging.",
+      "source": "SDM/SOP hygiene pada BP; room program = usulan.",
+      "concept_width_m": 4,
+      "concept_depth_m": 4,
+      "archetype": "locker",
+      "placement": "Fasilitas staf gedung/site",
+      "layout": "Locker baris belakang, changing bench, handwash dan APD; transisi personal belongings ke uniform bersih. Furniture/skid ditarik dari pendekatan pintu belakang pada revisi model.",
+      "services": "Supply air bersih, wastewater dan ventilasi gedung.",
+      "design_check": "16 m² konsep. Jumlah locker berdasarkan staf peak aktual, bukan semua headcount perusahaan.",
+      "family": "Wet utility",
+      "finishes": {
+        "floor": "Lantai antiselip warna abu muda dengan sambungan bersih dan drain terkendali; detail kemiringan belum final.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S12.png",
+      "navigation_group": "Staf dan administrasi",
+      "photoreal_path": "assets/photoreal/S12.png",
+      "plan_path": "assets/plans/S12.svg",
+      "modeled_footprints": [
+        {
+          "name": "ChangingBench_top",
+          "x": 1.0,
+          "y": 1.59,
+          "width": 2.0,
+          "depth": 0.42
+        },
+        {
+          "name": "ChangingBench_shelf",
+          "x": 1.05,
+          "y": 1.64,
+          "width": 1.9,
+          "depth": 0.32
+        },
+        {
+          "name": "Hygiene_top",
+          "x": 0.2,
+          "y": 0.34,
+          "width": 1.0,
+          "depth": 0.62
+        },
+        {
+          "name": "Hygiene_shelf",
+          "x": 0.25,
+          "y": 0.39,
+          "width": 0.9,
+          "depth": 0.52
+        },
+        {
+          "name": "Hygiene_basin",
+          "x": 0.4,
+          "y": 0.45,
+          "width": 0.6,
+          "depth": 0.4
+        }
+      ]
+    },
+    {
+      "id": "S13",
+      "name": "Toilet / sanitasi staf",
+      "level": "Shared site / hub",
+      "group": "Staf",
+      "status": "Usulan; dapat menggunakan fasilitas gedung",
+      "area": "Belum ditentukan",
+      "purpose": "Menyediakan kebutuhan staf di luar ruang budidaya dan packing.",
+      "equipment": "Fasilitas sanitasi dan higiene tangan gedung/site.",
+      "connections": "S12/S14 → S13 → transisi higiene sebelum kembali kerja.",
+      "check": "Akses tidak melewati area packing bersih atau dekat intake GH tanpa kajian.",
+      "source": "Fasilitas gedung belum dirinci pada sumber; usulan program.",
+      "concept_width_m": 3,
+      "concept_depth_m": 4,
+      "archetype": "toilet",
+      "placement": "Fasilitas gedung",
+      "layout": "Dua cubicle konsep dan handwash lobby; doorway dipisah dari zona buah; finishes yang dapat dibersihkan. Dua panel privasi cubicle; akses masuk dari depan, tanpa pintu servis belakang.",
+      "services": "Sanitary plumbing dan exhaust gedung.",
+      "design_check": "12 m² studi. Accessible toilet, jumlah fixture dan jalur akses final mengikuti gedung/regulasi; ukuran cubicle visual belum approval.",
+      "family": "Wet utility",
+      "finishes": {
+        "floor": "Lantai antiselip warna abu muda dengan sambungan bersih dan drain terkendali; detail kemiringan belum final.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S13.png",
+      "navigation_group": "Staf dan administrasi",
+      "photoreal_path": "assets/photoreal/S13.png",
+      "plan_path": "assets/plans/S13.svg",
+      "modeled_footprints": [
+        {
+          "name": "WC",
+          "x": 0.47,
+          "y": 3.02,
+          "width": 0.46,
+          "depth": 0.46
+        },
+        {
+          "name": "WC_Cistern",
+          "x": 0.5,
+          "y": 3.54,
+          "width": 0.4,
+          "depth": 0.22
+        },
+        {
+          "name": "WC.001",
+          "x": 1.77,
+          "y": 3.02,
+          "width": 0.46,
+          "depth": 0.46
+        },
+        {
+          "name": "WC_Cistern.001",
+          "x": 1.8,
+          "y": 3.54,
+          "width": 0.4,
+          "depth": 0.22
+        },
+        {
+          "name": "Handwash_top",
+          "x": 0.6,
+          "y": 0.29,
+          "width": 1.0,
+          "depth": 0.62
+        },
+        {
+          "name": "Handwash_shelf",
+          "x": 0.65,
+          "y": 0.34,
+          "width": 0.9,
+          "depth": 0.52
+        },
+        {
+          "name": "Handwash_basin",
+          "x": 0.8,
+          "y": 0.4,
+          "width": 0.6,
+          "depth": 0.4
+        }
+      ]
+    },
+    {
+      "id": "S14",
+      "name": "Istirahat / briefing / P3K",
+      "level": "Shared site / hub",
+      "group": "Staf",
+      "status": "Usulan ruang bersama",
+      "area": "Belum ditentukan",
+      "purpose": "Ruang staf untuk break, briefing dan perlengkapan pertolongan pertama.",
+      "equipment": "Meja/seat, board SOP, perlengkapan P3K sesuai site.",
+      "connections": "S12, S15 dan akses keluar site; di luar crop/pack.",
+      "check": "Makan/minum staf terpisah dari meja buah dan nutrisi. Bisa menggunakan fasilitas gedung.",
+      "source": "SDM/briefing pada BP; ruang = usulan.",
+      "concept_width_m": 4,
+      "concept_depth_m": 5,
+      "archetype": "staff",
+      "placement": "Fasilitas staf gedung/site",
+      "layout": "Meja briefing, bench/seat, SOP board dan first-aid cabinet; tidak menjadi pantry di packing bersih.",
+      "services": "Light, ventilasi dan water point bila gedung menyediakan.",
+      "design_check": "20 m² konsep. Isi P3K dan kapasitas kursi mengikuti SOP dan staf shift.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S14.png",
+      "navigation_group": "Staf dan administrasi",
+      "photoreal_path": "assets/photoreal/S14.png",
+      "plan_path": "assets/plans/S14.svg",
+      "modeled_footprints": [
+        {
+          "name": "BriefingTable_top",
+          "x": 0.8,
+          "y": 1.55,
+          "width": 2.4,
+          "depth": 1.1
+        },
+        {
+          "name": "BriefingTable_shelf",
+          "x": 0.85,
+          "y": 1.6,
+          "width": 2.3,
+          "depth": 1.0
+        },
+        {
+          "name": "BriefingSeat_seat",
+          "x": 0.89,
+          "y": 0.99,
+          "width": 0.42,
+          "depth": 0.42
+        },
+        {
+          "name": "BriefingSeat_seat.001",
+          "x": 0.89,
+          "y": 2.79,
+          "width": 0.42,
+          "depth": 0.42
+        },
+        {
+          "name": "BriefingSeat_seat.002",
+          "x": 1.79,
+          "y": 0.99,
+          "width": 0.42,
+          "depth": 0.42
+        },
+        {
+          "name": "BriefingSeat_seat.003",
+          "x": 1.79,
+          "y": 2.79,
+          "width": 0.42,
+          "depth": 0.42
+        },
+        {
+          "name": "BriefingSeat_seat.004",
+          "x": 2.69,
+          "y": 0.99,
+          "width": 0.42,
+          "depth": 0.42
+        },
+        {
+          "name": "BriefingSeat_seat.005",
+          "x": 2.69,
+          "y": 2.79,
+          "width": 0.42,
+          "depth": 0.42
+        }
+      ]
+    },
+    {
+      "id": "S15",
+      "name": "Kantor kecil / admin site",
+      "level": "Shared site / hub",
+      "group": "Staf",
+      "status": "Disebut eksplisit workbook",
+      "area": "9 m² per lokasi pada catatan CAPEX",
+      "purpose": "Catatan operasi, produksi, order, stok dan koordinasi dua lokasi.",
+      "equipment": "CAPEX: meja/kursi, AC,2 laptop, printer; akses dashboard.",
+      "connections": "S10 data; S17 QC; S23 dispatch; S14 briefing.",
+      "check": "9 m² adalah asumsi anggaran, belum layout meja/okupansi final. Dapat ditempatkan pada ruang gedung.",
+      "source": "CAPEX_Detail B37/N37: office build-out tiap lokasi 9 m².",
+      "concept_width_m": 3,
+      "concept_depth_m": 3,
+      "archetype": "office",
+      "placement": "Office site",
+      "layout": "Dua workstation compact, printer cabinet dan wall planning board; sightline ke akses site. Furniture/skid ditarik dari pendekatan pintu belakang pada revisi model.",
+      "services": "Power/data/AC dari CAPEX; monitor berisi layout dan chart simulasi.",
+      "design_check": "9 m² dari workbook; 3 × 3 m adalah bentuk konsep. Tidak tampilkan data akun atau dashboard live.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "BP area 9 m²; shape proposed",
+      "render_path": "assets/renders/S15.png",
+      "navigation_group": "Staf dan administrasi",
+      "photoreal_path": "assets/photoreal/S15.png",
+      "plan_path": "assets/plans/S15.svg",
+      "modeled_footprints": [
+        {
+          "name": "Desk_top",
+          "x": 0.25,
+          "y": 1.325,
+          "width": 1.9,
+          "depth": 0.65
+        },
+        {
+          "name": "Desk_shelf",
+          "x": 0.3,
+          "y": 1.375,
+          "width": 1.8,
+          "depth": 0.55
+        },
+        {
+          "name": "OfficeChair_seat",
+          "x": 0.44,
+          "y": 0.79,
+          "width": 0.42,
+          "depth": 0.42
+        },
+        {
+          "name": "OfficeChair_seat.001",
+          "x": 1.34,
+          "y": 0.79,
+          "width": 0.42,
+          "depth": 0.42
+        },
+        {
+          "name": "PrinterCabinet",
+          "x": 2.2,
+          "y": 0.425,
+          "width": 0.6,
+          "depth": 0.45
+        }
+      ]
+    },
+    {
+      "id": "S16",
+      "name": "Penerimaan buah panen di hub",
+      "level": "Shared site / hub",
+      "group": "Pasca panen",
+      "status": "Usulan zona dari alur BP",
+      "area": "Belum ditentukan",
+      "purpose": "Menerima crate per GH/batch dan menjaga identitas buah sebelum QC.",
+      "equipment": "Crate bersih, tempat timbang, meja data, trolley.",
+      "connections": "G02 → S16 → S17.",
+      "check": "Jangan menggabungkan receiving bahan kimia S01 dengan panen.",
+      "source": "G02 ke distribution hub Bab V [0884]; detail hub = usulan.",
+      "concept_width_m": 4,
+      "concept_depth_m": 5,
+      "archetype": "fruitreceiving",
+      "placement": "Hub pasca panen",
+      "layout": "Clean crate inbound, platform scale dan batch desk; waiting positions sebelum QC; terpisah dari dirty crate return.",
+      "services": "Data capture portable; lighting inspeksi; trolley route.",
+      "design_check": "20 m² konsep. Harvest peak dan lift schedule menentukan receiving buffer sebenarnya.",
+      "family": "Clean fruit handling",
+      "finishes": {
+        "floor": "Permukaan halus yang dapat dibersihkan, matte light-gray; clean bays dipisahkan dari returns.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S16.png",
+      "navigation_group": "Pascapanen dan hub",
+      "photoreal_path": "assets/photoreal/S16.png",
+      "plan_path": "assets/plans/S16.svg",
+      "modeled_footprints": [
+        {
+          "name": "Inspection_top.001",
+          "x": 1.3,
+          "y": 2.9,
+          "width": 1.8,
+          "depth": 0.7
+        },
+        {
+          "name": "Inspection_shelf.001",
+          "x": 1.35,
+          "y": 2.95,
+          "width": 1.7,
+          "depth": 0.6
+        },
+        {
+          "name": "Receiving_crate_base.003",
+          "x": 0.7,
+          "y": 0.8,
+          "width": 0.6,
+          "depth": 0.4
+        },
+        {
+          "name": "Receiving_crate_base.004",
+          "x": 0.7,
+          "y": 1.9,
+          "width": 0.6,
+          "depth": 0.4
+        },
+        {
+          "name": "Receiving_crate_base.005",
+          "x": 3.0,
+          "y": 1.1,
+          "width": 0.6,
+          "depth": 0.4
+        },
+        {
+          "name": "HoldRack_shelf.003",
+          "x": 0.2,
+          "y": 4.175,
+          "width": 1.4,
+          "depth": 0.55
+        }
+      ]
+    },
+    {
+      "id": "S17",
+      "name": "QC / grading / timbang",
+      "level": "Shared site / hub",
+      "group": "Pasca panen",
+      "status": "Fungsi QC BP; ruang usulan",
+      "area": "Belum ditentukan",
+      "purpose": "Sortir mutu visual, berat dan hasil/sampling kemanisan; tetapkan release setiap batch.",
+      "equipment": "Timbangan, refractometer/alat QC, meja, catatan batch.",
+      "connections": "S16 → S17 → S18 hold atau S19 pack; Grade B/C outlet terpisah.",
+      "check": "SOP sampling Brix dan ambang Grade A perlu satu versi. Ini bench QC, bukan klaim lab akreditasi.",
+      "source": "Bab IV QC/label; Bab V sortasi; alat farming CAPEX B38.",
+      "concept_width_m": 4,
+      "concept_depth_m": 5,
+      "archetype": "qc",
+      "placement": "Hub pasca panen",
+      "layout": "Dua QC benches dengan scale dan refractometer, clear inspection light; Grade A/B/C crate bays setelah keputusan release.",
+      "services": "Power timbangan; data batch; sanitasi alat sesuai SOP.",
+      "design_check": "20 m² konsep. Tidak menempel angka Brix contoh sebagai hasil buah. Satu release SOP perlu menyamakan target ≥15° Bab IV dengan bagian lama.",
+      "family": "Clean fruit handling",
+      "finishes": {
+        "floor": "Permukaan halus yang dapat dibersihkan, matte light-gray; clean bays dipisahkan dari returns.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S17.png",
+      "navigation_group": "Pascapanen dan hub",
+      "photoreal_path": "assets/photoreal/S17.png",
+      "plan_path": "assets/plans/S17.svg",
+      "modeled_footprints": [
+        {
+          "name": "QC_Bench_top",
+          "x": 0.35,
+          "y": 2.65,
+          "width": 1.5,
+          "depth": 0.7
+        },
+        {
+          "name": "QC_Bench_shelf",
+          "x": 0.4,
+          "y": 2.7,
+          "width": 1.4,
+          "depth": 0.6
+        },
+        {
+          "name": "QC_Bench_top.001",
+          "x": 2.15,
+          "y": 2.65,
+          "width": 1.5,
+          "depth": 0.7
+        },
+        {
+          "name": "QC_Bench_shelf.001",
+          "x": 2.2,
+          "y": 2.7,
+          "width": 1.4,
+          "depth": 0.6
+        },
+        {
+          "name": "GradeBay_base",
+          "x": 0.5,
+          "y": 0.8,
+          "width": 0.6,
+          "depth": 0.4
+        },
+        {
+          "name": "GradeBay_base.001",
+          "x": 1.7,
+          "y": 0.8,
+          "width": 0.6,
+          "depth": 0.4
+        },
+        {
+          "name": "GradeBay_base.002",
+          "x": 2.9,
+          "y": 0.8,
+          "width": 0.6,
+          "depth": 0.4
+        }
+      ]
+    },
+    {
+      "id": "S18",
+      "name": "Hold produk / non-release",
+      "level": "Shared site / hub",
+      "group": "Pasca panen",
+      "status": "Usulan zona bertanda",
+      "area": "Belum ditentukan; dapat area rack terpisah",
+      "purpose": "Mencegah produk yang belum lolos QC atau menunggu keputusan tercampur produk rilis.",
+      "equipment": "Rak/crate bertanda hold, log dan kontrol akses.",
+      "connections": "S17 → S18 → release ulang atau disposition/secondary outlet/S25.",
+      "check": "Hold bukan storage rutin; jangan otomatis memasarkan buah tidak layak pangan sebagai Grade C.",
+      "source": "Usulan quality flow dari fungsi grading dan risk matrix.",
+      "concept_width_m": 2,
+      "concept_depth_m": 3,
+      "archetype": "hold",
+      "placement": "Zona rack terpisah hub",
+      "layout": "Dedicated hold rack dengan barrier kecil dan log; dipisah dari buah released dan inventory siap dispatch. Rak hold dipersempit menjadi 1 m agar jalur kanan tetap bebas.",
+      "services": "Log release/quarantine; hanya staf berwenang.",
+      "design_check": "6 m² konsep, dapat berupa zona bukan kamar. Suhu hold mengikuti keputusan QC dan cold-chain.",
+      "family": "Clean fruit handling",
+      "finishes": {
+        "floor": "Permukaan halus yang dapat dibersihkan, matte light-gray; clean bays dipisahkan dari returns.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S18.png",
+      "navigation_group": "Pascapanen dan hub",
+      "photoreal_path": "assets/photoreal/S18.png",
+      "plan_path": "assets/plans/S18.svg",
+      "modeled_footprints": [
+        {
+          "name": "HoldOnly_shelf",
+          "x": 0.15,
+          "y": 1.5,
+          "width": 1.0,
+          "depth": 0.6
+        },
+        {
+          "name": "HoldCrate_base",
+          "x": 0.35,
+          "y": 1.6,
+          "width": 0.6,
+          "depth": 0.4
+        }
+      ]
+    },
+    {
+      "id": "S19",
+      "name": "Packing Signature / Weekly",
+      "level": "Shared site / hub",
+      "group": "Pasca panen",
+      "status": "Fungsi kemasan BP; ruang bersama usulan",
+      "area": "Belum ditentukan",
+      "purpose": "Mengemas single retail atau dua buah per pengiriman Weekly pada alur bersih.",
+      "equipment": "Meja bersih, material pelindung, label printer, QR scan, scales bila perlu.",
+      "connections": "S17 release + S21 kemasan → S19 → S22/S23.",
+      "check": "Konversi format per kanal tetap mengikuti katalog; identitas batch setiap buah tidak hilang.",
+      "source": "Bab IV Tabel 4.21; packaging Bab V; layout room = usulan.",
+      "concept_width_m": 6,
+      "concept_depth_m": 5,
+      "archetype": "packing",
+      "placement": "Hub, zona bersih",
+      "layout": "Dua benches packing 2,4 m, protective materials, label station, timbang dan scan; demo single Signature serta dua-fruit Weekly. Pintu belakang pada model dipusatkan pada ruang bebas antarfurniture.",
+      "services": "Power printer/scale; clean stock dari S21; dry task area.",
+      "design_check": "30 m² konsep. Weekly dua buah per delivery, min empat minggu; jumlah meja belum dibuktikan laju packing.",
+      "family": "Clean fruit handling",
+      "finishes": {
+        "floor": "Permukaan halus yang dapat dibersihkan, matte light-gray; clean bays dipisahkan dari returns.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S19.png",
+      "navigation_group": "Pascapanen dan hub",
+      "photoreal_path": "assets/photoreal/S19.png",
+      "plan_path": "assets/plans/S19.svg",
+      "modeled_footprints": [
+        {
+          "name": "PackingBench_top",
+          "x": 0.3,
+          "y": 2.4,
+          "width": 2.4,
+          "depth": 0.8
+        },
+        {
+          "name": "PackingBench_shelf",
+          "x": 0.35,
+          "y": 2.45,
+          "width": 2.3,
+          "depth": 0.7
+        },
+        {
+          "name": "Weekly_base",
+          "x": 1.61,
+          "y": 2.65,
+          "width": 0.48,
+          "depth": 0.3
+        },
+        {
+          "name": "Signature_base",
+          "x": 0.73,
+          "y": 2.65,
+          "width": 0.24,
+          "depth": 0.3
+        },
+        {
+          "name": "PackingBench_top.001",
+          "x": 3.25,
+          "y": 2.4,
+          "width": 2.4,
+          "depth": 0.8
+        },
+        {
+          "name": "PackingBench_shelf.001",
+          "x": 3.3,
+          "y": 2.45,
+          "width": 2.3,
+          "depth": 0.7
+        },
+        {
+          "name": "Weekly_base.001",
+          "x": 4.56,
+          "y": 2.65,
+          "width": 0.48,
+          "depth": 0.3
+        },
+        {
+          "name": "Signature_base.001",
+          "x": 3.68,
+          "y": 2.65,
+          "width": 0.24,
+          "depth": 0.3
+        },
+        {
+          "name": "CleanPackStock_shelf",
+          "x": 0.25,
+          "y": 4.3,
+          "width": 1.5,
+          "depth": 0.5
+        },
+        {
+          "name": "LabelStation_top",
+          "x": 3.7,
+          "y": 4.15,
+          "width": 1.8,
+          "depth": 0.6
+        },
+        {
+          "name": "LabelStation_shelf",
+          "x": 3.75,
+          "y": 4.2,
+          "width": 1.7,
+          "depth": 0.5
+        },
+        {
+          "name": "FinishedPacks_crate_base",
+          "x": 5.05,
+          "y": 0.8,
+          "width": 0.6,
+          "depth": 0.4
+        }
+      ]
+    },
+    {
+      "id": "S20",
+      "name": "Assembly Gift Edition",
+      "level": "Shared site / hub",
+      "group": "Pasca panen",
+      "status": "Fungsi gift BP; zona usulan",
+      "area": "Belum ditentukan; dapat zonasi meja di ruang packing",
+      "purpose": "Seleksi dan perakitan tiga buah Grade A+ dalam rigid box.",
+      "equipment": "Meja assembly, inlay, kartu narasi, packaging QC.",
+      "connections": "S17 seleksi A+ + S21 → S20 → S22/S23.",
+      "check": "Bukan tiga buah bebas berat tanpa spesifikasi; box fit/rantai dingin harus diuji.",
+      "source": "Bab IV Tabel 4.20/4.21; ruang assembly = usulan.",
+      "concept_width_m": 4,
+      "concept_depth_m": 4,
+      "archetype": "gift",
+      "placement": "Hub, zona bersih",
+      "layout": "Assembly bench, tiga-fruit rigid gift box, inlay/card station dan finish inspection; materials tersimpan tertutup.",
+      "services": "Task light; barcode/batch verification sebelum masuk cold chain.",
+      "design_check": "16 m² konsep, dapat berbagi ruang packing. Tidak mengubah Gift Edition menjadi dua buah.",
+      "family": "Clean fruit handling",
+      "finishes": {
+        "floor": "Permukaan halus yang dapat dibersihkan, matte light-gray; clean bays dipisahkan dari returns.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S20.png",
+      "navigation_group": "Pascapanen dan hub",
+      "photoreal_path": "assets/photoreal/S20.png",
+      "plan_path": "assets/plans/S20.svg",
+      "modeled_footprints": [
+        {
+          "name": "GiftAssembly_top",
+          "x": 0.8,
+          "y": 1.55,
+          "width": 2.4,
+          "depth": 0.9
+        },
+        {
+          "name": "GiftAssembly_shelf",
+          "x": 0.85,
+          "y": 1.6,
+          "width": 2.3,
+          "depth": 0.8
+        },
+        {
+          "name": "GiftSecond_base",
+          "x": 0.74,
+          "y": 1.85,
+          "width": 0.72,
+          "depth": 0.3
+        },
+        {
+          "name": "GiftInlayStock_shelf",
+          "x": 0.25,
+          "y": 3.2,
+          "width": 1.5,
+          "depth": 0.6
+        },
+        {
+          "name": "FinishedPacks_crate_base.001",
+          "x": 3.05,
+          "y": 0.8,
+          "width": 0.6,
+          "depth": 0.4
+        }
+      ]
+    },
+    {
+      "id": "S21",
+      "name": "Gudang kemasan bersih",
+      "level": "Shared site / hub",
+      "group": "Pasca panen",
+      "status": "Usulan fasilitas bersama",
+      "area": "Belum ditentukan",
+      "purpose": "Menjaga box, inlay, labels dan kartu tetap bersih, kering dan siap dipakai.",
+      "equipment": "Rak tertutup/covered stock, FIFO lot packaging.",
+      "connections": "S01 penerimaan kemasan melalui jalur bersih → S21 → S19/S20.",
+      "check": "Pisahkan dari seed/chemical store, splash dan cratewash.",
+      "source": "Pemasok packaging Bab V; ruang = usulan.",
+      "concept_width_m": 3,
+      "concept_depth_m": 4,
+      "archetype": "packstore",
+      "placement": "Hub, ruang kering bersih",
+      "layout": "Rak box datar, inlay dan label stock tertutup; FIFO, off-floor storage dan packaging inspection bench.",
+      "services": "Dry storage conditions; light.",
+      "design_check": "12 m² konsep. Stock peak dan carton dimensions menentukan rak; tidak berbagi chemical store.",
+      "family": "Clean fruit handling",
+      "finishes": {
+        "floor": "Permukaan halus yang dapat dibersihkan, matte light-gray; clean bays dipisahkan dari returns.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S21.png",
+      "navigation_group": "Pascapanen dan hub",
+      "photoreal_path": "assets/photoreal/S21.png",
+      "plan_path": "assets/plans/S21.svg",
+      "modeled_footprints": [
+        {
+          "name": "Storage_shelf.008",
+          "x": 0.25,
+          "y": 3.3,
+          "width": 1.6,
+          "depth": 0.5
+        },
+        {
+          "name": "SideStorage_shelf.008",
+          "x": 0.15,
+          "y": 0.7,
+          "width": 0.6,
+          "depth": 2.2
+        },
+        {
+          "name": "InventoryDesk_top.002",
+          "x": 1.85,
+          "y": 0.725,
+          "width": 1.0,
+          "depth": 0.55
+        },
+        {
+          "name": "InventoryDesk_shelf.002",
+          "x": 1.9,
+          "y": 0.775,
+          "width": 0.9,
+          "depth": 0.45
+        }
+      ]
+    },
+    {
+      "id": "S22",
+      "name": "Cold room pusat / staging dingin",
+      "level": "Shared site / hub",
+      "group": "Pasca panen",
+      "status": "Cold storage pusat disebut workbook",
+      "area": "Dimensi/tonase belum ditentukan; 1 unit pusat Y0",
+      "purpose": "Menjaga mutu sebelum distribusi sesuai proses yang divalidasi. Initial cold room ditempatkan pada HQ/central facility.",
+      "equipment": "Workbook Y0: cold storage/cold chain Rp 450 juta; temperature logging, racks, akses servis.",
+      "connections": "S19/S20 → S22 → S23; site satelit memakai transfer/cold-box sesuai SLA.",
+      "check": "Jangan menduplikasi cold room di tiap GH/lokasi. Setpoint, fruit load dan dwell time belum disizing; 4–8°C panduan lama bukan keputusan final.",
+      "source": "CAPEX_Detail B15/N15: 1 unit @ HQ Y0; additions Y4/Y5. Ukuran = TBD.",
+      "concept_width_m": 4,
+      "concept_depth_m": 5,
+      "archetype": "cold",
+      "placement": "HQ / central hub saja",
+      "layout": "Insulated room, strip curtain, accessible aisle, rack crates dan evaporator service position; external condenser bukan di dalam room. Pintu belakang pada model dipusatkan pada ruang bebas antarfurniture.",
+      "services": "Cold room vendor, temperature logging, defrost/condensate drain dan power.",
+      "design_check": "20 m² internal-envelope studi, bukan tonase final. Tidak ada setpoint 4–8°C yang dijadikan final atau angka di display. Satu unit pusat Y0 dari workbook.",
+      "family": "Clean fruit handling",
+      "finishes": {
+        "floor": "Permukaan halus yang dapat dibersihkan, matte light-gray; clean bays dipisahkan dari returns.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S22.png",
+      "navigation_group": "Pascapanen dan hub",
+      "photoreal_path": "assets/photoreal/S22.png",
+      "plan_path": "assets/plans/S22.svg",
+      "modeled_footprints": [
+        {
+          "name": "ColdRack_shelf",
+          "x": 0.15,
+          "y": 1.3,
+          "width": 0.6,
+          "depth": 2.9
+        },
+        {
+          "name": "ColdCrate_base",
+          "x": 0.2,
+          "y": 1.51,
+          "width": 0.5,
+          "depth": 0.38
+        },
+        {
+          "name": "ColdCrate_base.001",
+          "x": 0.2,
+          "y": 2.51,
+          "width": 0.5,
+          "depth": 0.38
+        },
+        {
+          "name": "ColdCrate_base.002",
+          "x": 0.2,
+          "y": 3.51,
+          "width": 0.5,
+          "depth": 0.38
+        },
+        {
+          "name": "ColdRack_shelf.004",
+          "x": 3.25,
+          "y": 1.3,
+          "width": 0.6,
+          "depth": 2.9
+        },
+        {
+          "name": "ColdCrate_base.012",
+          "x": 3.3,
+          "y": 1.51,
+          "width": 0.5,
+          "depth": 0.38
+        },
+        {
+          "name": "ColdCrate_base.013",
+          "x": 3.3,
+          "y": 2.51,
+          "width": 0.5,
+          "depth": 0.38
+        },
+        {
+          "name": "ColdCrate_base.014",
+          "x": 3.3,
+          "y": 3.51,
+          "width": 0.5,
+          "depth": 0.38
+        },
+        {
+          "name": "ColdTransfer_crate_base",
+          "x": 1.7,
+          "y": 1.2,
+          "width": 0.6,
+          "depth": 0.4
+        }
+      ]
+    },
+    {
+      "id": "S23",
+      "name": "Dispatch / handoff cold chain",
+      "level": "Shared site / hub",
+      "group": "Pasca panen",
+      "status": "Fungsi logistik BP; ruang usulan",
+      "area": "Belum ditentukan",
+      "purpose": "Mencocokkan order, batch, pack, waktu dan kendaraan sebelum pengiriman.",
+      "equipment": "Order check, cold box/reefer sesuai armada, trolley, timestamp handoff.",
+      "connections": "S22/S19 → S23 → S26 → pelanggan/mitra.",
+      "check": "Waktu transfer, lift queue, packing window dan cold-chain capacity perlu jadwal panen aktual.",
+      "source": "Logistik Bab V; CAPEX_Detail B16: 2 unit cool box motor pada Y0.",
+      "concept_width_m": 4,
+      "concept_depth_m": 5,
+      "archetype": "dispatch",
+      "placement": "Hub, dekat outbound",
+      "layout": "Order check bench, protected cold-box staging dan outbound trolley; finished packs tidak bertemu returns.",
+      "services": "Dispatch timestamps; cold-chain handoff sesuai SLA kanal.",
+      "design_check": "20 m² konsep. Jangan menahan cold product terlalu lama di staging suhu lingkungan.",
+      "family": "Clean fruit handling",
+      "finishes": {
+        "floor": "Permukaan halus yang dapat dibersihkan, matte light-gray; clean bays dipisahkan dari returns.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S23.png",
+      "navigation_group": "Pascapanen dan hub",
+      "photoreal_path": "assets/photoreal/S23.png",
+      "plan_path": "assets/plans/S23.svg",
+      "modeled_footprints": [
+        {
+          "name": "OrderCheck_top",
+          "x": 0.4,
+          "y": 3.95,
+          "width": 2.0,
+          "depth": 0.7
+        },
+        {
+          "name": "OrderCheck_shelf",
+          "x": 0.45,
+          "y": 4.0,
+          "width": 1.9,
+          "depth": 0.6
+        },
+        {
+          "name": "Outbound_crate_base",
+          "x": 0.7,
+          "y": 1.4,
+          "width": 0.6,
+          "depth": 0.4
+        },
+        {
+          "name": "ColdBox",
+          "x": 0.725,
+          "y": 1.225,
+          "width": 0.55,
+          "depth": 0.75
+        },
+        {
+          "name": "Outbound_crate_base.001",
+          "x": 2.4,
+          "y": 1.4,
+          "width": 0.6,
+          "depth": 0.4
+        },
+        {
+          "name": "ColdBox.001",
+          "x": 2.425,
+          "y": 1.225,
+          "width": 0.55,
+          "depth": 0.75
+        }
+      ]
+    },
+    {
+      "id": "S24",
+      "name": "Cuci crate / alat dan pengeringan",
+      "level": "Shared site / hub",
+      "group": "Utilitas",
+      "status": "Usulan zona basah terpisah",
+      "area": "Belum ditentukan",
+      "purpose": "Mencuci dan mengeringkan reusable crates/tools, tanpa membasahi packing bersih.",
+      "equipment": "Wash point, rack drying, tools sesuai SOP, drain yang dirancang.",
+      "connections": "Dirty return → S24 → dry clean hold → S16/G03.",
+      "check": "Ini cuci crate/alat; fasilitas fruit-washing bukan otomatis dibutuhkan atau ditetapkan.",
+      "source": "Usulan flow kebersihan untuk crate/alat yang disebut CAPEX.",
+      "concept_width_m": 4,
+      "concept_depth_m": 4,
+      "archetype": "wash",
+      "placement": "Area basah terpisah hub/site",
+      "layout": "Wash trough, dirty incoming rack, clean drying rack dan splash separation; alur kotor → cuci → kering → cleanhold. Rak pengering ditarik ke depan agar pendekatan pintu belakang bebas.",
+      "services": "Water, wastewater dan drain treatment sesuai gedung; hanging hose terparkir.",
+      "design_check": "16 m² konsep. Bukan pencucian buah otomatis; chemicals, dwell dan rinse mengikuti SOP.",
+      "family": "Wet utility",
+      "finishes": {
+        "floor": "Lantai antiselip warna abu muda dengan sambungan bersih dan drain terkendali; detail kemiringan belum final.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S24.png",
+      "navigation_group": "Pascapanen dan hub",
+      "photoreal_path": "assets/photoreal/S24.png",
+      "plan_path": "assets/plans/S24.svg",
+      "modeled_footprints": [
+        {
+          "name": "WashTrough_top",
+          "x": 1.3,
+          "y": 2.99,
+          "width": 1.0,
+          "depth": 0.62
+        },
+        {
+          "name": "WashTrough_shelf",
+          "x": 1.35,
+          "y": 3.04,
+          "width": 0.9,
+          "depth": 0.52
+        },
+        {
+          "name": "WashTrough_basin",
+          "x": 1.5,
+          "y": 3.1,
+          "width": 0.6,
+          "depth": 0.4
+        },
+        {
+          "name": "DirtyIncoming_shelf",
+          "x": 0.2,
+          "y": 0.65,
+          "width": 0.8,
+          "depth": 1.1
+        },
+        {
+          "name": "CleanDrying_shelf",
+          "x": 2.8,
+          "y": 0.3,
+          "width": 0.8,
+          "depth": 2.0
+        },
+        {
+          "name": "DryingCrate_base",
+          "x": 2.9,
+          "y": 1.1,
+          "width": 0.6,
+          "depth": 0.4
+        }
+      ]
+    },
+    {
+      "id": "S25",
+      "name": "Limbah tanaman / packaging / residual",
+      "level": "Shared site / hub",
+      "group": "Site",
+      "status": "Usulan area terkontrol",
+      "area": "Belum ditentukan",
+      "purpose": "Mengumpulkan sisa tanaman, reject dan packaging; memisahkan limbah nutrisi/kimia sesuai proses.",
+      "equipment": "Bin tertutup dan terlabel, route removal, tempat tahan residual sesuai bahan.",
+      "connections": "G04/S18/S24 → S25 → pengelola disposal site.",
+      "check": "Jalur limbah tidak melintasi clean pack/nursery; crop waste tidak diletakkan di intake GH.",
+      "source": "Risiko penyakit/efficiency BP; rincian waste area = usulan.",
+      "concept_width_m": 3,
+      "concept_depth_m": 4,
+      "archetype": "waste",
+      "placement": "Service yard / jalur kotor",
+      "layout": "Covered bins untuk crop residue, packaging dan residual terpisah; trolley pickup; tidak melalui packing bersih.",
+      "services": "Controlled runoff dan removal route; ventilasi yard.",
+      "design_check": "12 m² konsep. Jenis residu dan aturan disposal mengikuti bahan aktual.",
+      "family": "Wet utility",
+      "finishes": {
+        "floor": "Lantai antiselip warna abu muda dengan sambungan bersih dan drain terkendali; detail kemiringan belum final.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S25.png",
+      "navigation_group": "Pascapanen dan hub",
+      "photoreal_path": "assets/photoreal/S25.png",
+      "plan_path": "assets/plans/S25.svg",
+      "modeled_footprints": []
+    },
+    {
+      "id": "S26",
+      "name": "Lift barang / dock / transfer ke jalan",
+      "level": "Shared site / hub",
+      "group": "Site",
+      "status": "Usulan integrasi fasilitas gedung",
+      "area": "Dimensi/kapasitas fasilitas gedung belum ada",
+      "purpose": "Menghubungkan rooftop dengan receiving/dispatch dan kendaraan di tingkat jalan.",
+      "equipment": "Lift/hoist yang disetujui gedung, loading point, trolley, jadwal lift.",
+      "connections": "S01 input dan S23 buah punya jadwal/jalur terpisah; akses kendaraan di ground.",
+      "check": "Cek payload dan ukuran crate/trolley, clearances, waktu antre; rooftop tidak otomatis tempat parkir kendaraan.",
+      "source": "Rooftop + distribution BP; akses vertikal belum terinci.",
+      "concept_width_m": 5,
+      "concept_depth_m": 6,
+      "archetype": "dock",
+      "placement": "Interface gedung ke jalan",
+      "layout": "Lift door, landing trolley dan ground-level loading canopy; van cold-chain sebagai equipment envelope konsep.",
+      "services": "Building lift/dock infrastructure, akses servis dan scheduler.",
+      "design_check": "30 m² vignette. Lift payload, car dimensions dan dock height belum tersedia; tidak memvisualkan hoist yang sudah disetujui.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S26.png",
+      "navigation_group": "Site dan logistik",
+      "photoreal_path": "assets/photoreal/S26.png",
+      "plan_path": "assets/plans/S26.svg",
+      "modeled_footprints": [
+        {
+          "name": "DockTrolley_crate_base",
+          "x": 1.2,
+          "y": 4.6,
+          "width": 0.6,
+          "depth": 0.4
+        },
+        {
+          "name": "VehicleEnvelope",
+          "x": 2.95,
+          "y": 0.15,
+          "width": 1.7,
+          "depth": 3.7
+        }
+      ]
+    },
+    {
+      "id": "S27",
+      "name": "Sirkulasi site / egress / drain atap",
+      "level": "Shared site / hub",
+      "group": "Site",
+      "status": "Usulan integrasi struktur gedung",
+      "area": "Di luar total footprint 7.000 m² GH",
+      "purpose": "Jalur staf/trolley, akses service, jalur keluar dan drain roof yang tidak tertutup equipment.",
+      "equipment": "Clear routes, outlet roof drain, edge protection sesuai desain gedung.",
+      "connections": "Antar-GH ↔ shared rooms ↔ lift/stairs; drain gedung.",
+      "check": "Setback tepi, fire access, wind exposure dan roof slopes mengikuti survey dan engineer; tidak tersedia dalam BP.",
+      "source": "Renovasi rooftop CAPEX B19; detail engineering belum ada.",
+      "concept_width_m": 12,
+      "concept_depth_m": 8,
+      "archetype": "sitepath",
+      "placement": "Ruang antar-modul rooftop",
+      "layout": "Dua tepi GH terlihat, dedicated walkway, roof drains dan edge guard; rute tidak menumpuk pallets pada waterproofing.",
+      "services": "Roof drainage dan protection sesuai gedung.",
+      "design_check": "Area vignette 12 × 8 m, bukan plot site. Jalur utama 2 m konsep; egress, setbacks, guard dan roof loads tetap keputusan engineer.",
+      "family": "Crop / shell",
+      "finishes": {
+        "floor": "Permukaan existing roof dilindungi sesuai gedung; jalur abu muda dan planter/DFT support pada skid terpisah.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S27.png",
+      "navigation_group": "Site dan logistik",
+      "photoreal_path": "assets/photoreal/S27.png",
+      "plan_path": "assets/plans/S27.svg",
+      "modeled_footprints": []
+    },
+    {
+      "id": "S28",
+      "name": "Open Farm reception / viewing",
+      "level": "Shared site / hub",
+      "group": "Pengunjung",
+      "status": "Opsional; touchpoint BP, ruang usulan",
+      "area": "Belum ditentukan; di luar modul panen",
+      "purpose": "Menerima dan mengedukasi pengunjung tanpa menjadikan semua jalur budidaya jalur wisata.",
+      "equipment": "Visitor check-in, viewing route, briefing/signage; hygiene jika masuk terbatas.",
+      "connections": "Entrance publik → S28 → observation route → keluar; tidak lewat chemical/packing.",
+      "check": "Belum ada capacity ticket/jadwal final. Accessibility dan pemisahan visitor/staf harus dirancang.",
+      "source": "Bab IV Brand Touchpoints: Open Farm; layout program = usulan.",
+      "concept_width_m": 5,
+      "concept_depth_m": 6,
+      "archetype": "visitor",
+      "placement": "Optional Open Farm di luar jalur produksi",
+      "layout": "Check-in counter, briefing zone, viewing barrier dan akses yang menghadap GH; tidak melintasi utilities/packing.",
+      "services": "Booking/check-in; daylight; signage layer asli pada tahap produksi.",
+      "design_check": "30 m² konsep opsional. Bukan tiket/kegiatan yang telah dijual, dan tidak mengorbankan lintasan panen.",
+      "family": "Dry work / staff",
+      "finishes": {
+        "floor": "Matte light-gray dry floor; threshold rata; furniture mudah dibersihkan.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S28.png",
+      "navigation_group": "Pengembangan opsional",
+      "photoreal_path": "assets/photoreal/S28.png",
+      "plan_path": "assets/plans/S28.svg",
+      "modeled_footprints": [
+        {
+          "name": "ReceptionDesk",
+          "x": 1.25,
+          "y": 3.55,
+          "width": 2.0,
+          "depth": 0.7
+        },
+        {
+          "name": "VisitorSeat_seat",
+          "x": 0.79,
+          "y": 0.89,
+          "width": 0.42,
+          "depth": 0.42
+        },
+        {
+          "name": "VisitorSeat_seat.001",
+          "x": 1.79,
+          "y": 0.89,
+          "width": 0.42,
+          "depth": 0.42
+        },
+        {
+          "name": "VisitorSeat_seat.002",
+          "x": 2.79,
+          "y": 0.89,
+          "width": 0.42,
+          "depth": 0.42
+        }
+      ]
+    },
+    {
+      "id": "S29",
+      "name": "Pilot R&D / trial bay",
+      "level": "Shared site / hub",
+      "group": "Pengembangan",
+      "status": "Opsional; program trial di panduan",
+      "area": "Belum ditentukan",
+      "purpose": "Trial varietas/proses pada area yang dibedakan dari produksi komersial.",
+      "equipment": "Label trial, loop/records terpisah, bench/mini bay sesuai trial.",
+      "connections": "Agronomi → S29; output belum otomatis masuk pack premium.",
+      "check": "Jika memakai GH dari 35 unit, kapasitas produksi berkurang; jangan menghitung pilot sebagai kapasitas tambahan gratis.",
+      "source": "Panduan Bab V Improvement: R&D; area/kapasitas = belum final.",
+      "concept_width_m": 4,
+      "concept_depth_m": 6,
+      "archetype": "research",
+      "placement": "Optional pilot terpisah dari commercial rows",
+      "layout": "Dua trial benches dengan independent mini loops dan reference crops; batch trial terpisah dari release komersial.",
+      "services": "Monitoring trial, sampling, cleaning dan experiment log.",
+      "design_check": "24 m² konsep opsional. Bila memakai commercial GH, kurangi kapasitas model; model ini tidak otomatis menambah GH ke roadmap.",
+      "family": "Crop / shell",
+      "finishes": {
+        "floor": "Permukaan existing roof dilindungi sesuai gedung; jalur abu muda dan planter/DFT support pada skid terpisah.",
+        "walls": "Off-white washable surfaces; galvanised steel on crop frames; forest green only on cabinets, crate, trim and identity details.",
+        "worktops": "Stainless steel in fruit/wet areas; sealed dry worktops in staff/admin zones.",
+        "lighting": "Neutral white task light and soft Jakarta daylight. Render lighting is illustrative, not a lux calculation."
+      },
+      "dimension_status": "NEW visual allocation only; final area/capacity TBD",
+      "render_path": "assets/renders/S29.png",
+      "navigation_group": "Pengembangan opsional",
+      "photoreal_path": "assets/photoreal/S29.png",
+      "plan_path": "assets/plans/S29.svg",
+      "modeled_footprints": [
+        {
+          "name": "Trial_A_top",
+          "x": 0.45,
+          "y": 1.45,
+          "width": 1.1,
+          "depth": 3.1
+        },
+        {
+          "name": "Trial_A_shelf",
+          "x": 0.5,
+          "y": 1.5,
+          "width": 1.0,
+          "depth": 3.0
+        },
+        {
+          "name": "Trial_B_top",
+          "x": 2.25,
+          "y": 1.45,
+          "width": 1.1,
+          "depth": 3.1
+        },
+        {
+          "name": "Trial_B_shelf",
+          "x": 2.3,
+          "y": 1.5,
+          "width": 1.0,
+          "depth": 3.0
+        },
+        {
+          "name": "Trial_LoopA_vessel",
+          "x": 0.62,
+          "y": 0.47,
+          "width": 0.36,
+          "depth": 0.36
+        },
+        {
+          "name": "Trial_LoopA_base",
+          "x": 0.611,
+          "y": 0.461,
+          "width": 0.378,
+          "depth": 0.378
+        },
+        {
+          "name": "Trial_LoopB_vessel",
+          "x": 2.52,
+          "y": 0.47,
+          "width": 0.36,
+          "depth": 0.36
+        },
+        {
+          "name": "Trial_LoopB_base",
+          "x": 2.511,
+          "y": 0.461,
+          "width": 0.378,
+          "depth": 0.378
+        }
+      ]
+    }
+  ],
+  "decisions": [
+    "Model chooses UV-film appearance; polycarbonate remains an alternative, not mixed into the same BOM.",
+    "Reservoir illustration separates working solution from two small A/B concentrate containers; added hardware is proposed.",
+    "Shared rooms are independent visual allocations, not an approved rooftop masterplan or funded expansion.",
+    "Some section IDs are overlays or zones. Their vignette sizes must not be summed as separate rooms.",
+    "Cold room shown once at central hub; final volume, temperature, peak hold and throughput unresolved.",
+    "Interior furniture and vendor equipment are generic geometric envelopes, not specified brands."
+  ]
+}

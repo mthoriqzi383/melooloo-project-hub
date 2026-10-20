@@ -1,0 +1,27 @@
+{
+  "colors": {
+    "Forest": "#1F4D2E",
+    "Cream": "#FAF3E3",
+    "Moss": "#97BC62",
+    "Melon": "#F49D37",
+    "Green tint": "#EAF3EA",
+    "Charcoal": "#222222",
+    "Terracotta": "#B85042"
+  },
+  "typography": {
+    "headings": "Poppins SemiBold",
+    "body": "Nunito Sans",
+    "logo": "original artwork only"
+  },
+  "space": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    64
+  ],
+  "status": "colors from existing design guidance; dimensions and spacing are proposals"
+}

@@ -1,0 +1,354 @@
+/* Operations chapter: dense source facts presented as readable systems, not generic card lists. */
+.ops-scene{display:flex;flex-direction:column;--ops-ink:#153e2d;--ops-soft:#536f5d;--ops-line:#b4c5b1;--ops-lime:#c7e79e;--ops-paper:#eff4e9}
+.ops-scene .story-copy{flex:none;max-width:100%}
+.ops-scene .story-copy h2{font-size:clamp(28px,3.9cqw,63px);line-height:1;max-width:21em}
+.ops-scene .story-copy p{font-size:clamp(11px,1.12cqw,18px);margin-top:.5cqw;line-height:1.3}
+.ops-content{flex:1;min-height:0;margin-top:1.2cqw;display:flex;gap:.8cqw}
+.ops-note{font-size:clamp(8px,.78cqw,12px);line-height:1.22;color:#627764;border-top:1px solid var(--ops-line);padding-top:.45cqw;margin-top:.55cqw;flex:none}
+.ops-scene small{font-weight:800;letter-spacing:.1em}
+.ops-scene p{margin:0}
+.ops-photo{height:100%;width:100%;position:relative;overflow:hidden;background:#dce8d7}
+.ops-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.ops-photo>span{position:absolute;bottom:.5cqw;left:.6cqw;right:.6cqw;background:rgba(9,48,30,.84);color:#f8fff1;font-size:.65cqw;line-height:1.1;padding:.25cqw .35cqw;letter-spacing:.05em;font-weight:800}
+.ops-metric{display:flex;flex-direction:column;min-width:0}
+.ops-metric strong{font-size:2.7cqw;letter-spacing:-.07em;line-height:1}
+.ops-metric span{font-size:.9cqw;line-height:1.2}
+.ops-metric small{font-size:.7cqw;color:var(--ops-soft);margin-top:.3cqw}
+.ops-interactive [data-beat-target]{cursor:pointer;transition:transform .2s ease,background-color .2s ease,box-shadow .2s ease}
+.ops-interactive [data-beat-target]:focus-visible{outline:3px solid #327e50;outline-offset:2px}
+.ops-interactive [data-beat-target][data-active="true"]{box-shadow:inset 0 0 0 .23cqw #4c9252;background-color:#d9ecc6}
+.ops-beat-panel{background:#123d2b;color:#f5faed;padding:.7cqw .9cqw;display:flex;flex-direction:column;min-width:0}
+.ops-beat-panel small{font-size:.68cqw;color:#c7e99b}
+.ops-beat-panel strong{font-size:1.25cqw;line-height:1.05;margin:.3cqw 0}
+.ops-beat-panel p{font-size:.86cqw;line-height:1.2}
+.ops-beat-panel em{font-size:.6cqw;color:#c7e99b;font-style:normal;font-weight:800;letter-spacing:.07em;margin-top:auto}
+
+/* 21 — locations, service promise, and tiered suppliers. */
+.ops-21 .ops-content{display:block}
+.ops-supply-route{height:100%;display:flex;flex-direction:column;gap:.8cqw}
+.ops-supply-sites{display:grid;grid-template-columns:1fr 1fr;gap:.8cqw;flex:1;min-height:0}
+.ops-site{background:linear-gradient(145deg,#103b2b,#0a291f);color:#f6faed;display:flex;flex-direction:column;padding:1.1cqw 1.4cqw;position:relative;overflow:hidden}
+.ops-site::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(215,239,187,.04) 1px,transparent 1px),linear-gradient(rgba(215,239,187,.04) 1px,transparent 1px);background-size:2.2cqw 2.2cqw;pointer-events:none}
+.ops-site:nth-child(2){background:linear-gradient(145deg,#1b5540,#103729)}
+.ops-site small{color:#d4edaa;font-size:.75cqw}
+.ops-site strong{font-size:2.2cqw;letter-spacing:-.055em;margin:.25cqw 0 .2cqw;position:relative}
+.ops-site span{font-size:.96cqw;max-width:28em}
+.ops-site-plan{position:relative;align-self:center;width:min(90%,36cqw);height:47%;margin:auto 0 .2cqw;padding:1cqw 2.1cqw;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:.38cqw;transform:skewY(-8deg);border:1px solid rgba(218,241,197,.35);background:rgba(222,247,215,.055);box-shadow:0 1cqw 2cqw rgba(0,0,0,.16)}
+.ops-site-plan::after{content:"KORIDOR SERVIS";position:absolute;left:0;right:0;top:48%;text-align:center;background:#194531;color:#cde7b4;font-size:.55cqw;font-weight:800;letter-spacing:.2em;padding:.22cqw 0;transform:skewY(8deg)}
+.ops-site-plan i{background:linear-gradient(90deg,#b8dbac 0 10%,#edf5db 10% 86%,#8dbc88 86%);border:1px solid rgba(255,255,255,.5);box-shadow:0 .2cqw .4cqw rgba(0,0,0,.17)}
+.ops-site:nth-child(2) .ops-site-plan{transform:skewY(7deg)}
+.ops-site:nth-child(2) .ops-site-plan::after{transform:skewY(-7deg)}
+.ops-supply-arrow{display:flex;align-items:center;justify-content:center;gap:1cqw;background:#cde7b7;padding:.7cqw;color:#143e2d;font-size:1cqw;font-weight:800;letter-spacing:.04em}
+.ops-supply-arrow b{font-size:1.5cqw;color:#4b8750}
+.ops-supply-arrow strong{background:#153f2b;color:#fff;padding:.4cqw .6cqw;white-space:nowrap}
+.ops-supply-vendors{display:grid;grid-template-columns:repeat(3,1fr);gap:.8cqw;min-height:7.2cqw}
+.ops-supply-vendors>div{display:flex;flex-direction:column;border-top:2px solid #8cba71;padding:.6cqw .9cqw;background:#eff4e8}
+.ops-supply-vendors small{font-size:.7cqw;color:#5b7f57}
+.ops-supply-vendors strong{font-size:1.15cqw;margin:.25cqw 0}
+.ops-supply-vendors span{font-size:.82cqw;line-height:1.18}
+
+/* 23 — construction versus operating cost. */
+.ops-23 .ops-content{display:grid;grid-template-columns:1.2fr 1fr;gap:1cqw}
+.ops-cost-left{display:flex;flex-direction:column;background:#143e2c;color:#f5faec;padding:1.4cqw 1.7cqw}
+.ops-cost-left>small,.ops-cost-right small{font-size:.75cqw;color:#c7e89d}
+.ops-cost-left>strong{font-size:5.8cqw;line-height:1;letter-spacing:-.08em;margin:auto 0 1cqw}
+.ops-cost-left em,.ops-cost-right em{font-size:1.5cqw;font-style:normal;letter-spacing:0}
+.ops-cost-bar{height:1.7cqw;background:rgba(255,255,255,.22)}
+.ops-cost-bar span{height:100%;display:block;background:#c9eaa0}
+.ops-cost-left p{font-size:1.13cqw;margin:.9cqw 0 0;line-height:1.25}
+.ops-cost-foot{font-size:.76cqw;color:#d4e8d4;margin-top:.45cqw}
+.ops-cost-right{display:grid;grid-template-rows:1fr 1fr;gap:1cqw}
+.ops-cost-right>div{display:flex;flex-direction:column;background:#dce9d5;padding:1.3cqw 1.5cqw}
+.ops-cost-right>div+div{background:#e8efe3}
+.ops-cost-right small{color:#5c8258}
+.ops-cost-right strong{font-size:3.5cqw;letter-spacing:-.07em;margin:auto 0 .3cqw;white-space:nowrap}
+.ops-cost-right span{font-size:.88cqw;line-height:1.2}
+
+/* 24 — performance objectives and operational decisions. */
+.ops-24 .ops-content{flex-direction:column;gap:0}
+.ops-priority-head{display:grid;grid-template-columns:28% 15% 1fr;background:#173f2d;color:#eff9e8;padding:.65cqw 1.2cqw;font-size:.75cqw;letter-spacing:.1em;font-weight:800}
+.ops-priority-rows{display:grid;grid-template-rows:repeat(5,1fr);flex:1}
+.ops-priority-rows>div{display:grid;grid-template-columns:3cqw 25% 15% 1fr;gap:.6cqw;align-items:center;border-bottom:1px solid var(--ops-line);padding:.4cqw 1.2cqw;background:rgba(255,255,255,.56)}
+.ops-priority-rows>div:nth-child(even){background:#e7efe2}
+.ops-priority-rows b{font-size:.8cqw;color:#6c896e}
+.ops-priority-rows strong{font-size:1.7cqw;letter-spacing:-.05em}
+.ops-priority-rows em{font-size:.76cqw;font-style:normal;font-weight:800;color:#5a775c}
+.ops-priority-rows .ops-rank-high{color:#2d7f42}
+.ops-priority-rows span{font-size:.96cqw;line-height:1.23}
+
+/* 25 — three functions under a shared quality system. */
+.ops-25 .ops-content{flex-direction:column;gap:.6cqw}
+.ops-team-axis{background:#153f2d;color:#f7fbef;display:flex;align-items:center;justify-content:center;gap:2cqw;padding:.75cqw;font-size:.78cqw;letter-spacing:.08em}
+.ops-team-axis b{font-size:1.5cqw;color:#cceaa1}.ops-team-axis strong{font-size:1.2cqw;letter-spacing:0}
+.ops-team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8cqw;flex:1}
+.ops-team-grid>div{display:flex;flex-direction:column;padding:1.1cqw 1.3cqw;background:#e5eee0;border-top:.4cqw solid #83b86e}
+.ops-team-grid>div:nth-child(2){background:#d7e7d5}.ops-team-grid>div:nth-child(3){background:#c8dfcf}
+.ops-team-grid small{font-size:.76cqw;color:#577f57}
+.ops-team-grid strong{font-size:2.2cqw;line-height:1.05;letter-spacing:-.05em;margin:1.5cqw 0 .8cqw}
+.ops-team-grid p{font-size:1.08cqw;line-height:1.3}
+.ops-team-grid span{margin-top:auto;border-top:1px solid #aac1a5;padding-top:.65cqw;font-size:.85cqw;font-weight:800}
+
+/* 26 — five specific supply risks. */
+.ops-26 .ops-content{display:block}
+.ops-table{height:100%;display:flex;flex-direction:column}
+.ops-table-head{display:grid;grid-template-columns:24% 10% 11% 1fr;background:#173f2d;color:#f2f9eb;padding:.65cqw 1cqw .65cqw 3cqw;font-size:.72cqw;letter-spacing:.09em;font-weight:800}
+.ops-table-row{display:grid;grid-template-columns:2cqw 22% 10% 11% 1fr;gap:1cqw;align-items:center;flex:1;border-bottom:1px solid #b3c7ae;padding:.35cqw 1cqw;background:#f8faf4}
+.ops-table-row:nth-child(odd){background:#e9f0e4}
+.ops-table-row>b{font-size:.76cqw;color:#6d8c67}
+.ops-table-row strong{font-size:1.18cqw;line-height:1.15}
+.ops-table-row em{font-style:normal;font-weight:800;font-size:.83cqw;color:#547455}
+.ops-table-row>span{font-size:.86cqw;line-height:1.2}
+
+/* 28 — six questions, six numeric anchors. */
+.ops-28 .ops-content{display:block}
+.ops-agenda-grid{height:100%;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:.8cqw}
+.ops-agenda-grid>div{display:flex;flex-direction:column;background:#e5eee0;border-top:.32cqw solid #79ad67;padding:1cqw 1.2cqw}
+.ops-agenda-grid>div:nth-child(2),.ops-agenda-grid>div:nth-child(5){background:#d3e6d4}
+.ops-agenda-grid small{font-size:.7cqw;color:#5a8059}
+.ops-agenda-grid strong{font-size:2.7cqw;line-height:1;letter-spacing:-.07em;margin:auto 0 .25cqw}
+.ops-agenda-grid b{font-size:1.1cqw}.ops-agenda-grid span{font-size:.8cqw;margin-top:.3cqw;line-height:1.2}
+
+/* 29–30 — modular greenhouse geometry and hardware. */
+.ops-29 .ops-content{display:grid;grid-template-columns:46% 1fr;gap:1cqw}
+.ops-unit-photo{position:relative;min-height:0}.ops-unit-photo .ops-photo img{object-position:center}
+.ops-unit-stamp{position:absolute;top:1cqw;left:1cqw;background:#153e2b;color:white;padding:.55cqw .8cqw;font-size:1.7cqw;font-weight:800}
+.ops-unit-right{display:flex;flex-direction:column;gap:.8cqw}
+.ops-unit-metrics{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:.7cqw;flex:1}
+.ops-unit-metrics .ops-metric{background:#e1edda;border-top:.3cqw solid #80b06c;padding:.8cqw 1cqw;justify-content:center}
+.ops-unit-detail{background:#143e2c;color:#f5faeb;padding:.75cqw 1cqw;display:flex;flex-direction:column;gap:.3cqw}
+.ops-unit-detail small{font-size:.68cqw;color:#c6e997}.ops-unit-detail span{font-size:.82cqw;line-height:1.18}
+.ops-30 .ops-content{display:grid;grid-template-columns:54% 1fr;gap:1cqw}
+.ops-tech-photo{min-height:0}.ops-tech-photo .ops-photo img{object-position:center}
+.ops-tech-photo{position:relative;overflow:hidden}
+.ops-tech-pin{position:absolute;display:flex;align-items:center;gap:.35cqw;color:#f9fff2;font-size:.62cqw;font-weight:800;letter-spacing:.07em;text-shadow:0 1px 3px #08231b;filter:drop-shadow(0 2px 3px rgba(0,0,0,.3))}
+.ops-tech-pin b{display:grid;place-items:center;width:1.45cqw;height:1.45cqw;border:1px solid #f6fff0;border-radius:50%;background:#194a32;color:#f6fff0}
+.ops-tech-pin span{padding:.25cqw .38cqw;background:rgba(13,51,32,.75);border-left:1px solid #c8ec9e}
+.ops-tech-pin::after{content:"";position:absolute;top:1.45cqw;left:.7cqw;width:1px;height:2.7cqw;background:#e4f4cd;transform:rotate(22deg);transform-origin:top}
+.ops-tech-pin.pin-tank{left:40%;top:18%}.ops-tech-pin.pin-probe{left:45%;top:55%}.ops-tech-pin.pin-pump{left:9%;top:69%}
+.ops-tech-pin.pin-probe::after,.ops-tech-pin.pin-pump::after{height:1.1cqw}
+.ops-tech-rail{display:grid;grid-template-rows:repeat(4,1fr);gap:.45cqw}
+.ops-tech-rail>div{display:grid;grid-template-columns:38% 1fr;align-items:center;gap:.1cqw .7cqw;background:#e7efe1;border-left:.32cqw solid #79ae62;padding:.4cqw .8cqw}
+.ops-tech-rail>div:nth-child(even){background:#d7e8d3}
+.ops-tech-rail small{grid-column:1/-1;font-size:.65cqw;color:#658268}
+.ops-tech-rail strong{font-size:1.33cqw;line-height:1.1;letter-spacing:-.04em}
+.ops-tech-rail span{font-size:.8cqw;line-height:1.2}
+
+/* 31 — sensor/actuator matrix, with presenter-controlled focus. */
+.ops-31 .ops-content{flex-direction:column;gap:.65cqw}
+.ops-control-table{flex:1;min-height:0;display:grid;grid-template-rows:auto repeat(4,1fr)}
+.ops-control-head,.ops-control-row{display:grid;grid-template-columns:15% 25% 25% 20% 15%;align-items:center;text-align:left;gap:0}
+.ops-control-head{padding:.55cqw .8cqw;background:#143e2c;color:#f3faec;font-size:.68cqw;letter-spacing:.07em;font-weight:800}
+.ops-control-row{appearance:none;border:0;border-bottom:1px solid #b5caae;background:#f8faf5;color:#173d2c;font:inherit;padding:.45cqw .8cqw;min-width:0}
+.ops-control-row:nth-child(odd){background:#e7f0e1}
+.ops-control-row strong{font-size:1.3cqw}.ops-control-row span{font-size:.82cqw;line-height:1.16}.ops-control-row b{font-size:.78cqw;color:#3c8550}.ops-control-row em{font-size:.74cqw;font-style:normal}
+.ops-control-bottom{display:grid;grid-template-columns:23% 20% 1fr;gap:.65cqw;min-height:8.8cqw}
+.ops-control-bottom>div:not(.ops-beat-panel){display:flex;flex-direction:column;background:#dcebd4;padding:.7cqw .85cqw}
+.ops-control-bottom>div:not(.ops-beat-panel)>strong{font-size:1.6cqw;letter-spacing:-.04em}
+.ops-control-bottom>div:not(.ops-beat-panel)>span{font-size:.77cqw;line-height:1.16;margin-top:auto}
+
+/* 32 — the physical DFT return loop. */
+.ops-32 .ops-content{flex-direction:column;gap:1cqw}
+.ops-dft-loop{display:grid;grid-template-columns:1fr 3cqw 1fr 3cqw 1fr 3cqw 1fr;align-items:center;gap:.2cqw;flex:1}
+.ops-dft-loop>b{font-size:2.7cqw;text-align:center;color:#55935b}
+.ops-dft-node{height:73%;background:#d9e9d4;border-top:.35cqw solid #6aab66;display:flex;flex-direction:column;justify-content:center;padding:1cqw}
+.ops-dft-node:nth-of-type(3){background:#bbdcb9}
+.ops-dft-node small{font-size:.7cqw;color:#5d7f5b}
+.ops-dft-node strong{font-size:1.8cqw;letter-spacing:-.05em;margin:.7cqw 0}
+.ops-dft-node span{font-size:.88cqw;line-height:1.18}
+.ops-dft-bottom{display:grid;grid-template-columns:1fr 1.1fr;gap:.8cqw;min-height:11cqw}
+.ops-dft-bottom>div:first-child{display:grid;grid-template-columns:1fr 1fr;gap:.8cqw}
+.ops-dft-bottom .ops-metric{background:#153f2d;color:white;padding:.85cqw 1cqw;justify-content:center}
+.ops-dft-bottom>div:last-child{background:#f0e7d6;padding:.9cqw 1.1cqw;border-top:.3cqw solid #b69a66}
+.ops-dft-bottom small{font-size:.7cqw;color:#795f3d}
+.ops-dft-bottom p{font-size:.95cqw;line-height:1.3;margin:.6cqw 0 0}
+
+/* 33 — cumulative capacity by year, with city milestones. */
+.ops-33 .ops-content{flex-direction:column;gap:.35cqw}
+.ops-growth-head{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--ops-line);padding-bottom:.4cqw}
+.ops-growth-head strong{font-size:2.5cqw;letter-spacing:-.07em}.ops-growth-head em{font-size:1cqw;font-style:normal;letter-spacing:0}
+.ops-growth-head span{font-size:.83cqw;font-weight:800;letter-spacing:.09em}
+.ops-growth-plot{height:49%;display:grid;grid-template-columns:repeat(11,1fr);gap:.45cqw;align-items:end;border-bottom:1px solid #829f80;background:repeating-linear-gradient(0deg,transparent 0 24.8%,rgba(106,141,100,.15) 24.8% 25%)}
+.ops-growth-col{height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}
+.ops-growth-col>span{position:absolute;bottom:calc(var(--bar-height) + .2cqw);font-size:.7cqw}
+.ops-growth-col i{width:84%;background:linear-gradient(#a7d783,#347a4b);display:block;min-height:.5cqw;animation:ops-grow .6s ease both;transform-origin:bottom}
+.ops-growth-col i.is-surabaya{background:linear-gradient(#c9e693,#4f9a67)}
+.ops-growth-col i.is-bali{background:linear-gradient(#e6cf88,#b3804b)}
+.ops-growth-col small{position:absolute;bottom:-1.1cqw;font-size:.7cqw;letter-spacing:0}
+.ops-growth-units{display:grid;grid-template-columns:repeat(11,1fr);gap:.45cqw;margin-top:.8cqw;text-align:center}
+.ops-growth-units span{font-size:.68cqw;color:#678168}
+.ops-growth-milestones{display:grid;grid-template-columns:repeat(4,1fr) 2.1fr;gap:.55cqw;min-height:8cqw;margin-top:.45cqw}
+.ops-growth-milestones>button{appearance:none;border:1px solid #b9cdb2;background:#eef4e8;color:#173d2c;text-align:left;padding:.55cqw .65cqw;display:flex;flex-direction:column;font:inherit}
+.ops-growth-milestones>button b{font-size:.68cqw}.ops-growth-milestones>button strong{font-size:1.12cqw;letter-spacing:-.04em;margin-top:auto}
+.ops-growth-milestones .ops-beat-panel{min-height:0}
+
+/* 34–35 — replication mechanism and the three operating promises. */
+.ops-34 .ops-content{flex-direction:column;gap:.9cqw}
+.ops-replication-big{display:grid;grid-template-columns:repeat(3,1fr);gap:.8cqw;flex:1}
+.ops-replication-big .ops-metric{background:#dcebd5;padding:1.2cqw 1.3cqw;justify-content:end;border-top:.36cqw solid #69a862}
+.ops-replication-big .ops-metric strong{font-size:5cqw}.ops-replication-big .ops-metric span{font-size:1.03cqw}
+.ops-replication-track{display:flex;align-items:center;gap:.8cqw;background:#163f2d;color:#f5faed;padding:.8cqw 1cqw;min-height:8.2cqw}
+.ops-replication-track>small{font-size:.75cqw;color:#d2ebad;margin-right:auto}
+.ops-replication-track>div{display:flex;flex-direction:column;gap:.3cqw}
+.ops-replication-track>div span{font-size:.66cqw;color:#bed9bd}.ops-replication-track>div strong{font-size:1.1cqw;white-space:nowrap}
+.ops-replication-track>b{font-size:1.5cqw;color:#bee39d}
+.ops-35 .ops-content{display:block}
+.ops-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:.9cqw;height:100%}
+.ops-pillar{display:flex;flex-direction:column;background:#e2edda;padding:1.15cqw 1.3cqw;border-top:.4cqw solid #78ab63}
+.ops-pillar-1{background:#cfe5d0}.ops-pillar-2{background:#173f2d;color:#f5f9ea}
+.ops-pillar small{font-size:.75cqw;color:#5e825d}.ops-pillar-2 small{color:#cae8a7}
+.ops-pillar>strong{font-size:3.4cqw;letter-spacing:-.07em;line-height:1;margin:auto 0 .4cqw}
+.ops-pillar>span{font-size:1.05cqw}
+.ops-pillar ul{list-style:none;padding:0;margin:1.4cqw 0 0}
+.ops-pillar li{padding:.6cqw 0;border-top:1px solid rgba(78,122,78,.35);font-size:.98cqw;line-height:1.15}
+.ops-pillar-2 li{border-color:rgba(220,243,206,.34)}
+
+@keyframes ops-grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@media(prefers-reduced-motion:reduce){.ops-growth-col i{animation:none!important}.ops-interactive [data-beat-target]{transition:none!important}}
+
+/* 36 — nutrient plan by developmental phase. */
+.ops-36 .ops-content{flex-direction:column;gap:.8cqw}
+.ops-sweet-track{display:grid;grid-template-columns:repeat(4,1fr);gap:.75cqw;flex:1}
+.ops-sweet-stage{display:flex;flex-direction:column;justify-content:flex-end;padding:1.1cqw 1.2cqw;background:#e9f0de;border-top:.38cqw solid #a6bd74}
+.ops-sweet-stage:nth-child(2){background:#dceacc}.ops-sweet-stage:nth-child(3){background:#cce2bf}.ops-sweet-stage:nth-child(4){background:#b6d7ac}
+.ops-sweet-stage small{font-size:.7cqw;color:#537851;margin-bottom:auto}
+.ops-sweet-stage>strong{font-size:2.6cqw;line-height:1;letter-spacing:-.075em;white-space:nowrap}
+.ops-sweet-stage>em{font-size:.78cqw;font-style:normal;margin-top:.1cqw}
+.ops-sweet-stage>div{display:flex;align-items:baseline;gap:.5cqw;margin-top:1.1cqw;border-top:1px solid #99b692;padding-top:.5cqw}
+.ops-sweet-stage>div b{font-size:1.3cqw}.ops-sweet-stage>div span{font-size:.75cqw}
+.ops-sweet-stage p{font-size:.9cqw;line-height:1.2;margin-top:.75cqw}
+.ops-sweet-footer{display:grid;grid-template-columns:27% 1fr;gap:1cqw;align-items:center;background:#153f2d;color:#f5faeb;min-height:7.6cqw;padding:.75cqw 1.1cqw}
+.ops-sweet-footer>div{display:flex;flex-direction:column}.ops-sweet-footer strong{font-size:1.8cqw}.ops-sweet-footer span{font-size:.75cqw;color:#cae5c0}
+.ops-sweet-footer p{font-size:.9cqw;line-height:1.22}
+
+/* 37 — monitoring bands and outbreak escalation. */
+.ops-37 .ops-content{display:grid;grid-template-columns:1fr 1fr;gap:1cqw}
+.ops-intervene-left,.ops-intervene-right{display:flex;flex-direction:column;min-height:0}
+.ops-intervene-left>small,.ops-intervene-right>small{font-size:.74cqw;color:#557a58;border-bottom:1px solid var(--ops-line);padding:.5cqw 0}
+.ops-thrips-bands,.ops-outbreak{display:grid;grid-template-rows:repeat(3,1fr);flex:1;gap:.45cqw;margin-top:.6cqw}
+.ops-thrips-bands>div{display:grid;grid-template-columns:19% 24% 1fr;align-items:center;gap:.5cqw;background:#d9ebd0;border-left:.4cqw solid #65a660;padding:.4cqw .8cqw}
+.ops-thrips-bands>div:nth-child(2){background:#f3e8c7;border-color:#c99f4f}.ops-thrips-bands>div:nth-child(3){background:#efd1bb;border-color:#bd7650}
+.ops-thrips-bands strong{font-size:2.2cqw;letter-spacing:-.06em}.ops-thrips-bands b{font-size:1cqw}.ops-thrips-bands span{font-size:.8cqw;line-height:1.2}
+.ops-intervene-left>p{font-size:.84cqw;margin-top:.55cqw}
+.ops-outbreak>div{display:grid;grid-template-columns:25% 31% 1fr;align-items:center;gap:.5cqw;background:#edf2e8;padding:.45cqw .7cqw;border-top:1px solid #a9c0a4}
+.ops-outbreak b{font-size:.9cqw}.ops-outbreak strong{font-size:1cqw;line-height:1.1}.ops-outbreak span{font-size:.79cqw;line-height:1.2}
+
+/* 38 — nursery and production house have different operating envelopes. */
+.ops-38 .ops-content{display:grid;grid-template-columns:35% 1fr;gap:1cqw}
+.ops-nursery-images{display:grid;grid-template-rows:1fr 1fr;gap:.7cqw;min-height:0}
+.ops-nursery-images>div{position:relative;min-height:0;overflow:hidden}
+.ops-nursery-images strong{position:absolute;top:.7cqw;left:.7cqw;background:#153e2c;color:#fff;font-size:.9cqw;letter-spacing:.08em;padding:.45cqw .6cqw}
+.ops-nursery-table{display:grid;grid-template-rows:auto repeat(6,1fr);min-height:0}
+.ops-nursery-head,.ops-nursery-table>div:not(.ops-nursery-head){display:grid;grid-template-columns:30% 33% 1fr;align-items:center;padding:.45cqw .8cqw}
+.ops-nursery-head{background:#153f2d;color:#fff;font-size:.72cqw;font-weight:800;letter-spacing:.08em}
+.ops-nursery-table>div:not(.ops-nursery-head){border-bottom:1px solid #afc3aa;background:#edf3e8}
+.ops-nursery-table>div:nth-child(odd){background:#dcebd6}
+.ops-nursery-table strong{font-size:.94cqw}.ops-nursery-table span{font-size:.86cqw}
+
+/* 39 — eight production actions on a two-line rail. */
+.ops-39 .ops-content{flex-direction:column;gap:.7cqw}
+.ops-process-track{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:.7cqw;flex:1}
+.ops-process-track>div{display:flex;flex-direction:column;background:#e3eee0;border-top:.32cqw solid #7aaa69;padding:.9cqw 1.05cqw}
+.ops-process-track>div:nth-child(even){background:#d3e5d3}
+.ops-process-track>div:last-child{background:#153f2d;color:#fff;border-color:#c5e69f}
+.ops-process-track small{font-size:.68cqw;color:#5e805f}.ops-process-track>div:last-child small{color:#c6e899}
+.ops-process-track strong{font-size:1.68cqw;letter-spacing:-.05em;line-height:1;margin:auto 0 .3cqw}
+.ops-process-track span{font-size:.84cqw;line-height:1.16}
+.ops-process-summary{display:flex;align-items:center;justify-content:space-between;gap:.4cqw;background:#153f2d;color:#f5faee;padding:.55cqw .8cqw;font-size:.82cqw;font-weight:800}
+.ops-process-summary b{font-size:1.3cqw;color:#bde297}.ops-process-summary strong{color:#cdeba6;white-space:nowrap}
+
+/* 40 — labor time and the staffing stress threshold. */
+.ops-40 .ops-content{display:grid;grid-template-columns:53% 1fr;gap:1cqw}
+.ops-labor-bars{display:flex;flex-direction:column;background:#eff4ea;padding:1cqw 1.2cqw;gap:.35cqw}
+.ops-labor-bars>small{font-size:.72cqw;color:#5a805a;margin-bottom:.5cqw}
+.ops-labor-bars>div{display:grid;grid-template-columns:38% 1fr 8%;gap:.5cqw;align-items:center;flex:1}
+.ops-labor-bars>div span{font-size:.83cqw}.ops-labor-bars>div>i{height:.72cqw;background:#d2e3cc}.ops-labor-bars>div>i>b{display:block;height:100%;background:#67a35e}
+.ops-labor-bars>div strong{font-size:.84cqw;text-align:right}.ops-labor-bars footer{border-top:1px solid #acc4a7;padding-top:.45cqw;font-size:.75cqw;letter-spacing:.05em}
+.ops-labor-bars footer strong{float:right;font-size:1.2cqw;letter-spacing:0}
+.ops-labor-side{display:grid;grid-template-rows:1fr 1fr auto;gap:.65cqw}
+.ops-labor-side>div{display:flex;flex-direction:column;justify-content:center;background:#d9ebd4;padding:.7cqw 1cqw}
+.ops-labor-side>div:nth-child(2){background:#cce3cf}
+.ops-labor-side small{font-size:.68cqw;color:#557856}.ops-labor-side strong{font-size:2.4cqw;line-height:1.05;letter-spacing:-.06em;margin:.35cqw 0}.ops-labor-side span{font-size:.84cqw}
+.ops-labor-side .ops-labor-stress{display:block;background:#f2e8ce;border-left:.35cqw solid #c49d54;font-size:.88cqw;line-height:1.2}
+
+/* 41 — nursery overlap changes the number of annual harvest slots. */
+.ops-41 .ops-content{flex-direction:column;gap:.8cqw}
+.ops-cycle-compare{display:grid;grid-template-columns:1fr 1fr;gap:1cqw;flex:1}
+.ops-cycle-compare>div{display:flex;flex-direction:column;background:#e8e9dd;padding:1.1cqw 1.4cqw}
+.ops-cycle-compare>div+div{background:#d1e9c8;border-top:.4cqw solid #5b9b59}
+.ops-cycle-compare small{font-size:.74cqw;color:#5d805b}.ops-cycle-compare strong{font-size:4.4cqw;line-height:1;letter-spacing:-.08em;margin:auto 0 .3cqw}
+.ops-cycle-compare span{font-size:1.1cqw}.ops-cycle-compare i{height:1cqw;background:linear-gradient(90deg,#75a66a var(--fill),rgba(80,120,72,.12) var(--fill));margin-top:1cqw}
+.ops-cycle-equations{display:grid;grid-template-columns:1fr 1.35fr 1.2fr;gap:.7cqw;min-height:8.1cqw}
+.ops-cycle-equations>div{display:flex;flex-direction:column;justify-content:center;background:#163f2d;color:#f4faeb;padding:.65cqw .8cqw}
+.ops-cycle-equations small{font-size:.65cqw;color:#c6e79f}.ops-cycle-equations strong{font-size:1.45cqw;letter-spacing:-.05em;margin-top:.4cqw;white-space:nowrap}
+
+/* 42 — securing a publicly available seed versus developing a variety. */
+.ops-42 .ops-content{flex-direction:column;gap:.8cqw}
+.ops-seed-intro{background:#153f2d;color:#f7f9f0;padding:.8cqw 1.1cqw;font-size:1.12cqw;line-height:1.26}
+.ops-seed-paths{display:grid;grid-template-columns:1fr 1fr;gap:.8cqw;flex:1}
+.ops-seed-paths>div{display:flex;flex-direction:column;background:#e6efe0;padding:1.1cqw 1.3cqw;border-top:.34cqw solid #76ad67}
+.ops-seed-paths>div+div{background:#cfe6d1}
+.ops-seed-paths small{font-size:.73cqw;color:#628761}
+.ops-seed-paths strong{font-size:2.25cqw;letter-spacing:-.05em;margin:1cqw 0 .2cqw}
+.ops-seed-paths b{font-size:1.6cqw;color:#3b7750}
+.ops-seed-paths span{font-size:.98cqw;line-height:1.27;margin:auto 0 1cqw}
+.ops-seed-paths em{font-size:.78cqw;font-style:normal;border-top:1px solid #a6bfa6;padding-top:.5cqw}
+
+/* 43 — seed program decision gates and omitted-base-model disclosure. */
+.ops-43 .ops-content{flex-direction:column;gap:.65cqw}
+.ops-seed-total{display:flex;align-items:baseline;gap:1cqw;background:#153e2c;color:#f5faed;padding:.6cqw 1cqw}
+.ops-seed-total small{font-size:.68cqw;color:#c9e99e}.ops-seed-total strong{font-size:2.65cqw;letter-spacing:-.06em;margin-left:auto;white-space:nowrap}
+.ops-seed-total em{font-size:1cqw;font-style:normal}.ops-seed-total span{font-size:.75cqw;max-width:14em}
+.ops-seed-phases{display:grid;grid-template-columns:repeat(4,1fr);gap:.6cqw;flex:1;min-height:0}
+.ops-seed-phases>button{appearance:none;border:1px solid #acc7a5;background:#e5efe0;color:#163d2b;font:inherit;text-align:left;padding:.8cqw 1cqw;display:flex;flex-direction:column;min-width:0}
+.ops-seed-phases>button:nth-child(even){background:#d5e7d3}
+.ops-seed-phases small{font-size:.7cqw;color:#567e59}.ops-seed-phases strong{font-size:1.9cqw;letter-spacing:-.06em;margin:auto 0 .5cqw}
+.ops-seed-phases span{font-size:.82cqw;line-height:1.15}
+.ops-seed-bottom{display:grid;grid-template-columns:24% 22% 1fr;gap:.55cqw;min-height:8cqw}
+.ops-seed-bottom>div:not(.ops-beat-panel){display:flex;flex-direction:column;background:#f1e7d6;padding:.6cqw .8cqw}
+.ops-seed-bottom>div:nth-child(2){background:#e2edda}
+.ops-seed-bottom>div:not(.ops-beat-panel) strong{font-size:1.25cqw}
+.ops-seed-bottom>div:not(.ops-beat-panel) span{font-size:.76cqw;line-height:1.18;margin-top:auto}
+.ops-seed-bottom .ops-beat-panel{min-height:0}
+
+/* 44 — six mutually reinforcing capabilities. */
+.ops-44 .ops-content{flex-direction:column;gap:.7cqw}
+.ops-moat-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:.7cqw;flex:1}
+.ops-moat-grid>div{display:flex;flex-direction:column;background:#e5eee0;border-top:.3cqw solid #80b670;padding:.8cqw 1.05cqw}
+.ops-moat-grid>div:nth-child(even){background:#d1e6d2}
+.ops-moat-grid small{font-size:.68cqw;color:#5c825e}.ops-moat-grid strong{font-size:2.4cqw;letter-spacing:-.065em;margin:auto 0 .4cqw}
+.ops-moat-grid span{font-size:.88cqw;line-height:1.2}
+.ops-moat-summary{background:#153f2d;color:#f4faed;font-size:.86cqw;letter-spacing:.05em;padding:.7cqw .9cqw}
+.ops-moat-summary b{color:#cfeba7}
+
+/* 45 — arithmetic and assumptions behind the expansion table. */
+.ops-45 .ops-content{flex-direction:column;gap:1cqw}
+.ops-capacity-equation{display:flex;align-items:stretch;gap:.35cqw;flex:1}
+.ops-capacity-equation .ops-metric{flex:1;justify-content:center;background:#e4efde;padding:1cqw;text-align:center}
+.ops-capacity-equation .ops-metric strong{font-size:3cqw}
+.ops-capacity-equation>b{align-self:center;font-size:2cqw;padding:0 .3cqw;color:#6f9d61}
+.ops-capacity-result{flex:1.3;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#153f2d;color:white;padding:1cqw}
+.ops-capacity-result strong{font-size:3.1cqw;letter-spacing:-.07em;white-space:nowrap}.ops-capacity-result span{font-size:.88cqw}
+.ops-capacity-assumptions{display:grid;grid-template-columns:repeat(3,1fr);gap:.7cqw;min-height:10cqw}
+.ops-capacity-assumptions>div{display:flex;flex-direction:column;background:#dcebd6;border-top:.3cqw solid #74aa67;padding:.7cqw 1cqw}
+.ops-capacity-assumptions small{font-size:.69cqw;color:#648467}.ops-capacity-assumptions strong{font-size:2cqw;letter-spacing:-.06em;margin:auto 0 .25cqw}.ops-capacity-assumptions span{font-size:.86cqw}
+
+/* 46 — five measurable failure modes. */
+.ops-46 .ops-content{flex-direction:column;gap:0}
+.ops-downside-head{display:grid;grid-template-columns:25% 20% 28% 1fr;background:#153f2d;color:#f8faee;padding:.6cqw .8cqw .6cqw 2.5cqw;font-size:.69cqw;letter-spacing:.09em;font-weight:800}
+.ops-downside-rows{display:grid;grid-template-rows:repeat(5,1fr);flex:1}
+.ops-downside-rows>div{display:grid;grid-template-columns:1.6cqw 23% 19% 27% 1fr;align-items:center;gap:.6cqw;border-bottom:1px solid #b7cbb3;background:#f7f9f4;padding:.45cqw .75cqw}
+.ops-downside-rows>div:nth-child(even){background:#e8efe3}
+.ops-downside-rows b{font-size:.7cqw;color:#799778}.ops-downside-rows strong{font-size:1cqw;line-height:1.14}
+.ops-downside-rows span{font-size:.83cqw;line-height:1.18}.ops-downside-rows em{font-size:.85cqw;font-style:normal;font-weight:800;color:#8b654c}
+
+@media(max-width:700px){
+  .ops-scene .story-copy h2{font-size:4.1cqw}
+  .ops-note{font-size:.75cqw}
+  .ops-control-row span,.ops-table-row>span,.ops-downside-rows span{font-size:.78cqw}
+}
+/* Chapter transitions follow the presentation order: marketing now appears near the end. */
+.chapter-veil[data-chapter="2"] .chapter-veil-image{background-image:linear-gradient(90deg,rgba(4,29,21,.94),rgba(4,29,21,.38)),url('assets/editorial/roof-cluster.jpg?v=brand-3')}
+.chapter-veil[data-chapter="3"] .chapter-veil-image{background-image:linear-gradient(90deg,rgba(4,29,21,.94),rgba(4,29,21,.36)),url('assets/editorial/nursery.jpg?v=brand-3')}
+.chapter-veil[data-chapter="4"] .chapter-veil-image{background-image:radial-gradient(circle at 78% 34%,rgba(188,225,134,.27),transparent 28%),linear-gradient(90deg,#092719,#15402e)}
+.chapter-veil[data-chapter="5"] .chapter-veil-image{background-image:linear-gradient(90deg,rgba(4,29,21,.96),rgba(4,29,21,.4)),url('assets/editorial/greenhouse-unit.jpg?v=brand-3')}
+.chapter-veil[data-chapter="6"] .chapter-veil-image{background-image:linear-gradient(90deg,rgba(44,28,20,.92),rgba(44,28,20,.35)),url('assets/editorial/signature-pack.jpg?v=brand-3')}

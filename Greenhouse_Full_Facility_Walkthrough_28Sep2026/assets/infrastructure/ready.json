@@ -1,0 +1,10 @@
+{
+  "status": "ready",
+  "module": "greenhouse_module_infrastructure.glb",
+  "source": "Local Blender infrastructure master",
+  "sensors_per_module": 8,
+  "module_sha256": "3ac52eefe045b33ae9ed7ca18e387fa8ba4c2eb2bd59e2160b17a2ca4b3387c3",
+  "asset_validation": "qa/infrastructure_asset_validation.json",
+  "browser_validation": "qa/infrastructure_browser_validation.json",
+  "date": "2026-09-29"
+}

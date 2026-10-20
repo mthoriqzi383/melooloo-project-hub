@@ -1,0 +1,116 @@
+/* HR / SDM: five distinct, source-led presentation compositions. */
+.hr-scene{display:flex;flex-direction:column;--hr-ink:#153e2b;--hr-soft:#526e59;--hr-line:#b7c8b4;--hr-lime:#c9e99e}
+.hr-scene .story-copy{flex:none;max-width:100%}
+.hr-scene .story-copy h2{font-size:clamp(27px,3.85cqw,62px);line-height:1;max-width:22em}
+.hr-scene .story-copy p{font-size:clamp(10px,1.08cqw,18px);line-height:1.25;margin-top:.55cqw;max-width:68em}
+.hr-content{flex:1;min-height:0;margin-top:1.1cqw;display:flex;gap:.75cqw}
+.hr-note{border-top:1px solid var(--hr-line);padding-top:.4cqw;margin-top:.5cqw;font-size:clamp(8px,.76cqw,12px);line-height:1.2;color:#657a66;flex:none}
+.hr-scene small{font-weight:800;letter-spacing:.12em}
+.hr-scene p{margin:0}
+.hr-scene button{font:inherit;color:inherit;cursor:pointer}
+.hr-scene [data-beat-target]{transition:background-color .22s ease,box-shadow .22s ease,transform .22s ease}
+.hr-scene [data-beat-target]:focus-visible{outline:3px solid #397d4e;outline-offset:2px}
+.hr-scene [data-beat-target][data-active="true"]{box-shadow:inset 0 0 0 .21cqw #5d9d58;background-color:#dcebcf}
+.hr-beat-panel{min-width:0;background:#143e2c;color:#f5f9ee;display:flex;flex-direction:column;padding:.75cqw .9cqw}
+.hr-beat-panel small{font-size:.67cqw;color:#caec9b}
+.hr-beat-panel strong{font-size:1.18cqw;line-height:1.05;margin:.28cqw 0}
+.hr-beat-panel p{font-size:.81cqw;line-height:1.25;color:#e0ecdf}
+
+/* 48 — people as a quality system, anchored by property-only greenhouse imagery. */
+.story-visual:has(.hr-dark){background:#0b2c20;color:#f8fbf3}
+.story-visual:has(.hr-dark)::before{background:radial-gradient(circle at 72% 75%,rgba(101,155,87,.17),transparent 44%)}
+.story-visual:has(.hr-dark) .story-topline,.story-visual:has(.hr-dark) .story-footer{color:#dcebd7;border-color:rgba(227,247,211,.34)}
+.hr-dark .story-overline{color:#c9e99e}
+.hr-dark .story-copy h2{color:#fafcf5;font-size:4.6cqw}
+.hr-dark .story-copy p{color:#dce9dc}
+.hr-dark .hr-note{color:#bbd1be;border-color:rgba(223,245,211,.3)}
+.hr-48 .hr-content{display:grid;grid-template-columns:1.1fr 1fr;gap:1.1cqw}
+.hr-mandate-left{display:flex;flex-direction:column;min-width:0}
+.hr-mandate-left>small{font-size:.7cqw;color:#cde99f}
+.hr-mandate-arc{display:flex;align-items:center;gap:.45cqw;margin:.6cqw 0;font-size:.78cqw;font-weight:800;letter-spacing:.07em;color:#f2f8e9}
+.hr-mandate-arc span{white-space:nowrap}.hr-mandate-arc b{font-size:1.2cqw;color:#a8d682}
+.hr-mandate-left>p{font-size:1.04cqw;line-height:1.25;max-width:43em;color:#dde9d9;margin-bottom:.7cqw}
+.hr-mandate-picture{flex:1;min-height:0;background:linear-gradient(0deg,rgba(3,32,21,.69),transparent 56%),url('assets/editorial/hr-training-v1.png?v=visual-refresh-1') center 55%/cover;position:relative;border:1px solid rgba(221,244,216,.15)}
+.hr-binder-logo{position:absolute;width:5.3cqw;height:auto;left:49%;top:52%;object-fit:contain;transform:perspective(12cqw) rotateX(48deg) rotateZ(-3deg);mix-blend-mode:multiply;opacity:.82;filter:saturate(.7)}
+.hr-mandate-picture span{position:absolute;bottom:.65cqw;left:.7cqw;color:#f2f7ec;background:rgba(9,45,28,.76);padding:.25cqw .4cqw;font-size:.65cqw;font-weight:800;letter-spacing:.05em}
+.hr-mandate-right{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:.65cqw}
+.hr-mandate-right>div{display:flex;flex-direction:column;border-top:2px solid #9dcf7b;background:rgba(232,246,219,.1);padding:.7cqw .85cqw}
+.hr-mandate-right small{font-size:.62cqw;color:#c3e4a5}
+.hr-mandate-right strong{font-size:3.05cqw;line-height:1;letter-spacing:-.07em;color:#d4efa3;margin:auto 0 .1cqw}
+.hr-mandate-right span{font-size:.9cqw;font-weight:750;color:#f1f8e9}.hr-mandate-right em{font-size:.69cqw;color:#c7d9c6;font-style:normal;margin-top:.35cqw}
+
+/* 49 — staffing growth and three hiring gates. */
+.hr-49 .hr-content{display:grid;grid-template-columns:.9fr 1.1fr;gap:1cqw}
+.hr-hiring-scale{display:flex;flex-direction:column;background:#143e2b;color:#f5faee;padding:1.1cqw 1.25cqw;min-width:0}
+.hr-hiring-scale>small,.hr-hiring-process>small{font-size:.7cqw;color:#cbe99d}
+.hr-hiring-slope{width:100%;height:13cqw;flex:1;min-height:5cqw;margin:.4cqw 0 -.8cqw;overflow:visible}
+.hr-hiring-slope path{fill:none;stroke:#bce28e;stroke-width:2.5;stroke-linecap:round}
+.hr-hiring-slope circle{fill:#d7f3a4;stroke:#143e2b;stroke-width:2}
+.hr-hiring-line{display:flex;align-items:flex-end;justify-content:space-between;gap:.4cqw;flex:none;margin:.25cqw 0 .8cqw;min-height:0}
+.hr-hiring-line>div{min-width:0;display:flex;flex-direction:column;gap:.3cqw}
+.hr-hiring-line b{font-size:.8cqw;color:#d1e5cf}.hr-hiring-line strong{font-size:4.2cqw;line-height:1;letter-spacing:-.08em;color:#d1eda0}
+.hr-hiring-line span{font-size:.72cqw;line-height:1.16;color:#dbe8d9;max-width:8.5em}
+.hr-hiring-line i{height:1px;flex:1;background:#a8d884;align-self:center;margin-bottom:1cqw}
+.hr-hiring-scale>p{font-size:.9cqw;line-height:1.24;border-top:1px solid rgba(233,250,218,.3);padding-top:.75cqw;color:#e1ebdb}
+.hr-hiring-process{display:flex;flex-direction:column;gap:.47cqw;min-height:0}
+.hr-hiring-process>small{color:#527954;padding:.1cqw 0 .3cqw}
+.hr-hiring-process>button{appearance:none;text-align:left;border:1px solid #bdcdb7;background:#edf3e8;display:grid;grid-template-columns:3.2cqw 1fr;gap:.12cqw .55cqw;align-items:center;padding:.55cqw .75cqw;flex:1;min-height:0}
+.hr-hiring-process>button b{grid-row:1/3;font-size:1.7cqw;color:#79a86b}
+.hr-hiring-process>button strong{font-size:1.28cqw;line-height:1}.hr-hiring-process>button span{font-size:.78cqw;line-height:1.18;color:#536e57}
+.hr-hiring-process .hr-beat-panel{min-height:6.3cqw;flex:none}
+
+/* 50 — complete reporting structure from the source page. */
+.hr-50 .hr-content{flex-direction:column;gap:0}
+.hr-org-ceo{align-self:center;background:#143e2b;color:#fff;text-align:center;min-width:15cqw;padding:.35cqw 1cqw}
+.hr-org-ceo small{display:block;font-size:.55cqw;color:#cfe9b0}.hr-org-ceo strong{display:block;font-size:1.4cqw;letter-spacing:.04em}
+.hr-org-connector{height:1.6cqw;margin:0 16%;border-bottom:2px solid #5d8c5b;position:relative}
+.hr-org-connector i{position:absolute;left:50%;height:100%;border-left:2px solid #5d8c5b}
+.hr-org-columns{display:grid;grid-template-columns:1fr 1.32fr .88fr;gap:.65cqw;flex:1;min-height:0;padding-top:.55cqw}
+.hr-org-branch{appearance:none;min-width:0;border:1px solid #bdcfb8;background:#edf4e9;display:flex;flex-direction:column;padding:.55cqw .7cqw;text-align:left;position:relative}
+.hr-org-branch:before{content:"";position:absolute;top:-.55cqw;left:50%;height:.55cqw;border-left:2px solid #5d8c5b}
+.hr-org-branch>small{font-size:.62cqw;color:#5c825b}.hr-org-branch>strong{font-size:1.42cqw;line-height:1.05;margin:.3cqw 0 .45cqw;letter-spacing:-.04em}
+.hr-org-splits{display:grid;grid-auto-columns:1fr;grid-auto-flow:column;gap:.45cqw;flex:1;min-height:0}
+.hr-org-splits>div{display:flex;flex-direction:column;min-width:0;justify-content:center;gap:.12cqw}
+.hr-org-role{display:flex;align-items:center;justify-content:center;text-align:center;background:#d5e6d1;border:1px solid #afc9ac;min-height:2.5cqw;padding:.25cqw;font-size:.77cqw;font-weight:700;line-height:1.12}
+.hr-org-role.is-head{background:#b9d9b6}.hr-org-splits i{text-align:center;font-style:normal;color:#639061;font-size:.8cqw;line-height:1}
+.hr-org-bottom{display:grid;grid-template-columns:1.3fr 1fr;gap:.65cqw;min-height:5.6cqw;margin-top:.55cqw}
+.hr-org-bottom>span{display:flex;align-items:center;background:#e2eee0;padding:.7cqw;font-size:.8cqw;line-height:1.2;color:#4e6b55}
+
+/* 51 — total workforce chart with farmer count shown inside each bar. */
+.hr-51 .hr-content{flex-direction:column;gap:.45cqw}
+.hr-headcount-top{display:flex;align-items:end;justify-content:space-between;gap:1cqw;border-bottom:1px solid #9db79a;padding-bottom:.35cqw}
+.hr-headcount-top strong{font-size:2.4cqw;line-height:1;letter-spacing:-.06em}.hr-headcount-top strong i{font-style:normal;color:#80ae69}.hr-headcount-top em{font-size:.95cqw;font-style:normal;letter-spacing:0}
+.hr-headcount-top>span{font-size:.68cqw;font-weight:800;letter-spacing:.08em}
+.hr-headcount-plot{display:grid;grid-template-columns:repeat(11,1fr);gap:.55cqw;align-items:end;flex:1;min-height:0;border-bottom:1px solid #789e78;padding:0 .3cqw}
+.hr-headcount-col{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;min-height:0;position:relative}
+.hr-headcount-col>span{position:absolute;bottom:calc(var(--height) + 1.2cqw);font-size:.68cqw;font-weight:800}
+.hr-headcount-col:last-child>span{bottom:calc(var(--height) - 1.1cqw);z-index:1}
+.hr-headcount-col i{display:block;width:100%;height:var(--height);background:linear-gradient(to top,#195537 0 var(--farmer),#afd993 var(--farmer) 100%);min-height:1cqw;animation:hr-grow .75s both;transform-origin:bottom}
+.hr-headcount-col b{font-size:.68cqw;position:absolute;bottom:-1.18cqw}
+.hr-headcount-legend{display:flex;gap:1.3cqw;margin-top:1.25cqw;font-size:.65cqw;color:#4f6e54}
+.hr-headcount-legend span{display:flex;align-items:center;gap:.3cqw}.hr-headcount-legend i{display:block;width:.75cqw;height:.75cqw;background:#195537}.hr-headcount-legend span+span i{background:#afd993}
+.hr-headcount-milestones{display:grid;grid-template-columns:repeat(4,1fr) 1.35fr;gap:.42cqw;min-height:7.7cqw}
+.hr-headcount-milestones>button{appearance:none;border:1px solid #bbcfb5;background:#e9f1e5;text-align:left;padding:.5cqw;display:flex;flex-direction:column}
+.hr-headcount-milestones>button small{font-size:.63cqw;color:#58815b}.hr-headcount-milestones>button strong{font-size:1.55cqw;line-height:1;margin:auto 0 .2cqw}.hr-headcount-milestones>button span{font-size:.68cqw;line-height:1.1}
+.hr-headcount-milestones .hr-beat-panel{padding:.5cqw .6cqw}.hr-headcount-milestones .hr-beat-panel strong{font-size:1cqw}.hr-headcount-milestones .hr-beat-panel p{font-size:.71cqw}
+
+/* 52 — payroll progression and source reconciliation, kept separate from OPEX. */
+.hr-52 .hr-content{flex-direction:column;gap:.55cqw}
+.hr-payroll-head{display:flex;align-items:end;justify-content:space-between;gap:1cqw;border-bottom:1px solid #98b398;padding-bottom:.45cqw}
+.hr-payroll-head>div{display:flex;flex-direction:column;gap:.2cqw}
+.hr-payroll-head small{font-size:.64cqw;color:#5c805d}.hr-payroll-head strong{font-size:2.3cqw;line-height:1;letter-spacing:-.06em}.hr-payroll-head i{font-style:normal;color:#88b870}.hr-payroll-head em{font-size:.9cqw;font-style:normal;letter-spacing:0}
+.hr-payroll-head>div+div strong{font-size:1.5cqw}
+.hr-payroll-chart{display:grid;grid-template-columns:repeat(11,1fr);align-items:end;gap:.55cqw;flex:1;min-height:0;border-bottom:1px solid #729671;padding:0 .3cqw}
+.hr-payroll-bar{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;position:relative}
+.hr-payroll-bar span{position:absolute;bottom:calc(var(--height) + 1.15cqw);font-size:.65cqw;font-weight:800;white-space:nowrap}
+.hr-payroll-bar:last-child span{bottom:calc(var(--height) - 1.1cqw);z-index:1}
+.hr-payroll-bar i{display:block;height:var(--height);width:100%;background:linear-gradient(0deg,#226542,#92c780);transform-origin:bottom;animation:hr-grow .75s both}
+.hr-payroll-bar:nth-last-child(-n+2) i{background:linear-gradient(0deg,#986d31,#dbbc70)}
+.hr-payroll-bar b{font-size:.66cqw;position:absolute;bottom:-1.16cqw}
+.hr-payroll-bottom{display:grid;grid-template-columns:1.8fr 1fr;gap:.55cqw;min-height:9cqw;margin-top:1.2cqw}
+.hr-payroll-choices{display:grid;grid-template-columns:repeat(3,1fr);gap:.42cqw}
+.hr-payroll-choices>button{appearance:none;background:#e7f0e2;border:1px solid #b9cfb3;text-align:left;display:flex;flex-direction:column;padding:.55cqw}
+.hr-payroll-choices>button small{font-size:.62cqw;color:#5b825d}.hr-payroll-choices>button strong{font-size:1.22cqw;line-height:1;margin:auto 0 .3cqw}.hr-payroll-choices>button span{font-size:.68cqw;line-height:1.1}
+
+@keyframes hr-grow{from{transform:scaleY(.05)}to{transform:scaleY(1)}}
+@media(prefers-reduced-motion:reduce){.hr-headcount-col i,.hr-payroll-bar i{animation:none}}

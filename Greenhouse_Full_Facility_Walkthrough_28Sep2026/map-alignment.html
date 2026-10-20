@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mall Artha Gading · mapped site alignment</title>
+<style>
+  :root{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:#1a3028;background:#eeeae0}
+  *{box-sizing:border-box}body{margin:0}a{color:#275947}
+  header{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:16px 24px;background:#f8f6ef;border-bottom:1px solid #ccd0c5}
+  .brand{font-size:23px;font-weight:800;letter-spacing:-1.4px;text-decoration:none;color:#1c523e}.brand small{display:block;font-size:9px;letter-spacing:2px}
+  header a.return{font-size:13px;font-weight:700;text-decoration:none;background:#1d513c;color:white;padding:11px 15px;border-radius:10px}
+  main{display:grid;grid-template-columns:minmax(320px,1fr) 345px;gap:18px;max-width:1540px;margin:0 auto;padding:20px}
+  .card{background:#fbfaf6;border:1px solid #d2d7ce;border-radius:16px;overflow:hidden;box-shadow:0 5px 24px #30453610}
+  .mapbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #d2d7ce}
+  h1{font-size:21px;line-height:1.15;margin:0}h2{font-size:16px;margin:0 0 12px}p{line-height:1.52;margin:0 0 13px;font-size:13px}
+  .sub{font-size:12px;color:#596c5f;margin-top:5px}
+  .filters{display:flex;flex-wrap:wrap;gap:9px;font-size:12px;font-weight:650}.filters label{white-space:nowrap;cursor:pointer}.filters input{accent-color:#286a4a}
+  .mapwrap{position:relative;background:#e5e5d9;overflow:hidden}svg{display:block;width:100%;height:min(72vh,850px);min-height:530px}
+  .key{position:absolute;left:15px;bottom:15px;background:#fbfaf2e8;backdrop-filter:blur(8px);padding:9px 12px;border-radius:9px;font-size:11px;line-height:1.8;color:#32453a}
+  .swatch{display:inline-block;width:19px;height:10px;margin-right:6px;vertical-align:middle;border:1px solid #6d8975}.dash{border:2px dashed #be7636;background:#eaab6970}
+  aside{padding:20px}.kicker{font-size:10px;text-transform:uppercase;letter-spacing:2px;font-weight:800;color:#9b6a35;margin-bottom:8px}
+  .badge{display:inline-block;border-radius:100px;background:#dce7dc;color:#1b5a3c;padding:6px 10px;font-size:11px;font-weight:750;margin:0 5px 8px 0}
+  .metric{display:grid;grid-template-columns:1fr auto;gap:8px;border-bottom:1px solid #dbe0d7;padding:11px 0;font-size:12px}.metric strong{font-size:13px}
+  .notice{padding:13px;border-left:4px solid #c27839;background:#faf1e5;border-radius:5px;margin:14px 0}.notice p:last-child{margin-bottom:0}
+  .roadlist{font-size:12px;line-height:1.8;padding-left:19px;margin-top:0}
+  footer{font-size:11px;color:#58695b;padding:14px 18px;background:#f6f5ee;border-top:1px solid #d8dbd1}
+  @media(max-width:900px){main{grid-template-columns:1fr}svg{height:65vh;min-height:460px}}
+  @media(max-width:570px){header{padding:13px}header a.return{font-size:11px;padding:10px}.mapbar{align-items:flex-start}h1{font-size:18px}main{padding:8px;gap:8px}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="./index.html?city=1&fly=1#CORNER_SE">melooloo<small>SMART GREENHOUSE</small></a><div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><a href="../index.html" style="color:#1c523e;font-size:13px;font-weight:700">← All pages</a><a class="return" href="./index.html?city=1&fly=1#CORNER_SE">Explore 3D site ↗</a></div></header>
+<main>
+  <section class="card">
+    <div class="mapbar"><div><h1>Mall Artha Gading · site alignment</h1><div class="sub">North-up plan · greenhouse axis parallel to mall · public OpenStreetMap geometry</div></div><div class="filters"><label><input type="checkbox" data-layer="buildings" checked> Nearby buildings</label><label><input type="checkbox" data-layer="trees" checked> Trees</label><label><input type="checkbox" data-layer="proposal" checked> GH proposal</label></div></div>
+    <div class="mapwrap"><svg id="plan" role="img" aria-label="North-up plan of Mall Artha Gading showing mapped roads, buildings and the mall-parallel concept greenhouse footprint"></svg><div class="key"><div><span class="swatch" style="background:#b6beb8"></span>Mapped mall footprint</div><div><span class="swatch" style="background:#b0c3b7"></span>Mapped neighboring buildings</div><div><span class="swatch dash"></span>Parallel concept footprint · roof fit unverified</div></div></div>
+    <footer>© OpenStreetMap contributors · ODbL 1.0 · retrieved 30 Sep 2026 · <a href="https://www.openstreetmap.org/way/99362081" target="_blank" rel="noopener">View source mall outline</a>. Road lines and building footprints are mapped features; drawn road widths, heights and roof use remain estimates.</footer>
+  </section>
+  <aside class="card">
+    <div class="kicker">Mapped versus proposed</div>
+    <h2>How the simulator aligns</h2>
+    <p>The mall boundary, surrounding streets, nearby building footprints, land cover and mapped tree rows are projected from OpenStreetMap into the walkthrough’s metre-based coordinates. This plan uses the same data as the 3D scene.</p>
+    <div><span class="badge" id="mallCount">Mall outline</span><span class="badge" id="buildingCount">Nearby buildings</span><span class="badge" id="roadCount">Roads</span></div>
+    <div class="metric"><span>Mapped mall ground footprint</span><strong id="mallArea">—</strong></div>
+    <div class="metric"><span>Greenhouse concept</span><strong>78 × 86 m</strong></div>
+    <div class="metric"><span>Axis parallel to mall</span><strong>29° E of N</strong></div>
+    <div class="metric"><span>Plan orientation</span><strong>North up</strong></div>
+    <div class="notice"><p><strong>Rooftop fit is unverified.</strong> The orange outline fits within the mapped ground boundary, but that does not establish usable roof area. Existing rooftop structures, floor levels, support, setbacks, access and mall approval require a roof survey and drawings.</p></div>
+    <h2>Mapped street context</h2>
+    <ul class="roadlist"><li>Jalan Yos Sudarso · west corridor</li><li>Jalan Artha Gading Selatan · mall frontage and west/south approaches</li><li>Jalan Artha Gading Boulevard · north district</li><li>Jalan Permata Artha Gading · eastern district</li></ul>
+    <p>Source: <a href="https://www.openstreetmap.org/way/99362081" target="_blank" rel="noopener">Mall Artha Gading outline</a> and adjacent OSM ways. The official <a href="https://www.arthagading.com/" target="_blank" rel="noopener">mall site</a> confirms the venue and address.</p>
+  </aside>
+</main>
+<script type="module" src="./map-alignment.js?v=1"></script>
+</body>
+</html>

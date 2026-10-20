@@ -1,0 +1,75 @@
+/* Finance proof sequence: selected interactive arguments and a clearer cost/sensitivity view. */
+.fin-interactive [data-beat-target]{cursor:pointer;transition:box-shadow .22s ease,transform .22s ease,background-color .22s ease}
+.fin-interactive [data-beat-target]:focus-visible{outline:3px solid #24714a;outline-offset:2px}
+.fin-interactive [data-beat-target]:hover{transform:translateY(-2px)}
+.fin-beat-panel{background:#dfeeda;color:#173f2d;padding:.55cqw .75cqw;display:flex;flex-direction:column;min-width:0}
+.fin-beat-panel small{font-size:.63cqw;color:#5f8758;font-weight:800;letter-spacing:.12em}
+.fin-beat-panel strong{font-size:1.05cqw;line-height:1.05;margin:.17cqw 0}
+.fin-beat-panel p{font-size:.72cqw;line-height:1.2;margin:0}
+
+/* 56 — the funded year and the expansion years remain visible together. */
+.fin-funding-select{appearance:none;border:0;border-bottom:1px solid currentColor;background:transparent;color:inherit;text-align:left;font:inherit;font-size:.8cqw;letter-spacing:.1em;font-weight:800;padding:0 0 .36cqw;align-self:flex-start}
+.fin-funding-initial .fin-funding-select{color:#cce8aa}
+.fin-funding-expansion .fin-funding-select{color:#557f57}
+.fin-funding-select[data-active="true"]{color:#a5d960;border-bottom-width:3px}
+.fin-funding-expansion .fin-funding-select[data-active="true"]{color:#25703b}
+.finance-page-56 .fin-funding-expansion .fin-expansion-total{margin:.7cqw 0}
+.finance-page-56 .fin-funding-split{height:8cqw;min-height:70px}
+.finance-page-56 .fin-funding-expansion .fin-beat-panel{margin-top:.6cqw;min-height:4.5cqw;flex:1}
+.finance-page-56 .fin-term-row{margin-top:.3cqw;padding-top:.5cqw}
+
+/* 57 — annual CAPEX/OPEX groups, with the five-year aggregate separated. */
+.fin-spend-visual{display:grid;grid-template-columns:1.75fr .8fr;gap:1cqw;flex:1;min-height:0}
+.fin-spend-chart{display:flex;flex-direction:column;min-height:0;border:1px solid #cbdcca;background:#fffdf9;padding:.7cqw 1cqw}
+.fin-spend-legend{display:flex;align-items:center;gap:1cqw;color:#426447;font-size:.69cqw;font-weight:800;letter-spacing:.06em}
+.fin-spend-legend span{display:flex;align-items:center;gap:.3cqw}.fin-spend-legend i{display:block;width:.7cqw;height:.7cqw;background:#81b275}
+.fin-spend-legend span+span i{background:#194f35}.fin-spend-legend b{margin-left:auto;font-weight:750;color:#6c896c}
+.fin-spend-years{display:grid;grid-template-columns:repeat(6,1fr);gap:.5cqw;align-items:end;flex:1;min-height:0;border-bottom:1px solid #7a9c77;padding:.9cqw .2cqw 0}
+.fin-spend-year{height:100%;display:flex;flex-direction:column;align-items:center;min-width:0}
+.fin-spend-pair{display:flex;align-items:end;gap:.15cqw;flex:1;width:100%;min-height:0}
+.fin-spend-pair>div{display:flex;align-items:start;justify-content:center;width:50%;min-height:2px;position:relative;animation:grow-bar .7s ease both;transform-origin:bottom}
+.fin-spend-pair span{position:absolute;top:.35cqw;left:50%;transform:translateX(-50%);font-size:.78cqw;line-height:1;font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}
+.fin-spend-year:nth-child(2) .fin-spend-capex span{top:-1.05cqw;color:#245a37}
+.fin-spend-capex{background:linear-gradient(0deg,#598e61,#badc99);color:#123c29}
+.fin-spend-opex{background:linear-gradient(0deg,#174b34,#60a06a);color:#f7fff1}
+.fin-spend-year>strong{height:1.4cqw;font-size:.7cqw;line-height:1.4cqw;color:#3f664a}
+.fin-spend-summary{display:flex;flex-direction:column;background:#143f2c;color:#f6f9ee;padding:1cqw 1.1cqw}
+.fin-spend-summary small{font-size:.67cqw;color:#cfe9aa;line-height:1.25;letter-spacing:.08em}
+.fin-spend-summary strong{font-size:2.15cqw;letter-spacing:-.055em;line-height:1;margin:1.1cqw 0 .2cqw}
+.fin-spend-summary em{font-size:.88cqw;font-style:normal;letter-spacing:0}
+.fin-spend-summary>span{font-size:.78cqw;line-height:1.23;color:#dfecdd}
+.fin-spend-explain{margin-top:auto;border-top:1px solid rgba(232,250,222,.35);padding-top:.7cqw;font-size:.73cqw;line-height:1.22;color:#e0ecdf}
+.fin-spend-foot{display:flex;justify-content:space-between;align-items:center;gap:1.5cqw;margin-top:.45cqw;min-height:2.2cqw}
+.fin-spend-foot .fin-source{margin:0;white-space:nowrap}
+.fin-spend-foot>span{font-size:.72cqw;color:#648067;text-align:right}
+
+/* 60 — presenter beats support the cash-return curve. */
+.fin-fcf-beats{display:grid;grid-template-columns:repeat(5,1fr);gap:.5cqw;margin-top:.4cqw}
+.fin-fcf-beats button{appearance:none;text-align:left;border:1px solid #bfd2b8;background:#edf3e7;color:#16432e;display:flex;justify-content:space-between;align-items:center;padding:.32cqw .5cqw;font:inherit}
+.fin-fcf-beats button b{font-size:.68cqw}.fin-fcf-beats button strong{font-size:.88cqw}
+.fin-fcf-beats button[data-active="true"]{background:#17472f;color:#f7f9ed;box-shadow:inset 0 0 0 2px #9bcb7d}
+.finance-page-60 .fin-fcf-svg{margin-top:.35cqw}
+.fin-fcf-focus{margin-top:.35cqw}
+.fin-fcf-focus .fin-beat-panel{display:grid;grid-template-columns:4.2cqw 13cqw 1fr;align-items:center;gap:.6cqw;min-height:3.2cqw;padding:.35cqw .65cqw}
+.fin-fcf-focus .fin-beat-panel strong{margin:0}.fin-fcf-focus .fin-beat-panel p{font-size:.75cqw}
+.finance-page-60 .fin-cash-footer{padding-top:.45cqw}.finance-page-60 .fin-cash-footer .fin-stat{padding-top:.4cqw}
+
+/* 63 — actual source sensitivity values replace a row of abstract thresholds. */
+.fin-scenarios-detailed{gap:.45cqw}
+.fin-scenarios-detailed .fin-scenario-grid{flex:none;height:12.5cqw;gap:.5cqw}
+.fin-scenarios-detailed .fin-scenario{appearance:none;text-align:left;padding:.7cqw .8cqw}
+.fin-scenarios-detailed .fin-scenario strong{font-size:1.65cqw}
+.fin-scenarios-detailed .fin-scenario[data-active="true"]{outline:3px solid #3a864a;outline-offset:-3px}
+.fin-scenarios-detailed .fin-scenario.base[data-active="true"]{outline-color:#d8f4a3}
+.fin-sensitivity-table{border:1px solid #bbd0b4;display:flex;flex-direction:column;min-height:0;flex:1;background:#f7faf4}
+.fin-sensitivity-head,.fin-sensitivity-row{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:.3cqw;align-items:center;padding:.4cqw .65cqw}
+.fin-sensitivity-head{background:#18452f;color:#f4faee;font-size:.62cqw;font-weight:800;letter-spacing:.08em}
+.fin-sensitivity-head span+span{text-align:right}
+.fin-sensitivity-row{flex:1;border-top:1px solid #c7d9c3;font-size:.8cqw}
+.fin-sensitivity-row:nth-child(odd){background:#e9f1e4}
+.fin-sensitivity-row strong{font-size:.93cqw}.fin-sensitivity-row span{text-align:right;font-weight:700}
+.fin-sensitivity-row span:nth-child(2){color:#9a5b3b}
+.fin-scenario-bottom{display:grid;grid-template-columns:1.25fr 1fr;gap:.55cqw;min-height:4.2cqw}
+.fin-scenario-bottom>span{background:#e6f0df;display:flex;align-items:center;padding:.55cqw .7cqw;color:#4f6f53;font-size:.75cqw;line-height:1.24}
+
+@media(prefers-reduced-motion:reduce){.fin-spend-pair>div{animation:none}}
