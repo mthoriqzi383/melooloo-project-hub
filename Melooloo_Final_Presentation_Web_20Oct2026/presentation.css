@@ -61,3 +61,4 @@ html.editor-preview .story-canvas [data-beat-target]{cursor:pointer}
 .landing-meta{flex-wrap:wrap}
 .landing-download{color:var(--lime);font-weight:750;text-decoration:none;white-space:nowrap;border-bottom:1px solid rgba(199,237,148,.55);padding-bottom:3px}
 .landing-download:hover,.landing-download:focus-visible{color:#e0f6c6;border-bottom-color:currentColor}
+@media(max-width:650px){.header-actions a[href="editor.html"]{display:none}.landing-meta{gap:10px}}
