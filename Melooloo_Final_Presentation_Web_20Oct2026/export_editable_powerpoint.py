@@ -1,4 +1,4 @@
-"""Rebuild the 66-slide HTML deck as editable PowerPoint objects.
+"""Rebuild the 64-slide HTML deck as editable PowerPoint objects.
 
 Text, cards, bars, lines, markers, borders, and diagram labels become native
 PowerPoint objects. Photographs and brand artwork remain separate replaceable
@@ -457,15 +457,15 @@ def add_scatter(slide, source):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--base-url", default="http://127.0.0.1:8787")
-    parser.add_argument("--output", default=str(HERE / "exports" / "Melooloo_Final_Presentation_66_Editable.pptx"))
-    parser.add_argument("--limit", type=int, default=66)
+    parser.add_argument("--output", default=str(HERE / "exports" / "Melooloo_Final_Presentation_64_Editable.pptx"))
+    parser.add_argument("--limit", type=int, default=64)
     args = parser.parse_args()
     output = Path(args.output).resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
     prs = Presentation()
     prs.slide_width, prs.slide_height = Inches(SLIDE_W), Inches(SLIDE_H)
     prs.core_properties.title = "Melooloo — Presentasi Sidang Akhir (Editable)"
-    prs.core_properties.subject = "PowerPoint objects rebuilt from the 66-slide web deck"
+    prs.core_properties.subject = "PowerPoint objects rebuilt from the 64-slide web deck"
     prs.core_properties.author = "Melooloo"
     blank = prs.slide_layouts[6]
     manifest=[]
@@ -479,7 +479,7 @@ def main():
         page.route(f"{args.base_url.rstrip('/')}**", local)
         page.goto(f"{args.base_url.rstrip('/')}/{HERE.name}/index.html#slide=1",wait_until="networkidle",timeout=60000)
         route=page.locator(".drawer-item").evaluate_all("items=>items.map(e=>Number(e.dataset.page))")
-        if len(route)!=66 or set(route)!=set(range(1,67)):
+        if len(route)!=64 or set(route)!=(set(range(1,67))-{45,46}):
             raise RuntimeError(f"Invalid source route: {route}")
         for pos,source in enumerate(route[:args.limit],1):
             if pos>1: page.evaluate("n=>location.hash=`#slide=${n}`",source)
@@ -492,12 +492,12 @@ def main():
             if source in SCATTER: add_scatter(slide,source)
             title=payload["label"].split(": ",1)[-1]
             slide.notes_slide.notes_text_frame.text=(
-                f"Melooloo presentation {pos}/66 · source slide {source}\n{title}\n"
+                f"Melooloo presentation {pos}/64 · source slide {source}\n{title}\n"
                 f"Interactive web version: {PUBLIC_URL}#slide={source}\n"
                 "Native PowerPoint text and drawing objects; photos are separate replaceable images."
             )
             manifest.append({"presentation_slide":pos,"source_slide":source,"title":title,"objects":len(slide.shapes),"editable_text_boxes":sum(s.has_text_frame and bool(s.text.strip()) for s in slide.shapes)})
-            print(f"{pos:02d}/{min(args.limit,66)} source {source:02d}: {len(slide.shapes)} objects",flush=True)
+            print(f"{pos:02d}/{min(args.limit,64)} source {source:02d}: {len(slide.shapes)} objects",flush=True)
         browser.close()
         prs.save(output)
     output.with_suffix(".json").write_text(json.dumps({"format":"editable native PowerPoint export","slides":manifest},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")

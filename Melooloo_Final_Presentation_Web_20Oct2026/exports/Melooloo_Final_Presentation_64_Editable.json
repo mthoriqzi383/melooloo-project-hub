@@ -1,0 +1,453 @@
+{
+  "format": "editable native PowerPoint export",
+  "slides": [
+    {
+      "presentation_slide": 1,
+      "source_slide": 1,
+      "title": "Melooloo",
+      "objects": 51,
+      "editable_text_boxes": 12
+    },
+    {
+      "presentation_slide": 2,
+      "source_slide": 2,
+      "title": "Our Shareholders",
+      "objects": 17,
+      "editable_text_boxes": 8
+    },
+    {
+      "presentation_slide": 3,
+      "source_slide": 3,
+      "title": "Peluang di pasar premium",
+      "objects": 158,
+      "editable_text_boxes": 20
+    },
+    {
+      "presentation_slide": 4,
+      "source_slide": 4,
+      "title": "Dua masalah. Satu model.",
+      "objects": 59,
+      "editable_text_boxes": 36
+    },
+    {
+      "presentation_slide": 5,
+      "source_slide": 5,
+      "title": "Struktur industri membuka ruang",
+      "objects": 63,
+      "editable_text_boxes": 26
+    },
+    {
+      "presentation_slide": 6,
+      "source_slide": 6,
+      "title": "Visi dan standar produk",
+      "objects": 156,
+      "editable_text_boxes": 34
+    },
+    {
+      "presentation_slide": 7,
+      "source_slide": 7,
+      "title": "Business Model Canvas",
+      "objects": 69,
+      "editable_text_boxes": 54
+    },
+    {
+      "presentation_slide": 8,
+      "source_slide": 20,
+      "title": "Tujuan dan Sasaran Operasi",
+      "objects": 69,
+      "editable_text_boxes": 24
+    },
+    {
+      "presentation_slide": 9,
+      "source_slide": 21,
+      "title": "Lokasi dan Rantai Pasok",
+      "objects": 51,
+      "editable_text_boxes": 33
+    },
+    {
+      "presentation_slide": 10,
+      "source_slide": 22,
+      "title": "Lokasi Potensial",
+      "objects": 64,
+      "editable_text_boxes": 25
+    },
+    {
+      "presentation_slide": 11,
+      "source_slide": 23,
+      "title": "Kinerja dan Biaya Operasional",
+      "objects": 47,
+      "editable_text_boxes": 24
+    },
+    {
+      "presentation_slide": 12,
+      "source_slide": 24,
+      "title": "Prioritas Kinerja Operasi",
+      "objects": 41,
+      "editable_text_boxes": 27
+    },
+    {
+      "presentation_slide": 13,
+      "source_slide": 25,
+      "title": "Struktur Organisasi dan Kesiapan Tim",
+      "objects": 35,
+      "editable_text_boxes": 23
+    },
+    {
+      "presentation_slide": 14,
+      "source_slide": 26,
+      "title": "Manajemen Risiko Rantai Pasok",
+      "objects": 48,
+      "editable_text_boxes": 34
+    },
+    {
+      "presentation_slide": 15,
+      "source_slide": 27,
+      "title": "Strategi operasi",
+      "objects": 59,
+      "editable_text_boxes": 18
+    },
+    {
+      "presentation_slide": 16,
+      "source_slide": 28,
+      "title": "Enam pertanyaan operasional",
+      "objects": 43,
+      "editable_text_boxes": 28
+    },
+    {
+      "presentation_slide": 17,
+      "source_slide": 29,
+      "title": "Di dalam satu greenhouse",
+      "objects": 32,
+      "editable_text_boxes": 16
+    },
+    {
+      "presentation_slide": 18,
+      "source_slide": 30,
+      "title": "Teknologi produksi",
+      "objects": 50,
+      "editable_text_boxes": 23
+    },
+    {
+      "presentation_slide": 19,
+      "source_slide": 31,
+      "title": "Sensor → keputusan → aktuator",
+      "objects": 52,
+      "editable_text_boxes": 37
+    },
+    {
+      "presentation_slide": 20,
+      "source_slide": 32,
+      "title": "Mengapa memilih DFT",
+      "objects": 40,
+      "editable_text_boxes": 25
+    },
+    {
+      "presentation_slide": 21,
+      "source_slide": 33,
+      "title": "Produksi tahun demi tahun",
+      "objects": 459,
+      "editable_text_boxes": 45
+    },
+    {
+      "presentation_slide": 22,
+      "source_slide": 34,
+      "title": "Pertumbuhan dari unit yang sama",
+      "objects": 29,
+      "editable_text_boxes": 19
+    },
+    {
+      "presentation_slide": 23,
+      "source_slide": 35,
+      "title": "Banyak. Seragam. Aman.",
+      "objects": 40,
+      "editable_text_boxes": 22
+    },
+    {
+      "presentation_slide": 24,
+      "source_slide": 36,
+      "title": "Kemanisan dibangun per fase",
+      "objects": 47,
+      "editable_text_boxes": 31
+    },
+    {
+      "presentation_slide": 25,
+      "source_slide": 37,
+      "title": "Kapan petani bertindak",
+      "objects": 42,
+      "editable_text_boxes": 25
+    },
+    {
+      "presentation_slide": 26,
+      "source_slide": 38,
+      "title": "Nursery berjalan paralel",
+      "objects": 53,
+      "editable_text_boxes": 29
+    },
+    {
+      "presentation_slide": 27,
+      "source_slide": 39,
+      "title": "Delapan tahap kerja",
+      "objects": 54,
+      "editable_text_boxes": 34
+    },
+    {
+      "presentation_slide": 28,
+      "source_slide": 40,
+      "title": "Apakah tenaga kerja cukup?",
+      "objects": 56,
+      "editable_text_boxes": 29
+    },
+    {
+      "presentation_slide": 29,
+      "source_slide": 41,
+      "title": "Lima panen dari slot 73 hari",
+      "objects": 89,
+      "editable_text_boxes": 16
+    },
+    {
+      "presentation_slide": 30,
+      "source_slide": 42,
+      "title": "Benih dapat ditiru. Sistem tidak.",
+      "objects": 25,
+      "editable_text_boxes": 15
+    },
+    {
+      "presentation_slide": 31,
+      "source_slide": 43,
+      "title": "Investasi benih bertahap",
+      "objects": 55,
+      "editable_text_boxes": 28
+    },
+    {
+      "presentation_slide": 32,
+      "source_slide": 44,
+      "title": "Apa yang sukar disalin",
+      "objects": 41,
+      "editable_text_boxes": 25
+    },
+    {
+      "presentation_slide": 33,
+      "source_slide": 47,
+      "title": "Empat angka inti",
+      "objects": 59,
+      "editable_text_boxes": 18
+    },
+    {
+      "presentation_slide": 34,
+      "source_slide": 48,
+      "title": "Manusia menjaga hasil",
+      "objects": 81,
+      "editable_text_boxes": 31
+    },
+    {
+      "presentation_slide": 35,
+      "source_slide": 49,
+      "title": "Bangun tim, uji kompetensi",
+      "objects": 87,
+      "editable_text_boxes": 28
+    },
+    {
+      "presentation_slide": 36,
+      "source_slide": 50,
+      "title": "Siapa menjaga apa?",
+      "objects": 122,
+      "editable_text_boxes": 28
+    },
+    {
+      "presentation_slide": 37,
+      "source_slide": 51,
+      "title": "Tim tumbuh bersama unit",
+      "objects": 580,
+      "editable_text_boxes": 59
+    },
+    {
+      "presentation_slide": 38,
+      "source_slide": 52,
+      "title": "Biaya orang, tahun demi tahun",
+      "objects": 415,
+      "editable_text_boxes": 89
+    },
+    {
+      "presentation_slide": 39,
+      "source_slide": 53,
+      "title": "Rencana keuangan Melooloo",
+      "objects": 48,
+      "editable_text_boxes": 15
+    },
+    {
+      "presentation_slide": 40,
+      "source_slide": 54,
+      "title": "Asumsi Utama Proyeksi",
+      "objects": 65,
+      "editable_text_boxes": 37
+    },
+    {
+      "presentation_slide": 41,
+      "source_slide": 55,
+      "title": "Initial Investment",
+      "objects": 53,
+      "editable_text_boxes": 28
+    },
+    {
+      "presentation_slide": 42,
+      "source_slide": 56,
+      "title": "Funding Strategy",
+      "objects": 55,
+      "editable_text_boxes": 36
+    },
+    {
+      "presentation_slide": 43,
+      "source_slide": 57,
+      "title": "Belanja bangun, biaya jalan",
+      "objects": 581,
+      "editable_text_boxes": 120
+    },
+    {
+      "presentation_slide": 44,
+      "source_slide": 58,
+      "title": "Pendapatan tumbuh, laba positif sejak Y1",
+      "objects": 437,
+      "editable_text_boxes": 48
+    },
+    {
+      "presentation_slide": 45,
+      "source_slide": 59,
+      "title": "Aset dan ekuitas bertumbuh",
+      "objects": 118,
+      "editable_text_boxes": 46
+    },
+    {
+      "presentation_slide": 46,
+      "source_slide": 60,
+      "title": "Kas kembali pada Tahun 6",
+      "objects": 117,
+      "editable_text_boxes": 49
+    },
+    {
+      "presentation_slide": 47,
+      "source_slide": 61,
+      "title": "Tahun 1 adalah titik kritis",
+      "objects": 47,
+      "editable_text_boxes": 28
+    },
+    {
+      "presentation_slide": 48,
+      "source_slide": 62,
+      "title": "Indikator kelayakan melewati ambang",
+      "objects": 34,
+      "editable_text_boxes": 24
+    },
+    {
+      "presentation_slide": 49,
+      "source_slide": 63,
+      "title": "Pendapatan adalah variabel paling peka",
+      "objects": 80,
+      "editable_text_boxes": 37
+    },
+    {
+      "presentation_slide": 50,
+      "source_slide": 64,
+      "title": "Layak, dengan tiga risiko yang dikawal",
+      "objects": 38,
+      "editable_text_boxes": 19
+    },
+    {
+      "presentation_slide": 51,
+      "source_slide": 8,
+      "title": "Tiga sasaran pemasaran",
+      "objects": 59,
+      "editable_text_boxes": 18
+    },
+    {
+      "presentation_slide": 52,
+      "source_slide": 9,
+      "title": "Enam segmen, dua jalur",
+      "objects": 19,
+      "editable_text_boxes": 10
+    },
+    {
+      "presentation_slide": 53,
+      "source_slide": 10,
+      "title": "Dari TAM ke SOM",
+      "objects": 26,
+      "editable_text_boxes": 16
+    },
+    {
+      "presentation_slide": 54,
+      "source_slide": 11,
+      "title": "Apa yang setara. Apa yang berbeda.",
+      "objects": 25,
+      "editable_text_boxes": 16
+    },
+    {
+      "presentation_slide": 55,
+      "source_slide": 12,
+      "title": "Peta kompetitif",
+      "objects": 73,
+      "editable_text_boxes": 29
+    },
+    {
+      "presentation_slide": 56,
+      "source_slide": 13,
+      "title": "Ruang menuju titik ideal",
+      "objects": 81,
+      "editable_text_boxes": 33
+    },
+    {
+      "presentation_slide": 57,
+      "source_slide": 14,
+      "title": "Posisi merek: kebun di kota",
+      "objects": 55,
+      "editable_text_boxes": 15
+    },
+    {
+      "presentation_slide": 58,
+      "source_slide": 15,
+      "title": "Produk dan harga",
+      "objects": 17,
+      "editable_text_boxes": 10
+    },
+    {
+      "presentation_slide": 59,
+      "source_slide": 16,
+      "title": "Lima kanal distribusi",
+      "objects": 31,
+      "editable_text_boxes": 24
+    },
+    {
+      "presentation_slide": 60,
+      "source_slide": 17,
+      "title": "Komunikasi yang terukur",
+      "objects": 21,
+      "editable_text_boxes": 12
+    },
+    {
+      "presentation_slide": 61,
+      "source_slide": 18,
+      "title": "Brand di titik temu pelanggan",
+      "objects": 22,
+      "editable_text_boxes": 10
+    },
+    {
+      "presentation_slide": 62,
+      "source_slide": 19,
+      "title": "Ekonomi pemasaran",
+      "objects": 20,
+      "editable_text_boxes": 11
+    },
+    {
+      "presentation_slide": 63,
+      "source_slide": 65,
+      "title": "Dari peluang ke keputusan",
+      "objects": 64,
+      "editable_text_boxes": 22
+    },
+    {
+      "presentation_slide": 64,
+      "source_slide": 66,
+      "title": "Terima kasih.",
+      "objects": 53,
+      "editable_text_boxes": 14
+    }
+  ]
+}

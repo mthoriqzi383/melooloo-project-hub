@@ -17,8 +17,9 @@
     {name:'Pasar & merek',start:8,end:19,palette:1,cue:'Dari target menuju pengalaman merek'},
     {name:'Penutup',start:65,end:66,palette:6,cue:'Keputusan dan langkah berikutnya'}
   ];
-  const routeOrder = sections.flatMap(section => Array.from({length:section.end-section.start+1},(_,i)=>section.start+i));
-  if (routeOrder.length !== 66 || new Set(routeOrder).size !== 66) throw new Error('Presentation order must include each source page exactly once.');
+  const reservedPages = new Set([45,46]);
+  const routeOrder = sections.flatMap(section => Array.from({length:section.end-section.start+1},(_,i)=>section.start+i)).filter(n => !reservedPages.has(n));
+  if (routeOrder.length !== 64 || new Set(routeOrder).size !== 64) throw new Error('Presentation route must include 64 pages and exclude Cadangan.');
   const modelUrl = '../Greenhouse_Full_Facility_Walkthrough_28Sep2026/index.html?city=1&fly=1';
   const contexts = {
     21:['CORNER_SE','Lihat lokasi rooftop'],22:['CORNER_SE','Lihat lokasi rooftop'],
@@ -124,10 +125,10 @@
   const sourceWarnings = {
     8:'Halaman Canva ini memakai proyeksi pendapatan Y1 lama. Angka pada desain HTML, Rp7,4 miliar, mengikuti PowerPoint Keuangan Mery halaman 6.',
     17:'Halaman Canva ini memakai anggaran pemasaran Y1 lama. Angka pada desain HTML, Rp768 juta untuk pemasaran dan penjualan, mengikuti tabel OPEX PowerPoint Keuangan Mery halaman 5.',
-    20:'Halaman Canva ini memakai roadmap operasi lama 35→52 greenhouse. Desain HTML dan rangkaian operasi terbaru mengikuti skenario 35→237 greenhouse dari slide operasi rinci dan PowerPoint Keuangan Mery.',
+    20:'Materi operasi awal pada Canva memakai roadmap 35→52 greenhouse; rangkaian operasi rinci setelahnya memakai skenario 35→237 greenhouse. Keduanya dipertahankan sesuai materi sumber.',
     21:'Lokasi Jakarta Selatan dan Timur pada halaman sumber adalah usulan lama. Lokasi rooftop saat ini tetap usulan dan membutuhkan verifikasi lapangan.',
-    23:'Halaman Canva ini memakai model biaya lama. Angka pada desain HTML mengikuti CAPEX dan OPEX Tahun 0 dari PowerPoint Keuangan Mery halaman 5.',
-    25:'Angka headcount pada halaman Canva ini mengikuti skenario 52 greenhouse yang lebih lama. Desain HTML hanya menampilkan struktur fungsi; kebutuhan staf untuk 237 greenhouse perlu dihitung ulang.',
+    23:'Angka slide operasi mengikuti Canva awal. Materi keuangan Mery pada slide 53–64 memakai model yang lebih baru.',
+    25:'Angka headcount pada materi operasi awal mengikuti skenario 52 greenhouse. Materi HR revisi dan skenario operasi rinci memiliki horizon berbeda.',
     43:'Anggaran pemuliaan benih Rp4.250 juta pada halaman sumber adalah usulan tambahan dan belum masuk proyeksi keuangan dasar PowerPoint Mery.',
     51:'Total headcount pada tabel sumber dipakai dalam grafik HTML. Rincian per jabatan belum sepenuhnya menjumlah ke total tercetak; angka tersebut perlu direkonsiliasi sebelum sidang.',
     52:'Payroll all pada tabel SDM tidak sama dengan baris Gaji & tunjangan di OPEX PowerPoint Mery. Total Y9 pada tabel SDM juga tidak sama dengan jumlah empat komponennya (Rp11.255 juta setelah pembulatan vs total tercetak Rp11.524 juta). Perlu rekonsiliasi sebelum sidang.',
@@ -219,20 +220,21 @@
     });
   }
   function showPage(value, options={}) {
-    const nextPage = Math.min(66,Math.max(1,Number(value) || 1));
+    const requestedPage = Math.min(66,Math.max(1,Number(value) || 1));
+    const nextPage = reservedPages.has(requestedPage) ? 47 : requestedPage;
     const routePosition = routeOrder.indexOf(nextPage);
     const previousSection = sectionFor(page);
     const nextSection = sectionFor(nextPage);
     const changed = page !== nextPage;
     page = nextPage;
     if (!playing) { playing = true; $('landing').hidden = true; $('player').hidden = false; }
-    $('slideCount').textContent = `${pad(routePosition+1)} / 66`;
+    $('slideCount').textContent = `${pad(routePosition+1)} / ${routeOrder.length}`;
     $('chapterLabel').textContent = nextSection.name.toUpperCase();
     $('progressChapter').textContent = nextSection.name;
     $('slideTitle').textContent = story[page-1].title;
-    $('progressFill').style.width = `${(routePosition+1) / 66 * 100}%`;
+    $('progressFill').style.width = `${(routePosition+1) / routeOrder.length * 100}%`;
     $('stagePrev').disabled = routePosition === 0;
-    $('stageNext').disabled = routePosition === 65;
+    $('stageNext').disabled = routePosition === routeOrder.length - 1;
     syncContext(); syncDrawer();
     setUrl(`slide=${page}`);
     if (changed || options.force) {
@@ -249,7 +251,7 @@
   }
   function next() {
     if (interactiveBeats[page] && beat < interactiveBeats[page].length-1) setBeat(beat+1);
-    else showPage(routeOrder[Math.min(65,routeOrder.indexOf(page)+1)]);
+    else showPage(routeOrder[Math.min(routeOrder.length - 1,routeOrder.indexOf(page)+1)]);
   }
   function prev() {
     if (interactiveBeats[page] && beat > 0) setBeat(beat-1);
@@ -282,6 +284,7 @@
       heading.textContent = `${pad(section.start)}–${pad(section.end)} / ${section.name.toUpperCase()}`;
       list.append(heading);
       for (let n=section.start;n<=section.end;n++) {
+        if (reservedPages.has(n)) continue;
         const item = document.createElement('button');
         item.type = 'button'; item.className = 'drawer-item'; item.dataset.page = String(n);
         item.dataset.search = `${n} ${story[n-1].title} ${slides[n-1].title} ${slides[n-1].section} ${slides[n-1].text}`.toLocaleLowerCase();
@@ -397,7 +400,7 @@
     if (['ArrowRight','PageDown',' '].includes(event.key)) { event.preventDefault(); next(); }
     else if (['ArrowLeft','PageUp'].includes(event.key)) { event.preventDefault(); prev(); }
     else if (event.key === 'Home') { event.preventDefault(); showPage(1); }
-    else if (event.key === 'End') { event.preventDefault(); showPage(routeOrder[65]); }
+    else if (event.key === 'End') { event.preventDefault(); showPage(routeOrder.at(-1)); }
     else if (event.key.toLowerCase() === 'f') toggleFullscreen();
     else if (event.key.toLowerCase() === 'g') openScene(contexts[page]?.[0] || 'CORNER_SE');
   });

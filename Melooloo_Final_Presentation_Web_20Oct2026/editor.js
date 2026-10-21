@@ -7,9 +7,10 @@
     ['Peluang & model',1,7],['Operasi & teknologi',20,47],['Tim',48,52],
     ['Investasi',53,56],['Kelayakan',57,64],['Pasar & merek',8,19],['Penutup',65,66]
   ];
-  const order = sections.flatMap(([,first,last]) => Array.from({length:last-first+1},(_,i)=>first+i));
+  const reservedPages = new Set([45,46]);
+  const order = sections.flatMap(([,first,last]) => Array.from({length:last-first+1},(_,i)=>first+i)).filter(n=>!reservedPages.has(n));
   const key = 'melooloo-slide-draft-v1';
-  let draft = {schema:1,deck:'Melooloo Final Presentation 66',author:'',slides:{}};
+  let draft = {schema:1,deck:'Melooloo Final Presentation 64',author:'',slides:{}};
   let page = 1;
   let selected = null;
   let texts = [];
@@ -21,10 +22,10 @@
   const status = message => { $('editorStatus').textContent = message; };
   function sanitize(input) {
     if (!input || input.schema !== 1 || typeof input.slides !== 'object') throw new Error('Format draf tidak sesuai.');
-    const result = {schema:1,deck:'Melooloo Final Presentation 66',author:String(input.author || '').slice(0,80),slides:{}};
+    const result = {schema:1,deck:'Melooloo Final Presentation 64',author:String(input.author || '').slice(0,80),slides:{}};
     for (const [number,slide] of Object.entries(input.slides)) {
       const n = Number(number);
-      if (!Number.isInteger(n) || n < 1 || n > 66 || !slide || typeof slide !== 'object') continue;
+      if (!Number.isInteger(n) || n < 1 || n > 66 || reservedPages.has(n) || !slide || typeof slide !== 'object') continue;
       const next = {text:{}};
       for (const [position,patch] of Object.entries(slide.text || {})) {
         const i = Number(position);
@@ -41,7 +42,7 @@
   catch { status('Draf lama tidak dapat dibuka. Mulai dari draf kosong.'); }
   $('editorName').value = draft.author;
   const fromHash = Number(location.hash.match(/^#slide=(\d+)$/)?.[1]);
-  if (Number.isInteger(fromHash) && fromHash >= 1 && fromHash <= 66) page = fromHash;
+  if (Number.isInteger(fromHash) && order.includes(fromHash)) page = fromHash;
   function save() {
     draft.author = $('editorName').value.slice(0,80);
     try { localStorage.setItem(key,JSON.stringify(draft)); status('Draf tersimpan di browser ini.'); }
@@ -63,6 +64,7 @@
     for (const [label,first,last] of sections) {
       let added = false;
       for (let n=first;n<=last;n++) {
+        if (reservedPages.has(n)) continue;
         if (query && !`${n} ${story[n-1].title} ${label}`.toLocaleLowerCase('id').includes(query)) continue;
         if (!added) { const group = document.createElement('div');group.className='slide-group';group.textContent=label.toUpperCase();host.append(group);added=true; }
         const button = document.createElement('button');button.type='button';button.className='slide-row';button.dataset.page=n;
@@ -81,7 +83,7 @@
     $('currentNumber').textContent=pad(page);
     $('currentTitle').textContent=story[page-1].title;
     $('prevSlide').disabled=order.indexOf(page)===0;
-    $('nextSlide').disabled=order.indexOf(page)===65;
+    $('nextSlide').disabled=order.indexOf(page)===order.length-1;
     document.querySelectorAll('.slide-row').forEach(row=>row.setAttribute('aria-current',Number(row.dataset.page)===page?'page':'false'));
     $('slideNote').value=draft.slides[page]?.note || '';
     history.replaceState(null,'',`#slide=${page}`);
@@ -168,7 +170,7 @@
   $('slideSearch').addEventListener('input',buildSlides);
   $('textSearch').addEventListener('input',refreshTexts);
   $('prevSlide').addEventListener('click',()=>showPage(order[Math.max(0,order.indexOf(page)-1)]));
-  $('nextSlide').addEventListener('click',()=>showPage(order[Math.min(65,order.indexOf(page)+1)]));
+  $('nextSlide').addEventListener('click',()=>showPage(order[Math.min(order.length-1,order.indexOf(page)+1)]));
   $('editValue').addEventListener('input',()=>{clearTimeout(saveTimer);saveTimer=setTimeout(updateText,280);});
   $('editValue').addEventListener('blur',()=>{if (saveTimer) {clearTimeout(saveTimer);saveTimer=null;updateText();}});
   for (const field of ['quickTitle','quickLead']) {
@@ -231,7 +233,7 @@
   setInterval(()=>{
     if (!api) return;
     const current=api.getPage();
-    if (current!==page && current>=1 && current<=66) {page=current;selected=null;$('editCard').hidden=true;syncCurrent();refreshTexts();}
+    if (current!==page && order.includes(current)) {page=current;selected=null;$('editCard').hidden=true;syncCurrent();refreshTexts();}
   },500);
   buildSlides();syncCurrent();
 })();
