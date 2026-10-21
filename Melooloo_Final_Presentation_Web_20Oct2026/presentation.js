@@ -94,17 +94,6 @@
       ['Operasi','HRGA, operasi lokasi, head grower, farmer, dan driver membentuk jalur pelaksanaan.'],
       ['Keuangan','Head of Finance memimpin staf Finance & Accounting di bawah Finance Director.']
     ],
-    51: [
-      ['Y0 · mulai','18 personel total menurut tabel sumber; 6 peran farmer tercatat.'],
-      ['Y5 · Jakarta','39 personel saat model menargetkan 103 greenhouse.'],
-      ['Y6 · Surabaya','52 personel saat ekspansi kota kedua dimulai.'],
-      ['Y10 · tiga kota','85 personel dan 41 farmer tercatat pada sumber untuk 237 greenhouse.']
-    ],
-    52: [
-      ['Y0 · awal','Payroll all Rp1.682 juta dan total biaya SDM tercetak Rp1.713 juta.'],
-      ['Y5 · bertambah','Payroll all Rp5.094 juta; hiring Rp6,3 juta, training Rp48 juta, teknologi Rp7 juta.'],
-      ['Y10 · tiga kota','Payroll all Rp11.822 juta dan total biaya SDM tercetak Rp11.905 juta.']
-    ],
     56: [
       ['Modal awal','Lima pendiri menanggung 100% dana awal Rp10.462 juta, masing-masing 20% saham.'],
       ['Ekspansi','Rencana CAPEX Y1–Y10 Rp46.094 juta: 30% kas internal dan 70% kredit investasi.']
@@ -155,7 +144,7 @@
     const section = sectionFor(n);
     const start = `<article class="story-canvas story-${item.type}${wideFigures.has(n)?' story-wide':''} story-chapter-${chapterIndex(n)}${item.type==='finance'?'':' story-visual'}" aria-label="Slide sumber ${n}: ${escape(item.title)}"><div class="story-grain" aria-hidden="true"></div><div class="story-topline"><span><i></i> MELOOLOO / ${escape(section.name).toUpperCase()}</span><span>PRESENTASI ${pad(routeOrder.indexOf(n)+1)} / 66 · ASLI ${pad(n)}</span></div>`;
     const heading = `<div class="story-copy"><div class="story-overline">${escape(section.name)}</div><h2>${escape(item.title)}</h2><p>${escape(item.lead)}</p></div>`;
-    const sourceLabel = n >= 53 && n <= 64 ? `SUMBER: FINANCIAL STRATEGY (MERY) · HALAMAN ${pad(n-52)}` : sourceWarnings[n] ? `SUMBER: PDF ASLI + CATATAN · HALAMAN ${pad(n)}` : `SUMBER: PDF SIDANG AKHIR · HALAMAN ${pad(n)}`;
+    const sourceLabel = n >= 53 && n <= 64 ? `SUMBER: FINANCIAL STRATEGY (MERY) · HALAMAN ${pad(n-52)}` : n >= 48 && n <= 52 ? `SUMBER: PDF SDM REVISI + SLIDE ASLI · HALAMAN ${pad(n)}` : sourceWarnings[n] ? `SUMBER: PDF ASLI + CATATAN · HALAMAN ${pad(n)}` : `SUMBER: PDF SIDANG AKHIR · HALAMAN ${pad(n)}`;
     const footer = `<div class="story-footer"><span>PT MELOOLOO SEGAR INDONESIA</span><span>${sourceLabel}</span></div>`;
     let body;
     const visual = window.MELOOLOO_RENDER_HR?.(n,item,heading) || window.MELOOLOO_RENDER_OPERATIONS?.(n,item,heading) || window.MELOOLOO_RENDER_VISUAL?.(n,item,heading);
