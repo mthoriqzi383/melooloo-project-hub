@@ -20,7 +20,7 @@
   const concept = 'VISUALISASI KONSEP · BUKAN FOTO FASILITAS TERPASANG';
   const fact = (f,i) => `<div class="vs-fact"><small>${String(i+1).padStart(2,'0')}</small><strong>${E(f[0])}</strong><span>${E(f[1])}</span></div>`;
   const facts = (item,count) => `<div class="vs-facts">${item.facts.slice(0,count||item.facts.length).map(fact).join('')}</div>`;
-  const source = (n,label='Lihat data pada halaman asli') => `<button class="vs-source" type="button" data-open-source>${E(label)} <span aria-hidden="true">↗</span></button>`;
+  const source = () => '';
   const photo = (name,caption=concept) => `<div class="vs-photo"><img src="${img(name)}" alt="${E(descriptions[name] || 'Visualisasi konsep Melooloo')}" loading="eager"><span>${E(caption)}</span></div>`;
   const entries = (item,kind='') => `<div class="vs-entries ${kind}">${item.facts.map((f,i)=>`<div class="vs-entry"><b>${String(i+1).padStart(2,'0')}</b><strong>${E(f[0])}</strong><span>${E(f[1])}</span></div>`).join('')}</div>`;
   const beatPanel = count => `<div class="vs-beat-panel" aria-live="polite"><div class="vs-beat-number"><span data-beat-number>01 / ${String(count).padStart(2,'0')}</span><span class="vs-beat-rule" aria-hidden="true"></span></div><strong data-beat-title></strong><p data-beat-description></p><small>KLIK ELEMEN ATAU TEKAN →</small></div>`;
@@ -97,8 +97,7 @@
   }
   function evidence(n,item,heading) {
     const use = n===21 ? fig(21) : n===23 ? fig(23) : fig(n);
-    const note = n===23 ? 'Bagan CAPEX Canva menggunakan model lama; angka terbaru ada pada bagian keuangan.' : n===21 ? 'Peta sumber · lokasi perlu verifikasi lapangan.' : 'Data dan bagan dari materi sumber.';
-    return `<div class="vscene vs-evidence"><div class="vs-evidence-side">${heading}${facts(item,3)}<p>${E(note)}</p>${source(n)}</div><button class="vs-evidence-image" type="button" data-open-source aria-label="Perbesar data sumber"><img src="${use}" alt="Bagan sumber untuk halaman ${n}"></button></div>`;
+    return `<div class="vscene vs-evidence"><div class="vs-evidence-side">${heading}${facts(item,3)}</div><button class="vs-evidence-image" type="button" data-open-source aria-label="Perbesar data sumber"><img src="${use}" alt="Bagan sumber untuk halaman ${n}">${n===23?'<span class="vs-archive-label">ARSIP MODEL LAMA · LIHAT ANGKA TERBARU DI BAGIAN KEUANGAN</span>':''}</button></div>`;
   }
   function product(item,heading) {
     return `<div class="vscene vs-product">${heading}<div class="vs-product-pair"><div>${photo('signature-pack')}<strong>Signature Pack</strong><span>Rp 75.000/kg · jalur B2B</span></div><div>${photo('gift-edition-branded')}<strong>Gift Edition</strong><span>Rp 535.000 · kotak tiga buah</span></div></div><div class="vs-product-note">253 responden dalam pengujian kesediaan membayar · kemasan adalah visualisasi konsep</div></div>`;

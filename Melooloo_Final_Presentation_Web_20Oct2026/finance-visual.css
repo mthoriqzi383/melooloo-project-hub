@@ -73,3 +73,52 @@
 .fin-scenario-bottom>span{background:#e6f0df;display:flex;align-items:center;padding:.55cqw .7cqw;color:#4f6f53;font-size:.75cqw;line-height:1.24}
 
 @media(prefers-reduced-motion:reduce){.fin-spend-pair>div{animation:none}}
+
+/* Mery replacement slides: keep every source row editable and legible. */
+.finance-page-57 .story-copy h2{font-size:3.6cqw}
+.finance-page-57 .finance-main{margin-top:.85cqw}
+.fin-ledger-stack{display:flex;flex-direction:column;gap:.65cqw;flex:1;min-height:0}
+.fin-ledger-section{min-height:0;flex:1;display:flex;flex-direction:column}
+.fin-ledger-section h3{margin:0 0 .28cqw;color:#4c8053;font-size:.86cqw;letter-spacing:.13em}
+.fin-ledger{width:100%;height:100%;border-collapse:collapse;table-layout:fixed;background:#fbfaf5;font-size:.94cqw;color:#254c35;font-variant-numeric:tabular-nums}
+.fin-ledger th,.fin-ledger td{padding:.13cqw .43cqw;border:1px solid #d9dfd0;line-height:1.12}
+.fin-ledger thead{background:#16472f;color:#f3f8e9}
+.fin-ledger thead th{font-weight:800;color:#f3f8e9}
+.fin-ledger th:first-child{width:32%;text-align:left}
+.fin-ledger td,.fin-ledger thead th:not(:first-child){text-align:right}
+.fin-ledger tbody th{font-weight:570}
+.fin-ledger tbody tr:nth-child(even){background:#f0f1e9}
+.fin-ledger tbody tr.total{background:#dceacb;font-weight:800}
+.fin-ledger tbody tr.total th{font-weight:800}
+.fin-ledger-definition{margin:0;font-size:.64cqw;line-height:1.15;color:#536d55}
+
+.finance-page-59 .finance-main{margin-top:1.25cqw}
+.fin-balance-dashboard{display:grid;grid-template-columns:1.66fr .86fr;gap:1.3cqw;flex:1;min-height:0}
+.fin-balance-plot{display:flex;flex-direction:column;position:relative;min-width:0;min-height:0;padding:0 .3cqw .1cqw 1.8cqw}
+.fin-balance-key{display:flex;align-items:center;justify-content:center;gap:1cqw;height:2.3cqw;color:#42634b;font-size:.78cqw}
+.fin-balance-key span{display:flex;align-items:center;gap:.28cqw;white-space:nowrap}
+.fin-balance-key i{display:inline-block;width:.53cqw;height:.53cqw}
+.fin-balance-key .asset{background:#2f734d}.fin-balance-key .liability{background:#cba159}.fin-balance-key .equity{background:#9ccb7b}
+.fin-balance-key b{margin-left:auto;font-weight:650;white-space:nowrap}
+.fin-balance-axis{position:absolute;left:0;top:3.4cqw;bottom:1.3cqw;display:flex;flex-direction:column;justify-content:space-between;font-size:.65cqw;color:#68806a}
+.fin-balance-clusters{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.7cqw;align-items:end;flex:1;min-height:0;padding:.7cqw .3cqw .1cqw;background:repeating-linear-gradient(to top,#cbd8c8 0,#cbd8c8 1px,transparent 1px,transparent 25%);border-bottom:1px solid #9bad97}
+.fin-balance-group{display:flex;flex-direction:column;height:100%;min-height:0;align-items:center;justify-content:end}
+.fin-balance-cluster{display:flex;align-items:end;gap:.12cqw;width:100%;height:100%}
+.fin-balance-column{display:flex;align-items:flex-start;justify-content:center;position:relative;flex:1;min-width:0;animation:grow-bar .8s ease both;transform-origin:bottom}
+.fin-balance-column.asset{background:#32754e}.fin-balance-column.liability{background:#cda35e}.fin-balance-column.equity{background:#9ece7e}
+.fin-balance-column span{position:absolute;top:-1.2cqw;color:#24543a;font-size:.63cqw;font-weight:800;white-space:nowrap}
+.fin-balance-group>strong{font-size:.76cqw;color:#416149;padding-top:.38cqw}
+.fin-balance-insights{display:grid;grid-template-rows:repeat(3,1fr);gap:.55cqw;min-height:0}
+.fin-balance-insight{display:flex;flex-direction:column;min-height:0;border:1px solid #6c9470;background:#fffdf8;padding:.8cqw 1cqw}
+.fin-balance-insight.primary{background:#12432d;color:#f4f9e9}
+.fin-balance-insight small{color:#7ba55b;font-size:.72cqw;letter-spacing:.1em;font-weight:800}
+.fin-balance-insight.primary small{color:#c9e996}
+.fin-balance-insight strong{margin:.25cqw 0;font-size:1.9cqw;line-height:1;color:#17452e;letter-spacing:-.04em}
+.fin-balance-insight.primary strong{color:#d4f29e}
+.fin-balance-insight p{margin:0;color:#55705a;font-size:.79cqw;line-height:1.24}
+.fin-balance-insight.primary p{color:#e1efe0}
+
+/* Presentation-facing copy: retain source details in the source viewer. */
+.fin-bottomline,.fin-spend-foot,.vs-strategy-note,.vs-channels-note,.vs-product-note,.vs-gallery-note,.vs-water-note,.vs-nursery-note,.vs-process-foot,.vs-org-foot{display:none!important}
+.vs-evidence-image{position:relative}
+.vs-archive-label{position:absolute;left:1cqw;bottom:1cqw;right:1cqw;background:#16452f;color:#f4f8ec;padding:.55cqw .7cqw;font-size:.76cqw;font-weight:800;letter-spacing:.04em;text-align:center}

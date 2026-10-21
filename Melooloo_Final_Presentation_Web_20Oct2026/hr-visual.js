@@ -2,7 +2,7 @@
   'use strict';
   const E = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const panel = () => '<div class="hr-beat-panel" aria-live="polite"><small data-beat-number>01 / 03</small><strong data-beat-title></strong><p data-beat-description></p></div>';
-  const scene = (n, heading, body, note = '', interactive = false) => `<div class="vscene hr-scene hr-${n}${n === 48 ? ' hr-dark' : ''}"${interactive ? ` data-interactive-slide="${n}"` : ''}>${heading}<div class="hr-content">${body}</div>${note ? `<div class="hr-note">${note}</div>` : ''}</div>`;
+  const scene = (n, heading, body, note = '', interactive = false) => `<div class="vscene hr-scene hr-${n}${n === 48 ? ' hr-dark' : ''}"${interactive ? ` data-interactive-slide="${n}"` : ''}>${heading}<div class="hr-content">${body}</div></div>`;
 
   function mandate(heading) {
     const outcomes = [

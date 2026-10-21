@@ -7,7 +7,7 @@
   const cell = (label,value) => `<div class="fin-stat"><span>${label}</span><strong>${value}</strong></div>`;
   const row = (a,b) => `<div class="fin-row"><span>${a}</span><strong>${b}</strong></div>`;
   const note = text => `<div class="fin-note">${text}</div>`;
-  const source = `<button class="fin-source" type="button" data-open-source>Lihat tabel &amp; angka lengkap sumber <span>↗</span></button>`;
+  const source = '';
   const beatPanel = () => '<div class="fin-beat-panel" aria-live="polite"><small data-beat-number>01 / 02</small><strong data-beat-title></strong><p data-beat-description></p></div>';
   const wrap = (n,heading,body,extra='') => `<div class="finance-layout finance-page-${n} ${extra}"${extra.includes('fin-interactive') ? ` data-interactive-slide="${n}"` : ''}>${heading}<div class="finance-main">${body}</div></div>`;
 
@@ -28,7 +28,7 @@
       ['Debt setelah pajak','8,97%'],['Bobot modal','50% : 50%'],
       ['WACC','12,77%']
     ];
-    return wrap(n,heading,`<div class="fin-two fin-assumptions"><div class="fin-card"><h3>01 / Mesin proyeksi</h3>${left.map(x=>row(...x)).join('')}</div><div class="fin-card fin-card-dark"><h3>02 / Biaya modal</h3>${right.map(x=>row(...x)).join('')}</div></div><div class="fin-bottomline"><span>Piutang: B2B 40 hari · B2C 7 hari</span><span>WACC 50:50 adalah asumsi valuasi; dana Y0 100% pendiri</span>${source}</div>`);
+    return wrap(n,heading,`<div class="fin-two fin-assumptions"><div class="fin-card"><h3>PARAMETER OPERASI</h3>${left.map(x=>row(...x)).join('')}</div><div class="fin-card fin-card-dark"><h3>BIAYA MODAL</h3>${right.map(x=>row(...x)).join('')}</div></div>`);
   }
   function investment(n,heading) {
     return wrap(n,heading,`<div class="fin-invest"><div class="fin-invest-total"><small>TOTAL DANA TAHUN 0</small><strong>Rp10.462<em>juta</em></strong><div class="fin-split"><span style="width:67.1%"></span><span style="width:32.9%"></span></div><div class="fin-split-label"><span>67,1% CAPEX ASET TETAP</span><span>32,9% MODAL KERJA</span></div>${note('OPEX Y0 Rp3.137 juta · pendapatan trial Y0 Rp3.509 juta.')}</div><div class="fin-invest-detail"><div class="fin-card"><h3>CAPEX · Rp7.024 juta</h3>${[['Greenhouse 35 unit','5.066'],['Cold storage & kendaraan','650'],['Rooftop & deposit 2 lokasi','600'],['Legal & kantor','351'],['Kontingensi','357']].map(x=>row(...x)).join('')}</div><div class="fin-card"><h3>Modal kerja · Rp3.438 juta</h3>${row('Pra-operasi','479')}${row('Buffer kas','2.959')}${note('Buffer kas setara 5,3 bulan biaya kas operasi Y1.')}</div></div></div>${source}`);
@@ -37,9 +37,25 @@
     return wrap(n,heading,`<div class="fin-funding"><div class="fin-funding-initial"><button type="button" class="fin-funding-select" data-beat-target="0">01 / TAHUN 0 · MODAL PENDIRI</button><strong class="fin-giant">100%</strong><p>Rp10.462 juta dari lima pendiri. Masing-masing Rp2.092,4 juta dan 20% saham.</p><div class="fin-founder-list">Emily <b>·</b> Thoriq <b>·</b> Carlos <b>·</b> Nindio <b>·</b> Mery</div></div><div class="fin-funding-expansion"><button type="button" class="fin-funding-select" data-beat-target="1">02 / Y1–Y10 · CAPEX EKSPANSI</button><strong class="fin-expansion-total">Rp46.094 juta</strong><div class="fin-funding-split"><div style="width:30%"><b>30%</b><span>Kas internal<br>Rp13.830 jt</span></div><div style="width:70%"><b>70%</b><span>Kredit investasi<br>Rp32.264 jt</span></div></div>${beatPanel()}<div class="fin-term-row"><span>Bunga <b>11,5%</b></span><span>Tenor <b>5 tahun</b></span><span>Grace <b>1 tahun</b></span><span>D/E maks <b>0,39×</b></span></div></div></div>${source}`,'fin-interactive');
   }
   function spending(n,heading) {
-    const d=D.spending;
-    const columns=d.years.slice(0,6).map((year,i)=>`<div class="fin-spend-year"><div class="fin-spend-pair"><div class="fin-spend-capex" style="height:${(d.capexMillion[i]/11296*100).toFixed(1)}%"><span>${whole(d.capexMillion[i])}</span></div><div class="fin-spend-opex" style="height:${(d.opexMillion[i]/11296*100).toFixed(1)}%"><span>${whole(d.opexMillion[i])}</span></div></div><strong>${year}</strong></div>`).join('');
-    return wrap(n,heading,`<div class="fin-spend-visual"><div class="fin-spend-chart"><div class="fin-spend-legend"><span><i></i> CAPEX</span><span><i></i> OPEX</span><b>Rp juta / tahun</b></div><div class="fin-spend-years">${columns}</div></div><div class="fin-spend-summary"><small>Y6–Y10 · AGREGAT LIMA TAHUN</small><strong>Rp31.569 <em>juta</em></strong><span>CAPEX untuk ekspansi &amp; penggantian</span><strong>Rp102.827 <em>juta</em></strong><span>OPEX seluruh lima tahun</span><div class="fin-spend-explain">Y0 CAPEX Rp7.503 jt sudah mencakup Rp479 jt modal kerja praoperasi. Kolom agregat tidak setara satu tahun.</div></div></div><div class="fin-spend-foot">${source}<span>Y1 menjadi dasar operasi 35 GH; pembelian greenhouse kembali meningkat mulai Y2.</span></div>`);
+    const years=['Y0','Y1','Y2','Y3','Y4','Y5','Y6–Y10'];
+    const capex=[
+      ['Greenhouse (baru + penggantian)','5.066','0','2.461','2.461','3.091','2.727','23.911'],
+      ['Cold storage & kendaraan','650','0','325','325','325','325','2.272'],
+      ['Renovasi & deposit lokasi','600','0','292','287','294','301','2.039'],
+      ['Legal & kantor','351','50','130','132','165','142','988'],
+      ['Modal kerja & kontingensi','836','3','160','160','194','175','2.359'],
+      ['Total CAPEX*','7.503','53','3.368','3.365','4.069','3.670','31.569']
+    ];
+    const opex=[
+      ['Gaji & tunjangan','1.053','1.073','1.187','1.688','1.815','2.905','28.979'],
+      ['Sewa lokasi','1.248','1.218','1.776','2.284','2.995','3.774','23.492'],
+      ['Logistik & distribusi','163','351','607','879','1.206','1.581','16.766'],
+      ['Perawatan, admin & overhead','166','399','564','716','903','1.124','15.398'],
+      ['Pemasaran & penjualan','507','768','1.069','1.207','1.649','1.912','18.191'],
+      ['Total OPEX','3.137','3.808','5.202','6.774','8.567','11.296','102.827']
+    ];
+    const table=(label,rows)=>`<section class="fin-ledger-section"><h3>${label}</h3><table class="fin-ledger"><thead><tr><th scope="col">Komponen (Rp juta)</th>${years.map(y=>`<th scope="col">${y}</th>`).join('')}</tr></thead><tbody>${rows.map((r,i)=>`<tr${i===rows.length-1?' class="total"':''}>${r.map((v,j)=>`<${j?'td':'th scope="row"'}>${v}</${j?'td':'th'}>`).join('')}</tr>`).join('')}</tbody></table></section>`;
+    return wrap(n,heading,`<div class="fin-ledger-stack">${table('A / CAPITAL EXPENDITURE',capex)}${table('B / OPERATING EXPENDITURE',opex)}<p class="fin-ledger-definition">*Y0 CAPEX Rp7.503 juta mencakup CAPEX Rp7.024 juta dan modal kerja praoperasi Rp479 juta. Total CAPEX Y0–Y10 Rp53,6 miliar.</p></div>`);
   }
   function income(n,heading) {
     const bars=D.revenue.map((v,i)=>`<div class="fin-yearbar"><span>${decimal(v)}</span><div class="fin-bar-track"><i style="height:${(v/86.6*100).toFixed(2)}%"></i></div><strong>${D.years[i]}</strong></div>`).join('');
@@ -48,8 +64,14 @@
   }
   function balance(n,heading) {
     const b=D.balance;
-    const bars=b.years.map((y,i)=>`<div class="fin-balance-year"><div class="fin-balance-values"><b>${decimal(b.assets[i])}</b><span>ASET</span></div><div class="fin-balance-track" style="height:${(b.assets[i]/81.6*100).toFixed(1)}%"><div class="fin-balance-liability" style="height:${(b.liabilities[i]/b.assets[i]*100).toFixed(1)}%"></div><div class="fin-balance-equity" style="height:${(b.equity[i]/b.assets[i]*100).toFixed(1)}%"></div></div><strong>${y}</strong></div>`).join('');
-    return wrap(n,heading,`<div class="fin-balance"><div class="fin-balance-legend"><span><i></i>Ekuitas</span><span><i></i>Liabilitas</span><b>Rp miliar</b></div><div class="fin-balance-bars">${bars}</div><div class="fin-balance-caption">Y10 <b>Rp81,6 M</b> aset <span>·</span> <b>Rp65,5 M</b> ekuitas <span>·</span> <b>Rp16,1 M</b> liabilitas</div></div>${source}`);
+    const series=[['Total aset',b.assets,'asset'],['Total liabilitas',b.liabilities,'liability'],['Total ekuitas',b.equity,'equity']];
+    const bars=b.years.map((year,i)=>`<div class="fin-balance-group"><div class="fin-balance-cluster">${series.map(([name,values,key])=>`<div class="fin-balance-column ${key}" style="height:${(values[i]/90*100).toFixed(1)}%" title="${name} ${year}: Rp${decimal(values[i])} miliar"><span>${decimal(values[i])}</span></div>`).join('')}</div><strong>${year}</strong></div>`).join('');
+    const cards=[
+      ['01 / TOTAL ASET','Rp9,4 → 81,6 M','Didorong kas (Rp39,6 M di Y10) dan greenhouse baru di 3 kota.'],
+      ['02 / TOTAL EKUITAS','Rp9,1 → 65,5 M','Tumbuh dari laba ditahan, setelah dividen 30% mulai Y3.'],
+      ['03 / TOTAL LIABILITAS','maks 28% aset','Sebagian besar kredit investasi bank untuk ekspansi.']
+    ];
+    return wrap(n,heading,`<div class="fin-balance-dashboard"><div class="fin-balance-plot"><div class="fin-balance-key">${series.map(([name,,key])=>`<span><i class="${key}"></i>${name}</span>`).join('')}<b>Rp miliar</b></div><div class="fin-balance-axis"><span>90</span><span>60</span><span>30</span><span>0</span></div><div class="fin-balance-clusters">${bars}</div></div><div class="fin-balance-insights">${cards.map(([label,value,detail],i)=>`<div class="fin-balance-insight${i===0?' primary':''}"><small>${label}</small><strong>${value}</strong><p>${detail}</p></div>`).join('')}</div></div>`);
   }
   function cashflow(n,heading) {
     const v=D.cumulativeFcf;

@@ -142,10 +142,10 @@
   function renderStory(n) {
     const item = story[n-1];
     const section = sectionFor(n);
-    const start = `<article class="story-canvas story-${item.type}${wideFigures.has(n)?' story-wide':''} story-chapter-${chapterIndex(n)}${item.type==='finance'?'':' story-visual'}" aria-label="Slide sumber ${n}: ${escape(item.title)}"><div class="story-grain" aria-hidden="true"></div><div class="story-topline"><span><i></i> MELOOLOO / ${escape(section.name).toUpperCase()}</span><span>PRESENTASI ${pad(routeOrder.indexOf(n)+1)} / 66 · ASLI ${pad(n)}</span></div>`;
-    const heading = `<div class="story-copy"><div class="story-overline">${escape(section.name)}</div><h2>${escape(item.title)}</h2><p>${escape(item.lead)}</p></div>`;
-    const sourceLabel = n >= 53 && n <= 64 ? `SUMBER: FINANCIAL STRATEGY (MERY) · HALAMAN ${pad(n-52)}` : n >= 48 && n <= 52 ? `SUMBER: PDF SDM REVISI + SLIDE ASLI · HALAMAN ${pad(n)}` : sourceWarnings[n] ? `SUMBER: PDF ASLI + CATATAN · HALAMAN ${pad(n)}` : `SUMBER: PDF SIDANG AKHIR · HALAMAN ${pad(n)}`;
-    const footer = `<div class="story-footer"><span>PT MELOOLOO SEGAR INDONESIA</span><span>${sourceLabel}</span></div>`;
+    const start = `<article class="story-canvas story-${item.type}${wideFigures.has(n)?' story-wide':''} story-chapter-${chapterIndex(n)}${item.type==='finance'?'':' story-visual'}" aria-label="Slide sumber ${n}: ${escape(item.title)}"><div class="story-grain" aria-hidden="true"></div><div class="story-topline"><span><i></i> MELOOLOO / ${item.type==='finance'?'KEUANGAN':escape(section.name).toUpperCase()}</span></div>`;
+    const financeOverline = {54:'ASUMSI PROYEKSI',55:'INVESTASI',56:'PENDANAAN',57:'RENCANA CAPEX & OPEX',58:'PROYEKSI LABA RUGI',59:'NERACA'};
+    const heading = `<div class="story-copy"><div class="story-overline">${escape(financeOverline[n] || section.name)}</div><h2>${escape(item.title)}</h2><p>${escape(item.lead)}</p></div>`;
+    const footer = `<div class="story-footer"><span>PT MELOOLOO SEGAR INDONESIA</span></div>`;
     let body;
     const visual = window.MELOOLOO_RENDER_HR?.(n,item,heading) || window.MELOOLOO_RENDER_OPERATIONS?.(n,item,heading) || window.MELOOLOO_RENDER_VISUAL?.(n,item,heading);
     if (visual) {
@@ -327,7 +327,7 @@
   function openSource() {
     priorFocus = document.activeElement;
     $('sourceModalTitle').textContent = `${pad(page)} / ${story[page-1].title}`;
-    $('sourceModalKicker').textContent = page >= 53 && page <= 64 ? `POWERPOINT KEUANGAN MERY · HALAMAN ${pad(page-52)}` : sourceWarnings[page] ? 'HALAMAN ASLI · LIHAT CATATAN PEMBARUAN' : 'HALAMAN ASLI DARI PDF CANVA';
+    $('sourceModalKicker').textContent = page === 57 || page === 59 ? `POWERPOINT REVISI MERY · HALAMAN ${page === 57 ? '01' : '02'}` : page >= 53 && page <= 64 ? `POWERPOINT KEUANGAN MERY · HALAMAN ${pad(page-52)}` : sourceWarnings[page] ? 'HALAMAN ASLI · LIHAT CATATAN PEMBARUAN' : 'HALAMAN ASLI DARI PDF CANVA';
     $('sourceModalNotice').hidden = !sourceWarnings[page];
     $('sourceModalNotice').textContent = sourceWarnings[page] || '';
     $('sourceModalImage').src = pageImage(page);

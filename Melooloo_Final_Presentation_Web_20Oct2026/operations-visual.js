@@ -5,7 +5,7 @@
   const photo = (name, label) => `<div class="ops-photo"><img src="${image(name)}" alt="${E(label)}" loading="eager"><span>VISUALISASI KONSEP · BUKAN FASILITAS TERPASANG</span></div>`;
   const metric = (value, label, detail='') => `<div class="ops-metric"><strong>${value}</strong><span>${E(label)}</span>${detail?`<small>${E(detail)}</small>`:''}</div>`;
   const panel = () => `<div class="ops-beat-panel" aria-live="polite"><small data-beat-number>01 / 04</small><strong data-beat-title></strong><p data-beat-description></p><em>KLIK TAHAP ATAU TEKAN →</em></div>`;
-  const scene = (n, heading, body, note='', interactive=false) => `<div class="vscene ops-scene ops-${n}${interactive?' ops-interactive':''}"${interactive?` data-interactive-slide="${n}"`:''}>${heading}<div class="ops-content">${body}</div>${note?`<div class="ops-note">${note}</div>`:''}</div>`;
+  const scene = (n, heading, body, note='', interactive=false) => `<div class="vscene ops-scene ops-${n}${interactive?' ops-interactive':''}"${interactive?` data-interactive-slide="${n}"`:''}>${heading}<div class="ops-content">${body}</div></div>`;
 
   function supply(heading) {
     const sites = `<div class="ops-site"><small>LOKASI A · USULAN</small><div class="ops-site-plan" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><strong>Rooftop Jakarta</strong><span>modul greenhouse · bagian dari 35 unit awal</span></div><div class="ops-site"><small>LOKASI B · USULAN</small><div class="ops-site-plan" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><strong>Rooftop Jakarta</strong><span>lokasi kedua menjaga kontinuitas panen</span></div>`;
