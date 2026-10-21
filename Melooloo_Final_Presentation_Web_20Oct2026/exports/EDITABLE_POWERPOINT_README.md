@@ -1,5 +1,7 @@
 # Melooloo editable PowerPoint
 
+Updated 22 October 2026 from the current web slides, including Emily's opening-section revisions and the revised HR/SDM section.
+
 `Melooloo_Final_Presentation_66_Editable.pptx` follows the same 66-page speaking order as the web presentation. Text, cards, diagrams, chart bars, markers, and lines are native PowerPoint elements. Photographs and logos are separate picture objects that can be replaced or cropped in PowerPoint.
 
 Slide 2 follows the five-person shareholder layout from the supplied reference. Nindio and Emily use the supplied photos. The Carlos, Mery, and Thoriq portrait circles are intentionally empty for the team to fill with its real portraits.

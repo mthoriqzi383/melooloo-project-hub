@@ -202,7 +202,7 @@ def gradient_colors(value):
 
 def render_gradient(slide, item, bw, bh):
     bgi = item.get("bgi", "")
-    if "gradient(" not in bgi or "url(" in bgi:
+    if "gradient(" not in bgi:
         return
     colors = gradient_colors(bgi)
     if not colors:
@@ -215,9 +215,12 @@ def render_gradient(slide, item, bw, bh):
         return
     horizontal = "90deg" in bgi or "to right" in bgi
     a, b = colors[0], colors[1]
-    strips = 10
+    strips = 32
     for i in range(strips):
         t = (i + .5) / strips
+        # CSS 0deg runs from the bottom upward; native PowerPoint strips run top down.
+        if not horizontal and ("0deg" in bgi or "to top" in bgi):
+            t = 1 - t
         col = tuple(round(a[0][k] * (1 - t) + b[0][k] * t) for k in range(3))
         alpha = a[1] * (1 - t) + b[1] * t
         cell = [x + i*w/strips, y, w/strips+.2, h] if horizontal else [x, y+i*h/strips, w, h/strips+.2]
@@ -335,9 +338,8 @@ def add_dom_items(slide, payload, temp, cache, source_number):
             bgi = item.get("bgi", "")
             if "url(" in bgi:
                 add_image(slide, item, bw, bh, temp, cache)
-                # Preserve the darkened cover treatment with a native editable wash.
-                if "vs-cover-image" in str(item.get("classes", "")):
-                    pass
+                if "gradient(" in bgi:
+                    render_gradient(slide, item, bw, bh)
             elif "gradient(" in bgi:
                 render_gradient(slide, item, bw, bh)
             if not rounded:

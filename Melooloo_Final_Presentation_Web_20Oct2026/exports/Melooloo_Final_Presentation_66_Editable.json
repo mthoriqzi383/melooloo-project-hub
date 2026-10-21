@@ -5,7 +5,7 @@
       "presentation_slide": 1,
       "source_slide": 1,
       "title": "Melooloo",
-      "objects": 31,
+      "objects": 53,
       "editable_text_boxes": 14
     },
     {
@@ -19,7 +19,7 @@
       "presentation_slide": 3,
       "source_slide": 3,
       "title": "Peluang di pasar premium",
-      "objects": 75,
+      "objects": 163,
       "editable_text_boxes": 24
     },
     {
@@ -33,14 +33,14 @@
       "presentation_slide": 5,
       "source_slide": 5,
       "title": "Struktur industri membuka ruang",
-      "objects": 66,
-      "editable_text_boxes": 29
+      "objects": 65,
+      "editable_text_boxes": 28
     },
     {
       "presentation_slide": 6,
       "source_slide": 6,
       "title": "Visi dan standar produk",
-      "objects": 63,
+      "objects": 159,
       "editable_text_boxes": 37
     },
     {
@@ -54,21 +54,21 @@
       "presentation_slide": 8,
       "source_slide": 20,
       "title": "Operasi: mutu yang berulang",
-      "objects": 39,
+      "objects": 61,
       "editable_text_boxes": 20
     },
     {
       "presentation_slide": 9,
       "source_slide": 21,
       "title": "Lokasi dan rantai pasok",
-      "objects": 326,
+      "objects": 766,
       "editable_text_boxes": 28
     },
     {
       "presentation_slide": 10,
       "source_slide": 22,
       "title": "Rooftop sebagai lokasi konsep",
-      "objects": 31,
+      "objects": 53,
       "editable_text_boxes": 14
     },
     {
@@ -103,7 +103,7 @@
       "presentation_slide": 15,
       "source_slide": 27,
       "title": "Strategi operasi",
-      "objects": 39,
+      "objects": 61,
       "editable_text_boxes": 20
     },
     {
@@ -145,7 +145,7 @@
       "presentation_slide": 21,
       "source_slide": 33,
       "title": "Produksi tahun demi tahun",
-      "objects": 199,
+      "objects": 463,
       "editable_text_boxes": 48
     },
     {
@@ -201,7 +201,7 @@
       "presentation_slide": 29,
       "source_slide": 41,
       "title": "Lima panen dari slot 73 hari",
-      "objects": 49,
+      "objects": 93,
       "editable_text_boxes": 19
     },
     {
@@ -243,21 +243,21 @@
       "presentation_slide": 35,
       "source_slide": 47,
       "title": "Empat angka inti",
-      "objects": 39,
+      "objects": 61,
       "editable_text_boxes": 20
     },
     {
       "presentation_slide": 36,
       "source_slide": 48,
       "title": "Manusia menjaga hasil",
-      "objects": 53,
+      "objects": 85,
       "editable_text_boxes": 34
     },
     {
       "presentation_slide": 37,
       "source_slide": 49,
       "title": "Bangun tim, uji kompetensi",
-      "objects": 90,
+      "objects": 91,
       "editable_text_boxes": 31
     },
     {
@@ -265,21 +265,21 @@
       "source_slide": 50,
       "title": "Siapa menjaga apa?",
       "objects": 126,
-      "editable_text_boxes": 38
+      "editable_text_boxes": 31
     },
     {
       "presentation_slide": 39,
       "source_slide": 51,
       "title": "Tim tumbuh bersama unit",
-      "objects": 187,
-      "editable_text_boxes": 44
+      "objects": 584,
+      "editable_text_boxes": 62
     },
     {
       "presentation_slide": 40,
       "source_slide": 52,
       "title": "Biaya orang, tahun demi tahun",
-      "objects": 177,
-      "editable_text_boxes": 41
+      "objects": 419,
+      "editable_text_boxes": 92
     },
     {
       "presentation_slide": 41,
@@ -306,35 +306,35 @@
       "presentation_slide": 44,
       "source_slide": 56,
       "title": "Pendanaan sesuai fase pertumbuhan",
-      "objects": 60,
+      "objects": 67,
       "editable_text_boxes": 40
     },
     {
       "presentation_slide": 45,
       "source_slide": 57,
       "title": "Belanja bangun, biaya jalan",
-      "objects": 163,
+      "objects": 43,
       "editable_text_boxes": 39
     },
     {
       "presentation_slide": 46,
       "source_slide": 58,
       "title": "Pendapatan tumbuh, laba positif sejak Y1",
-      "objects": 178,
+      "objects": 442,
       "editable_text_boxes": 52
     },
     {
       "presentation_slide": 47,
       "source_slide": 59,
       "title": "Aset dan ekuitas bertumbuh",
-      "objects": 122,
+      "objects": 276,
       "editable_text_boxes": 39
     },
     {
       "presentation_slide": 48,
       "source_slide": 60,
       "title": "Kas kembali pada Tahun 6",
-      "objects": 122,
+      "objects": 121,
       "editable_text_boxes": 53
     },
     {
@@ -355,7 +355,7 @@
       "presentation_slide": 51,
       "source_slide": 63,
       "title": "Pendapatan adalah variabel paling peka",
-      "objects": 85,
+      "objects": 73,
       "editable_text_boxes": 41
     },
     {
@@ -369,7 +369,7 @@
       "presentation_slide": 53,
       "source_slide": 8,
       "title": "Tiga sasaran pemasaran",
-      "objects": 39,
+      "objects": 61,
       "editable_text_boxes": 20
     },
     {
@@ -411,7 +411,7 @@
       "presentation_slide": 59,
       "source_slide": 14,
       "title": "Posisi merek: kebun di kota",
-      "objects": 35,
+      "objects": 57,
       "editable_text_boxes": 17
     },
     {
@@ -453,14 +453,14 @@
       "presentation_slide": 65,
       "source_slide": 65,
       "title": "Dari peluang ke keputusan",
-      "objects": 44,
+      "objects": 66,
       "editable_text_boxes": 24
     },
     {
       "presentation_slide": 66,
       "source_slide": 66,
       "title": "Terima kasih.",
-      "objects": 33,
+      "objects": 55,
       "editable_text_boxes": 16
     }
   ]

@@ -50,10 +50,10 @@
     ],
     5: [
       ['Pendatang baru','Sedang · skor 2,825 pada slide sumber. Hambatan: investasi, teknis, standar ritel, dan benih.'],
-      ['Daya tawar pembeli','Tinggi · alternatif lokal dan impor. Respons: mutu konsisten, traceability, dan kontrak panjang.'],
+      ['Daya tawar pembeli','Tinggi · pembeli memiliki alternatif pasokan lokal dan impor.'],
       ['Daya tawar pemasok','Sedang · diversifikasi, kontrak tahunan, dan pengembangan nursery sendiri.'],
       ['Ancaman substitusi','Sedang · impor Jepang dan buah premium lokal. Pembeda: kesegaran dan kedekatan.'],
-      ['Rivalitas','Sedang · slide sumber menyebut produsen premium terbesar 54 ton/tahun.']
+      ['Rivalitas','Sedang · persaingan antarprodusen melon premium.']
     ],
     7: [
       ['Customer Segments','B2B supermarket premium · B2C konsumen urban.'],
