@@ -72,7 +72,7 @@
   const channels = [
     ['01 / RITEL PREMIUM','Di rak tempat pelanggan mencari buah premium.','Pasokan terjadwal, kemasan siap rak, sampling di gerai mitra, dan materi titik jual.','Rp75.000/kg ke peritel'],
     ['02 / HOTEL & RESTORAN','Spesifikasi untuk dapur profesional.','Penjualan langsung ke chef dan hotel, dengan pasokan yang konsisten dan kemasan sesuai kebutuhan.','Rp75.000/kg B2B'],
-    ['03 / E-GROCERY','Buah premium di kanal belanja rutin.','Kemasan siap kirim dan integrasi stok mendukung mitra e-grocery pada fase setelah kanal awal.','Rp78.000–82.000/kg pada sumber kanal'],
+    ['03 / E-GROCERY','Buah premium di kanal belanja rutin.','Kemasan siap kirim dan integrasi stok mendukung mitra e-grocery pada fase setelah kanal awal.','Rp78.000–82.000/kg · harga rencana kanal'],
     ['04 / LANGSUNG B2C','Hubungan langsung dengan pembeli.','Website, WhatsApp, dan langganan melayani konsumen urban di area yang tidak berbenturan dengan gerai mitra.','Rp99.000/kg B2C'],
     ['05 / EVENT & KORPORAT','Hadiah menjadi titik masuk merek.','Gift Edition, aktivasi komunitas, dan pesanan korporat membutuhkan kapasitas musiman serta kemasan yang terjaga.','Rp535.000 per gift box tiga buah']
   ];

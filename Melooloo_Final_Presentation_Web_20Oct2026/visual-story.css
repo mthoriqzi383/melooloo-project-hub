@@ -391,7 +391,7 @@
 .vs-forces .vs-force{display:grid;grid-template-columns:1fr auto;align-items:baseline;row-gap:.3cqw;padding:.65cqw .9cqw}
 .vs-forces .vs-force small{grid-column:1/-1;font-size:.79cqw;line-height:1.18;color:#54705a;text-align:left}
 .vs-forces .vs-focus-target[data-active="false"]{opacity:.8}
-.vs-forces .vs-force-4{bottom:12%}
+.vs-forces .vs-force-4{bottom:2%}
 .vs-forces .vs-force[data-active="true"]{background:#c5eaa3;border-color:#143d2a;box-shadow:0 .45cqw 1.5cqw rgba(35,72,43,.17)}
 .vs-forces .vs-force-1[data-active="false"]{background:rgba(255,255,255,.72);border-color:#91b474}
 .vs-forces-lines path{opacity:.25;transition:opacity .28s ease,stroke-width .28s ease,stroke .28s ease}

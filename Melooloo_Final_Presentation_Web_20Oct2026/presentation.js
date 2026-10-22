@@ -50,7 +50,7 @@
       ['Celah estimasi','Selisih kedua rentang tersebut diperkirakan 260–1.790 ton per tahun.']
     ],
     5: [
-      ['Pendatang baru','Sedang · skor 2,825 pada slide sumber. Hambatan: investasi, teknis, standar ritel, dan benih.'],
+      ['Pendatang baru','Sedang · skor 2,825. Hambatan masuk: investasi, keahlian teknis, standar ritel, dan akses benih.'],
       ['Daya tawar pembeli','Tinggi · pembeli memiliki alternatif pasokan lokal dan impor.'],
       ['Daya tawar pemasok','Sedang · diversifikasi, kontrak tahunan, dan pengembangan nursery sendiri.'],
       ['Ancaman substitusi','Sedang · impor Jepang dan buah premium lokal. Pembeda: kesegaran dan kedekatan.'],
@@ -109,7 +109,7 @@
     63: [
       ['Pesimis · 25%','Pendapatan turun 25% dan OPEX naik 15% menghasilkan NPV negatif Rp19,9 miliar.'],
       ['Most likely · 55%','NPV dasar dengan nilai likuidasi Y10 adalah positif Rp23,5 miliar.'],
-      ['Optimis · 20%','Skenario optimis pada model sumber menghasilkan NPV positif Rp53,5 miliar.'],
+      ['Optimis · 20%','Dalam skenario optimis, NPV diproyeksikan mencapai Rp53,5 miliar.'],
       ['Expected NPV','Bobot 25%, 55%, dan 20% menghasilkan expected NPV sekitar Rp18,7 miliar.']
     ]
   };
@@ -163,7 +163,7 @@
       const bars = harvest.map((value,i)=>`<div class="story-chart-item" style="--height:${(value/816.6*100).toFixed(2)}%;--bar-index:${i}"><span class="story-chart-value">${String(value.toFixed(1)).replace('.',',')}</span><span class="story-chart-bar"></span><strong>Y${i}</strong></div>`).join('');
       body = `<div class="story-layout story-layout-chart">${heading}${factMarkup(item.facts,'chart')}<button class="story-chart" type="button" data-open-source aria-label="Buka tabel sumber produksi per tahun"><span class="story-chart-axis">TON / TAHUN</span><span class="story-chart-grid" aria-hidden="true"></span><span class="story-chart-bars">${bars}</span><span class="story-chart-source">LIHAT TABEL LENGKAP DARI PDF SUMBER ↗</span></button></div>`;
     } else if (item.type === 'photo') {
-      const note = n === 22 || n === 29 || n === 30 ? 'VISUALISASI KONSEP · BUKAN DOKUMENTASI LOKASI TERPASANG' : 'VISUALISASI DARI SLIDE SUMBER';
+      const note = n === 22 || n === 29 || n === 30 ? 'VISUALISASI KONSEP · BUKAN DOKUMENTASI LOKASI TERPASANG' : 'VISUALISASI KONSEP';
       body = `<div class="story-layout story-layout-photo">${heading}<div class="story-photo-frame"><img src="${photo(n)}" alt="Visual pendukung ${escape(item.title)}"><span>${note}</span></div>${factMarkup(item.facts,'photo')}</div>`;
     } else {
       body = `<div class="story-layout story-layout-cards">${heading}<div class="story-cards-art" aria-hidden="true"></div>${factMarkup(item.facts,'grid')}</div>`;
