@@ -1,5 +1,5 @@
-/* Pages 1–52 and 66 condense the supplied Canva PDF. Pages 53–64 use the
-   later finance PowerPoint; page 65 uses its finance decision figures. */
+/* Pages 8–15 use the new October marketing deck; 16–19 are retired from the
+   speaking route. Pages 53–64 use the later finance PowerPoint. */
 window.MELOOLOO_STORY = [
   {type:'hero',title:'Melooloo',lead:'Produsen melon premium berbasis urban farming dengan sistem smart greenhouse adaptif untuk segmen B2B2C di Jakarta.',facts:[['Sidang','Business plan'],['Kelompok 6','Prasetiya Mulya']]},
   {type:'cards',title:'Our Shareholders',lead:'Lima anggota kelompok 6 dalam presentasi business plan.',facts:[['Carlos','Indra Alam'],['Mery',''],['Nindio','Mahendra W'],['Muhamad','Thoriq'],['Emily','Yubilina']]},
@@ -8,18 +8,18 @@ window.MELOOLOO_STORY = [
   {type:'cards',title:'Struktur industri membuka ruang',lead:'Lima kekuatan persaingan memperlihatkan daya tawar pembeli tinggi; empat kekuatan lainnya dinilai sedang.',facts:[['Sedang','pendatang baru'],['Tinggi','daya tawar pembeli'],['Sedang','daya tawar pemasok'],['Sedang','substitusi'],['Sedang','rivalitas']]},
   {type:'cards',title:'Visi dan standar produk',lead:'PT Melooloo Segar Indonesia menggabungkan greenhouse IoT, hidroponik presisi, dan analitik untuk kualitas premium.',facts:[['≥15°','target Brix'],['≥1,5–2,0 kg','ukuran buah'],['4–5×','panen per tahun'],['M.E.L.O.O','nilai inti']]},
   {type:'figure',title:'Business Model Canvas',lead:'Kemitraan benih, greenhouse, teknologi, produksi, distribusi dan brand terhubung dalam satu kanvas bisnis.',facts:[['B2B','ritel premium dan HoReCa'],['B2C','konsumen urban premium']]},
-  {type:'cards',title:'Tiga sasaran pemasaran',lead:'Meningkatkan penjualan, membangun merek, dan meningkatkan kepuasan pelanggan.',facts:[['Rp 7,4 M','proyeksi pendapatan Y1'],['20 outlet','B2B aktif Tahun 1'],['10%','aided brand awareness Tahun 1'],['≥80','Customer Satisfaction Index Tahun 1']]},
-  {type:'cards',title:'Enam segmen, dua jalur',lead:'Prioritas B2B adalah ritel premium dan HoReCa; B2C melayani keluarga premium, gifting, dan komunitas.',facts:[['65%','volume B2B Tahun 1'],['35%','volume B2C Tahun 1'],['3','segmen B2B'],['3','segmen B2C']]},
-  {type:'figure',title:'Dari TAM ke SOM',lead:'Estimasi pasar disusun top-down dari konsumsi dan bottom-up dari pintu distribusi.',facts:[['16.800 ton','TAM tahunan Jabodetabek'],['236,9 ton','SAM'],['90,5 ton','SOM Tahun 1']]},
-  {type:'cards',title:'Apa yang setara. Apa yang berbeda.',lead:'Standar premium menjadi titik kesetaraan; kesegaran urban, konsistensi, dan kedekatan lokasi menjadi pembeda.',facts:[['Point of parity','syarat untuk masuk pasar'],['Point of difference','alasan dipilih pelanggan']]},
-  {type:'figure',title:'Peta kompetitif',lead:'Sembilan pemain dibandingkan melalui dua sumbu posisi bersaing.',facts:[['9','pemain dipetakan'],['1','ruang strategi yang dituju']]},
-  {type:'figure',title:'Ruang menuju titik ideal',lead:'Posisi Melooloo dibandingkan dengan merek yang dapat ditemui konsumen Jakarta.',facts:[['10','merek dalam peta positioning'],['Jakarta','fokus pasar awal']]},
-  {type:'cards',title:'Posisi merek: kebun di kota',lead:'Janji merek bertumpu pada asal yang dekat, kesegaran, kualitas konsisten, dan pengalaman smart farming.',facts:[['Lokal','asal yang dekat'],['Premium','rasa dan penampilan'],['Terukur','budidaya presisi']]},
-  {type:'cards',title:'Produk dan harga',lead:'Tiga lini produk melayani meja makan, hadiah, dan kebutuhan HoReCa.',facts:[['Rp 75.000/kg','premium table fruit B2B'],['Rp 535.000','gift box tiga buah'],['253','responden uji kesediaan membayar']]},
-  {type:'cards',title:'Lima kanal distribusi',lead:'Harga, marjin perantara, dan dukungan penjualan disesuaikan untuk setiap kanal.',facts:[['Ritel premium','B2B'],['Hotel & restoran','HoReCa'],['Direct to consumer','B2C'],['Event','aktivasi'],['Marketplace','online']]},
-  {type:'cards',title:'Komunikasi yang terukur',lead:'IMC Tahun 1 menggabungkan digital, personal selling, sampling, event, PR, dan materi di titik jual.',facts:[['Rp 768 Jt','proyeksi pemasaran & penjualan Y1'],['70%','rencana membangun kesadaran'],['30%','rencana konversi prospek']]},
-  {type:'photo',title:'Brand di titik temu pelanggan',lead:'Materi produk, kemasan, rak ritel, halaman digital, dan booth menjadi satu pengalaman merek.',facts:[['Produk','premium melon'],['Kemasan','retail & gifting'],['Digital','website dan sosial']]},
-  {type:'cards',title:'Ekonomi pemasaran',lead:'NMC, MROS, dan MROI menunjukkan proyeksi kontribusi pemasaran sepanjang horizon.',facts:[['Rp 83.712 Jt','NMC kumulatif Y0–Y10'],['52–59%','MROS'],['780–904%','MROI']]},
+  {type:'hero',title:'Strategi pemasaran Melooloo',lead:'Enam pertanyaan inti: pembeli, posisi, harga, distribusi, pelanggan, dan anggaran.',facts:[['M0','pembuka pemasaran']]},
+  {type:'cards',title:'Pembeli dan ukuran pasar',lead:'Target SOM Tahun 1 sebesar 85,5 ton, atau 4–6% estimasi pasar premium DKI.',facts:[['68% / 32%','bauran B2B/B2C Grade A Y1'],['1.460–2.190 ton','SAM premium DKI'],['85,5 ton','SOM Y1']]},
+  {type:'cards',title:'Posisi dan bukti mutu',lead:'Brix ≥15 adalah standar kategori; kedekatan panen, kebun yang dapat dikunjungi, dan QR lot adalah pembeda yang direncanakan.',facts:[['<24 jam','target panen ke rak'],['≥15 Brix','standar mutu'],['QR','rencana data lot']]},
+  {type:'cards',title:'Merek yang dapat dialami',lead:'Kebun, uji rasa, kemasan, dan identitas lot dirancang untuk membuat janji merek terlihat.',facts:[['Kunjungan Kebun','rencana pengalaman'],['Uji Manis','rencana aktivasi']]},
+  {type:'cards',title:'Harga dan format produk',lead:'Harga model Rp75.000/kg B2B dan Rp99.000/kg B2C; Gift Edition Rp535.000/box.',facts:[['Rp28.658/kg','HPP model'],['Rp75.000/kg','harga B2B'],['Rp99.000/kg','harga B2C']]},
+  {type:'cards',title:'Kanal dan komunikasi',lead:'B2B menjadi jangkar volume; B2C ditargetkan mencapai 60% volume Grade A pada Tahun 5.',facts:[['68% → 40%','B2B Y1–Y5'],['32% → 60%','B2C Y1–Y5'],['Rp768 juta','anggaran IMC Y1']]},
+  {type:'cards',title:'Perjalanan dan target pelanggan',lead:'Kesadaran, pembelian, dan retensi diukur melalui survei merek, CRM, dan audit kanal.',facts:[['10% → 40%','aided awareness Y1–Y5'],['3.303 → 10.909','pelanggan B2C aktif'],['35% → 58%','retensi B2C']]},
+  {type:'cards',title:'Anggaran dan gerbang keputusan',lead:'Porsi pemasaran direncanakan turun dari 10,3% pendapatan Y1 ke 5,9% Y5.',facts:[['Rp768 juta','anggaran Y1'],['Rp75.000 → 40.000','target CAC Y1–Y5'],['3','gerbang evaluasi']]},
+  {type:'cards',title:'Arsip pemasaran lama',lead:'Diganti oleh delapan halaman pemasaran baru.',facts:[]},
+  {type:'cards',title:'Arsip pemasaran lama',lead:'Diganti oleh delapan halaman pemasaran baru.',facts:[]},
+  {type:'cards',title:'Arsip pemasaran lama',lead:'Diganti oleh delapan halaman pemasaran baru.',facts:[]},
+  {type:'cards',title:'Arsip pemasaran lama',lead:'Diganti oleh delapan halaman pemasaran baru.',facts:[]},
   {type:'cards',title:'Tujuan dan Sasaran Operasi',lead:'Kualitas · kontinuitas suplai · efisiensi sumber daya · mitigasi risiko.',facts:[['Brix >15°','target kemanisan'],['90%','Grade A'],['4–5×','panen per tahun'],['80–85%','hemat air']]},
   {type:'figure',title:'Lokasi dan Rantai Pasok',lead:'Hyper-Proximity · desentralisasi lokasi · tier pemasok · SLA logistik.',facts:[['2 lokasi','Jakarta Selatan 17 GH + Jakarta Timur 18 GH'],['<12 jam','target kirim B2B']]},
   {type:'photo',title:'Lokasi Potensial',lead:'Dua lokasi rooftop strategis di Jakarta menjadi rencana awal fasilitas produksi.',facts:[['17–18 unit','rencana per lokasi'],['±7.000 m²','total dua lokasi']]},
@@ -66,5 +66,5 @@ window.MELOOLOO_STORY = [
   {type:'finance',title:'Sensitivitas & Skenario',lead:'Skenario pesimis menghasilkan NPV negatif; expected NPV berbobot tetap positif.',facts:[['−Rp19,9 M','NPV pesimis'],['Rp23,5 M','NPV most likely'],['Rp18,7 M','expected NPV']]},
   {type:'finance',title:'Keputusan Investasi',lead:'Keputusan investasi GO bergantung pada penerimaan harga, ketahanan produksi, dan disiplin penagihan.',facts:[['Harga','penerimaan premium'],['IoT','gangguan dan panen'],['Piutang','termin B2B 40 hari']]},
   {type:'cards',title:'Dari peluang ke keputusan',lead:'Melooloo membangun pasokan melon premium melalui smart greenhouse; model keuangan terbaru mendukung investasi dengan mitigasi terukur.',facts:[['35 → 237 GH','kapasitas Y0–Y10 dalam model baru'],['IoT','kendali budidaya'],['Rp23,5 M','NPV skenario most likely'],['GO','dengan mitigasi risiko']]},
-  {type:'hero',title:'Terima kasih.',lead:'PT Melooloo Segar Indonesia · Sidang business plan.',facts:[['64','halaman presentasi'],['3D','walkthrough greenhouse']]}
+  {type:'hero',title:'Terima kasih.',lead:'PT Melooloo Segar Indonesia · Sidang business plan.',facts:[['60','halaman presentasi'],['3D','walkthrough greenhouse']]}
 ];

@@ -14,12 +14,23 @@
     {name:'Tim',start:48,end:52,palette:3,cue:'Orang yang menjaga mutu setiap hari'},
     {name:'Investasi',start:53,end:56,palette:4,cue:'Modal untuk membangun kapasitas'},
     {name:'Kelayakan',start:57,end:64,palette:5,cue:'Apakah angka mendukung keputusan?'},
-    {name:'Pasar & merek',start:8,end:19,palette:1,cue:'Dari target menuju pengalaman merek'},
+    {name:'Pasar & merek',start:8,end:15,palette:1,cue:'Dari pembeli menuju keputusan pemasaran'},
     {name:'Penutup',start:65,end:66,palette:6,cue:'Keputusan dan langkah berikutnya'}
   ];
-  const reservedPages = new Set([45,46]);
+  const reservedPages = new Set([16,17,18,19,45,46]);
   const routeOrder = sections.flatMap(section => Array.from({length:section.end-section.start+1},(_,i)=>section.start+i)).filter(n => !reservedPages.has(n));
-  if (routeOrder.length !== 64 || new Set(routeOrder).size !== 64) throw new Error('Presentation route must include 64 pages and exclude Cadangan.');
+  if (routeOrder.length !== 60 || new Set(routeOrder).size !== 60) throw new Error('Presentation route must include 60 pages.');
+  const marketingSlides = {8:'M0',9:'M1',10:'M2',11:'T',12:'M3',13:'M4',14:'M5',15:'M6'};
+  const marketingSources = {
+    8:'Panduan Slide Pemasaran v2 (Canva), pembuka M0; paper Melooloo rev15, Bab IV.',
+    9:'Survei primer n = 253 (Lampiran A), wawancara Suzuya (Lampiran K), paper rev15 Tabel 4.1 dan 4.6–4.7.',
+    10:'Paper rev15 Gambar 4.1, Tabel 4.9–4.12, dan Lampiran L.3. Posisi pesaing dan pembeda adalah riset serta rencana tim.',
+    11:'Paper rev15 Bab IV, strategi branding dan komunikasi. Foto dan aktivitas merupakan visualisasi konsep.',
+    12:'Paper rev15 Lampiran L.6 dan Tabel 4.18–4.20. Harga dan margin adalah angka model.',
+    13:'Paper rev15 Tabel 4.1, 4.21, 4.23, 4.25–4.26. Jadwal, bauran kanal, dan akuisisi adalah target.',
+    14:'Paper rev15 Tabel 4.1, 4.16, 4.24. Seluruh KPI adalah target rencana.',
+    15:'Paper rev15 Tabel 4.28–4.29 dan model keuangan Oktober 2026. NMC adalah proyeksi kontribusi pemasaran.'
+  };
   const modelUrl = '../Greenhouse_Full_Facility_Walkthrough_28Sep2026/index.html?city=1&fly=1';
   const contexts = {
     21:['CORNER_SE','Lihat lokasi rooftop'],22:['CORNER_SE','Lihat lokasi rooftop'],
@@ -123,8 +134,6 @@
   const photo = n => ({18:'figures/figure-018.jpg',22:'assets/roof-context.png',29:'assets/hero-greenhouse.png',30:'assets/hero-greenhouse.png'})[n] || 'assets/hero-greenhouse.png';
   const chapterIndex = n => sectionFor(n).palette;
   const sourceWarnings = {
-    8:'Halaman Canva ini memakai proyeksi pendapatan Y1 lama. Angka pada desain HTML, Rp7,4 miliar, mengikuti PowerPoint Keuangan Mery halaman 6.',
-    17:'Halaman Canva ini memakai anggaran pemasaran Y1 lama. Angka pada desain HTML, Rp768 juta untuk pemasaran dan penjualan, mengikuti tabel OPEX PowerPoint Keuangan Mery halaman 5.',
     20:'Materi operasi awal pada Canva memakai roadmap 35→52 greenhouse; rangkaian operasi rinci setelahnya memakai skenario 35→237 greenhouse. Keduanya dipertahankan sesuai materi sumber.',
     21:'Lokasi Jakarta Selatan dan Timur pada halaman sumber adalah usulan lama. Lokasi rooftop saat ini tetap usulan dan membutuhkan verifikasi lapangan.',
     23:'Angka slide operasi mengikuti Canva awal. Materi keuangan Mery pada slide 53–64 memakai model yang lebih baru.',
@@ -143,6 +152,11 @@
   function renderStory(n) {
     const item = story[n-1];
     const section = sectionFor(n);
+    if (marketingSlides[n]) {
+      const code = marketingSlides[n];
+      $('storySlide').innerHTML = `<article class="story-canvas story-marketing" aria-label="Slide pemasaran ${code}: ${escape(item.title)}"><iframe class="marketing-frame" src="marketing-36/index.html?embed=1&amp;review=1#${code}" title="${escape(item.title)}" tabindex="-1" loading="eager"></iframe></article>`;
+      return;
+    }
     const start = `<article class="story-canvas story-${item.type}${wideFigures.has(n)?' story-wide':''} story-chapter-${chapterIndex(n)}${item.type==='finance'?'':' story-visual'}" aria-label="Slide sumber ${n}: ${escape(item.title)}"><div class="story-grain" aria-hidden="true"></div><div class="story-topline"><span><i></i> MELOOLOO / ${item.type==='finance'?'KEUANGAN':escape(section.name).toUpperCase()}</span></div>`;
     const financeOverline = {54:'ASUMSI PROYEKSI',55:'INVESTASI',56:'PENDANAAN',57:'RENCANA CAPEX & OPEX',58:'PROYEKSI LABA RUGI',59:'NERACA'};
     const overline = n >= 60 && n <= 64 ? '' : financeOverline[n] || section.name;
@@ -222,7 +236,7 @@
   }
   function showPage(value, options={}) {
     const requestedPage = Math.min(66,Math.max(1,Number(value) || 1));
-    const nextPage = reservedPages.has(requestedPage) ? 47 : requestedPage;
+    const nextPage = requestedPage >= 16 && requestedPage <= 19 ? 15 : reservedPages.has(requestedPage) ? 47 : requestedPage;
     const routePosition = routeOrder.indexOf(nextPage);
     const previousSection = sectionFor(page);
     const nextSection = sectionFor(nextPage);
@@ -288,7 +302,9 @@
         if (reservedPages.has(n)) continue;
         const item = document.createElement('button');
         item.type = 'button'; item.className = 'drawer-item'; item.dataset.page = String(n);
-        item.dataset.search = `${n} ${story[n-1].title} ${slides[n-1].title} ${slides[n-1].section} ${slides[n-1].text}`.toLocaleLowerCase();
+        item.dataset.search = marketingSlides[n]
+          ? `${n} ${marketingSlides[n]} ${story[n-1].title} ${story[n-1].lead}`.toLocaleLowerCase()
+          : `${n} ${story[n-1].title} ${slides[n-1].title} ${slides[n-1].section} ${slides[n-1].text}`.toLocaleLowerCase();
         const num = document.createElement('span'); num.textContent = pad(n);
         const title = document.createElement('strong'); title.textContent = story[n-1].title;
         item.append(num,title);
@@ -320,7 +336,14 @@
   }
   function openText() {
     priorFocus = document.activeElement;
-    $('textModalTitle').textContent = `${pad(page)} / ${slides[page-1].title}`;
+    $('textModalTitle').textContent = `${pad(page)} / ${story[page-1].title}`;
+    if (marketingSlides[page]) {
+      const slide = $('storySlide').querySelector('iframe')?.contentDocument?.querySelector('.slide.active');
+      $('slideText').textContent = (slide?.innerText || story[page-1].lead).trim() + '\n\nSUMBER\n' + marketingSources[page];
+      $('textModal').hidden = false;
+      $('textModalClose').focus();
+      return;
+    }
     const extracted = slides[page-1].text.trim();
     const warning = sourceWarnings[page] ? `CATATAN: ${sourceWarnings[page]}\n\n` : '';
     $('slideText').textContent = warning + (extracted.length > 100 ? extracted : 'Halaman ini terutama berupa gambar atau tabel, sehingga teks otomatisnya tidak lengkap. Buka “Referensi” untuk membaca data lengkap.');
@@ -331,6 +354,18 @@
   function openSource() {
     priorFocus = document.activeElement;
     $('sourceModalTitle').textContent = `${pad(page)} / ${story[page-1].title}`;
+    if (marketingSlides[page]) {
+      $('sourceModalKicker').textContent = `PAPER BISNIS OKTOBER · ${marketingSlides[page]}`;
+      $('sourceModalNotice').hidden = false;
+      $('sourceModalNotice').textContent = marketingSources[page];
+      $('sourceModalImage').parentElement.hidden = true;
+      $('sourcePdfLink').hidden = true;
+      $('sourceModal').hidden = false;
+      $('sourceModalClose').focus();
+      return;
+    }
+    $('sourceModalImage').parentElement.hidden = false;
+    $('sourcePdfLink').hidden = false;
     $('sourceModalKicker').textContent = page === 57 || page === 59 ? `POWERPOINT REVISI MERY · HALAMAN ${page === 57 ? '01' : '02'}` : page >= 53 && page <= 64 ? `POWERPOINT KEUANGAN MERY · HALAMAN ${pad(page-52)}` : sourceWarnings[page] ? 'HALAMAN ASLI · LIHAT CATATAN PEMBARUAN' : 'HALAMAN ASLI DARI PDF CANVA';
     $('sourceModalNotice').hidden = !sourceWarnings[page];
     $('sourceModalNotice').textContent = sourceWarnings[page] || '';

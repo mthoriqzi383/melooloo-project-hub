@@ -5,12 +5,12 @@
   if (!Array.isArray(story) || story.length !== 66) throw new Error('Presentation data missing.');
   const sections = [
     ['Peluang & model',1,7],['Operasi & teknologi',20,47],['Tim',48,52],
-    ['Investasi',53,56],['Kelayakan',57,64],['Pasar & merek',8,19],['Penutup',65,66]
+    ['Investasi',53,56],['Kelayakan',57,64],['Pasar & merek',8,15],['Penutup',65,66]
   ];
-  const reservedPages = new Set([45,46]);
+  const reservedPages = new Set([16,17,18,19,45,46]);
   const order = sections.flatMap(([,first,last]) => Array.from({length:last-first+1},(_,i)=>first+i)).filter(n=>!reservedPages.has(n));
   const key = 'melooloo-slide-draft-v1';
-  let draft = {schema:1,deck:'Melooloo Final Presentation 64',author:'',slides:{}};
+  let draft = {schema:1,deck:'Melooloo Final Presentation 60',author:'',slides:{}};
   let page = 1;
   let selected = null;
   let texts = [];
@@ -22,12 +22,12 @@
   const status = message => { $('editorStatus').textContent = message; };
   function sanitize(input) {
     if (!input || input.schema !== 1 || typeof input.slides !== 'object') throw new Error('Format draf tidak sesuai.');
-    const result = {schema:1,deck:'Melooloo Final Presentation 64',author:String(input.author || '').slice(0,80),slides:{}};
+    const result = {schema:1,deck:'Melooloo Final Presentation 60',author:String(input.author || '').slice(0,80),slides:{}};
     for (const [number,slide] of Object.entries(input.slides)) {
       const n = Number(number);
       if (!Number.isInteger(n) || n < 1 || n > 66 || reservedPages.has(n) || !slide || typeof slide !== 'object') continue;
       const next = {text:{}};
-      for (const [position,patch] of Object.entries(slide.text || {})) {
+      for (const [position,patch] of Object.entries(n >= 8 && n <= 15 ? {} : slide.text || {})) {
         const i = Number(position);
         if (!Number.isInteger(i) || i < 0 || i > 500 || !patch || typeof patch.base !== 'string' || typeof patch.value !== 'string') continue;
         if (patch.base.length > 2000 || patch.value.length > 2000 || !patch.value.trim()) continue;
@@ -82,6 +82,9 @@
   function syncCurrent() {
     $('currentNumber').textContent=pad(page);
     $('currentTitle').textContent=story[page-1].title;
+    const marketing = page >= 8 && page <= 15;
+    document.querySelector('.preview-foot .live-dot + span').textContent = marketing ? 'Tulis usulan pada catatan peninjau' : 'Klik teks pada slide untuk mengedit';
+    document.querySelector('.inspector-head p').textContent = marketing ? 'Slide pemasaran baru dapat dipratinjau di sini. Tulis usulan perubahan pada catatan peninjau.' : 'Klik teks di pratinjau, atau isi judul dan pembuka di sini.';
     $('prevSlide').disabled=order.indexOf(page)===0;
     $('nextSlide').disabled=order.indexOf(page)===order.length-1;
     document.querySelectorAll('.slide-row').forEach(row=>row.setAttribute('aria-current',Number(row.dataset.page)===page?'page':'false'));
@@ -108,7 +111,7 @@
       const dot=document.createElement('i');dot.hidden=entry.proposed===null;
       row.append(index,body,dot);row.addEventListener('click',()=>selectText(entry.index));list.append(row);
     }
-    if (!list.children.length) {const empty=document.createElement('p');empty.className='slide-group';empty.textContent='Tidak ada teks yang cocok.';list.append(empty);}
+    if (!list.children.length) {const empty=document.createElement('p');empty.className='slide-group';empty.textContent=page >= 8 && page <= 15 ? 'Slide pemasaran baru ditinjau lewat catatan peninjau di bawah.' : 'Tidak ada teks yang cocok.';list.append(empty);}
   }
   function syncQuickFields() {
     const primary=api.getPrimaryTexts();
