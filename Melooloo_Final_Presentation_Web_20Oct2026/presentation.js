@@ -11,11 +11,11 @@
   const $ = id => document.getElementById(id);
   const sections = [
     {name:'Peluang & model',start:1,end:7,palette:0,cue:'Dari celah pasar menuju model bisnis'},
+    {name:'Pasar & merek',start:8,end:15,palette:1,cue:'Dari pembeli menuju keputusan pemasaran'},
     {name:'Operasi & teknologi',start:20,end:47,palette:2,cue:'Dari satu greenhouse menjadi sistem'},
     {name:'Tim',start:48,end:52,palette:3,cue:'Orang yang menjaga mutu setiap hari'},
     {name:'Investasi',start:53,end:56,palette:4,cue:'Modal untuk membangun kapasitas'},
     {name:'Kelayakan',start:57,end:64,palette:5,cue:'Apakah angka mendukung keputusan?'},
-    {name:'Pasar & merek',start:8,end:15,palette:1,cue:'Dari pembeli menuju keputusan pemasaran'},
     {name:'Penutup',start:65,end:66,palette:6,cue:'Keputusan dan langkah berikutnya'}
   ];
   const reservedPages = new Set([16,17,18,19,45,46]);

@@ -346,9 +346,3 @@
   .ops-note{font-size:.75cqw}
   .ops-control-row span,.ops-table-row>span,.ops-downside-rows span{font-size:.78cqw}
 }
-/* Chapter transitions follow the presentation order: marketing now appears near the end. */
-.chapter-veil[data-chapter="2"] .chapter-veil-image{background-image:linear-gradient(90deg,rgba(4,29,21,.94),rgba(4,29,21,.38)),url('assets/editorial/roof-cluster.jpg?v=brand-3')}
-.chapter-veil[data-chapter="3"] .chapter-veil-image{background-image:linear-gradient(90deg,rgba(4,29,21,.94),rgba(4,29,21,.36)),url('assets/editorial/nursery.jpg?v=brand-3')}
-.chapter-veil[data-chapter="4"] .chapter-veil-image{background-image:radial-gradient(circle at 78% 34%,rgba(188,225,134,.27),transparent 28%),linear-gradient(90deg,#092719,#15402e)}
-.chapter-veil[data-chapter="5"] .chapter-veil-image{background-image:linear-gradient(90deg,rgba(4,29,21,.96),rgba(4,29,21,.4)),url('assets/editorial/greenhouse-unit.jpg?v=brand-3')}
-.chapter-veil[data-chapter="6"] .chapter-veil-image{background-image:linear-gradient(90deg,rgba(44,28,20,.92),rgba(44,28,20,.35)),url('assets/editorial/signature-pack.jpg?v=brand-3')}

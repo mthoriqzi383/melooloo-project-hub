@@ -4,8 +4,8 @@
   const story = window.MELOOLOO_STORY;
   if (!Array.isArray(story) || story.length !== 66) throw new Error('Presentation data missing.');
   const sections = [
-    ['Peluang & model',1,7],['Operasi & teknologi',20,47],['Tim',48,52],
-    ['Investasi',53,56],['Kelayakan',57,64],['Pasar & merek',8,15],['Penutup',65,66]
+    ['Peluang & model',1,7],['Pasar & merek',8,15],['Operasi & teknologi',20,47],
+    ['Tim',48,52],['Investasi',53,56],['Kelayakan',57,64],['Penutup',65,66]
   ];
   const reservedPages = new Set([16,17,18,19,45,46]);
   const order = sections.flatMap(([,first,last]) => Array.from({length:last-first+1},(_,i)=>first+i)).filter(n=>!reservedPages.has(n));
