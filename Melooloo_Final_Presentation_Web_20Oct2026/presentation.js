@@ -7,6 +7,7 @@
   if (typeof window.MELOOLOO_RENDER_FINANCE !== 'function') throw new Error('Finance visual layouts did not load.');
   if (typeof window.MELOOLOO_RENDER_OPERATIONS !== 'function') throw new Error('Operations visual layouts did not load.');
   if (typeof window.MELOOLOO_RENDER_HR !== 'function') throw new Error('HR visual layouts did not load.');
+  if (typeof window.MELOOLOO_RENDER_MARKETING !== 'function') throw new Error('Marketing visual layouts did not load.');
   const $ = id => document.getElementById(id);
   const sections = [
     {name:'Peluang & model',start:1,end:7,palette:0,cue:'Dari celah pasar menuju model bisnis'},
@@ -152,18 +153,13 @@
   function renderStory(n) {
     const item = story[n-1];
     const section = sectionFor(n);
-    if (marketingSlides[n]) {
-      const code = marketingSlides[n];
-      $('storySlide').innerHTML = `<article class="story-canvas story-marketing" aria-label="Slide pemasaran ${code}: ${escape(item.title)}"><iframe class="marketing-frame" src="marketing-36/index.html?embed=1&amp;review=1#${code}" title="${escape(item.title)}" tabindex="-1" loading="eager"></iframe></article>`;
-      return;
-    }
-    const start = `<article class="story-canvas story-${item.type}${wideFigures.has(n)?' story-wide':''} story-chapter-${chapterIndex(n)}${item.type==='finance'?'':' story-visual'}" aria-label="Slide sumber ${n}: ${escape(item.title)}"><div class="story-grain" aria-hidden="true"></div><div class="story-topline"><span><i></i> MELOOLOO / ${item.type==='finance'?'KEUANGAN':escape(section.name).toUpperCase()}</span></div>`;
+    const start = `<article class="story-canvas story-${item.type}${wideFigures.has(n)?' story-wide':''} story-chapter-${chapterIndex(n)}${item.type==='finance'?'':' story-visual'}${marketingSlides[n]?' story-marketing-live':''}" aria-label="Slide ${n}: ${escape(item.title)}"><div class="story-grain" aria-hidden="true"></div><div class="story-topline"><span><i></i> MELOOLOO / ${item.type==='finance'?'KEUANGAN':escape(section.name).toUpperCase()}</span></div>`;
     const financeOverline = {54:'ASUMSI PROYEKSI',55:'INVESTASI',56:'PENDANAAN',57:'RENCANA CAPEX & OPEX',58:'PROYEKSI LABA RUGI',59:'NERACA'};
     const overline = n >= 60 && n <= 64 ? '' : financeOverline[n] || section.name;
     const heading = `<div class="story-copy">${overline ? `<div class="story-overline">${escape(overline)}</div>` : ''}<h2>${escape(item.title)}</h2><p>${escape(item.lead)}</p></div>`;
     const footer = `<div class="story-footer"><span>PT MELOOLOO SEGAR INDONESIA</span></div>`;
     let body;
-    const visual = window.MELOOLOO_RENDER_HR?.(n,item,heading) || window.MELOOLOO_RENDER_OPERATIONS?.(n,item,heading) || window.MELOOLOO_RENDER_VISUAL?.(n,item,heading);
+    const visual = window.MELOOLOO_RENDER_MARKETING(n,item,heading) || window.MELOOLOO_RENDER_HR?.(n,item,heading) || window.MELOOLOO_RENDER_OPERATIONS?.(n,item,heading) || window.MELOOLOO_RENDER_VISUAL?.(n,item,heading);
     if (visual) {
       body = visual;
     } else if (item.type === 'finance') {
@@ -338,8 +334,8 @@
     priorFocus = document.activeElement;
     $('textModalTitle').textContent = `${pad(page)} / ${story[page-1].title}`;
     if (marketingSlides[page]) {
-      const slide = $('storySlide').querySelector('iframe')?.contentDocument?.querySelector('.slide.active');
-      $('slideText').textContent = (slide?.innerText || story[page-1].lead).trim() + '\n\nSUMBER\n' + marketingSources[page];
+      const slide = $('storySlide').querySelector('.mk-scene');
+      $('slideText').textContent = (slide?.innerText || story[page-1].lead).trim();
       $('textModal').hidden = false;
       $('textModalClose').focus();
       return;
@@ -359,13 +355,17 @@
       $('sourceModalNotice').hidden = false;
       $('sourceModalNotice').textContent = marketingSources[page];
       $('sourceModalImage').parentElement.hidden = true;
-      $('sourcePdfLink').hidden = true;
+      $('sourcePdfLink').href = `marketing-36/index.html#${marketingSlides[page]}`;
+      $('sourcePdfLink').textContent = 'Buka materi pemasaran lengkap ↗';
+      $('sourcePdfLink').hidden = false;
       $('sourceModal').hidden = false;
       $('sourceModalClose').focus();
       return;
     }
     $('sourceModalImage').parentElement.hidden = false;
     $('sourcePdfLink').hidden = false;
+    $('sourcePdfLink').href = 'source-slides.pdf?v=finance-4';
+    $('sourcePdfLink').textContent = 'Buka PDF 66 halaman ↗';
     $('sourceModalKicker').textContent = page === 57 || page === 59 ? `POWERPOINT REVISI MERY · HALAMAN ${page === 57 ? '01' : '02'}` : page >= 53 && page <= 64 ? `POWERPOINT KEUANGAN MERY · HALAMAN ${pad(page-52)}` : sourceWarnings[page] ? 'HALAMAN ASLI · LIHAT CATATAN PEMBARUAN' : 'HALAMAN ASLI DARI PDF CANVA';
     $('sourceModalNotice').hidden = !sourceWarnings[page];
     $('sourceModalNotice').textContent = sourceWarnings[page] || '';
