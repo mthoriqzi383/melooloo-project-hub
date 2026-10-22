@@ -323,7 +323,7 @@
     $('textModalTitle').textContent = `${pad(page)} / ${slides[page-1].title}`;
     const extracted = slides[page-1].text.trim();
     const warning = sourceWarnings[page] ? `CATATAN: ${sourceWarnings[page]}\n\n` : '';
-    $('slideText').textContent = warning + (extracted.length > 100 ? extracted : 'Halaman sumber ini terutama berupa gambar atau tabel raster, sehingga teks otomatisnya tidak lengkap. Gunakan tombol “Slide sumber” untuk membaca seluruh data pada halaman asli.');
+    $('slideText').textContent = warning + (extracted.length > 100 ? extracted : 'Halaman ini terutama berupa gambar atau tabel, sehingga teks otomatisnya tidak lengkap. Buka “Referensi” untuk membaca data lengkap.');
     $('textModal').hidden = false;
     $('textModalClose').focus();
   }
