@@ -145,7 +145,8 @@
     const section = sectionFor(n);
     const start = `<article class="story-canvas story-${item.type}${wideFigures.has(n)?' story-wide':''} story-chapter-${chapterIndex(n)}${item.type==='finance'?'':' story-visual'}" aria-label="Slide sumber ${n}: ${escape(item.title)}"><div class="story-grain" aria-hidden="true"></div><div class="story-topline"><span><i></i> MELOOLOO / ${item.type==='finance'?'KEUANGAN':escape(section.name).toUpperCase()}</span></div>`;
     const financeOverline = {54:'ASUMSI PROYEKSI',55:'INVESTASI',56:'PENDANAAN',57:'RENCANA CAPEX & OPEX',58:'PROYEKSI LABA RUGI',59:'NERACA'};
-    const heading = `<div class="story-copy"><div class="story-overline">${escape(financeOverline[n] || section.name)}</div><h2>${escape(item.title)}</h2><p>${escape(item.lead)}</p></div>`;
+    const overline = n >= 60 && n <= 64 ? '' : financeOverline[n] || section.name;
+    const heading = `<div class="story-copy">${overline ? `<div class="story-overline">${escape(overline)}</div>` : ''}<h2>${escape(item.title)}</h2><p>${escape(item.lead)}</p></div>`;
     const footer = `<div class="story-footer"><span>PT MELOOLOO SEGAR INDONESIA</span></div>`;
     let body;
     const visual = window.MELOOLOO_RENDER_HR?.(n,item,heading) || window.MELOOLOO_RENDER_OPERATIONS?.(n,item,heading) || window.MELOOLOO_RENDER_VISUAL?.(n,item,heading);

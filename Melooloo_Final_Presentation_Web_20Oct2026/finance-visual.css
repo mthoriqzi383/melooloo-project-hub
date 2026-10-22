@@ -122,3 +122,6 @@
 .fin-bottomline,.fin-spend-foot,.vs-strategy-note,.vs-channels-note,.vs-product-note,.vs-gallery-note,.vs-water-note,.vs-nursery-note,.vs-process-foot,.vs-org-foot{display:none!important}
 .vs-evidence-image{position:relative}
 .vs-archive-label{position:absolute;left:1cqw;bottom:1cqw;right:1cqw;background:#16452f;color:#f4f8ec;padding:.55cqw .7cqw;font-size:.76cqw;font-weight:800;letter-spacing:.04em;text-align:center}
+.fin-payback-summary{display:inline-flex;align-items:baseline;gap:.35cqw;white-space:nowrap}
+.fin-payback-summary span{display:inline-block}
+.fin-payback-summary i{margin-left:.55cqw}
