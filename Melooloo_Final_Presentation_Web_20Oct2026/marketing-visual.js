@@ -33,7 +33,7 @@
       <div class="mk-buyer-card mk-buyer-b2c">
         <div class="mk-buyer-head"><span>B2C · VOLUME GRADE A TAHUN 1</span><strong>32<em>%</em></strong></div>
         ${image(asset('reference-gift-edition.jpg'), 'Konsep Gift Edition Melooloo untuk pelanggan langsung')}
-        <div class="mk-buyer-list"><b>Premium Lifestyle</b><b>Gift &amp; Occasion</b><b>Health-Conscious Urban</b></div>
+        <div class="mk-buyer-list"><b>Premium Lifestyle</b><b>Gift &amp; Occasion</b><b>Health-Conscious Urban</b><b>Wellness Community</b></div>
       </div>
       <div class="mk-buyer-foot"><span>PINTU SASARAN</span><strong>121 ritel premium <i>+</i> 37 hotel bintang 5</strong><em>Proyeksi pasar awal</em></div>
     `);
@@ -183,7 +183,7 @@
     return scene(9, heading, `
       <div class="mk-audience-pair">
         <div><small>VOLUME GRADE A · TAHUN 1</small><strong>68<em>%</em></strong><b>B2B</b><span>ritel premium · hotel bintang 5 · e-grocery</span></div>
-        <div><small>VOLUME GRADE A · TAHUN 1</small><strong>32<em>%</em></strong><b>B2C</b><span>Premium Lifestyle · Gift &amp; Occasion · Health-Conscious Urban</span></div>
+        <div><small>VOLUME GRADE A · TAHUN 1</small><strong>32<em>%</em></strong><b>B2C</b><span>Premium Lifestyle · Gift &amp; Occasion · Health-Conscious Urban · Wellness Community</span></div>
         <div class="mk-audience-photo">${image(asset('reference-gift-edition.jpg'), 'Konsep kemasan Gift Edition Melooloo bermerek')}</div>
       </div>
       <div class="mk-pool-flow"><span>DARI PASAR KE TARGET TAHUN 1 <b>→</b></span><div>${pools.map(([label,value,unit],i)=>`<section class="${i===3?'selected':''}"><small>${label}</small><strong>${value}</strong><em>${unit}</em></section>`).join('')}</div></div>
@@ -210,7 +210,7 @@
     return scene(12, heading, `
       <div class="mk-price-head"><div><small>POSISI HARGA</small><strong>14–17×</strong><span>di bawah Crown Melon pada harga langsung Rp99.000/kg</span></div><div class="mk-price-scale"><div><span>HPP RENCANA</span><b>Rp28,7 rb/kg</b></div><div><span>MELOOLOO B2B</span><b>Rp75 rb/kg</b></div><div><span>LANGSUNG</span><b>Rp99 rb/kg</b></div><div><span>CROWN MELON</span><b>Rp1,3–1,7 jt/kg</b></div></div></div>
       <div class="mk-format-grid"><div>${image(asset('reference-signature-pack.jpg'), 'Konsep Signature Pack Melooloo dengan segel bermerek')}<strong>Lewat mitra</strong><span>Signature · Chef Selection</span><b>±62% margin kotor rencana</b></div><div>${image(asset('reference-gift-edition.jpg'), 'Konsep Gift Edition Melooloo dalam kotak bermerek')}<strong>Langsung</strong><span>Weekly · Season Pass · Gift Edition Rp535.000/box</span><b>±71% margin kotor rencana</b></div></div>
-      <div class="mk-price-evidence"><strong>45,8%</strong><span>survei bersedia membayar ≥Rp100.000 per buah</span><b>0 hari diskon pada buah bersegel</b></div>
+      <div class="mk-price-evidence"><strong>45,8%</strong><span>survei bersedia membayar ≥Rp100.000 per buah</span></div>
     `, false, 'mk-14 mk-combined-price');
   }
 

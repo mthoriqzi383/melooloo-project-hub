@@ -7,6 +7,7 @@
   if (!Number.isInteger(first) || !Number.isInteger(last) || first > last) throw new Error('Invalid slide range.');
   const excluded = new Set((document.body.dataset.exclude || '').split(',').filter(Boolean).map(Number));
   const source = window.MELOOLOO_ORIGINAL_MARKETING || {};
+  const revisions = window.MELOOLOO_MARKETING_REVISIONS || {};
   const all = Array.isArray(source) ? source : Array.isArray(source.slides) ? source.slides : [
     ...(Array.isArray(source.main) ? source.main : []),
     ...(Array.isArray(source.backup) ? source.backup : [])
@@ -15,12 +16,14 @@
   const format = value => String(value).padStart(2, '0');
   const info = number => {
     const entry = manifest.get(number) || {};
+    const revision = revisions[number] || {};
     const rawImage = String(entry.image || entry.src || entry.file || `slides/slide-${format(number)}.png`);
     return {
       number,
       title: String(entry.title || entry.name || (number === 22 ? 'Slide cadangan untuk tanya jawab' : `Slide pemasaran ${number}`)),
-      image: rawImage.startsWith('marketing-original/') ? rawImage.slice('marketing-original/'.length) : rawImage,
-      text: String(entry.text || '')
+      image: revision.revisedImage ? `../${revision.revisedImage}` : rawImage.startsWith('marketing-original/') ? rawImage.slice('marketing-original/'.length) : rawImage,
+      text: String(revision.text || entry.text || ''),
+      revised: Boolean(revision.revisedImage)
     };
   };
   const records = Array.from({length: last - first + 1}, (_, index) => first + index)
@@ -51,13 +54,13 @@
     const well = $('slideWell');
     well.classList.add('is-loading');
     $('slideError').hidden = true;
-    img.alt = `Slide ${current} dari PowerPoint pemasaran asli: ${entry.title}`;
+    img.alt = `Slide strategi pemasaran ${current}: ${entry.title}`;
     img.src = entry.image;
     $('slideTranscript').textContent = entry.text || `Teks slide ${current} belum tersedia.`;
     $('slideText').textContent = $('slideTranscript').textContent;
     $('textModalTitle').textContent = `Slide ${format(current)} · ${entry.title}`;
     $('slideTitle').textContent = entry.title;
-    $('slideLabel').textContent = `${kind === 'cadangan' ? 'Cadangan' : 'Materi utama'} · PowerPoint asli · slide ${format(current)}`;
+    $('slideLabel').textContent = `${kind === 'cadangan' ? 'Cadangan' : 'Materi utama'} · ${entry.revised ? 'revisi' : 'PowerPoint tim'} · slide ${format(current)}`;
     $('slideCounter').innerHTML = `${format(position)} <span>/ ${format(records.length)}</span>`;
     $('progressFill').style.width = `${position / records.length * 100}%`;
     $('prevButton').disabled = position === 1;

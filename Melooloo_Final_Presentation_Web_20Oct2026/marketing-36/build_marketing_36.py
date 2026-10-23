@@ -27,7 +27,7 @@ main = {}
 main['M1'] = slide('M1', 'Pembeli sudah ada; Tahun 1 cukup menjangkau 4–6% pasar premium DKI', '''
   <div class="m36-three">
     <div class="m36-panel frag"><div class="lbl"><span class="num">1</span>pembeli kami</div>
-      <div class="m36-dual"><div><small>B2B · TAHUN 1</small><strong>68%</strong><span>volume Grade A</span><p>Ritel premium · hotel bintang 5 · e-grocery</p></div><div class="accent"><small>B2C · TAHUN 1</small><strong>32%</strong><span>volume Grade A</span><p>Premium Lifestyle · Gift &amp; Occasion · Health-Conscious Urban</p></div></div>
+      <div class="m36-dual"><div><small>B2B · TAHUN 1</small><strong>68%</strong><span>volume Grade A</span><p>Ritel premium · hotel bintang 5 · e-grocery</p></div><div class="accent"><small>B2C · TAHUN 1</small><strong>32%</strong><span>volume Grade A</span><p>Premium Lifestyle · Gift &amp; Occasion · Health-Conscious Urban · Wellness Community</p></div></div>
       <div class="m36-mini">B2B memberi lantai volume; B2C dikembangkan lewat langganan dan hadiah.</div>
     </div>
     <div class="m36-panel frag"><div class="lbl"><span class="num">2</span>masalah mereka</div>
@@ -98,6 +98,23 @@ keep = ['M0', 'M1', 'M2', 'T', 'M3', 'M4', 'M5', 'M6'] + [f'B{i}' for i in range
 assert len(keep) == 36
 sections['M0'] = sections['M0'].replace('<span style="font-weight:700">[NAMA PRESENTER]</span> · [peran di tim]', '<span style="font-weight:700">Tim Melooloo</span> · Kelompok 6')
 for key, value in main.items(): sections[key] = value
+
+# Keep the older standalone review pages aligned with the revised public deck.
+sections['B19'] = sections['B19'].replace(
+    '\n          <tr><td>Hari diskon pada buah bersegel</td><td>0</td><td>0</td><td>—</td></tr>',
+    '',
+)
+sections['B23'] = (sections['B23']
+    .replace('Tiga pembeli B2B dan tiga sub-segmen B2C', 'Tiga pembeli B2B dan empat kelompok B2C')
+    .replace('Health-Conscious Urban, dijangkau lewat komunitas', 'Health-Conscious Urban')
+    .replace('Pendukung; komunitas menjadi saluran akuisisi utama', 'Pendukung')
+    .replace(
+        '<div class="seg"><div class="sn">Health-Conscious Urban</div><div class="sd"><span>2–4 buah per bulan; kesegaran, keamanan pangan, ketertelusuran</span><span class="sst">Pendukung</span></div></div>',
+        '<div class="seg"><div class="sn">Health-Conscious Urban</div><div class="sd"><span>2–4 buah per bulan; kesegaran, keamanan pangan, ketertelusuran</span><span class="sst">Pendukung</span></div></div>'
+        '<div class="seg"><div class="sn">Wellness Community</div><div class="sd"><span>Anggota studio pilates, yoga, klub lari, dan padel; aktivitas komunitas dan langganan</span><span class="sst">Pendukung</span></div></div>',
+    )
+    .replace('Sumber: Tabel 4.2, 4.4, 4.5, hlm. 38–44.', 'Sumber: Tabel 4.2, 4.4, 4.5, 4.24; paper hlm. 38–44, 80.')
+)
 
 # Carry across the full existing backup slide compositions. Correct claims
 # where the October paper or v2 guide makes the earlier wording too broad.

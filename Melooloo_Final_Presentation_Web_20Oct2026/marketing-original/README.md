@@ -1,6 +1,6 @@
 # Original marketing slides
 
-These are faithful static renders of the user supplied `Melooloo_Strategi_Pemasaran_v3_23Okt2026.pptx`. The public main presentation selects source slides 1, 3–5, 7–8, 12–17, and 19–21 (15 slides). Source slides 9–10 (labeled 2.3 and 2.4) and the four chapter dividers 2, 6, 11, and 18 are excluded from the presentation at the user's request. Slide 22 is the backup index; slides 23–51 are backup material for questions. All 51 renders remain here as an unchanged source archive.
+These are faithful static renders of the user supplied `Melooloo_Strategi_Pemasaran_v3_23Okt2026.pptx`. The public main presentation selects source slides 1, 3–5, 7–8, 12–17, and 19–21 (15 slides). Source slides 9–10 (labeled 2.3 and 2.4) and the four chapter dividers 2, 6, 11, and 18 are excluded from the presentation at the user's request. Slide 22 is the backup index; slides 23–51 are backup material for questions. All 51 renders remain here as an unchanged source archive. Selected public slides display documented derivatives in `../marketing-revised/` for later user revisions and charts that Quick Look omitted.
 
 The source PPTX is not changed or published here. To regenerate on macOS, place it in `~/Downloads` and run:
 

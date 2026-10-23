@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="editor.css?v=team-editor-3">
   <script src="story-data.js?v=marketing-pptx-count-20261023" defer></script>
   <script src="marketing-original/manifest.js?v=source-pptx-20261023" defer></script>
-  <script src="editor.js?v=marketing-divider-trim-20261023" defer></script>
+  <script src="editor.js?v=portrait-marketing-20261023" defer></script>
 </head>
 <body>
   <a class="skip" href="#preview">Lewati daftar slide</a>
@@ -19,7 +19,7 @@
   </header>
   <main class="workspace">
     <aside class="rail" aria-label="Daftar slide">
-      <div class="rail-head"><span class="eyebrow">01 / PILIH SLIDE</span><h1>Semua cerita.</h1><p>Pilih slide presentasi. Slide pemasaran PowerPoint asli menerima catatan; teks slide lain dapat disunting.</p></div>
+      <div class="rail-head"><span class="eyebrow">01 / PILIH SLIDE</span><h1>Semua cerita.</h1><p>Pilih slide presentasi. Slide pemasaran tim menerima catatan; teks slide lain dapat disunting.</p></div>
       <label class="search"><span>⌕</span><input id="slideSearch" type="search" placeholder="Cari judul atau nomor…" autocomplete="off"></label>
       <div class="slide-list" id="slideList"></div>
       <div class="rail-foot"><span id="changeCount">0 perubahan</span><span>Disimpan di browser ini</span></div>
@@ -32,7 +32,7 @@
     </section>
     <aside class="inspector" aria-label="Editor teks slide">
       <div class="inspector-head"><span class="eyebrow">03 / SUNTING KONTEN</span><h2>Teks pada slide.</h2><p>Klik teks di pratinjau, atau isi judul dan pembuka di sini.</p></div>
-      <div class="quick-fields" id="quickFields"><label id="quickTitleRow" for="quickTitle">Judul slide<input id="quickTitle" type="text" maxlength="2000" placeholder="Judul slide"></label><label id="quickLeadRow" for="quickLead">Kalimat pembuka<textarea id="quickLead" rows="3" maxlength="2000" placeholder="Kalimat pembuka slide"></textarea></label><p id="quickUnavailable" hidden>Slide pemasaran ditampilkan persis dari PowerPoint tim. Tulis usulan perubahan pada catatan peninjau di bawah; teks slide lain tetap dapat disunting di sini.</p></div>
+      <div class="quick-fields" id="quickFields"><label id="quickTitleRow" for="quickTitle">Judul slide<input id="quickTitle" type="text" maxlength="2000" placeholder="Judul slide"></label><label id="quickLeadRow" for="quickLead">Kalimat pembuka<textarea id="quickLead" rows="3" maxlength="2000" placeholder="Kalimat pembuka slide"></textarea></label><p id="quickUnavailable" hidden>Slide pemasaran ditampilkan sebagai gambar dari materi tim. Tulis usulan perubahan pada catatan peninjau di bawah; teks slide lain tetap dapat disunting di sini.</p></div>
       <label class="text-search-label" for="textSearch">Cari teks pada slide</label><input id="textSearch" class="text-search" type="search" placeholder="Judul, angka, label…" autocomplete="off">
       <div class="text-list" id="textList" aria-label="Teks yang dapat diedit"></div>
       <section class="edit-card" id="editCard" hidden><div class="edit-card-top"><span id="selectedTag">TEKS</span><button id="resetText" type="button">Pulihkan</button></div><label for="editValue">Teks baru</label><textarea id="editValue" rows="4" maxlength="2000"></textarea><div class="edit-hint"><span id="savedState">Tersimpan otomatis</span><span id="charCount">0 / 2000</span></div><details><summary>Lihat teks semula</summary><p id="originalValue"></p></details></section>

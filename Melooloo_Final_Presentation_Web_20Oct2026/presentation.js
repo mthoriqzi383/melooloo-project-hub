@@ -9,6 +9,7 @@
   if (typeof window.MELOOLOO_RENDER_HR !== 'function') throw new Error('HR visual layouts did not load.');
   const originalMarketing = window.MELOOLOO_ORIGINAL_MARKETING;
   if (!Array.isArray(originalMarketing?.main) || originalMarketing.main.length !== 21) throw new Error('Expected 21 original marketing slides.');
+  const marketingRevisions = window.MELOOLOO_MARKETING_REVISIONS || {};
   const $ = id => document.getElementById(id);
   const sections = [
     {name:'Peluang & model',start:1,end:7,palette:0,cue:'Dari celah pasar menuju model bisnis'},
@@ -23,8 +24,12 @@
   const reservedPages = new Set([8,9,10,11,12,13,14,15,16,17,18,19,45,46,...omittedMarketingPages]);
   const routeOrder = sections.flatMap(section => Array.from({length:section.end-section.start+1},(_,i)=>section.start+i)).filter(n => !reservedPages.has(n));
   if (routeOrder.length !== 67 || new Set(routeOrder).size !== 67) throw new Error('Presentation route must include 67 pages.');
-  const marketingFor = n => n >= 67 && n <= 87 && !omittedMarketingPages.has(n) ? originalMarketing.main[n - 67] : null;
-  const marketingImage = entry => `marketing-original/${entry.image}`;
+  const marketingFor = n => {
+    if (n < 67 || n > 87 || omittedMarketingPages.has(n)) return null;
+    const original = originalMarketing.main[n - 67];
+    return {...original,...(marketingRevisions[original.source] || {})};
+  };
+  const marketingImage = entry => entry.revisedImage || `marketing-original/${entry.image}`;
   const displayNumber = n => routeOrder.indexOf(n) + 1;
   const titleFor = n => marketingFor(n)?.title || story[n - 1]?.title || '';
   const modelUrl = '../Greenhouse_Full_Facility_Walkthrough_28Sep2026/index.html?city=1&fly=1';
@@ -148,7 +153,7 @@
   function renderStory(n) {
     const marketing = marketingFor(n);
     if (marketing) {
-      $('storySlide').innerHTML = `<article class="story-canvas original-marketing-canvas" aria-label="Slide ${displayNumber(n)}: ${escape(marketing.title)}"><img class="original-marketing-image" src="${escape(marketingImage(marketing))}" alt="Slide ${marketing.source} dari PowerPoint strategi pemasaran: ${escape(marketing.title)}" draggable="false"></article>`;
+      $('storySlide').innerHTML = `<article class="story-canvas original-marketing-canvas" aria-label="Slide ${displayNumber(n)}: ${escape(marketing.title)}"><img class="original-marketing-image" src="${escape(marketingImage(marketing))}" alt="Slide strategi pemasaran ${marketing.source}: ${escape(marketing.title)}" draggable="false"></article>`;
       const nextMarketing = marketingFor(routeOrder[displayNumber(n)]);
       if (nextMarketing) { const preview = new Image(); preview.src = marketingImage(nextMarketing); }
       return;
@@ -338,7 +343,7 @@
   function openText() {
     priorFocus = document.activeElement;
     $('textModalTitle').textContent = `${pad(displayNumber(page))} / ${titleFor(page)}`;
-    $('textModalKicker').textContent = marketingFor(page) ? 'TEKS DARI POWERPOINT PEMASARAN' : 'TEKS DARI PDF SUMBER';
+    $('textModalKicker').textContent = marketingFor(page) ? 'TEKS SLIDE PEMASARAN' : 'TEKS DARI PDF SUMBER';
     if (marketingFor(page)) {
       $('slideText').textContent = marketingFor(page).text.trim();
       $('textModal').hidden = false;
@@ -357,7 +362,7 @@
     $('sourceModalTitle').textContent = `${pad(displayNumber(page))} / ${titleFor(page)}`;
     if (marketingFor(page)) {
       const marketing = marketingFor(page);
-      $('sourceModalKicker').textContent = `POWERPOINT PEMASARAN V3 · SLIDE ${pad(marketing.source)}`;
+      $('sourceModalKicker').textContent = `${marketing.revisedImage ? 'SLIDE PEMASARAN · REVISI' : 'POWERPOINT PEMASARAN V3'} · SLIDE ${pad(marketing.source)}`;
       $('sourceModalNotice').hidden = true;
       $('sourceModalImage').parentElement.hidden = false;
       $('sourceModalImage').src = marketingImage(marketing);

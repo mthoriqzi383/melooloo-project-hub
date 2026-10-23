@@ -93,7 +93,7 @@
 .vs-roster-person{position:absolute;left:var(--x);top:var(--y);transform:translateX(-50%);width:18.5cqw;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.1cqw}
 .vs-roster-portrait{width:17cqw;height:17cqw;border-radius:50%;background:#fbf5e7;border:1px solid #d4d1c7;overflow:hidden}
 .vs-roster-portrait.has-photo{border:0}
-.vs-roster-portrait img{width:100%;height:100%;display:block;object-fit:cover;border-radius:50%}
+.vs-roster-portrait img{width:100%;height:100%;display:block;object-fit:cover;object-position:50% var(--portrait-y,50%);border-radius:50%}
 .vs-roster-person>strong{font:750 2.8cqw/1 Arial,sans-serif;color:#050505;letter-spacing:-.04em}
 .vs-gap .story-copy{max-width:58%}
 .vs-gap-plot{position:absolute;inset:36% 0 1%;padding:1cqw 0;display:flex;flex-direction:column;justify-content:space-around}

@@ -94,8 +94,8 @@
     $('currentNumber').textContent=pad(displayNumber(page));
     $('currentTitle').textContent=titleFor(page);
     document.querySelector('.preview-foot .live-dot + span').textContent = isMarketing(page) ? 'Tulis usulan pada catatan peninjau' : 'Klik teks pada slide untuk mengedit';
-    document.querySelector('.preview-foot small').textContent = isMarketing(page) ? 'Pratinjau dari PowerPoint asli tim.' : 'Gerakan dan interaksi slide tetap aktif.';
-    document.querySelector('.inspector-head p').textContent = isMarketing(page) ? 'Slide PowerPoint asli dapat dipratinjau di sini. Tulis usulan perubahan pada catatan peninjau.' : 'Klik teks di pratinjau, atau isi judul dan pembuka di sini.';
+    document.querySelector('.preview-foot small').textContent = isMarketing(page) ? 'Pratinjau dari materi tim.' : 'Gerakan dan interaksi slide tetap aktif.';
+    document.querySelector('.inspector-head p').textContent = isMarketing(page) ? 'Slide pemasaran tim dapat dipratinjau di sini. Tulis usulan perubahan pada catatan peninjau.' : 'Klik teks di pratinjau, atau isi judul dan pembuka di sini.';
     document.querySelector('.text-search-label').hidden = isMarketing(page);
     $('textSearch').hidden = isMarketing(page);
     $('prevSlide').disabled=order.indexOf(page)===0;
@@ -103,7 +103,7 @@
     document.querySelectorAll('.slide-row').forEach(row=>row.setAttribute('aria-current',Number(row.dataset.page)===page?'page':'false'));
     $('slideNote').value=draft.slides[page]?.note || '';
     history.replaceState(null,'',`#slide=${page}`);
-    status(isMarketing(page) ? 'Slide PowerPoint asli: tulis usulan pada catatan peninjau.' : 'Klik teks pada slide atau ubah judul di panel kanan.');
+    status(isMarketing(page) ? 'Slide pemasaran tim: tulis usulan pada catatan peninjau.' : 'Klik teks pada slide atau ubah judul di panel kanan.');
   }
   function showPage(n) {
     page=n;selected=null;$('editCard').hidden=true;syncCurrent();
