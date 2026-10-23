@@ -62,4 +62,38 @@
         .replace('Tabel 4.2, 4.4, 4.5, hlm. 38–44', 'Tabel 4.2, 4.4, 4.5, 4.24; paper hlm. 38–44, 80')
     }
   };
+
+  // These are the titles for the 15 marketing pages still in the main deck.
+  // The six removed source pages retain their archived titles.
+  const mainTitles = {
+    1: ['Strategi Pemasaran', 'strategi\npemasaran'],
+    3: ['Kualitas Rasa Melon Premium Belum Terjamin', 'Pembeli sudah membeli melon premium, tetapi tidak ada yang menjamin rasanya'],
+    4: ['Segmentasi dan Target Pasar', 'Pembeli kami: B2B 68% volume Tahun 1, B2C 32%'],
+    5: ['Estimasi Ukuran Pasar (TAM, SAM, SOM)', 'Kami hanya perlu 4–6% pasar premium DKI di Tahun 1'],
+    7: ['Peta Persaingan dan Posisi Melooloo', 'Satu-satunya pemasok premium di dalam Jakarta'],
+    8: ['Point of Parity dan Point of Difference', 'Pembedanya bisa diperiksa sendiri oleh pembeli'],
+    12: ['Strategi Harga dan Perbandingan Pasar', 'Harga 14–17 kali di bawah Crown Melon'],
+    13: ['Format Produk per Kanal', 'Satu format untuk satu kanal'],
+    14: ['Strategi Masuk Pasar Tahun 0–1', 'B2B mengunci volume sejak Tahun 0, mengikuti jadwal panen'],
+    15: ['Bauran Kanal Distribusi Tahun 1–10', 'B2C menjadi 60% volume di Tahun 5'],
+    16: ['Komunikasi Pemasaran Terpadu (IMC) Tahun 1', 'Anggaran komunikasi terbesar untuk pengalaman, karena pembeli harus mencicipi sebelum percaya'],
+    17: ['Sasaran Pemasaran per Tahap Perjalanan Pelanggan', 'Kami siap diukur di tiga tahap perjalanan pelanggan'],
+    19: ['Anggaran Pemasaran terhadap Pendapatan', 'Pemasaran hemat: ±6% pendapatan, di bawah tolok ukur'],
+    20: ['Mekanisme Pengendalian Anggaran dan Ekspansi', 'Terkendali: tiga rem sebelum anggaran dan ekspansi berjalan'],
+    21: ['Ringkasan Strategi Pemasaran', 'Premium. Local. Consistent.']
+  };
+  for (const [key, [title, oldHeadline]] of Object.entries(mainTitles)) {
+    const number = Number(key);
+    const revision = window.MELOOLOO_MARKETING_REVISIONS[number] ||= {};
+    const transcript = revision.text ?? sourceText(number);
+    const extension = number === 15 || number === 19 ? 'svg' : 'png';
+    revision.revisedImage = `marketing-revised/slide-${String(number).padStart(2, '0')}.${extension}?v=marketing-titles-20261023`;
+    revision.title = title;
+    revision.text = transcript.includes(oldHeadline)
+      ? transcript.replace(oldHeadline, title)
+      : `${title}\n${transcript}`;
+    if (number === 1) {
+      revision.text = revision.text.replace('[NAMA PRESENTER]\n·  [peran di tim]\n', '');
+    }
+  }
 })();

@@ -42,7 +42,11 @@ function circle(cx, cy, r, fill, stroke = '', sw = 0) {
 }
 
 function composite(slide, title, description, overlay) {
-  const background = readFileSync(join(dir, `../marketing-original/slides/slide-${String(slide).padStart(2, '0')}.png`)).toString('base64');
+  const slideName = `slide-${String(slide).padStart(2, '0')}.png`;
+  const base = [15, 19].includes(slide)
+    ? join(dir, `title-base-${slideName}`)
+    : join(dir, `../marketing-original/slides/${slideName}`);
+  const background = readFileSync(base).toString('base64');
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="title desc"><title id="title">${esc(title)}</title><desc id="desc">${esc(description)}</desc><image x="0" y="0" width="${W}" height="${H}" href="data:image/png;base64,${background}"/>${overlay}</svg>`;
   writeFileSync(join(dir, `slide-${String(slide).padStart(2, '0')}.svg`), svg);
 }

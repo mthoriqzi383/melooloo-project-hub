@@ -5,6 +5,7 @@
   if (!Array.isArray(story) || story.length !== 66) throw new Error('Presentation data missing.');
   const marketing = window.MELOOLOO_ORIGINAL_MARKETING?.main;
   if (!Array.isArray(marketing) || marketing.length !== 21) throw new Error('Original marketing slides missing.');
+  const marketingRevisions = window.MELOOLOO_MARKETING_REVISIONS || {};
   const sections = [
     ['Peluang & model',1,7],['Pasar & merek',67,87],['Operasi & teknologi',20,47],
     ['Tim',48,52],['Investasi',53,56],['Kelayakan',57,64],['Penutup',65,66]
@@ -14,7 +15,9 @@
   if (order.length !== 67 || new Set(order).size !== 67) throw new Error('Editor route must include 67 pages.');
   const isMarketing = n => n >= 67 && n <= 87;
   const displayNumber = n => order.indexOf(n) + 1;
-  const titleFor = n => isMarketing(n) ? marketing[n-67].title : story[n-1].title;
+  const titleFor = n => isMarketing(n)
+    ? marketingRevisions[marketing[n-67].source]?.title || marketing[n-67].title
+    : story[n-1].title;
   const key = 'melooloo-slide-draft-v1';
   let draft = {schema:1,deck:'Melooloo Final Presentation 67',author:'',slides:{}};
   let page = 1;

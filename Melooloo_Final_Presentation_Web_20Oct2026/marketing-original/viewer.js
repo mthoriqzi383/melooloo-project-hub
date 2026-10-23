@@ -20,7 +20,7 @@
     const rawImage = String(entry.image || entry.src || entry.file || `slides/slide-${format(number)}.png`);
     return {
       number,
-      title: String(entry.title || entry.name || (number === 22 ? 'Slide cadangan untuk tanya jawab' : `Slide pemasaran ${number}`)),
+      title: String(revision.title || entry.title || entry.name || (number === 22 ? 'Slide cadangan untuk tanya jawab' : `Slide pemasaran ${number}`)),
       image: revision.revisedImage ? `../${revision.revisedImage}` : rawImage.startsWith('marketing-original/') ? rawImage.slice('marketing-original/'.length) : rawImage,
       text: String(revision.text || entry.text || ''),
       revised: Boolean(revision.revisedImage)
