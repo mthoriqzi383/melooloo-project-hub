@@ -66,5 +66,5 @@ window.MELOOLOO_STORY = [
   {type:'finance',title:'Sensitivitas & Skenario',lead:'Skenario pesimis menghasilkan NPV negatif; expected NPV berbobot tetap positif.',facts:[['−Rp19,9 M','NPV pesimis'],['Rp23,5 M','NPV most likely'],['Rp18,7 M','expected NPV']]},
   {type:'finance',title:'Keputusan Investasi',lead:'Keputusan investasi GO bergantung pada penerimaan harga, ketahanan produksi, dan disiplin penagihan.',facts:[['Harga','penerimaan premium'],['IoT','gangguan dan panen'],['Piutang','termin B2B 40 hari']]},
   {type:'cards',title:'Dari peluang ke keputusan',lead:'Melooloo membangun pasokan melon premium melalui smart greenhouse; model keuangan terbaru mendukung investasi dengan mitigasi terukur.',facts:[['35 → 237 GH','kapasitas Y0–Y10 dalam model baru'],['IoT','kendali budidaya'],['Rp23,5 M','NPV skenario most likely'],['GO','dengan mitigasi risiko']]},
-  {type:'hero',title:'Terima kasih.',lead:'PT Melooloo Segar Indonesia · Sidang business plan.',facts:[['60','halaman presentasi'],['3D','walkthrough greenhouse']]}
+  {type:'hero',title:'Terima kasih.',lead:'PT Melooloo Segar Indonesia · Sidang business plan.',facts:[['73','halaman presentasi'],['3D','walkthrough greenhouse']]}
 ];
