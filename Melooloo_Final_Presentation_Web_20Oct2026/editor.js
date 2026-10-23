@@ -9,14 +9,14 @@
     ['Peluang & model',1,7],['Pasar & merek',67,87],['Operasi & teknologi',20,47],
     ['Tim',48,52],['Investasi',53,56],['Kelayakan',57,64],['Penutup',65,66]
   ];
-  const reservedPages = new Set([8,9,10,11,12,13,14,15,16,17,18,19,45,46,75,76]);
+  const reservedPages = new Set([8,9,10,11,12,13,14,15,16,17,18,19,45,46,68,72,75,76,77,84]);
   const order = sections.flatMap(([,first,last]) => Array.from({length:last-first+1},(_,i)=>first+i)).filter(n=>!reservedPages.has(n));
-  if (order.length !== 71 || new Set(order).size !== 71) throw new Error('Editor route must include 71 pages.');
+  if (order.length !== 67 || new Set(order).size !== 67) throw new Error('Editor route must include 67 pages.');
   const isMarketing = n => n >= 67 && n <= 87;
   const displayNumber = n => order.indexOf(n) + 1;
   const titleFor = n => isMarketing(n) ? marketing[n-67].title : story[n-1].title;
   const key = 'melooloo-slide-draft-v1';
-  let draft = {schema:1,deck:'Melooloo Final Presentation 71',author:'',slides:{}};
+  let draft = {schema:1,deck:'Melooloo Final Presentation 67',author:'',slides:{}};
   let page = 1;
   let selected = null;
   let texts = [];
@@ -28,7 +28,7 @@
   const status = message => { $('editorStatus').textContent = message; };
   function sanitize(input) {
     if (!input || input.schema !== 1 || typeof input.slides !== 'object') throw new Error('Format draf tidak sesuai.');
-    const result = {schema:1,deck:'Melooloo Final Presentation 71',author:String(input.author || '').slice(0,80),slides:{}};
+    const result = {schema:1,deck:'Melooloo Final Presentation 67',author:String(input.author || '').slice(0,80),slides:{}};
     for (const [number,slide] of Object.entries(input.slides)) {
       const n = Number(number);
       if (!Number.isInteger(n) || !order.includes(n) || !slide || typeof slide !== 'object') continue;
@@ -49,8 +49,9 @@
   $('editorName').value = draft.author;
   const fromHash = Number(location.hash.match(/^#slide=(\d+)$/)?.[1]);
   if (Number.isInteger(fromHash)) {
-    const mapped = fromHash >= 8 && fromHash <= 15 ? fromHash + 59 : fromHash >= 16 && fromHash <= 19 ? 87 : [75,76].includes(fromHash) ? 77 : fromHash;
+    const mapped = fromHash >= 8 && fromHash <= 15 ? fromHash + 59 : fromHash >= 16 && fromHash <= 19 ? 87 : fromHash;
     if (order.includes(mapped)) page = mapped;
+    else if (mapped >= 67 && mapped <= 87) page = order.find(n => n >= mapped && isMarketing(n)) || 20;
   }
   function save() {
     draft.author = $('editorName').value.slice(0,80);

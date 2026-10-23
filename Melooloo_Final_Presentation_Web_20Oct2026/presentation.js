@@ -19,10 +19,11 @@
     {name:'Kelayakan',start:57,end:64,palette:5,cue:'Apakah angka mendukung keputusan?'},
     {name:'Penutup',start:65,end:66,palette:6,cue:'Keputusan dan langkah berikutnya'}
   ];
-  const reservedPages = new Set([8,9,10,11,12,13,14,15,16,17,18,19,45,46,75,76]);
+  const omittedMarketingPages = new Set([68,72,75,76,77,84]);
+  const reservedPages = new Set([8,9,10,11,12,13,14,15,16,17,18,19,45,46,...omittedMarketingPages]);
   const routeOrder = sections.flatMap(section => Array.from({length:section.end-section.start+1},(_,i)=>section.start+i)).filter(n => !reservedPages.has(n));
-  if (routeOrder.length !== 71 || new Set(routeOrder).size !== 71) throw new Error('Presentation route must include 71 pages.');
-  const marketingFor = n => n >= 67 && n <= 87 && !reservedPages.has(n) ? originalMarketing.main[n - 67] : null;
+  if (routeOrder.length !== 67 || new Set(routeOrder).size !== 67) throw new Error('Presentation route must include 67 pages.');
+  const marketingFor = n => n >= 67 && n <= 87 && !omittedMarketingPages.has(n) ? originalMarketing.main[n - 67] : null;
   const marketingImage = entry => `marketing-original/${entry.image}`;
   const displayNumber = n => routeOrder.indexOf(n) + 1;
   const titleFor = n => marketingFor(n)?.title || story[n - 1]?.title || '';
@@ -233,7 +234,10 @@
   }
   function showPage(value, options={}) {
     const requestedPage = Math.min(87,Math.max(1,Number(value) || 1));
-    const nextPage = requestedPage >= 8 && requestedPage <= 15 ? requestedPage + 59 : requestedPage >= 16 && requestedPage <= 19 ? 87 : requestedPage === 75 || requestedPage === 76 ? 77 : reservedPages.has(requestedPage) ? 47 : requestedPage;
+    const mappedPage = requestedPage >= 8 && requestedPage <= 15 ? requestedPage + 59 : requestedPage >= 16 && requestedPage <= 19 ? 87 : requestedPage;
+    const nextPage = omittedMarketingPages.has(mappedPage)
+      ? routeOrder.find(n => n > mappedPage && n <= 87)
+      : reservedPages.has(mappedPage) ? 47 : mappedPage;
     const routePosition = routeOrder.indexOf(nextPage);
     const previousSection = sectionFor(page);
     const nextSection = sectionFor(nextPage);
