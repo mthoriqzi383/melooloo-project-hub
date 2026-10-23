@@ -1,6 +1,6 @@
 # Original marketing slides
 
-These are faithful static renders of the user supplied `Melooloo_Strategi_Pemasaran_v3_23Okt2026.pptx`. Slides 1–21 are the main presentation. Slide 22 is the backup index; slides 23–51 are backup material for questions.
+These are faithful static renders of the user supplied `Melooloo_Strategi_Pemasaran_v3_23Okt2026.pptx`. The public main presentation selects source slides 1–8 and 11–21 (19 slides); source slides 9–10, labeled 2.3 and 2.4, were removed from the presentation at the user's request. Slide 22 is the backup index; slides 23–51 are backup material for questions. All 51 renders remain here as an unchanged source archive.
 
 The source PPTX is not changed or published here. To regenerate on macOS, place it in `~/Downloads` and run:
 

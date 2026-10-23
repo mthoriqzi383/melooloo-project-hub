@@ -5,6 +5,7 @@
   const last = Number(document.body.dataset.last);
   const kind = document.body.dataset.kind || 'utama';
   if (!Number.isInteger(first) || !Number.isInteger(last) || first > last) throw new Error('Invalid slide range.');
+  const excluded = new Set((document.body.dataset.exclude || '').split(',').filter(Boolean).map(Number));
   const source = window.MELOOLOO_ORIGINAL_MARKETING || {};
   const all = Array.isArray(source) ? source : Array.isArray(source.slides) ? source.slides : [
     ...(Array.isArray(source.main) ? source.main : []),
@@ -22,25 +23,30 @@
       text: String(entry.text || '')
     };
   };
-  const records = Array.from({length: last - first + 1}, (_, index) => info(first + index));
+  const records = Array.from({length: last - first + 1}, (_, index) => first + index)
+    .filter(number => !excluded.has(number)).map(info);
+  if (!records.length) throw new Error('No slides selected.');
+  const slideNumbers = new Set(records.map(entry => entry.number));
+  const nearest = number => slideNumbers.has(number) ? number :
+    (records.find(entry => entry.number >= number) || records.at(-1)).number;
   const fromHash = () => {
     const number = Number(location.hash.match(/^#slide=(\d+)$/)?.[1]);
-    return number >= first && number <= last ? number : first;
+    return number >= first && number <= last ? nearest(number) : records[0].number;
   };
   let current = fromHash();
   let drawerBuilt = false;
   let priorFocus;
   const preload = new Set();
   function prefetch(number) {
-    if (number < first || number > last || preload.has(number)) return;
+    if (!slideNumbers.has(number) || preload.has(number)) return;
     preload.add(number);
     const image = new Image();
     image.src = info(number).image;
   }
   function show(number, changeHash = true) {
-    current = Math.max(first, Math.min(last, number));
+    current = nearest(Math.max(first, Math.min(last, number)));
     const entry = info(current);
-    const position = current - first + 1;
+    const position = records.findIndex(record => record.number === current) + 1;
     const img = $('slideImage');
     const well = $('slideWell');
     well.classList.add('is-loading');
@@ -54,13 +60,17 @@
     $('slideLabel').textContent = `${kind === 'cadangan' ? 'Cadangan' : 'Materi utama'} · PowerPoint asli · slide ${format(current)}`;
     $('slideCounter').innerHTML = `${format(position)} <span>/ ${format(records.length)}</span>`;
     $('progressFill').style.width = `${position / records.length * 100}%`;
-    $('prevButton').disabled = current === first;
-    $('nextButton').disabled = current === last;
+    $('prevButton').disabled = position === 1;
+    $('nextButton').disabled = position === records.length;
     document.title = `${format(current)} · ${entry.title} | Melooloo`;
     if (drawerBuilt) for (const button of $('drawerList').querySelectorAll('.slide-choice')) button.setAttribute('aria-current', Number(button.dataset.slide) === current ? 'page' : 'false');
-    if (changeHash) history.replaceState(null, '', `#slide=${current}`);
-    prefetch(current - 1);
-    prefetch(current + 1);
+    if (changeHash || location.hash !== `#slide=${current}`) history.replaceState(null, '', `#slide=${current}`);
+    if (position > 1) prefetch(records[position - 2].number);
+    if (position < records.length) prefetch(records[position].number);
+  }
+  function step(delta) {
+    const index = records.findIndex(record => record.number === current);
+    show(records[Math.max(0, Math.min(records.length - 1, index + delta))].number);
   }
   $('slideImage').addEventListener('load', () => $('slideWell').classList.remove('is-loading'));
   $('slideImage').addEventListener('error', () => {
@@ -118,8 +128,8 @@
     $('textModal').hidden = true;
     priorTextFocus?.focus?.();
   }
-  $('prevButton').addEventListener('click', () => show(current - 1));
-  $('nextButton').addEventListener('click', () => show(current + 1));
+  $('prevButton').addEventListener('click', () => step(-1));
+  $('nextButton').addEventListener('click', () => step(1));
   $('transcriptButton').addEventListener('click', openText);
   $('textModalClose').addEventListener('click', closeText);
   $('textModal').addEventListener('click', event => { if (event.target === $('textModal')) closeText(); });
@@ -137,10 +147,10 @@
       return;
     }
     if (!$('drawer').hidden) return;
-    if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); show(current + 1); }
-    else if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); show(current - 1); }
-    else if (event.key === 'Home') { event.preventDefault(); show(first); }
-    else if (event.key === 'End') { event.preventDefault(); show(last); }
+    if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); step(1); }
+    else if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); step(-1); }
+    else if (event.key === 'Home') { event.preventDefault(); show(records[0].number); }
+    else if (event.key === 'End') { event.preventDefault(); show(records.at(-1).number); }
     else if (event.key.toLowerCase() === 'f') $('fullscreenButton').click();
   });
   addEventListener('hashchange', () => show(fromHash(), false));
