@@ -17,6 +17,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 APPROVED = ROOT / "published-edits.js"
 PREFIX = "/* Reviewed edits are added here by the publishing script. */\nwindow.MELOOLOO_PUBLISHED_EDITS = "
+VALID_PAGES = set(range(1, 8)) | set(range(20, 45)) | set(range(47, 88))
+MARKETING_PAGES = set(range(67, 88))
+SUPPORTED_DECKS = {
+    "Melooloo Final Presentation 60",
+    "Melooloo Final Presentation 66",
+    "Melooloo Final Presentation 73",
+}
 
 
 def read_approved():
@@ -35,7 +42,7 @@ def main():
     if args.draft.stat().st_size > 2_000_000:
         parser.error("Draft exceeds 2 MB")
     draft = json.loads(args.draft.read_text(encoding="utf-8"))
-    if draft.get("schema") != 1 or draft.get("deck") != "Melooloo Final Presentation 66" or not isinstance(draft.get("slides"), dict):
+    if draft.get("schema") != 1 or draft.get("deck") not in SUPPORTED_DECKS or not isinstance(draft.get("slides"), dict):
         parser.error("This is not a Melooloo slide draft")
     published = read_approved()
     proposed = json.loads(json.dumps(published))
@@ -44,15 +51,21 @@ def main():
     count = 0
     print(f"Draf: {args.draft.name} | Penyunting: {draft.get('author') or '(tidak diisi)'}")
     for number, slide in sorted(draft["slides"].items(), key=lambda item: int(item[0]) if item[0].isdigit() else 999):
-        if not number.isdigit() or not 1 <= int(number) <= 66 or not isinstance(slide, dict):
+        if not number.isdigit() or int(number) not in VALID_PAGES or not isinstance(slide, dict):
             conflicts.append(f"Invalid slide: {number}")
             continue
         text = slide.get("text", {})
         if not isinstance(text, dict):
             conflicts.append(f"Slide {number}: text is invalid")
             continue
+        label = f"SLIDE {number}"
+        if int(number) in MARKETING_PAGES:
+            label += f" · tayang {int(number) - 59} · PowerPoint pemasaran {int(number) - 66}"
         if slide.get("note"):
-            print(f"\nSLIDE {number} · CATATAN: {str(slide['note'])[:300]}")
+            print(f"\n{label} · CATATAN: {str(slide['note'])[:2000]}")
+        if int(number) in MARKETING_PAGES and text:
+            conflicts.append(f"Slide {number}: original marketing slides accept reviewer notes only")
+            continue
         for position, patch in sorted(text.items(), key=lambda item: int(item[0]) if item[0].isdigit() else 999):
             if not position.isdigit() or not 0 <= int(position) <= 500 or not isinstance(patch, dict):
                 conflicts.append(f"Slide {number}: invalid position {position}")

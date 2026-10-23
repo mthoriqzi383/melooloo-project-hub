@@ -1,0 +1,22 @@
+.original-marketing-canvas {
+  background: #f5f1e8;
+}
+
+.original-marketing-canvas::before {
+  display: none;
+}
+
+.original-marketing-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.drawer-foot a {
+  color: #24563c;
+  font-weight: 750;
+  text-decoration-color: #8eb78b;
+  text-underline-offset: 3px;
+}

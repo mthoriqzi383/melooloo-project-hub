@@ -3,14 +3,20 @@
   const $ = id => document.getElementById(id);
   const story = window.MELOOLOO_STORY;
   if (!Array.isArray(story) || story.length !== 66) throw new Error('Presentation data missing.');
+  const marketing = window.MELOOLOO_ORIGINAL_MARKETING?.main;
+  if (!Array.isArray(marketing) || marketing.length !== 21) throw new Error('Original marketing slides missing.');
   const sections = [
-    ['Peluang & model',1,7],['Pasar & merek',8,15],['Operasi & teknologi',20,47],
+    ['Peluang & model',1,7],['Pasar & merek',67,87],['Operasi & teknologi',20,47],
     ['Tim',48,52],['Investasi',53,56],['Kelayakan',57,64],['Penutup',65,66]
   ];
-  const reservedPages = new Set([16,17,18,19,45,46]);
+  const reservedPages = new Set([8,9,10,11,12,13,14,15,16,17,18,19,45,46]);
   const order = sections.flatMap(([,first,last]) => Array.from({length:last-first+1},(_,i)=>first+i)).filter(n=>!reservedPages.has(n));
+  if (order.length !== 73 || new Set(order).size !== 73) throw new Error('Editor route must include 73 pages.');
+  const isMarketing = n => n >= 67 && n <= 87;
+  const displayNumber = n => order.indexOf(n) + 1;
+  const titleFor = n => isMarketing(n) ? marketing[n-67].title : story[n-1].title;
   const key = 'melooloo-slide-draft-v1';
-  let draft = {schema:1,deck:'Melooloo Final Presentation 60',author:'',slides:{}};
+  let draft = {schema:1,deck:'Melooloo Final Presentation 73',author:'',slides:{}};
   let page = 1;
   let selected = null;
   let texts = [];
@@ -22,12 +28,12 @@
   const status = message => { $('editorStatus').textContent = message; };
   function sanitize(input) {
     if (!input || input.schema !== 1 || typeof input.slides !== 'object') throw new Error('Format draf tidak sesuai.');
-    const result = {schema:1,deck:'Melooloo Final Presentation 60',author:String(input.author || '').slice(0,80),slides:{}};
+    const result = {schema:1,deck:'Melooloo Final Presentation 73',author:String(input.author || '').slice(0,80),slides:{}};
     for (const [number,slide] of Object.entries(input.slides)) {
       const n = Number(number);
-      if (!Number.isInteger(n) || n < 1 || n > 66 || reservedPages.has(n) || !slide || typeof slide !== 'object') continue;
+      if (!Number.isInteger(n) || !order.includes(n) || !slide || typeof slide !== 'object') continue;
       const next = {text:{}};
-      for (const [position,patch] of Object.entries(n >= 8 && n <= 15 ? {} : slide.text || {})) {
+      for (const [position,patch] of Object.entries(isMarketing(n) ? {} : slide.text || {})) {
         const i = Number(position);
         if (!Number.isInteger(i) || i < 0 || i > 500 || !patch || typeof patch.base !== 'string' || typeof patch.value !== 'string') continue;
         if (patch.base.length > 2000 || patch.value.length > 2000 || !patch.value.trim()) continue;
@@ -42,7 +48,10 @@
   catch { status('Draf lama tidak dapat dibuka. Mulai dari draf kosong.'); }
   $('editorName').value = draft.author;
   const fromHash = Number(location.hash.match(/^#slide=(\d+)$/)?.[1]);
-  if (Number.isInteger(fromHash) && order.includes(fromHash)) page = fromHash;
+  if (Number.isInteger(fromHash)) {
+    const mapped = fromHash >= 8 && fromHash <= 15 ? fromHash + 59 : fromHash >= 16 && fromHash <= 19 ? 87 : fromHash;
+    if (order.includes(mapped)) page = mapped;
+  }
   function save() {
     draft.author = $('editorName').value.slice(0,80);
     try { localStorage.setItem(key,JSON.stringify(draft)); status('Draf tersimpan di browser ini.'); }
@@ -65,12 +74,13 @@
       let added = false;
       for (let n=first;n<=last;n++) {
         if (reservedPages.has(n)) continue;
-        if (query && !`${n} ${story[n-1].title} ${label}`.toLocaleLowerCase('id').includes(query)) continue;
+        const sourceNumber = isMarketing(n) ? marketing[n-67].source : n;
+        if (query && !`${displayNumber(n)} ${n} ${sourceNumber} ${titleFor(n)} ${label}`.toLocaleLowerCase('id').includes(query)) continue;
         if (!added) { const group = document.createElement('div');group.className='slide-group';group.textContent=label.toUpperCase();host.append(group);added=true; }
         const button = document.createElement('button');button.type='button';button.className='slide-row';button.dataset.page=n;
         button.setAttribute('aria-current',n===page?'page':'false');
-        const number = document.createElement('b');number.textContent=pad(n);
-        const title = document.createElement('span');title.textContent=story[n-1].title;
+        const number = document.createElement('b');number.textContent=pad(displayNumber(n));
+        const title = document.createElement('span');title.textContent=titleFor(n);
         const dot = document.createElement('i');dot.setAttribute('aria-label','Ada perubahan');
         button.append(number,title,dot);
         button.addEventListener('click',()=>showPage(n));host.append(button);
@@ -80,16 +90,19 @@
     countChanges();
   }
   function syncCurrent() {
-    $('currentNumber').textContent=pad(page);
-    $('currentTitle').textContent=story[page-1].title;
-    const marketing = page >= 8 && page <= 15;
-    document.querySelector('.preview-foot .live-dot + span').textContent = marketing ? 'Tulis usulan pada catatan peninjau' : 'Klik teks pada slide untuk mengedit';
-    document.querySelector('.inspector-head p').textContent = marketing ? 'Slide pemasaran baru dapat dipratinjau di sini. Tulis usulan perubahan pada catatan peninjau.' : 'Klik teks di pratinjau, atau isi judul dan pembuka di sini.';
+    $('currentNumber').textContent=pad(displayNumber(page));
+    $('currentTitle').textContent=titleFor(page);
+    document.querySelector('.preview-foot .live-dot + span').textContent = isMarketing(page) ? 'Tulis usulan pada catatan peninjau' : 'Klik teks pada slide untuk mengedit';
+    document.querySelector('.preview-foot small').textContent = isMarketing(page) ? 'Pratinjau dari PowerPoint asli tim.' : 'Gerakan dan interaksi slide tetap aktif.';
+    document.querySelector('.inspector-head p').textContent = isMarketing(page) ? 'Slide PowerPoint asli dapat dipratinjau di sini. Tulis usulan perubahan pada catatan peninjau.' : 'Klik teks di pratinjau, atau isi judul dan pembuka di sini.';
+    document.querySelector('.text-search-label').hidden = isMarketing(page);
+    $('textSearch').hidden = isMarketing(page);
     $('prevSlide').disabled=order.indexOf(page)===0;
     $('nextSlide').disabled=order.indexOf(page)===order.length-1;
     document.querySelectorAll('.slide-row').forEach(row=>row.setAttribute('aria-current',Number(row.dataset.page)===page?'page':'false'));
     $('slideNote').value=draft.slides[page]?.note || '';
     history.replaceState(null,'',`#slide=${page}`);
+    status(isMarketing(page) ? 'Slide PowerPoint asli: tulis usulan pada catatan peninjau.' : 'Klik teks pada slide atau ubah judul di panel kanan.');
   }
   function showPage(n) {
     page=n;selected=null;$('editCard').hidden=true;syncCurrent();
@@ -98,7 +111,7 @@
   }
   function refreshTexts() {
     if (!api) return;
-    texts=api.getTexts();
+    texts=isMarketing(page) ? [] : api.getTexts();
     syncQuickFields();
     const query=$('textSearch').value.trim().toLocaleLowerCase('id');
     const list=$('textList');list.replaceChildren();
@@ -111,10 +124,10 @@
       const dot=document.createElement('i');dot.hidden=entry.proposed===null;
       row.append(index,body,dot);row.addEventListener('click',()=>selectText(entry.index));list.append(row);
     }
-    if (!list.children.length) {const empty=document.createElement('p');empty.className='slide-group';empty.textContent=page >= 8 && page <= 15 ? 'Slide pemasaran baru ditinjau lewat catatan peninjau di bawah.' : 'Tidak ada teks yang cocok.';list.append(empty);}
+    if (!list.children.length) {const empty=document.createElement('p');empty.className='slide-group';empty.textContent=isMarketing(page) ? 'Slide PowerPoint asli ditinjau lewat catatan peninjau di bawah.' : 'Tidak ada teks yang cocok.';list.append(empty);}
   }
   function syncQuickFields() {
-    const primary=api.getPrimaryTexts();
+    const primary=isMarketing(page) ? {title:null,lead:null} : api.getPrimaryTexts();
     for (const [field,index] of [['quickTitle',primary.title],['quickLead',primary.lead]]) {
       const row=$(field+'Row');
       row.hidden=index===null;
@@ -125,6 +138,7 @@
     $('quickUnavailable').hidden=primary.title!==null || primary.lead!==null;
   }
   function selectText(index) {
+    if (isMarketing(page)) return;
     selected=index;const entry=texts.find(item=>item.index===index);if (!entry) return;
     $('editCard').hidden=false;$('selectedTag').textContent=`TEKS ${pad(index+1)} · ${entry.tag.toUpperCase()}`;
     $('editValue').value=entry.current;$('originalValue').textContent=entry.base;
@@ -143,6 +157,7 @@
     api.highlight(selected);
   }
   function setTextPatch(index,value) {
+    if (isMarketing(page)) {status('Tulis usulan teks pemasaran pada catatan peninjau.');return;}
     const entry=texts.find(item=>item.index===index);
     if (!entry || !value.trim()) {status('Teks tidak boleh kosong.');return;}
     const slide=draft.slides[page] || {text:{}};
@@ -165,7 +180,7 @@
       }
       api=ready;
       api.setDraft(draft);api.showPage(page);refreshTexts();syncCurrent();
-      status('Klik teks pada slide atau ubah judul di panel kanan.');
+      status(isMarketing(page) ? 'Slide PowerPoint asli: tulis usulan pada catatan peninjau.' : 'Klik teks pada slide atau ubah judul di panel kanan.');
     } catch (error) { console.error(error);status('Pratinjau tidak dapat dibuka. Muat ulang halaman editor.'); }
   }
   $('deckFrame').addEventListener('load',()=>{previewAttempts=0;connectPreview();});

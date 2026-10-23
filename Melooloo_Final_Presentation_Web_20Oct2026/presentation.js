@@ -7,31 +7,25 @@
   if (typeof window.MELOOLOO_RENDER_FINANCE !== 'function') throw new Error('Finance visual layouts did not load.');
   if (typeof window.MELOOLOO_RENDER_OPERATIONS !== 'function') throw new Error('Operations visual layouts did not load.');
   if (typeof window.MELOOLOO_RENDER_HR !== 'function') throw new Error('HR visual layouts did not load.');
-  if (typeof window.MELOOLOO_RENDER_MARKETING !== 'function') throw new Error('Marketing visual layouts did not load.');
+  const originalMarketing = window.MELOOLOO_ORIGINAL_MARKETING;
+  if (!Array.isArray(originalMarketing?.main) || originalMarketing.main.length !== 21) throw new Error('Expected 21 original marketing slides.');
   const $ = id => document.getElementById(id);
   const sections = [
     {name:'Peluang & model',start:1,end:7,palette:0,cue:'Dari celah pasar menuju model bisnis'},
-    {name:'Pasar & merek',start:8,end:15,palette:1,cue:'Dari pembeli menuju keputusan pemasaran'},
+    {name:'Pasar & merek',start:67,end:87,palette:1,cue:'Strategi pemasaran dari PowerPoint tim'},
     {name:'Operasi & teknologi',start:20,end:47,palette:2,cue:'Dari satu greenhouse menjadi sistem'},
     {name:'Tim',start:48,end:52,palette:3,cue:'Orang yang menjaga mutu setiap hari'},
     {name:'Investasi',start:53,end:56,palette:4,cue:'Modal untuk membangun kapasitas'},
     {name:'Kelayakan',start:57,end:64,palette:5,cue:'Apakah angka mendukung keputusan?'},
     {name:'Penutup',start:65,end:66,palette:6,cue:'Keputusan dan langkah berikutnya'}
   ];
-  const reservedPages = new Set([16,17,18,19,45,46]);
+  const reservedPages = new Set([8,9,10,11,12,13,14,15,16,17,18,19,45,46]);
   const routeOrder = sections.flatMap(section => Array.from({length:section.end-section.start+1},(_,i)=>section.start+i)).filter(n => !reservedPages.has(n));
-  if (routeOrder.length !== 60 || new Set(routeOrder).size !== 60) throw new Error('Presentation route must include 60 pages.');
-  const marketingSlides = {8:'M0',9:'M1',10:'M2',11:'T',12:'M3',13:'M4',14:'M5',15:'M6'};
-  const marketingSources = {
-    8:'Panduan Slide Pemasaran v2 (Canva), pembuka M0; paper Melooloo rev15, Bab IV.',
-    9:'Survei primer n = 253 (Lampiran A), wawancara Suzuya (Lampiran K), paper rev15 Tabel 4.1 dan 4.6–4.7.',
-    10:'Paper rev15 Gambar 4.1, Tabel 4.9–4.12, dan Lampiran L.3. Posisi pesaing dan pembeda adalah riset serta rencana tim.',
-    11:'Paper rev15 Bab IV, strategi branding dan komunikasi. Foto dan aktivitas merupakan visualisasi konsep.',
-    12:'Paper rev15 Lampiran L.6 dan Tabel 4.18–4.20. Harga dan margin adalah angka model.',
-    13:'Paper rev15 Tabel 4.1, 4.21, 4.23, 4.25–4.26. Jadwal, bauran kanal, dan akuisisi adalah target.',
-    14:'Paper rev15 Tabel 4.1, 4.16, 4.24. Seluruh KPI adalah target rencana.',
-    15:'Paper rev15 Tabel 4.28–4.29 dan model keuangan Oktober 2026. NMC adalah proyeksi kontribusi pemasaran.'
-  };
+  if (routeOrder.length !== 73 || new Set(routeOrder).size !== 73) throw new Error('Presentation route must include 73 pages.');
+  const marketingFor = n => n >= 67 && n <= 87 ? originalMarketing.main[n - 67] : null;
+  const marketingImage = entry => `marketing-original/${entry.image}`;
+  const displayNumber = n => routeOrder.indexOf(n) + 1;
+  const titleFor = n => marketingFor(n)?.title || story[n - 1]?.title || '';
   const modelUrl = '../Greenhouse_Full_Facility_Walkthrough_28Sep2026/index.html?city=1&fly=1';
   const contexts = {
     21:['CORNER_SE','Lihat lokasi rooftop'],22:['CORNER_SE','Lihat lokasi rooftop'],
@@ -151,15 +145,22 @@
     return `<div class="story-facts story-facts-${type}">${facts.map(([value,label],i)=>`<div class="story-fact" style="--fact-index:${i}"><span class="story-fact-index">${pad(i+1)}</span><strong>${escape(value)}</strong><span class="story-fact-label">${escape(label)}</span></div>`).join('')}</div>`;
   }
   function renderStory(n) {
+    const marketing = marketingFor(n);
+    if (marketing) {
+      $('storySlide').innerHTML = `<article class="story-canvas original-marketing-canvas" aria-label="Slide ${displayNumber(n)}: ${escape(marketing.title)}"><img class="original-marketing-image" src="${escape(marketingImage(marketing))}" alt="Slide ${marketing.source} dari PowerPoint strategi pemasaran: ${escape(marketing.title)}" draggable="false"></article>`;
+      const nextMarketing = marketingFor(routeOrder[displayNumber(n)]);
+      if (nextMarketing) { const preview = new Image(); preview.src = marketingImage(nextMarketing); }
+      return;
+    }
     const item = story[n-1];
     const section = sectionFor(n);
-    const start = `<article class="story-canvas story-${item.type}${wideFigures.has(n)?' story-wide':''} story-chapter-${chapterIndex(n)}${item.type==='finance'?'':' story-visual'}${marketingSlides[n]?' story-marketing-live':''}" aria-label="Slide ${n}: ${escape(item.title)}"><div class="story-grain" aria-hidden="true"></div><div class="story-topline"><span><i></i> MELOOLOO / ${item.type==='finance'?'KEUANGAN':escape(section.name).toUpperCase()}</span></div>`;
+    const start = `<article class="story-canvas story-${item.type}${wideFigures.has(n)?' story-wide':''} story-chapter-${chapterIndex(n)}${item.type==='finance'?'':' story-visual'}" aria-label="Slide ${displayNumber(n)}: ${escape(item.title)}"><div class="story-grain" aria-hidden="true"></div><div class="story-topline"><span><i></i> MELOOLOO / ${item.type==='finance'?'KEUANGAN':escape(section.name).toUpperCase()}</span></div>`;
     const financeOverline = {54:'ASUMSI PROYEKSI',55:'INVESTASI',56:'PENDANAAN',57:'RENCANA CAPEX & OPEX',58:'PROYEKSI LABA RUGI',59:'NERACA'};
     const overline = n >= 60 && n <= 64 ? '' : financeOverline[n] || section.name;
     const heading = `<div class="story-copy">${overline ? `<div class="story-overline">${escape(overline)}</div>` : ''}<h2>${escape(item.title)}</h2><p>${escape(item.lead)}</p></div>`;
     const footer = `<div class="story-footer"><span>PT MELOOLOO SEGAR INDONESIA</span></div>`;
     let body;
-    const visual = window.MELOOLOO_RENDER_MARKETING(n,item,heading) || window.MELOOLOO_RENDER_HR?.(n,item,heading) || window.MELOOLOO_RENDER_OPERATIONS?.(n,item,heading) || window.MELOOLOO_RENDER_VISUAL?.(n,item,heading);
+    const visual = window.MELOOLOO_RENDER_HR?.(n,item,heading) || window.MELOOLOO_RENDER_OPERATIONS?.(n,item,heading) || window.MELOOLOO_RENDER_VISUAL?.(n,item,heading);
     if (visual) {
       body = visual;
     } else if (item.type === 'finance') {
@@ -210,7 +211,7 @@
     $('chapterVeil').dataset.chapter = String(number);
     $('chapterVeilKicker').textContent = `MELOOLOO / BAGIAN ${pad(number)}`;
     $('chapterVeilTitle').textContent = section.name;
-    $('chapterVeilRange').textContent = `${section.cue} · HALAMAN ${pad(section.start)}–${pad(section.end)}`;
+    $('chapterVeilRange').textContent = `${section.cue} · HALAMAN ${pad(displayNumber(section.start))}–${pad(displayNumber(section.end))}`;
     const veil = $('chapterVeil');
     veil.classList.remove('is-visible');
     void veil.offsetWidth;
@@ -231,8 +232,8 @@
     });
   }
   function showPage(value, options={}) {
-    const requestedPage = Math.min(66,Math.max(1,Number(value) || 1));
-    const nextPage = requestedPage >= 16 && requestedPage <= 19 ? 15 : reservedPages.has(requestedPage) ? 47 : requestedPage;
+    const requestedPage = Math.min(87,Math.max(1,Number(value) || 1));
+    const nextPage = requestedPage >= 8 && requestedPage <= 15 ? requestedPage + 59 : requestedPage >= 16 && requestedPage <= 19 ? 87 : reservedPages.has(requestedPage) ? 47 : requestedPage;
     const routePosition = routeOrder.indexOf(nextPage);
     const previousSection = sectionFor(page);
     const nextSection = sectionFor(nextPage);
@@ -242,7 +243,7 @@
     $('slideCount').textContent = `${pad(routePosition+1)} / ${routeOrder.length}`;
     $('chapterLabel').textContent = nextSection.name.toUpperCase();
     $('progressChapter').textContent = nextSection.name;
-    $('slideTitle').textContent = story[page-1].title;
+    $('slideTitle').textContent = titleFor(page);
     $('progressFill').style.width = `${(routePosition+1) / routeOrder.length * 100}%`;
     $('stagePrev').disabled = routePosition === 0;
     $('stageNext').disabled = routePosition === routeOrder.length - 1;
@@ -286,23 +287,23 @@
     for (const section of sections) {
       const jump = document.createElement('button');
       jump.type = 'button';
-      jump.innerHTML = `<small>${pad(section.start)}–${pad(section.end)}</small><strong></strong>`;
+      jump.innerHTML = `<small>${pad(displayNumber(section.start))}–${pad(displayNumber(section.end))}</small><strong></strong>`;
       jump.querySelector('strong').textContent = section.name;
       jump.addEventListener('click',() => showPage(section.start,{skipChapter:true}));
       index.append(jump);
       const heading = document.createElement('h3');
       heading.className = 'drawer-section';
-      heading.textContent = `${pad(section.start)}–${pad(section.end)} / ${section.name.toUpperCase()}`;
+      heading.textContent = `${pad(displayNumber(section.start))}–${pad(displayNumber(section.end))} / ${section.name.toUpperCase()}`;
       list.append(heading);
       for (let n=section.start;n<=section.end;n++) {
         if (reservedPages.has(n)) continue;
         const item = document.createElement('button');
         item.type = 'button'; item.className = 'drawer-item'; item.dataset.page = String(n);
-        item.dataset.search = marketingSlides[n]
-          ? `${n} ${marketingSlides[n]} ${story[n-1].title} ${story[n-1].lead}`.toLocaleLowerCase()
+        item.dataset.search = marketingFor(n)
+          ? `${displayNumber(n)} ${marketingFor(n).source} ${marketingFor(n).title} ${marketingFor(n).text}`.toLocaleLowerCase()
           : `${n} ${story[n-1].title} ${slides[n-1].title} ${slides[n-1].section} ${slides[n-1].text}`.toLocaleLowerCase();
-        const num = document.createElement('span'); num.textContent = pad(n);
-        const title = document.createElement('strong'); title.textContent = story[n-1].title;
+        const num = document.createElement('span'); num.textContent = pad(displayNumber(n));
+        const title = document.createElement('strong'); title.textContent = titleFor(n);
         item.append(num,title);
         item.addEventListener('click',() => { showPage(n,{skipChapter:true}); closeDrawer(); });
         list.append(item);
@@ -332,10 +333,10 @@
   }
   function openText() {
     priorFocus = document.activeElement;
-    $('textModalTitle').textContent = `${pad(page)} / ${story[page-1].title}`;
-    if (marketingSlides[page]) {
-      const slide = $('storySlide').querySelector('.mk-scene');
-      $('slideText').textContent = (slide?.innerText || story[page-1].lead).trim();
+    $('textModalTitle').textContent = `${pad(displayNumber(page))} / ${titleFor(page)}`;
+    $('textModalKicker').textContent = marketingFor(page) ? 'TEKS DARI POWERPOINT PEMASARAN' : 'TEKS DARI PDF SUMBER';
+    if (marketingFor(page)) {
+      $('slideText').textContent = marketingFor(page).text.trim();
       $('textModal').hidden = false;
       $('textModalClose').focus();
       return;
@@ -349,14 +350,16 @@
   function closeText() { if (!$('textModal').hidden) { $('textModal').hidden = true; priorFocus?.focus?.(); } }
   function openSource() {
     priorFocus = document.activeElement;
-    $('sourceModalTitle').textContent = `${pad(page)} / ${story[page-1].title}`;
-    if (marketingSlides[page]) {
-      $('sourceModalKicker').textContent = `PAPER BISNIS OKTOBER · ${marketingSlides[page]}`;
-      $('sourceModalNotice').hidden = false;
-      $('sourceModalNotice').textContent = marketingSources[page];
-      $('sourceModalImage').parentElement.hidden = true;
-      $('sourcePdfLink').href = `marketing-36/index.html#${marketingSlides[page]}`;
-      $('sourcePdfLink').textContent = 'Buka materi pemasaran lengkap ↗';
+    $('sourceModalTitle').textContent = `${pad(displayNumber(page))} / ${titleFor(page)}`;
+    if (marketingFor(page)) {
+      const marketing = marketingFor(page);
+      $('sourceModalKicker').textContent = `POWERPOINT PEMASARAN V3 · SLIDE ${pad(marketing.source)}`;
+      $('sourceModalNotice').hidden = true;
+      $('sourceModalImage').parentElement.hidden = false;
+      $('sourceModalImage').src = marketingImage(marketing);
+      $('sourceModalImage').alt = `Slide ${marketing.source} dari PowerPoint pemasaran: ${marketing.title}`;
+      $('sourcePdfLink').href = 'marketing-original/backup.html';
+      $('sourcePdfLink').textContent = 'Lihat slide cadangan ↗';
       $('sourcePdfLink').hidden = false;
       $('sourceModal').hidden = false;
       $('sourceModalClose').focus();
