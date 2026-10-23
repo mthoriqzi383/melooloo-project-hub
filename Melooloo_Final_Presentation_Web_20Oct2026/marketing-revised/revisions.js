@@ -36,6 +36,28 @@ Hasil Brix dari sampel lot. Tanggal panen terhubung ke riwayat lot. Status uji r
 Sumber: Gambar 4.1 dan Lampiran L Tabel L.3; Tabel 4.9–4.12; paper hlm. 49–57, 61, 66–67, 73.
 2.2`
     },
+    12: {
+      text: `1  Pasar dan Konsumen
+2  Positioning dan Diferensiasi
+3  Bauran Pemasaran
+4  Anggaran Pemasaran
+Posisi Harga Melooloo di Tier Premium Jakarta
+Harga per kg · skala linear · rentang kolom = harga terendah–tertinggi listing (hitungan tim)
+Rp 17 rb · Melon pasar tanpa merek
+Rp 50–64 rb · Greenhouse lokal standar: Inori Smartfarm, Akaruku Hydro Farm, Melonesia Beken
+Rp 60–75 rb · Premium lokal bermerek: Sunpride, Urbana Farm
+Rp 80–95 rb · Melon Jepang di rak premium: Dang Sweet Melon, Ray Farm
+Rp 108–122 rb · Premium lokapasar: Golden Kaze, Bogatani
+Ambang SAM ≥ Rp 50 rb/kg
+Melooloo langsung Rp 99 rb
+Rak mitra ±Rp 100–107 rb
+Ray Farm Rp 94.500/kg · Dang Sweet Melon Rp 79.900/kg
+Foto lapangan tim di ritel premium Jakarta, Oktober 2026
+Yang dibayar di Rp 99 rb: panen ke rak kurang dari 24 jam; lulus uji manis per lot, segel QR; dapat dilacak sampai greenhouse.
+1 buah 1,8 kg = Rp 178.200, setara 1 boks stroberi Jepang Rp 178.800.
+Sumber: Lampiran L Tabel L.6 (listing berbobot, Agustus 2026); Tabel 4.7, 4.19; paper hlm. 46, 52, 54–55, 61, 76–77; foto rak tim, 22 Oktober 2026.
+3.1`
+    },
     16: {
       text: sourceText(16).replace('\nPengalaman\n', '\nExperiences\n')
     },
@@ -106,7 +128,7 @@ Sumber: Gambar 4.1 dan Lampiran L Tabel L.3; Tabel 4.9–4.12; paper hlm. 49–5
     5: ['Estimasi Ukuran Pasar (TAM, SAM, SOM)', 'Kami hanya perlu 4–6% pasar premium DKI di Tahun 1'],
     7: ['Peta Persaingan dan Posisi Melooloo', 'Satu-satunya pemasok premium di dalam Jakarta'],
     8: ['Point of Parity dan Point of Difference', 'Pembedanya bisa diperiksa sendiri oleh pembeli'],
-    12: ['Strategi Harga dan Perbandingan Pasar', 'Harga 14–17 kali di bawah Crown Melon'],
+    12: ['Posisi Harga Melooloo di Tier Premium Jakarta', 'Harga 14–17 kali di bawah Crown Melon'],
     13: ['Format Produk per Kanal', 'Satu format untuk satu kanal'],
     14: ['Strategi Masuk Pasar Tahun 0–1', 'B2B mengunci volume sejak Tahun 0, mengikuti jadwal panen'],
     15: ['Bauran Kanal Distribusi Tahun 1–10', 'B2C menjadi 60% volume di Tahun 5'],
@@ -121,8 +143,8 @@ Sumber: Gambar 4.1 dan Lampiran L Tabel L.3; Tabel 4.9–4.12; paper hlm. 49–5
     const revision = window.MELOOLOO_MARKETING_REVISIONS[number] ||= {};
     const transcript = revision.text ?? sourceText(number);
     const extension = number === 15 || number === 19 ? 'svg' : 'png';
-    const image = number === 7 ? 'slide-07-v2.png' : number === 8 ? 'slide-08-v3.svg' : number === 16 ? 'slide-16-v2.png' : `slide-${String(number).padStart(2, '0')}.${extension}`;
-    const version = number === 7 ? 'competition-map-v2-20261023' : number === 8 ? 'pop-pod-v2-20261023' : number === 16 ? 'imc-experiences-20261023' : 'marketing-titles-20261023';
+    const image = number === 7 ? 'slide-07-v2.png' : number === 8 ? 'slide-08-v3.svg' : number === 12 ? 'slide-12-v2.png' : number === 16 ? 'slide-16-v2.png' : `slide-${String(number).padStart(2, '0')}.${extension}`;
+    const version = number === 7 ? 'competition-map-v2-20261023' : number === 8 ? 'pop-pod-v2-20261023' : number === 12 ? 'price-ladder-v2-20261023' : number === 16 ? 'imc-experiences-20261023' : 'marketing-titles-20261023';
     revision.revisedImage = `marketing-revised/${image}?v=${version}`;
     revision.title = title;
     revision.text = transcript.includes(oldHeadline)
