@@ -8,6 +8,7 @@ revisions to slides 4 and 13 are applied in the same temporary PPTX.
 
 from __future__ import annotations
 
+import argparse
 import tempfile
 from pathlib import Path
 from zipfile import ZipFile
@@ -73,7 +74,16 @@ def remove_cover_placeholder(xml: bytes) -> bytes:
     return etree.tostring(root, xml_declaration=True, encoding="UTF-8", standalone=True)
 
 
-def main() -> None:
+def revise_imc_label(xml: bytes) -> bytes:
+    root = etree.fromstring(xml)
+    labels = root.xpath(".//a:t[text()='Pengalaman   ']", namespaces=NS)
+    if len(labels) != 1:
+        raise ValueError(f"Expected one IMC label; found {len(labels)}")
+    labels[0].text = "Experiences   "
+    return etree.tostring(root, xml_declaration=True, encoding="UTF-8", standalone=True)
+
+
+def main(only_slide: int | None = None) -> None:
     if not SOURCE.is_file():
         raise FileNotFoundError(SOURCE)
     with tempfile.TemporaryDirectory(prefix="melooloo-marketing-titles-") as temp_name:
@@ -88,16 +98,24 @@ def main() -> None:
             for number, (old, new) in TITLES.items():
                 part = f"ppt/slides/slide{number}.xml"
                 updates[part] = retitle(updates.get(part, original.read(part)), old, new)
+            updates["ppt/slides/slide16.xml"] = revise_imc_label(updates["ppt/slides/slide16.xml"])
             updates["ppt/slides/slide1.xml"] = remove_cover_placeholder(updates["ppt/slides/slide1.xml"])
             for entry in original.infolist():
                 revised.writestr(entry, updates.get(entry.filename, original.read(entry.filename)))
 
-        for number in TITLES:
+        for number in ([only_slide] if only_slide is not None else TITLES):
             filename = f"slide-{number:02d}.png"
-            output = HERE / (f"title-base-{filename}" if number in (15, 19) else filename)
+            if number in (15, 19):
+                output = HERE / f"title-base-{filename}"
+            elif number == 16:
+                output = HERE / "slide-16-v2.png"
+            else:
+                output = HERE / filename
             dimensions = render_one(revised_pptx, number, 2400, output)
             print(f"Rendered {output.name}: {dimensions[0]}x{dimensions[1]}", flush=True)
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--slide", type=int, choices=sorted(TITLES), help="Render only one surviving main slide")
+    main(parser.parse_args().slide)

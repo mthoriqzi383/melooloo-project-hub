@@ -11,6 +11,9 @@
     8: {
       text: sourceText(8).replace(/melooloo · cek buahmu[\s\S]*?(?=Sumber:)/, 'ILUSTRASI APLIKASI\nJejak buah · Melooloo Signature, Grade A\nDEMO-001 · DATA CONTOH\nKemanisan: 15,2°Bx dari sampel lot; target mutu ≥15°Bx.\nDitanam: 05 Jul 2026. Dipanen: 20 Sep 2026.\nAsal kebun: belum diverifikasi. Uji residu: belum tersedia.\nLihat perjalanan lengkap.\nTampilan contoh, bukan hasil panen nyata.\nHasil Brix dari sampel lot. Tanggal panen terhubung ke riwayat lot. Status uji residu muncul saat data tersedia.\n')
     },
+    16: {
+      text: sourceText(16).replace('\nPengalaman\n', '\nExperiences\n')
+    },
     4: {
       revisedImage: 'marketing-revised/slide-04.png',
       text: sourceText(4).replace('Health-Conscious Urban\n', 'Health-Conscious Urban\nWellness Community\n')
@@ -93,8 +96,8 @@
     const revision = window.MELOOLOO_MARKETING_REVISIONS[number] ||= {};
     const transcript = revision.text ?? sourceText(number);
     const extension = number === 15 || number === 19 ? 'svg' : 'png';
-    const image = number === 7 ? 'slide-07-v2.png' : number === 8 ? 'slide-08-v2.svg' : `slide-${String(number).padStart(2, '0')}.${extension}`;
-    const version = number === 7 ? 'competition-map-v2-20261023' : number === 8 ? 'trace-phone-v2-20261023' : 'marketing-titles-20261023';
+    const image = number === 7 ? 'slide-07-v2.png' : number === 8 ? 'slide-08-v2.svg' : number === 16 ? 'slide-16-v2.png' : `slide-${String(number).padStart(2, '0')}.${extension}`;
+    const version = number === 7 ? 'competition-map-v2-20261023' : number === 8 ? 'trace-phone-v2-20261023' : number === 16 ? 'imc-experiences-20261023' : 'marketing-titles-20261023';
     revision.revisedImage = `marketing-revised/${image}?v=${version}`;
     revision.title = title;
     revision.text = transcript.includes(oldHeadline)
