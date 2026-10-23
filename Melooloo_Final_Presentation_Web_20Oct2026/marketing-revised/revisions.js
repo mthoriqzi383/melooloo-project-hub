@@ -5,6 +5,9 @@
   if (!Array.isArray(main) || main.length !== 21) throw new Error('Marketing source slides are missing.');
   const sourceText = number => [...main,...(source.backup || [])].find(entry => entry.source === number)?.text || '';
   window.MELOOLOO_MARKETING_REVISIONS = {
+    7: {
+      text: "1  Pasar dan Konsumen\n2  Positioning dan Diferensiasi\n3  Bauran Pemasaran\n4  Anggaran Pemasaran\nPeta Persaingan dan Posisi Melooloo\nMelon premium dari kebun smart greenhouse di dalam Jakarta, tiba di titik penjualan kurang dari 24 jam setelah panen.\nJARAK PRODUKSI × SKOR RASA\nhipotesis\nritel premium bernama\ndistributor / supermarket\nlangsung · reseller · agrowisata\ncelah: ≤ 60 km dan rasa ≥ 4\n2\n3\n4\n5\n10\n100\n1.000\n10.000\ndalam DKI\n//\njarak produksi ke konsumen Jakarta (km, skala logaritmik)\n↑ rasa: kemanisan & konsistensi (skor 1–5)\nMELOOLOO\nrencana · rasa 4,3\nCrown Melon\nimpor Jepang · ±5.900 km · 4,7\nSweet Greens\nDang Sweet · ±90 km · 4,1\nUrbana Farm\nKaranganyar · ±500 km · 4,0\nWohsae\nMalang · ±800 km · 3,7\nAkaruku\nCisauk · ±30 km · 3,3\nSunpride\nnasional · ±250 km · 2,9\njarak tidak dipublikasikan\nMirai Melon\nskor rasa 3,5\nMama Melon\nBogor · skor rasa 3,0\nMelon tanpa merek\npasar tradisional · 2,2\ntanpa skor rasa\nIr. Yoga Purnomo\nBekasi · ±25 km\nKabul Pamudji\nSemarang · ±450 km\nCELAH YANG DITUJU\ndekat konsumen + ritel premium bernama\nRasa ≥ 4 hanya dari pemain berjarak 90–5.900 km; ancaman terbesar Sweet Greens (dana USD 750.000).\nSumber: Lampiran L Tabel L.3 (jarak, kanal), Tabel L.4 (skor rasa, penilaian tim) dan Tabel L.5; Gambar 4.1–4.2; paper hlm. 44–47, 50–57.\n2.1"
+    },
     4: {
       revisedImage: 'marketing-revised/slide-04.png',
       text: sourceText(4).replace('Health-Conscious Urban\n', 'Health-Conscious Urban\nWellness Community\n')
@@ -87,11 +90,13 @@
     const revision = window.MELOOLOO_MARKETING_REVISIONS[number] ||= {};
     const transcript = revision.text ?? sourceText(number);
     const extension = number === 15 || number === 19 ? 'svg' : 'png';
-    revision.revisedImage = `marketing-revised/slide-${String(number).padStart(2, '0')}.${extension}?v=marketing-titles-20261023`;
+    const image = number === 7 ? 'slide-07-v2.png' : `slide-${String(number).padStart(2, '0')}.${extension}`;
+    const version = number === 7 ? 'competition-map-v2-20261023' : 'marketing-titles-20261023';
+    revision.revisedImage = `marketing-revised/${image}?v=${version}`;
     revision.title = title;
     revision.text = transcript.includes(oldHeadline)
       ? transcript.replace(oldHeadline, title)
-      : `${title}\n${transcript}`;
+      : transcript.includes(title) ? transcript : `${title}\n${transcript}`;
     if (number === 1) {
       revision.text = revision.text.replace('[NAMA PRESENTER]\n·  [peran di tim]\n', '');
     }
