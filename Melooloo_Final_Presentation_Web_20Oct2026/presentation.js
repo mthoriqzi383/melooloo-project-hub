@@ -14,16 +14,17 @@
   const sections = [
     {name:'Peluang & model',start:1,end:7,palette:0,cue:'Dari celah pasar menuju model bisnis'},
     {name:'Pasar & merek',start:67,end:87,palette:1,cue:'Strategi pemasaran dari PowerPoint tim'},
-    {name:'Operasi & teknologi',start:20,end:47,palette:2,cue:'Dari satu greenhouse menjadi sistem'},
+    {name:'Operasi & teknologi',start:27,end:47,palette:2,cue:'Dari satu greenhouse menjadi sistem'},
     {name:'Tim',start:48,end:52,palette:3,cue:'Orang yang menjaga mutu setiap hari'},
     {name:'Investasi',start:53,end:56,palette:4,cue:'Modal untuk membangun kapasitas'},
     {name:'Kelayakan',start:57,end:64,palette:5,cue:'Apakah angka mendukung keputusan?'},
     {name:'Penutup',start:65,end:66,palette:6,cue:'Keputusan dan langkah berikutnya'}
   ];
   const omittedMarketingPages = new Set([68,72,75,76,77,84]);
-  const reservedPages = new Set([8,9,10,11,12,13,14,15,16,17,18,19,45,46,...omittedMarketingPages]);
+  const removedOperationPages = new Set([20,21,22,23,24,25,26]);
+  const reservedPages = new Set([8,9,10,11,12,13,14,15,16,17,18,19,45,46,...removedOperationPages,...omittedMarketingPages]);
   const routeOrder = sections.flatMap(section => Array.from({length:section.end-section.start+1},(_,i)=>section.start+i)).filter(n => !reservedPages.has(n));
-  if (routeOrder.length !== 67 || new Set(routeOrder).size !== 67) throw new Error('Presentation route must include 67 pages.');
+  if (routeOrder.length !== 60 || new Set(routeOrder).size !== 60) throw new Error('Presentation route must include 60 pages.');
   const marketingFor = n => {
     if (n < 67 || n > 87 || omittedMarketingPages.has(n)) return null;
     const original = originalMarketing.main[n - 67];
@@ -240,7 +241,7 @@
   function showPage(value, options={}) {
     const requestedPage = Math.min(87,Math.max(1,Number(value) || 1));
     const mappedPage = requestedPage >= 8 && requestedPage <= 15 ? requestedPage + 59 : requestedPage >= 16 && requestedPage <= 19 ? 87 : requestedPage;
-    const nextPage = omittedMarketingPages.has(mappedPage)
+    const nextPage = removedOperationPages.has(mappedPage) ? 27 : omittedMarketingPages.has(mappedPage)
       ? routeOrder.find(n => n > mappedPage && n <= 87)
       : reservedPages.has(mappedPage) ? 47 : mappedPage;
     const routePosition = routeOrder.indexOf(nextPage);

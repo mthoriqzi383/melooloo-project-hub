@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parent
 APPROVED = ROOT / "published-edits.js"
 PREFIX = "/* Reviewed edits are added here by the publishing script. */\nwindow.MELOOLOO_PUBLISHED_EDITS = "
 MARKETING_PAGES = set(range(67, 88)) - {68, 72, 75, 76, 77, 84}
-DISPLAY_ORDER = [*range(1, 8), *sorted(MARKETING_PAGES), *range(20, 45), *range(47, 67)]
+DISPLAY_ORDER = [*range(1, 8), *sorted(MARKETING_PAGES), *range(27, 45), *range(47, 67)]
 DISPLAY_INDEX = {number: index + 1 for index, number in enumerate(DISPLAY_ORDER)}
 VALID_PAGES = set(DISPLAY_ORDER)
 SUPPORTED_DECKS = {

@@ -3,7 +3,9 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const here = dirname(fileURLToPath(import.meta.url));
-const base = readFileSync(join(here, 'slide-08.png')).toString('base64');
+const sourceName = process.argv[2] || 'slide-08.png';
+const outputName = process.argv[3] || 'slide-08-v2.svg';
+const base = readFileSync(join(here, sourceName)).toString('base64');
 const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1354" viewBox="0 0 2400 1354" role="img" aria-labelledby="title desc">
   <title id="title">Point of Parity dan Point of Difference — contoh antarmuka jejak buah Melooloo</title>
@@ -99,4 +101,4 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
   <text x="1616" y="1254" text-anchor="middle" fill="#596d5c" font-family="Arial,sans-serif" font-size="18">Tampilan contoh • bukan hasil panen nyata</text>
 </svg>`;
 
-writeFileSync(join(here, 'slide-08-v2.svg'), svg);
+writeFileSync(join(here, outputName), svg);

@@ -45,14 +45,14 @@
   }
   function agenda(heading) {
     const items=[
-      ['01','200 m²','Satu modul','Geometri dan alat di dalam GH'],
-      ['02','50 → 817 t','Skala','Panen dari Y0 sampai Y10'],
-      ['03','4 parameter','Mutu','Iklim, pH, dan nutrisi'],
-      ['04','8 tahap','Ritme kerja','Dari semai sampai sanitasi'],
-      ['05','73 hari','Siklus','Mengapa lima panen mungkin'],
-      ['06','Rp4.250 jt','Benih','Program R&D bertahap; belum di model dasar']
+      ['01','Greenhouse dan cara kerjanya','200 m²','Satu modul','Geometri dan alat di dalam GH'],
+      ['02','Hasil panen dan pertumbuhannya','50 → 817 t','Skala','Panen dari Y0 sampai Y10'],
+      ['03','parameter kunci dan cara kontrolnya','4 parameter','Mutu','Iklim, pH, dan nutrisi'],
+      ['04','Metode penanaman','8 tahap','Ritme kerja','Dari semai sampai sanitasi'],
+      ['05','perhitungan siklus','73 hari','Siklus','Mengapa lima panen mungkin'],
+      ['06','R&D dan Pembeda','Rp4.250 jt','Benih','Program R&D bertahap']
     ];
-    return scene(28,heading,`<div class="ops-agenda-grid">${items.map(([n,value,name,detail])=>`<div><small>${n} / PERTANYAAN</small><strong>${value}</strong><b>${name}</b><span>${detail}</span></div>`).join('')}</div>`,`Enam pertanyaan yang dijawab pada rangkaian operasi berikutnya.`);
+    return scene(28,heading,`<div class="ops-agenda-grid">${items.map(([n,topic,value,name,detail])=>`<div><small>${n} / ${E(topic)}</small><strong>${value}</strong><b>${name}</b><span>${detail}</span></div>`).join('')}</div>`,`Enam topik operasi pada rangkaian berikutnya.`);
   }
   function unit(heading) {
     return scene(29,heading,`<div class="ops-unit-photo">${photo('assets/hero-greenhouse.png','Visualisasi interior satu modul greenhouse Melooloo')}<div class="ops-unit-stamp">10 m × 20 m</div></div><div class="ops-unit-right"><div class="ops-unit-metrics">${metric('200 m²','luas modul')}${metric('140 m²','area ditanami')}${metric('14 × 30','baris × tanaman')}${metric('420','titik tanam')}</div><div class="ops-unit-detail"><small>GEOMETRI YANG MENENTUKAN</small><span>DFT 3 inci · pipa 0,8 m dari lantai · jalur kerja 80 cm · jarak tanam 40–50 cm · trellis 2,5 m · atap 4,5 m.</span></div></div>`,`Satu tanaman satu buah · Fujisawa RZ F1 · hasil model 3.591 kg per unit per tahun pada 5 siklus.`);
