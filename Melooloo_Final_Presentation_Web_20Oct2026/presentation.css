@@ -67,3 +67,11 @@ html.editor-preview .story-canvas [data-beat-target]{cursor:pointer}
 .landing-download{color:var(--lime);font-weight:750;text-decoration:none;white-space:nowrap;border-bottom:1px solid rgba(199,237,148,.55);padding-bottom:3px}
 .landing-download:hover,.landing-download:focus-visible{color:#e0f6c6;border-bottom-color:currentColor}
 @media(max-width:650px){.header-actions a[href="editor.html"]{display:none}.landing-meta{gap:10px}}
+
+/* Keep the silent concept video one click away from the cover and slide player. */
+.header-actions .video-shortcut{display:inline-flex;align-items:center;border:1px solid rgba(199,237,148,.5);border-radius:999px;background:rgba(199,237,148,.09);color:var(--lime);padding:9px 13px;text-decoration:none}
+.header-actions .video-shortcut:hover{background:rgba(199,237,148,.18);color:#e4f8cb}
+.player-bottom-actions .video-player-link{color:var(--lime);font-weight:750}
+@media(max-width:1100px){.header-context{display:none}}
+@media(max-width:850px){.header-actions a[href="story.html"],.header-actions a[href="editor.html"]{display:none}}
+@media(max-width:380px){.player{grid-template-rows:48px minmax(0,1fr) 125px}.player-bottom-actions{justify-content:flex-start;flex-wrap:wrap;column-gap:4px;row-gap:0}.player-bottom-actions .pdf-link,.player-bottom-actions button{padding:6px 7px}}
